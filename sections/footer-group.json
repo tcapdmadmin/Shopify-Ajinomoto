@@ -61,17 +61,19 @@
         "footer-0": {
           "type": "menu",
           "settings": {
-            "title": "AJINOMOTO PRODUCTS",
+            "title": "Food Vendor",
             "menu": "ajinomoto-products",
+            "customer_type": "Food Vendor",
             "enable_account_link": false
           }
         },
-        "8c396db5-ef97-4f4b-babd-37d2013af1d3": {
-          "type": "menu",
+        "75f6b3f4-f16a-476d-b540-14149e9827fe": {
+          "type": "payment",
           "settings": {
-            "title": "ABOUT US",
-            "menu": "about-us",
-            "enable_account_link": false
+            "show_payment_icons": true,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "show_currency_flags": true
           }
         },
         "footer-1": {
@@ -86,7 +88,7 @@
       },
       "block_order": [
         "footer-0",
-        "8c396db5-ef97-4f4b-babd-37d2013af1d3",
+        "75f6b3f4-f16a-476d-b540-14149e9827fe",
         "footer-1"
       ],
       "custom_css": [
@@ -101,12 +103,107 @@
         "footer_main_menu": false,
         "show_copyright": true,
         "copyright_text": "",
+        "policies_menu1": "",
+        "policies_menu": ""
+      }
+    },
+    "57068fb3-93da-4f12-aee8-2e36bac3b76b": {
+      "type": "footer2",
+      "blocks": {
+        "e797da35-bd6e-4ce1-8cd1-abcbe56d869b": {
+          "type": "menu",
+          "settings": {
+            "title": "Retailer",
+            "menu": "ajinomoto-products",
+            "customer_type": "Retailer",
+            "enable_account_link": false
+          }
+        },
+        "5ac5cefb-dbad-4f87-8a88-0f64e5e6126e": {
+          "type": "contact",
+          "settings": {
+            "phone": "",
+            "contact": "",
+            "chat": "",
+            "enable_social": true
+          }
+        },
+        "07e06048-a3a4-43ed-a976-94637ef30d91": {
+          "type": "payment",
+          "settings": {
+            "show_payment_icons": true,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "show_currency_flags": true
+          }
+        }
+      },
+      "block_order": [
+        "e797da35-bd6e-4ce1-8cd1-abcbe56d869b",
+        "5ac5cefb-dbad-4f87-8a88-0f64e5e6126e",
+        "07e06048-a3a4-43ed-a976-94637ef30d91"
+      ],
+      "settings": {
+        "show_newsletter": true,
+        "newsletter_richtext": "<p>Subscribe today to hear first about our sales<\/p>",
+        "footer_main_menu": true,
+        "show_copyright": false,
+        "copyright_text": "",
+        "policies_menu1": "",
+        "policies_menu": ""
+      }
+    },
+    "b718660f-19fc-4c86-a58c-d2e4572c0638": {
+      "type": "footer3",
+      "blocks": {
+        "47d4904c-c01b-4195-8140-dfeb4e505994": {
+          "type": "menu",
+          "settings": {
+            "title": "Food Vendor and Retailer",
+            "menu": "footer",
+            "customer_type": "Both",
+            "enable_account_link": false
+          }
+        },
+        "53757009-e7c6-47c9-98ba-94f542ddef71": {
+          "type": "contact",
+          "settings": {
+            "phone": "",
+            "contact": "",
+            "chat": "",
+            "enable_social": true
+          }
+        },
+        "4770a6e3-9fda-48ab-85ab-803be4340c39": {
+          "type": "payment",
+          "settings": {
+            "show_payment_icons": true,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "show_currency_flags": true
+          }
+        }
+      },
+      "block_order": [
+        "47d4904c-c01b-4195-8140-dfeb4e505994",
+        "53757009-e7c6-47c9-98ba-94f542ddef71",
+        "4770a6e3-9fda-48ab-85ab-803be4340c39"
+      ],
+      "settings": {
+        "show_newsletter": true,
+        "newsletter_richtext": "<p>Subscribe today to hear first about our sales<\/p>",
+        "footer_main_menu": true,
+        "show_copyright": false,
+        "copyright_text": "",
+        "policies_menu1": "",
         "policies_menu": ""
       }
     }
   },
   "order": [
     "footer-promotions",
-    "footer"
+    "footer",
+    "57068fb3-93da-4f12-aee8-2e36bac3b76b",
+    "b718660f-19fc-4c86-a58c-d2e4572c0638"
   ]
 }
