@@ -1,0 +1,295 @@
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="index-section color-scheme-{{ section.settings.color_scheme }} text-{{ section.settings.align_text }}">
+  {%- if section.settings.color_scheme != 'none' -%}
+    {% assign color_scheme = section.settings.color_scheme %}
+{% comment %}
+  Images:
+    - space
+    - paper
+    - marble
+  SVG:
+    - swirl
+    - squiggle
+  CSS:
+    - darken
+{% endcomment %}
+{%- capture key -%}color_scheme_{{ color_scheme }}_texture{%- endcapture -%}
+{%- assign texture = settings[key] -%}
+
+{%- if texture == 'space.jpg' or
+        texture == 'paper.jpg' or
+        texture == 'marble.jpg' -%}
+  {% capture image_classes %}
+    scheme-image scheme-texture--{{ texture }}
+  {% endcapture %}
+  {%- render 'image-element',
+    asset: texture,
+    host: 'theme',
+    type: 'asset',
+    classes: image_classes,
+    data-name: 'texture',
+    data-value: texture,
+  -%}
+{%- else -%}
+  <div class="scheme-{{ texture }}"></div>
+{%- endif -%}
+
+
+  {%- endif -%}
+
+  <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
+    {%- for block in section.blocks -%}
+      <div class="theme-block" {{ block.shopify_attributes }}>
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            <h2 class="{{ block.settings.heading_size }}">{{ block.settings.title | escape }}</h2>
+          {%- when 'page' -%}
+            <div class="rte">
+              {%- if block.settings.page_text != blank -%}
+                {{ pages[block.settings.page_text].content }}
+              {%- else -%}
+                {{ 'home_page.onboarding.no_content' | t }}
+              {%- endif -%}
+            </div>
+          {%- when 'text' -%}
+            <div class="rte">
+              {%- if block.settings.text != blank -%}
+                {%- if block.settings.enlarge_text %}<div class="enlarge-text">{% endif -%}
+                {{ block.settings.text }}
+                {%- if block.settings.enlarge_text %}</div>{% endif -%}
+              {%- else -%}
+                {{ 'home_page.onboarding.no_content' | t }}
+              {%- endif -%}
+            </div>
+          {%- when 'button' -%}
+            <div class="rte">
+              <a href="{{ block.settings.link }}" class="btn">
+                {{ block.settings.link_text }}
+              </a>
+            </div>
+        {%- endcase -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{%- if section.settings.divider -%}</div>{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.rich-text.name",
+  "settings": [
+    {
+      "type": "select",
+      "id": "align_text",
+      "label": "t:sections.rich-text.settings.align_text.label",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.rich-text.settings.align_text.options.left.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.rich-text.settings.align_text.options.center.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.rich-text.settings.align_text.options.right.label"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "narrow_column",
+      "label": "t:sections.rich-text.settings.narrow_column.label",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:sections.rich-text.settings.color_scheme.label",
+      "default": "1",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.rich-text.settings.color_scheme.options.none.label"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:sections.rich-text.settings.divider.label",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.rich-text.blocks.heading.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.rich-text.blocks.heading.settings.title.label",
+          "default": "Rich text"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "t:common.heading_size.label",
+          "default": "h2",
+          "options": [
+            {
+              "value": "h3",
+              "label": "t:common.heading_size.options.small.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:common.heading_size.options.medium.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:common.heading_size.options.large.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:common.heading_size.options.extra_large.label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.rich-text.blocks.text.name",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enlarge_text",
+          "label": "t:sections.rich-text.blocks.text.settings.enlarge_text.label",
+          "default": true
+        },
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "t:sections.rich-text.blocks.text.settings.text.label",
+          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "t:sections.rich-text.blocks.button.name",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.rich-text.blocks.button.settings.link.label"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "t:sections.rich-text.blocks.button.settings.link_text.label",
+          "default": "Button"
+        }
+      ]
+    },
+    {
+      "type": "page",
+      "name": "t:sections.rich-text.blocks.page.name",
+      "settings": [
+        {
+          "id": "page_text",
+          "type": "page",
+          "label": "t:sections.rich-text.blocks.page.settings.page_text.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["custom.popups"]
+  },
+  "locales": {
+    "de": {
+      "home_page": {
+        "onboarding": {
+          "no_content": "Dieser Bereich hat zur Zeit keinen Inhalt. Füge diesem Bereich über die Seitenleiste Inhalte hinzu."
+        }
+      }
+    },
+    "en": {
+      "home_page": {
+        "onboarding": {
+          "no_content": "This section doesn’t currently include any content. Add content to this section using the sidebar."
+        }
+      },
+      "snippet_name": "color-scheme-texture"
+    },
+    "es": {
+      "home_page": {
+        "onboarding": {
+          "no_content": "Esta secção não inclui de momento qualquer conteúdo. Adicione conteúdo a esta secção através da barra lateral."
+        }
+      },
+      "snippet_name": "color-scheme-texture"
+    },
+    "fr": {
+      "home_page": {
+        "onboarding": {
+          "no_content": "Cette section ne contient actuellement aucun contenu. Ajoutez-en en utilisant la barre latérale."
+        }
+      },
+      "snippet_name": "color-scheme-texture"
+    },
+    "it": {
+      "home_page": {
+        "onboarding": {
+          "no_content": "Questa sezione non include attualmente alcun contenuto. Aggiungi contenuti a questa sezione utilizzando la barra laterale."
+        }
+      }
+    },
+    "pt-BR": {
+      "home_page": {
+        "onboarding": {
+          "no_content": "Atualmente, esta seção não inclui nenhum conteúdo. Adicione conteúdo nesta seção usando a barra lateral."
+        }
+      }
+    },
+    "pt-PT": {
+      "home_page": {
+        "onboarding": {
+          "no_content": "Esta sección actualmente no incluye ningún contenido. Añade un contenido a esta sección utilizando la barra lateral."
+        }
+      }
+    }
+  }
+}
+{% endschema %}

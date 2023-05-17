@@ -1,0 +1,58 @@
+{
+  "type": "header",
+  "name": "t:sections.header-group.name",
+  "sections": {
+    "toolbar": {
+      "type": "toolbar",
+      "blocks": {
+        "toolbar-0": {
+          "type": "announcement",
+          "settings": {
+            "richtext": "<p><strong>FREE DELIVERY<\/strong> FOR ORDERS OVER $100<\/p>",
+            "richtext_mobile": "<p><strong>FREE DELIVERY<\/strong> FOR ORDERS OVER $100<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "toolbar-0"
+      ],
+      "settings": {
+        "announcement_center": false,
+        "toolbar_social": false,
+        "show_locale_selector": true,
+        "show_currency_selector": true,
+        "show_currency_flags": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "70de1558-f19e-4597-b5ab-19b195f5253b": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Ajinomoto-Logo.wine.png",
+            "desktop_logo_width": 100,
+            "mobile_logo_width": 60
+          }
+        }
+      },
+      "block_order": [
+        "70de1558-f19e-4597-b5ab-19b195f5253b"
+      ],
+      "settings": {
+        "main_menu_link_list": "main-menu",
+        "hover_menu": true,
+        "main_menu_alignment": "left",
+        "mega_products": true,
+        "header_sticky": true,
+        "header_footer_menu": true,
+        "sticky_index": false,
+        "sticky_collection": false
+      }
+    }
+  },
+  "order": [
+    "toolbar",
+    "header"
+  ]
+}

@@ -1,0 +1,35 @@
+<div
+  data-subsection
+  data-section-id="{{ section.id }}"
+  data-section-type="recently-viewed"
+  data-product-id="{{ product.id }}"
+  data-max-products="{{ settings.recently_viewed_max_products }}"
+>
+  <div class="index-section index-section--sub-product">
+    <div class="page-width">
+      <header class="section-header">
+        <div class="h3 section-header__title">{{ 'products.general.recent_products' | t }}</div>
+      </header>
+    </div>
+
+    <div class="page-width page-width--flush-small">
+      <div id="RecentlyViewed-{{ section.id }}"></div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.recently-viewed.name",
+  "class": "recently-viewed__section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.recently-viewed.settings.content"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

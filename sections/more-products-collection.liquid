@@ -1,0 +1,80 @@
+{%- liquid
+  if collection
+    assign collection_handle = collection.handle
+  else
+    for col in product.collections limit: 1
+      assign collection_handle = col.handle
+    endfor
+  endif
+
+  assign collection = collections[collection_handle]
+
+  capture gridView
+    render 'products_per_row', products_per_row: section.settings.products_per_row
+  endcapture
+-%}
+
+{%- if collection and collection.handle != blank -%}
+  {%- capture collection_link -%}
+    <a href="{{ collection.url }}">{{ collection.title }}</a>
+  {%- endcapture -%}
+  <div
+    data-subsection
+    data-section-id="{{ section.id }}"
+    data-section-type="collection-template">
+    <div class="index-section index-section--sub-product">
+      <div class="page-width">
+        <header class="section-header">
+          <div class="h3 section-header__title">{{ 'products.general.more_from_html' | t: link: collection_link }}</div>
+        </header>
+      </div>
+
+      <div class="page-width page-width--flush-small">
+        <div class="new-grid product-grid scrollable-grid--small" data-view="{{ gridView }}">
+          {%- liquid
+            for product in collection.products limit: section.settings.max_products
+              render 'product-grid-item', product: product, collection: collection, sizeVariable: section.settings.products_per_row, fallback: '45vw'
+
+              if settings.quick_shop_enable
+                render 'quick-shop-modal', product: product, collection: collection
+              endif
+            endfor
+          -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.more-products-collection.name",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.more-products-collection.settings.content"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "t:sections.more-products-collection.settings.products_per_row.label",
+      "default": 3,
+      "min": 2,
+      "max": 5,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "t:common.products.max_products.label",
+      "default": 5,
+      "min": 2,
+      "max": 10,
+      "step": 1
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

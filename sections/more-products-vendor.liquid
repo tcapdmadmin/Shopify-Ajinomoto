@@ -1,0 +1,74 @@
+{%- liquid
+  capture gridView
+    render 'products_per_row', products_per_row: section.settings.products_per_row
+  endcapture
+-%}
+
+{%- if product.vendor -%}
+  {%- capture vendor_link -%}
+    {{ product.vendor | link_to_vendor }}
+  {%- endcapture -%}
+
+  <div
+    data-subsection
+    data-section-id="{{ section.id }}"
+    data-section-type="vendor-products"
+    data-product-id="{{ product.id }}"
+    data-vendor="{{ product.vendor }}"
+    data-max-products="{{ section.settings.max_products }}"
+  >
+    <div class="index-section index-section--sub-product">
+      <div class="page-width">
+        <header class="section-header">
+          <div class="h3 section-header__title">{{ 'products.general.more_from_html' | t: link: vendor_link }}</div>
+        </header>
+      </div>
+
+      <div class="page-width page-width--flush-small">
+        <div id="VendorProducts-{{ section.id }}"
+          class="new-grid product-grid scrollable-grid--small" data-view="{{ gridView }}">
+          {% comment %}
+            This content is visually hidden and replaced when recommended
+            products show up
+          {% endcomment %}
+          <div class="visually-invisible">
+            {%- render 'product-grid-item', product: product, no_actions: true -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.more-products-vendor.name",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.more-products-vendor.settings.content"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "t:sections.more-products-vendor.settings.products_per_row.label",
+      "default": 3,
+      "min": 2,
+      "max": 5,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "t:common.products.max_products.label",
+      "default": 5,
+      "min": 2,
+      "max": 10,
+      "step": 1
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

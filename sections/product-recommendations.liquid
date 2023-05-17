@@ -1,0 +1,109 @@
+{%- liquid
+  assign recommend_products = true
+
+  if recommendations.products and recommendations.products_count > 0
+    assign related_collection = recommendations
+  endif
+
+  assign number_of_products = section.settings.related_count
+
+  capture gridView
+    render 'products_per_row', products_per_row: section.settings.products_per_row
+  endcapture
+-%}
+
+<product-recommendations
+  id="Recommendations-{{ section.id }}"
+  class="recommendations-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="product-recommendations"
+  data-enable="{{ recommend_products }}"
+  data-product-id="{{ product.id }}"
+  data-intent="related"
+  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ number_of_products }}"
+  data-limit="{{ number_of_products }}">
+
+  <div
+    data-section-id="{{ product.id }}"
+    data-subsection
+    data-section-type="collection-template"
+    class="index-section index-section--sub-product">
+    <div class="page-width">
+      <header class="section-header">
+        <div class="h3 section-header__title">
+          {{ section.settings.product_recommendations_heading }}
+        </div>
+      </header>
+    </div>
+
+    <div class="page-width page-width--flush-small">
+      {%- if recommend_products -%}
+        <div class="product-recommendations-placeholder">
+          {% comment %}
+            This content is visually hidden and replaced when recommended
+            products show up
+          {% endcomment %}
+          <div class="new-grid product-grid scrollable-grid--small visually-invisible" aria-hidden="true" data-view="scrollable">
+            {%- render 'product-grid-item', product: product, no_actions: true -%}
+          </div>
+        </div>
+      {%- endif -%}
+      {%- if related_collection.products_count > 0 -%}
+        <div class="product-recommendations page-width">
+          <div class="new-grid product-grid scrollable-grid--small" data-view="{{ gridView }}">
+            {%- for product in related_collection.products -%}
+              {%- render 'product-grid-item', product: product, sizeVariable: section.settings.products_per_row, fallback: '45vw' -%}
+            {%- endfor -%}
+          </div>
+
+          {%- liquid
+            if settings.quick_shop_enable
+              for product in related_collection.products
+                render 'quick-shop-modal', product: product
+              endfor
+            endif
+          -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</product-recommendations>
+
+{% schema %}
+{
+  "name": "t:sections.product-recommendations.name",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.product-recommendations.settings.content"
+    },
+    {
+      "type": "text",
+      "id": "product_recommendations_heading",
+      "label": "t:sections.product-recommendations.settings.product_recommendations_heading.label",
+      "default": "You may also like"
+    },
+    {
+      "type": "range",
+      "id": "related_count",
+      "label": "t:sections.product-recommendations.settings.related_count.label",
+      "default": 6,
+      "min": 2,
+      "max": 6,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "t:sections.product-recommendations.settings.products_per_row.label",
+      "default": 3,
+      "min": 2,
+      "max": 5,
+      "step": 1
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

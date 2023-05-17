@@ -1,0 +1,384 @@
+{
+  "sections": {
+    "eca8ba47-47c4-423e-8aec-fe96b61cf4dd": {
+      "type": "slideshow",
+      "blocks": {
+        "template--18841254035771__eca8ba47-47c4-423e-8aec-fe96b61cf4dd-16837857478463458e-1": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<h1>Create a <strong>Healthy Living Society<\/strong> with the Power of Amino Acids<\/h1>",
+            "title_size": 45,
+            "subheading": "",
+            "link": "",
+            "link_text": "SHOP RosDee PRODUCTS",
+            "link_2": "",
+            "link_text_2": "VIEW RECIPE",
+            "color_accent": "#1c1c1e",
+            "text_align": "vertical-center horizontal-left",
+            "image": "shopify:\/\/shop_images\/lp-banner.webp",
+            "image_mobile": "shopify:\/\/shop_images\/lp-banner-m.webp",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "template--18841254035771__eca8ba47-47c4-423e-8aec-fe96b61cf4dd-16837857478463458e-1"
+      ],
+      "custom_css": [
+        "h1 {color: #000000;}",
+        "a.btn.js-no-transition {border: 2px solid #1c1c1e;}",
+        "a.btn.js-no-transition:hover {background: none !important; border: 2px solid #1c1c1e; transition: 0.3s !important; color: #000000;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": false,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "d24f4364-4ae3-42f8-aa7a-429e70e7fde7": {
+      "type": "text-with-icons",
+      "blocks": {
+        "template--18841254035771__d24f4364-4ae3-42f8-aa7a-429e70e7fde7-1683786056dfbfdd36-0": {
+          "type": "text_block",
+          "settings": {
+            "icon": "package",
+            "title": "Convenient Return",
+            "text": ""
+          }
+        },
+        "template--18841254035771__d24f4364-4ae3-42f8-aa7a-429e70e7fde7-1683786056dfbfdd36-1": {
+          "type": "text_block",
+          "settings": {
+            "icon": "globe",
+            "title": "Delivery Guarantee",
+            "text": ""
+          }
+        },
+        "template--18841254035771__d24f4364-4ae3-42f8-aa7a-429e70e7fde7-1683786056dfbfdd36-2": {
+          "type": "text_block",
+          "settings": {
+            "icon": "shield",
+            "title": "Secure Payment",
+            "text": ""
+          }
+        },
+        "b212e048-1e3e-4a5d-971a-57321421eb9d": {
+          "type": "text_block",
+          "settings": {
+            "icon": "sales-tag",
+            "title": "3X Cashback",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18841254035771__d24f4364-4ae3-42f8-aa7a-429e70e7fde7-1683786056dfbfdd36-0",
+        "template--18841254035771__d24f4364-4ae3-42f8-aa7a-429e70e7fde7-1683786056dfbfdd36-1",
+        "template--18841254035771__d24f4364-4ae3-42f8-aa7a-429e70e7fde7-1683786056dfbfdd36-2",
+        "b212e048-1e3e-4a5d-971a-57321421eb9d"
+      ],
+      "custom_css": [
+        "@media only screen and (max-width: 768px) {.text-with-icons__blocks {flex-direction: unset !important; } @media only screen and (max-width: 768px) {.text-with-icons__blocks .text-with-icons__block {padding: 0 0 60px; width: 25%; } }}",
+        "@media only screen and (max-width: 768px) {.text-with-icons__block-icon .icon {height: 45px !important; width: 45px !important; }}",
+        "@media only screen and (max-width: 768px) {.h3, h3 {font-size: 14px; }}",
+        "@media only screen and (max-width: 768px) {.text-with-icons__blocks .text-with-icons__block {padding: 0 0 10px !important; }}"
+      ],
+      "settings": {
+        "align_text": "center",
+        "desktop_columns_per_row": 4,
+        "icon_color": "#000000",
+        "button_label": "",
+        "button_link": "",
+        "divider": false
+      }
+    },
+    "6ad483fa-923f-4899-93f9-afabe46b411d": {
+      "type": "featured-collections",
+      "blocks": {
+        "2221d003-364f-46b9-bc28-72cd69a215af": {
+          "type": "collection",
+          "settings": {
+            "collection": "aji-no-moto®-1",
+            "title": ""
+          }
+        },
+        "939184ab-9616-4578-9047-efc0c455e40b": {
+          "type": "collection",
+          "settings": {
+            "collection": "rosdee®",
+            "title": ""
+          }
+        },
+        "00b51f4a-a1af-4da4-bd16-41c5d0b44a73": {
+          "type": "collection",
+          "settings": {
+            "collection": "rosdee-menu™",
+            "title": ""
+          }
+        },
+        "20b60a3b-e9d3-4fa4-bd57-405c2d05e2c2": {
+          "type": "collection",
+          "settings": {
+            "collection": "blendy®",
+            "title": ""
+          }
+        },
+        "faef4955-58aa-4df8-80fa-4bfbd80c1b39": {
+          "type": "collection",
+          "settings": {
+            "collection": "ajinomoto-japanese-liquid-sauce",
+            "title": ""
+          }
+        },
+        "9dc09382-f188-4ea1-a516-50f7bfc6b20c": {
+          "type": "collection",
+          "settings": {
+            "collection": "gyoza",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "2221d003-364f-46b9-bc28-72cd69a215af",
+        "939184ab-9616-4578-9047-efc0c455e40b",
+        "00b51f4a-a1af-4da4-bd16-41c5d0b44a73",
+        "20b60a3b-e9d3-4fa4-bd57-405c2d05e2c2",
+        "faef4955-58aa-4df8-80fa-4bfbd80c1b39",
+        "9dc09382-f188-4ea1-a516-50f7bfc6b20c"
+      ],
+      "custom_css": [
+        "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
+        ".collection-image--is-collection img,.collection-image-fill-space--true img {-o-object-fit: cover; object-fit: contain;}",
+        ".collection-image img {padding: 0px;}"
+      ],
+      "settings": {
+        "title": "Shop by Brand",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    },
+    "315640e3-51da-43fe-a9d2-d7eaa59f9dc9": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Popular Picks",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "home_featured_products": "popular-picks",
+        "count": 5,
+        "products_per_row": 4,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "af966d2c-f455-4fe9-b444-5364bcff565c": {
+      "type": "rich-text",
+      "blocks": {
+        "template--18841254035771__af966d2c-f455-4fe9-b444-5364bcff565c-1683786389e6a115f6-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Up to 50% OFF on Selected Seasonings",
+            "heading_size": "h2"
+          }
+        },
+        "5e39556c-0933-458e-ae18-b93289fd8d24": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "Browse Sale Items"
+          }
+        }
+      },
+      "block_order": [
+        "template--18841254035771__af966d2c-f455-4fe9-b444-5364bcff565c-1683786389e6a115f6-0",
+        "5e39556c-0933-458e-ae18-b93289fd8d24"
+      ],
+      "custom_css": [
+        ".index-section.color-scheme-2.text-center {padding: 25px;}",
+        "h2.h2 {margin: 0 0 -15px !important;}"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "2",
+        "divider": false
+      }
+    },
+    "1515c956-2002-4b57-92e9-62d87f600ed0": {
+      "type": "text-columns",
+      "blocks": {
+        "template--18841254035771__1515c956-2002-4b57-92e9-62d87f600ed0-168378644560097007-0": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/6149f3faee2e3_7ca2d249-76e9-4883-b47c-a26d33d015da.webp",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "ba963c20-61f6-4307-9f71-8783051919b6": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/628b00bce4a59.webp",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18841254035771__1515c956-2002-4b57-92e9-62d87f600ed0-168378644560097007-0",
+        "ba963c20-61f6-4307-9f71-8783051919b6"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
+    "6096af03-0d26-459e-aaeb-c04ff141cd17": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "RosDee menu™",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "home_featured_products": "popular-picks",
+        "count": 5,
+        "products_per_row": 4,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "df82034f-23a7-4dd9-b563-6d65eb6a2642": {
+      "type": "text-and-image",
+      "settings": {
+        "image_mask": "none",
+        "image2": "shopify:\/\/shop_images\/6144012ab71dc_d0f464d9-6c4e-4ba0-b930-b3a2a113018e.webp",
+        "image2_mask": "none",
+        "subtitle": "NEW PRODUCT LAUNCH",
+        "title": "Ajinomoto Blendy®",
+        "heading_size": "h1",
+        "text": "<p>New! Blendy No.1 Brand from Japan provided relaxation both hot and cold type of coffee and beverage which make you enjoy with soft & smooth taste as authentic Japanese style. We have many varieties, Café au Lait (Coffee with milk) and Café au Lait Half Calorie for those who are health concern which imported coffee from Japan, Matcha au Lait from authentic original match from Japan and Cocoa au Lait from well-selected premium Cocoa quality. To serve authentic Japanese style with soft & smooth taste in Thailand, changing your mood to be relax with us “Have a Blendy day”<\/p>",
+        "button_label": "Browse Sale Items",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "4ba23cf3-3389-42f1-8527-b323f4803849": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Beverages",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "home_featured_products": "beverages",
+        "count": 5,
+        "products_per_row": 4,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "2515597e-a792-4817-9b03-2d8cd345bddf": {
+      "type": "featured-collections",
+      "blocks": {
+        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "aji-no-moto®-1",
+            "title": ""
+          }
+        },
+        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "rosdee®",
+            "title": ""
+          }
+        },
+        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "rosdee-menu™",
+            "title": ""
+          }
+        },
+        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "blendy®",
+            "title": ""
+          }
+        },
+        "619da1f8-7640-4231-acba-3fe2f454a714": {
+          "type": "collection",
+          "settings": {
+            "collection": "birdy®",
+            "title": ""
+          }
+        },
+        "16c3aaf8-52d8-42e3-8137-c8fdd7fcb97d": {
+          "type": "collection",
+          "settings": {
+            "collection": "gyoza",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-0",
+        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-1",
+        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-2",
+        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-3",
+        "619da1f8-7640-4231-acba-3fe2f454a714",
+        "16c3aaf8-52d8-42e3-8137-c8fdd7fcb97d"
+      ],
+      "custom_css": [
+        "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
+        ".collection-image--is-collection img,.collection-image-fill-space--true img {-o-object-fit: cover; object-fit: contain;}",
+        ".collection-image img {padding: 0px;}"
+      ],
+      "settings": {
+        "title": "Browse by Category",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "eca8ba47-47c4-423e-8aec-fe96b61cf4dd",
+    "d24f4364-4ae3-42f8-aa7a-429e70e7fde7",
+    "6ad483fa-923f-4899-93f9-afabe46b411d",
+    "315640e3-51da-43fe-a9d2-d7eaa59f9dc9",
+    "af966d2c-f455-4fe9-b444-5364bcff565c",
+    "1515c956-2002-4b57-92e9-62d87f600ed0",
+    "6096af03-0d26-459e-aaeb-c04ff141cd17",
+    "df82034f-23a7-4dd9-b563-6d65eb6a2642",
+    "4ba23cf3-3389-42f1-8527-b323f4803849",
+    "2515597e-a792-4817-9b03-2d8cd345bddf"
+  ]
+}

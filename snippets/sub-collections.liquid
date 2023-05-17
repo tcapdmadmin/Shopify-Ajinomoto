@@ -1,0 +1,27 @@
+{%- liquid
+  capture gridView
+    render 'products_per_row', products_per_row: sub_collection_links.size, style: 'fractions'
+  endcapture
+ -%}
+
+{%- for sub_collection_link in sub_collection_links -%}
+  {%- if sub_collection_link.url contains '/collections/' -%}
+    {%- liquid
+      assign sub_collection_split = sub_collection_link.url | split: '/'
+      assign sub_collection_handle = sub_collection_split | last
+      assign sub_collection = collections[sub_collection_handle]
+    -%}
+    {%- if sub_collection != blank -%}
+      {%- unless parent_url == sub_collection.url -%}
+        {%- assign sizeVariable = sub_collection_links.size | at_most: 6 -%}
+        {%- render 'collection-grid-item',
+          collection: sub_collection,
+          collection_title: sub_collection_link.title,
+          gridView: gridView,
+          sizeVariable: sizeVariable,
+          fallback: '30vw',
+        -%}
+      {%- endunless -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}

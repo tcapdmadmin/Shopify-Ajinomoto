@@ -1,0 +1,112 @@
+{
+  "type": "footer",
+  "name": "t:sections.footer-group.name",
+  "sections": {
+    "footer-promotions": {
+      "type": "footer-promotions",
+      "blocks": {
+        "footer-promotions-0": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/istockphoto-599768732-612x612_9bb6c164-e157-44ee-b302-2a988d7c881c.jpg",
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+            "button_label": "Optional button",
+            "button_link": "",
+            "color_scheme": "none"
+          }
+        },
+        "4cde3d51-8f04-4648-b643-922a8baf3298": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/happy-asian-couple-cooking-dinner-together-kitchen-home_74952-2401.webp",
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+            "button_label": "Optional button",
+            "button_link": "",
+            "color_scheme": "none"
+          }
+        },
+        "f0360dc1-e73d-4406-8cd5-2ee3bc4e8644": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/istockphoto-1223804017-170667a_11765b7e-4248-45d2-ac50-fe29d9825be6.webp",
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+            "button_label": "Optional button",
+            "button_link": "",
+            "color_scheme": "none"
+          }
+        }
+      },
+      "block_order": [
+        "footer-promotions-0",
+        "4cde3d51-8f04-4648-b643-922a8baf3298",
+        "f0360dc1-e73d-4406-8cd5-2ee3bc4e8644"
+      ],
+      "settings": {
+        "hide_homepage": true,
+        "image_size": "wide"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-0": {
+          "type": "menu",
+          "settings": {
+            "title": "AJINOMOTO PRODUCTS",
+            "menu": "ajinomoto-products",
+            "enable_account_link": false
+          }
+        },
+        "8c396db5-ef97-4f4b-babd-37d2013af1d3": {
+          "type": "menu",
+          "settings": {
+            "title": "ABOUT US",
+            "menu": "about-us",
+            "enable_account_link": false
+          }
+        },
+        "footer-1": {
+          "type": "contact",
+          "settings": {
+            "phone": "+66 2 462 6331",
+            "contact": "contact",
+            "chat": "",
+            "enable_social": true
+          }
+        }
+      },
+      "block_order": [
+        "footer-0",
+        "8c396db5-ef97-4f4b-babd-37d2013af1d3",
+        "footer-1"
+      ],
+      "custom_css": [
+        ".footer__section.footer__section--border {background: #ee1c25;}",
+        "p {color: #ffffff;}",
+        "input#Email-sections--19050668654907__footer {background: #ffffff;}",
+        "h2.footer__title {text-transform: uppercase;}"
+      ],
+      "settings": {
+        "show_newsletter": true,
+        "newsletter_richtext": "<p>Receive exclusive discount and product update right to your inboxes.<\/p>",
+        "footer_main_menu": false,
+        "show_copyright": true,
+        "copyright_text": "",
+        "policies_menu": ""
+      }
+    }
+  },
+  "order": [
+    "footer-promotions",
+    "footer"
+  ]
+}

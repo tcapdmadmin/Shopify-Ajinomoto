@@ -1,0 +1,178 @@
+<div class="color-scheme-{{ section.settings.color_scheme }}">
+  {%- if section.settings.color_scheme != 'none' -%}
+    {% assign color_scheme = section.settings.color_scheme %}
+{% comment %}
+  Images:
+    - space
+    - paper
+    - marble
+  SVG:
+    - swirl
+    - squiggle
+  CSS:
+    - darken
+{% endcomment %}
+{%- capture key -%}color_scheme_{{ color_scheme }}_texture{%- endcapture -%}
+{%- assign texture = settings[key] -%}
+
+{%- if texture == 'space.jpg' or
+        texture == 'paper.jpg' or
+        texture == 'marble.jpg' -%}
+  {% capture image_classes %}
+    scheme-image scheme-texture--{{ texture }}
+  {% endcapture %}
+  {%- render 'image-element',
+    asset: texture,
+    host: 'theme',
+    type: 'asset',
+    classes: image_classes,
+    data-name: 'texture',
+    data-value: texture,
+  -%}
+{%- else -%}
+  <div class="scheme-{{ texture }}"></div>
+{%- endif -%}
+
+
+  {%- endif -%}
+
+  {% style %}
+    .scrolling-text--{{ section.id }} {
+      --move-speed: {{ section.settings.speed }}s;
+    }
+
+    .scrolling-text--{{ section.id }} span {
+      font-size: {{ section.settings.text_size }}px;
+    }
+
+    {% if section.settings.color_scheme == 'button' %}
+      .scrolling-text--{{ section.id }} {
+        background: {{ settings.color_button }};
+        color: {{ settings.color_button_text }};
+      }
+    {% endif %}
+  {% endstyle %}
+
+  {% if section.settings.link != blank %}
+    <a href="{{ section.settings.link }}">
+  {% endif %}
+  <div class="scrolling-text scrolling-text--{{ section.id }}">
+    <div class="scrolling-text__inner scrolling-text__inner--{{ section.settings.direction }}" aria-hidden="true" tabindex="0" style="gap: {% if section.settings.text_spacing %}40px{% else %}10px{% endif %};">
+      {% for i in (1..35) %}
+        <span>{{ section.settings.text }}</span>
+      {% endfor %}
+    </div>
+  </div>
+  {% if section.settings.link != blank %}
+    </a>
+  {% endif %}
+
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.marquee.name",
+  "class": "index-section--flush",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "t:sections.marquee.settings.text.label",
+      "default": "Free shipping and returns"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:sections.marquee.settings.link.label"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "t:sections.marquee.settings.text_size.label",
+      "default": 70,
+      "min": 20,
+      "max": 150,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "text_spacing",
+      "label": "t:sections.marquee.settings.text_spacing.label",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "t:sections.marquee.settings.direction.label",
+      "default": "left",
+      "options": [
+        {
+          "label": "t:sections.marquee.settings.direction.options.left.label",
+          "value": "left"
+        },
+        {
+          "label": "t:sections.marquee.settings.direction.options.right.label",
+          "value": "right"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "t:sections.marquee.settings.speed.label",
+      "default": 200,
+      "min": 50,
+      "max": 300,
+      "step": 10,
+      "unit": "s"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:sections.marquee.settings.color_scheme.label",
+      "default": "1",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.marquee.settings.color_scheme.options.none.label"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.marquee.presets.scrolling_text.name"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["custom.popups"]
+  },
+  "locales": {
+    "en": {
+      "section_name": "scrolling-text",
+      "snippet_name": "color-scheme-texture"
+    },
+    "es": {
+      "section_name": "scrolling-text",
+      "snippet_name": "color-scheme-texture"
+    },
+    "fr": {
+      "section_name": "scrolling-text",
+      "snippet_name": "color-scheme-texture"
+    }
+  }
+}
+{% endschema %}

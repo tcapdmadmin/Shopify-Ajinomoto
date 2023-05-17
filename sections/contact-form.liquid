@@ -1,0 +1,299 @@
+<div class="index-section newsletter-{{ section.id }} color-scheme-{{ section.settings.color_scheme }}">
+  {%- if section.settings.color_scheme != 'none' -%}
+    {% assign color_scheme = section.settings.color_scheme %}
+{% comment %}
+  Images:
+    - space
+    - paper
+    - marble
+  SVG:
+    - swirl
+    - squiggle
+  CSS:
+    - darken
+{% endcomment %}
+{%- capture key -%}color_scheme_{{ color_scheme }}_texture{%- endcapture -%}
+{%- assign texture = settings[key] -%}
+
+{%- if texture == 'space.jpg' or
+        texture == 'paper.jpg' or
+        texture == 'marble.jpg' -%}
+  {% capture image_classes %}
+    scheme-image scheme-texture--{{ texture }}
+  {% endcapture %}
+  {%- render 'image-element',
+    asset: texture,
+    host: 'theme',
+    type: 'asset',
+    classes: image_classes,
+    data-name: 'texture',
+    data-value: texture,
+  -%}
+{%- else -%}
+  <div class="scheme-{{ texture }}"></div>
+{%- endif -%}
+
+
+  {%- endif -%}
+  <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
+    {%- if section.settings.title != blank or section.settings.text != blank -%}
+      <div class="section-header text-{{ section.settings.heading_position }}">
+        {%- if section.settings.title != blank -%}
+          <h2 class="section-header__title {{ section.settings.heading_size }}">
+            {{ section.settings.title }}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <div class="rte section-header__rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+      </div>
+    {% endif %}
+
+    <div class="form-vertical">
+      {%- assign form_id = 'contact-' | append: section.id -%}
+      {%- form 'contact', id: form_id -%}
+
+        {%- if form.posted_successfully? -%}
+          <p class="note note--success">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+        {%- endif -%}
+
+        {{ form.errors | default_errors }}
+
+        <div class="grid grid--small">
+          <div class="grid__item medium-up--one-half">
+            <label for="ContactFormName-{{ section.id }}">{{ 'contact.form.name' | t }}</label>
+            <input type="text" id="ContactFormName-{{ section.id }}" class="input-full" name="contact[name]" autocapitalize="words" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
+          </div>
+
+          <div class="grid__item medium-up--one-half">
+            <label for="ContactFormEmail-{{ section.id }}">{{ 'contact.form.email' | t }}</label>
+            <input type="email" id="ContactFormEmail-{{ section.id }}" class="input-full" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+          </div>
+        </div>
+
+        {%- if section.settings.show_phone -%}
+          <label for="ContactFormPhone-{{ section.id }}">{{ 'contact.form.phone' | t }}</label>
+          <input type="tel" id="ContactFormPhone-{{ section.id }}" class="input-full" name="contact[phone]" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+        {%- endif -%}
+
+        <label for="ContactFormMessage-{{ section.id }}">{{ 'contact.form.message' | t }}</label>
+        <textarea rows="5" id="ContactFormMessage-{{ section.id }}" class="input-full" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+        <label for="contact-form-submit-{{ section.id }}" class="hidden-label">{{ 'contact.form.send' | t }}</label>
+        <button type="submit" id="contact-form-submit-{{ section.id }}" class="btn">
+          {{ 'contact.form.send' | t }}
+        </button>
+
+        {% comment %}
+          Remove the following three lines of code to remove the note
+          about being protected by Google's reCAPTCHA service.
+          By removing it, the small reCAPTCHA widget will appear in the
+          bottom right corner of the page.
+        {% endcomment %}
+        {{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}
+
+      {%- endform -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.contact-form.name",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.contact-form.settings.content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.contact-form.settings.title.label",
+      "default": "Contact us"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:common.heading_size.label",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h3",
+          "label": "t:common.heading_size.options.small.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:common.heading_size.options.medium.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:common.heading_size.options.large.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:common.heading_size.options.extra_large.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "heading_position",
+      "label": "t:common.heading_position.label",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:common.heading_position.options.left.label"
+        },
+        {
+          "value": "center",
+          "label": "t:common.heading_position.options.center.label"
+        },
+        {
+          "value": "right",
+          "label": "t:common.heading_position.options.right.label"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.contact-form.settings.text.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_phone",
+      "label": "t:sections.contact-form.settings.show_phone.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "narrow_column",
+      "label": "t:sections.contact-form.settings.narrow_column.label",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:sections.contact-form.settings.color_scheme.label",
+      "default": "1",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.contact-form.settings.color_scheme.options.none.label"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.contact-form.presets.contact_form.name"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  },
+  "locales": {
+    "de": {
+      "contact": {
+        "form": {
+          "name": "Name",
+          "email": "E-Mail",
+          "phone": "Telefonnummer",
+          "message": "Nachricht",
+          "send": "Absenden",
+          "post_success": "Danke, dass Sie uns kontaktiert haben. Wir werden uns so schnell wie möglich bei Ihnen melden."
+        }
+      }
+    },
+    "en": {
+      "contact": {
+        "form": {
+          "name": "Name",
+          "email": "Email",
+          "phone": "Phone number",
+          "message": "Message",
+          "send": "Send",
+          "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
+        }
+      },
+      "snippet_name": "color-scheme-texture"
+    },
+    "es": {
+      "contact": {
+        "form": {
+          "name": "Nombre",
+          "email": "Correo electrónico",
+          "phone": "Número de teléfono",
+          "message": "Mensaje",
+          "send": "Enviar",
+          "post_success": "Gracias por contactarnos. Le responderemos lo antes posible."
+        }
+      },
+      "snippet_name": "color-scheme-texture"
+    },
+    "fr": {
+      "contact": {
+        "form": {
+          "name": "Nom",
+          "email": "Courriel",
+          "phone": "Téléphone",
+          "message": "Message",
+          "send": "Envoyer",
+          "post_success": "Merci de nous avoir avoir contacté. Nous vous reviendrons le plus rapidement possible."
+        }
+      },
+      "snippet_name": "color-scheme-texture"
+    },
+    "it": {
+      "contact": {
+        "form": {
+          "name": "Nome",
+          "email": "Indirizzo email",
+          "phone": "Numero di telefono",
+          "message": "Messaggio",
+          "send": "Invia",
+          "post_success": "Grazie per averci contattato. Risponderemo il prima possibile."
+        }
+      }
+    },
+    "pt-BR": {
+      "contact": {
+        "form": {
+          "name": "Nome",
+          "email": "E-mail",
+          "phone": "Telefone",
+          "message": "Mensagem",
+          "send": "Enviar",
+          "post_success": "Obrigado por entrar em contato. Nós lhe retornaremos assim que possível."
+        }
+      }
+    },
+    "pt-PT": {
+      "contact": {
+        "form": {
+          "name": "Nome",
+          "email": "Email",
+          "phone": "Número de Telefone",
+          "message": "Mensagem",
+          "send": "Enviar",
+          "post_success": "Obrigado por entrar em contacto connosco. Responder-lhe-emos logo que possível."
+        }
+      }
+    }
+  }
+}
+{% endschema %}

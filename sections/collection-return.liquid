@@ -1,0 +1,139 @@
+{% if collection %}
+  <div class="return-section color-scheme-{{ section.settings.color_scheme }}">
+    {%- if section.settings.color_scheme != 'none' -%}
+      {% assign color_scheme = section.settings.color_scheme %}
+{% comment %}
+  Images:
+    - space
+    - paper
+    - marble
+  SVG:
+    - swirl
+    - squiggle
+  CSS:
+    - darken
+{% endcomment %}
+{%- capture key -%}color_scheme_{{ color_scheme }}_texture{%- endcapture -%}
+{%- assign texture = settings[key] -%}
+
+{%- if texture == 'space.jpg' or
+        texture == 'paper.jpg' or
+        texture == 'marble.jpg' -%}
+  {% capture image_classes %}
+    scheme-image scheme-texture--{{ texture }}
+  {% endcapture %}
+  {%- render 'image-element',
+    asset: texture,
+    host: 'theme',
+    type: 'asset',
+    classes: image_classes,
+    data-name: 'texture',
+    data-value: texture,
+  -%}
+{%- else -%}
+  <div class="scheme-{{ texture }}"></div>
+{%- endif -%}
+
+
+    {%- endif -%}
+    <div class="page-width text-center">
+      <a href="{% if collection.handle == 'frontpage' %}/{% else %}{{ collection.url }}{% endif %}" class="btn return-link">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-arrow-left" viewBox="0 0 50 15"><title>icon-left-arrow</title><path d="M50 5.38v4.25H15V15L0 7.5 15 0v5.38Z"/></svg> {{ 'products.general.collection_return' | t: collection: collection.title }}
+      </a>
+    </div>
+  </div>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "t:sections.collection-return.name",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.collection-return.settings.content"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:sections.collection-return.settings.color_scheme.label",
+      "default": "2",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.collection-return.settings.color_scheme.options.none.label"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  },
+  "locales": {
+    "de": {
+      "products": {
+        "general": {
+          "collection_return": "Zurück zur {{ collection }}"
+        }
+      }
+    },
+    "en": {
+      "products": {
+        "general": {
+          "collection_return": "Back to {{ collection }}"
+        }
+      },
+      "snippet_name": "color-scheme-texture"
+    },
+    "es": {
+      "products": {
+        "general": {
+          "collection_return": "Volver a {{ collection }}"
+        }
+      },
+      "snippet_name": "color-scheme-texture"
+    },
+    "fr": {
+      "products": {
+        "general": {
+          "collection_return": "Retour à {{ collection }}"
+        }
+      },
+      "snippet_name": "color-scheme-texture"
+    },
+    "it": {
+      "products": {
+        "general": {
+          "collection_return": "Torna a {{ collection }}"
+        }
+      }
+    },
+    "pt-BR": {
+      "products": {
+        "general": {
+          "collection_return": "Voltar à {{ collection }}"
+        }
+      }
+    },
+    "pt-PT": {
+      "products": {
+        "general": {
+          "collection_return": "Regressar à {{ collection }}"
+        }
+      }
+    }
+  }
+}
+{% endschema %}

@@ -1,0 +1,53 @@
+{%- liquid
+
+  assign collection_link = collection.url
+  if block.settings.title != blank
+    assign title_output = block.settings.title
+  else
+    if collection == blank
+      assign title_output = 'home_page.onboarding.collection_title' | t
+      assign collection_link = '/collections/all'
+    elsif collection_title
+      assign title_output = collection_title
+    else
+      assign title_output = collection.title | escape
+    endif
+  endif
+-%}
+
+<div class="grid-item {{ gridView }}" {{ block.shopify_attributes }}>
+  <a href="{{ collection_link }}" class="collection-item">
+
+    {%- liquid
+      if settings.collection_grid_image == 'collection' and collection.image
+        assign collection_image = collection.image
+        assign using_collection_image = true
+      else
+        assign collection_image = collection.products.first.featured_media.preview_image
+        assign using_collection_image = false
+      endif
+    -%}
+
+    <div class="collection-image-wrap collection-image--{{ settings.collection_grid_shape }}
+      collection-image-fill-space--{{ settings.collection_grid_image_fill }}
+      "
+    >
+      {%- if collection == blank or collection_image == blank -%}
+        {%- capture placeholder -%}collection-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+        <div class="collection-image collection-image--placeholder">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
+      {%- else -%}
+        <div class="collection-image{% if using_collection_image %} collection-image--is-collection{% endif %} image-wrap">
+          {%- render 'image-element',
+            img: collection_image,
+            sizes: sizes,
+            sizeVariable: sizeVariable,
+            fallback: fallback,
+            widths: '720, 900, 1080',
+          -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <span class="collection-item__title">{{ title_output }}</span>
+  </a>
+</div>

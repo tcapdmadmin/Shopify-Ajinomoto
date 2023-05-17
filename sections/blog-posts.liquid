@@ -1,0 +1,898 @@
+{%- liquid
+  assign blog = blogs[section.settings.blog]
+  assign sidebar_count = 4
+
+  if section.settings.blog_show_tags
+    assign sidebar_count = 3
+  endif
+
+  assign have_blog = true
+  if blog.empty? or blog.articles.size == 0
+    assign have_blog = false
+  endif
+-%}
+
+{% style %}
+  {% if section.settings.heading_position == 'right' %}
+    #shopify-section-{{ section.id }} .section-header__link {
+      padding-left: 20px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      #shopify-section-{{ section.id }} .section-header__link {
+        padding-left: 10px;
+      }
+    }
+  {% elsif section.settings.heading_position == 'center' %}
+    #shopify-section-{{ section.id }} .section-header {
+      position: relative;
+    }
+
+    #shopify-section-{{ section.id }} .section-header__link {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    @media only screen and (max-width: 768px) {
+      #shopify-section-{{ section.id }} .section-header__link {
+        position: relative;
+      }
+    }
+  {% endif %}
+
+  @media only screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .section-header__title {
+      text-align: left !important;
+    }
+  }
+{% endstyle %}
+
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="page-width">
+
+  {%- if section.settings.title != blank -%}
+    <header class="section-header section-header--with-link">
+      <h2 class="section-header__title {{ section.settings.heading_size }} text-{{ section.settings.heading_position }}">
+        {{ section.settings.title | escape }}
+      </h2>
+      <a href="{{ blog.url }}" class="section-header__link">{{ 'blogs.article.view_all' | t }}</a>
+    </header>
+  {%- endif -%}
+
+  <div class="blog-layout">
+
+    <div class="blog-layout__main">
+      <div class="new-grid">
+        {%- if have_blog -%}
+          {%- for article in blog.articles limit: 1 -%}
+            {% assign image_size = section.settings.blog_image_size %}
+{% assign show_author = section.settings.blog_show_author %}
+{% assign show_comments = section.settings.blog_show_comments %}
+{% assign show_date = section.settings.blog_show_date %}
+{% assign show_tags = section.settings.blog_show_tags %}
+{% assign style = 'large' %}
+{%- assign fixed_aspect_ratio = false -%}
+{% unless image_size == 'natural' %}
+  {%- assign fixed_aspect_ratio = true -%}
+{% endunless %}
+
+
+{% comment %} sizeVariable logic {% endcomment %}
+{%- liquid
+  if style == 'large'
+    assign sizeVariable = '60vw'
+  elsif style == 'medium'
+    assign sizeVariable = '30vw'
+    assign fallback = '40vw'
+  else
+    # compact for sidebar article image
+    assign sizeVariable = '16vw'
+    assign fallback = '40vw'
+  endif
+-%}
+
+<div class="grid-item grid-article" data-style="{{ style }}">
+  <div class="grid-article__image">
+    {%- if article.empty? -%}
+      <div class="image-wrap">
+        <div class="grid__image-ratio grid__image-ratio--{{ image_size }}">
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--no-padding' }}
+        </div>
+      </div>
+    {%- else -%}
+      {%- if article.image -%}
+        <a href="{{ article.url }}" aria-label="{{ article.title | escape }}">
+          {%- if fixed_aspect_ratio -%}
+            <div class="image-wrap">
+              <div class="grid__image-ratio grid__image-ratio--{{ image_size }}">
+                {%- render 'image-element',
+                  img: article.image,
+                  sizeVariable: sizeVariable,
+                  fallback: fallback,
+                  widths: '360, 540, 720, 900, 1080',
+                -%}
+              </div>
+            </div>
+          {%- else -%}
+            <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: article.image.aspect_ratio }}%;">
+              {%- render 'image-element',
+                img: article.image,
+                sizeVariable: sizeVariable,
+                fallback: fallback,
+                widths: '180, 360, 540, 720, 900, 1080',
+              -%}
+            </div>
+          {%- endif -%}
+        </a>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if show_tags and article.tags.size > 0 -%}
+      <div class="grid-article__tags">
+        {%- for tag in article.tags -%}
+          {% if tag contains "_" %}{%- assign tag_starts_with = tag | slice: 0 -%}{% if tag_starts_with == "_" %}{% if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif %}{% continue %}{% endif %}{% endif %}
+          <a class="article-tag" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="grid-article__meta">
+    {%- if article.empty? -%}
+      <a href="{{ article.url }}" class="article__title">Example blog post</a>
+      <div class="article__sub-meta">
+        {%- if show_comments -%}
+          <span>
+            <a href="#">
+              {{ 'blogs.comments.with_count' | t: count: 0 }}
+            </a>
+          </span>
+        {%- endif -%}
+        {%- if show_date -%}
+          <span class="article__sub-meta-date">Jul 17, {{ 'now' | date: "%Y" }}</span>
+        {%- endif -%}
+        {%- if show_author -%}
+          <span>by Archetype Themes</span>
+        {%- endif -%}
+      </div>
+    {%- else -%}
+      <a href="{{ article.url }}" class="article__title">{{ article.title }}</a>
+      <div class="article__sub-meta">
+        {%- if show_comments and article.comments_count > 0 -%}
+          <span>
+            <a href="{{ article.url }}#comments">
+              {{ 'blogs.comments.with_count' | t: count: article.comments_count }}
+            </a>
+          </span>
+        {%- endif -%}
+        {%- if show_date -%}
+          <span class="article__sub-meta-date">{{ article.published_at | time_tag: format: 'month_day_year' }}</span>
+        {%- endif -%}
+        {%- if show_author -%}
+          <span>by {{ article.author }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+
+          {%- endfor -%}
+        {%- else -%}
+          {% assign image_size = 'landscape' %}
+{% assign show_author = section.settings.blog_show_author %}
+{% assign show_comments = section.settings.blog_show_comments %}
+{% assign show_date = section.settings.blog_show_date %}
+{% assign show_tags = section.settings.blog_show_tags %}
+{% assign style = 'large' %}
+{% assign article = false %}
+{% assign blog = false %}
+{%- assign fixed_aspect_ratio = false -%}
+{% unless image_size == 'natural' %}
+  {%- assign fixed_aspect_ratio = true -%}
+{% endunless %}
+
+
+{% comment %} sizeVariable logic {% endcomment %}
+{%- liquid
+  if style == 'large'
+    assign sizeVariable = '60vw'
+  elsif style == 'medium'
+    assign sizeVariable = '30vw'
+    assign fallback = '40vw'
+  else
+    # compact for sidebar article image
+    assign sizeVariable = '16vw'
+    assign fallback = '40vw'
+  endif
+-%}
+
+<div class="grid-item grid-article" data-style="{{ style }}">
+  <div class="grid-article__image">
+    {%- if article.empty? -%}
+      <div class="image-wrap">
+        <div class="grid__image-ratio grid__image-ratio--{{ image_size }}">
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--no-padding' }}
+        </div>
+      </div>
+    {%- else -%}
+      {%- if article.image -%}
+        <a href="{{ article.url }}" aria-label="{{ article.title | escape }}">
+          {%- if fixed_aspect_ratio -%}
+            <div class="image-wrap">
+              <div class="grid__image-ratio grid__image-ratio--{{ image_size }}">
+                {%- render 'image-element',
+                  img: article.image,
+                  sizeVariable: sizeVariable,
+                  fallback: fallback,
+                  widths: '360, 540, 720, 900, 1080',
+                -%}
+              </div>
+            </div>
+          {%- else -%}
+            <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: article.image.aspect_ratio }}%;">
+              {%- render 'image-element',
+                img: article.image,
+                sizeVariable: sizeVariable,
+                fallback: fallback,
+                widths: '180, 360, 540, 720, 900, 1080',
+              -%}
+            </div>
+          {%- endif -%}
+        </a>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if show_tags and article.tags.size > 0 -%}
+      <div class="grid-article__tags">
+        {%- for tag in article.tags -%}
+          {% if tag contains "_" %}{%- assign tag_starts_with = tag | slice: 0 -%}{% if tag_starts_with == "_" %}{% if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif %}{% continue %}{% endif %}{% endif %}
+          <a class="article-tag" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="grid-article__meta">
+    {%- if article.empty? -%}
+      <a href="{{ article.url }}" class="article__title">Example blog post</a>
+      <div class="article__sub-meta">
+        {%- if show_comments -%}
+          <span>
+            <a href="#">
+              {{ 'blogs.comments.with_count' | t: count: 0 }}
+            </a>
+          </span>
+        {%- endif -%}
+        {%- if show_date -%}
+          <span class="article__sub-meta-date">Jul 17, {{ 'now' | date: "%Y" }}</span>
+        {%- endif -%}
+        {%- if show_author -%}
+          <span>by Archetype Themes</span>
+        {%- endif -%}
+      </div>
+    {%- else -%}
+      <a href="{{ article.url }}" class="article__title">{{ article.title }}</a>
+      <div class="article__sub-meta">
+        {%- if show_comments and article.comments_count > 0 -%}
+          <span>
+            <a href="{{ article.url }}#comments">
+              {{ 'blogs.comments.with_count' | t: count: article.comments_count }}
+            </a>
+          </span>
+        {%- endif -%}
+        {%- if show_date -%}
+          <span class="article__sub-meta-date">{{ article.published_at | time_tag: format: 'month_day_year' }}</span>
+        {%- endif -%}
+        {%- if show_author -%}
+          <span>by {{ article.author }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="blog-layout__sidebar">
+      <div class="h4">{{ 'blogs.article.latest_posts' | t }}</div>
+
+      {%- if have_blog -%}
+        {%- for article in blog.articles limit: sidebar_count offset: 1 -%}
+          {% assign image_size = section.settings.blog_image_size %}
+{% assign show_author = section.settings.blog_show_author %}
+{% assign show_comments = section.settings.blog_show_comments %}
+{% assign show_date = section.settings.blog_show_date %}
+{% assign show_tags = section.settings.blog_show_tags %}
+{% assign style = 'compact' %}
+{%- assign fixed_aspect_ratio = false -%}
+{% unless image_size == 'natural' %}
+  {%- assign fixed_aspect_ratio = true -%}
+{% endunless %}
+
+
+{% comment %} sizeVariable logic {% endcomment %}
+{%- liquid
+  if style == 'large'
+    assign sizeVariable = '60vw'
+  elsif style == 'medium'
+    assign sizeVariable = '30vw'
+    assign fallback = '40vw'
+  else
+    # compact for sidebar article image
+    assign sizeVariable = '16vw'
+    assign fallback = '40vw'
+  endif
+-%}
+
+<div class="grid-item grid-article" data-style="{{ style }}">
+  <div class="grid-article__image">
+    {%- if article.empty? -%}
+      <div class="image-wrap">
+        <div class="grid__image-ratio grid__image-ratio--{{ image_size }}">
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--no-padding' }}
+        </div>
+      </div>
+    {%- else -%}
+      {%- if article.image -%}
+        <a href="{{ article.url }}" aria-label="{{ article.title | escape }}">
+          {%- if fixed_aspect_ratio -%}
+            <div class="image-wrap">
+              <div class="grid__image-ratio grid__image-ratio--{{ image_size }}">
+                {%- render 'image-element',
+                  img: article.image,
+                  sizeVariable: sizeVariable,
+                  fallback: fallback,
+                  widths: '360, 540, 720, 900, 1080',
+                -%}
+              </div>
+            </div>
+          {%- else -%}
+            <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: article.image.aspect_ratio }}%;">
+              {%- render 'image-element',
+                img: article.image,
+                sizeVariable: sizeVariable,
+                fallback: fallback,
+                widths: '180, 360, 540, 720, 900, 1080',
+              -%}
+            </div>
+          {%- endif -%}
+        </a>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if show_tags and article.tags.size > 0 -%}
+      <div class="grid-article__tags">
+        {%- for tag in article.tags -%}
+          {% if tag contains "_" %}{%- assign tag_starts_with = tag | slice: 0 -%}{% if tag_starts_with == "_" %}{% if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif %}{% continue %}{% endif %}{% endif %}
+          <a class="article-tag" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="grid-article__meta">
+    {%- if article.empty? -%}
+      <a href="{{ article.url }}" class="article__title">Example blog post</a>
+      <div class="article__sub-meta">
+        {%- if show_comments -%}
+          <span>
+            <a href="#">
+              {{ 'blogs.comments.with_count' | t: count: 0 }}
+            </a>
+          </span>
+        {%- endif -%}
+        {%- if show_date -%}
+          <span class="article__sub-meta-date">Jul 17, {{ 'now' | date: "%Y" }}</span>
+        {%- endif -%}
+        {%- if show_author -%}
+          <span>by Archetype Themes</span>
+        {%- endif -%}
+      </div>
+    {%- else -%}
+      <a href="{{ article.url }}" class="article__title">{{ article.title }}</a>
+      <div class="article__sub-meta">
+        {%- if show_comments and article.comments_count > 0 -%}
+          <span>
+            <a href="{{ article.url }}#comments">
+              {{ 'blogs.comments.with_count' | t: count: article.comments_count }}
+            </a>
+          </span>
+        {%- endif -%}
+        {%- if show_date -%}
+          <span class="article__sub-meta-date">{{ article.published_at | time_tag: format: 'month_day_year' }}</span>
+        {%- endif -%}
+        {%- if show_author -%}
+          <span>by {{ article.author }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..sidebar_count) -%}
+          {% assign image_size = 'landscape' %}
+{% assign show_author = section.settings.blog_show_author %}
+{% assign show_comments = section.settings.blog_show_comments %}
+{% assign show_date = section.settings.blog_show_date %}
+{% assign show_tags = section.settings.blog_show_tags %}
+{% assign style = 'compact' %}
+{% assign article = false %}
+{% assign blog = false %}
+{%- assign fixed_aspect_ratio = false -%}
+{% unless image_size == 'natural' %}
+  {%- assign fixed_aspect_ratio = true -%}
+{% endunless %}
+
+
+{% comment %} sizeVariable logic {% endcomment %}
+{%- liquid
+  if style == 'large'
+    assign sizeVariable = '60vw'
+  elsif style == 'medium'
+    assign sizeVariable = '30vw'
+    assign fallback = '40vw'
+  else
+    # compact for sidebar article image
+    assign sizeVariable = '16vw'
+    assign fallback = '40vw'
+  endif
+-%}
+
+<div class="grid-item grid-article" data-style="{{ style }}">
+  <div class="grid-article__image">
+    {%- if article.empty? -%}
+      <div class="image-wrap">
+        <div class="grid__image-ratio grid__image-ratio--{{ image_size }}">
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--no-padding' }}
+        </div>
+      </div>
+    {%- else -%}
+      {%- if article.image -%}
+        <a href="{{ article.url }}" aria-label="{{ article.title | escape }}">
+          {%- if fixed_aspect_ratio -%}
+            <div class="image-wrap">
+              <div class="grid__image-ratio grid__image-ratio--{{ image_size }}">
+                {%- render 'image-element',
+                  img: article.image,
+                  sizeVariable: sizeVariable,
+                  fallback: fallback,
+                  widths: '360, 540, 720, 900, 1080',
+                -%}
+              </div>
+            </div>
+          {%- else -%}
+            <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: article.image.aspect_ratio }}%;">
+              {%- render 'image-element',
+                img: article.image,
+                sizeVariable: sizeVariable,
+                fallback: fallback,
+                widths: '180, 360, 540, 720, 900, 1080',
+              -%}
+            </div>
+          {%- endif -%}
+        </a>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if show_tags and article.tags.size > 0 -%}
+      <div class="grid-article__tags">
+        {%- for tag in article.tags -%}
+          {% if tag contains "_" %}{%- assign tag_starts_with = tag | slice: 0 -%}{% if tag_starts_with == "_" %}{% if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif %}{% continue %}{% endif %}{% endif %}
+          <a class="article-tag" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="grid-article__meta">
+    {%- if article.empty? -%}
+      <a href="{{ article.url }}" class="article__title">Example blog post</a>
+      <div class="article__sub-meta">
+        {%- if show_comments -%}
+          <span>
+            <a href="#">
+              {{ 'blogs.comments.with_count' | t: count: 0 }}
+            </a>
+          </span>
+        {%- endif -%}
+        {%- if show_date -%}
+          <span class="article__sub-meta-date">Jul 17, {{ 'now' | date: "%Y" }}</span>
+        {%- endif -%}
+        {%- if show_author -%}
+          <span>by Archetype Themes</span>
+        {%- endif -%}
+      </div>
+    {%- else -%}
+      <a href="{{ article.url }}" class="article__title">{{ article.title }}</a>
+      <div class="article__sub-meta">
+        {%- if show_comments and article.comments_count > 0 -%}
+          <span>
+            <a href="{{ article.url }}#comments">
+              {{ 'blogs.comments.with_count' | t: count: article.comments_count }}
+            </a>
+          </span>
+        {%- endif -%}
+        {%- if show_date -%}
+          <span class="article__sub-meta-date">{{ article.published_at | time_tag: format: 'month_day_year' }}</span>
+        {%- endif -%}
+        {%- if show_author -%}
+          <span>by {{ article.author }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+
+        {%- endfor -%}
+      {%- endif -%}
+
+      {%- if section.settings.blog_show_tags and blog.all_tags.size > 0 -%}
+        <hr class="hr--small hr--clear">
+        <div class="h4">{{ 'blogs.article.explore_more' | t }}</div>
+
+        <ul class="no-bullets tag-list">
+          {%- for tag in blog.all_tags -%}
+            {% if tag contains "_" %}{%- assign tag_starts_with = tag | slice: 0 -%}{% if tag_starts_with == "_" %}{% if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif %}{% continue %}{% endif %}{% endif %}
+            <li class="tag tag--inline">
+              <a href="{{ blog.url }}/tagged/{{ tag.handle }}" class="article-tag">{{ tag }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+  </div>
+
+</div>
+
+{%- if section.settings.divider -%}</div>{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.blog-posts.name",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.blog-posts.settings.title.label",
+      "default": "From the blog"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:common.heading_size.label",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h3",
+          "label": "t:common.heading_size.options.small.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:common.heading_size.options.medium.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:common.heading_size.options.large.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:common.heading_size.options.extra_large.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "heading_position",
+      "label": "t:common.heading_position.label",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:common.heading_position.options.left.label"
+        },
+        {
+          "value": "center",
+          "label": "t:common.heading_position.options.center.label"
+        },
+        {
+          "value": "right",
+          "label": "t:common.heading_position.options.right.label"
+        }
+      ]
+    },
+    {
+      "id": "blog",
+      "type": "blog",
+      "label": "t:sections.blog-posts.settings.blog.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_tags",
+      "label": "t:sections.blog-posts.settings.blog_show_tags.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": "t:sections.blog-posts.settings.blog_show_date.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_comments",
+      "label": "t:sections.blog-posts.settings.blog_show_comments.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": "t:sections.blog-posts.settings.blog_show_author.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "blog_image_size",
+      "label": "t:sections.blog-posts.settings.blog_image_size.label",
+      "default": "wide",
+      "options": [
+        {
+          "value": "natural",
+          "label": "t:sections.blog-posts.settings.blog_image_size.options.natural.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.blog-posts.settings.blog_image_size.options.square.label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:sections.blog-posts.settings.blog_image_size.options.landscape.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.blog-posts.settings.blog_image_size.options.portrait.label"
+        },
+        {
+          "value": "wide",
+          "label": "t:sections.blog-posts.settings.blog_image_size.options.wide.label"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:sections.blog-posts.settings.divider.label",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.blog-posts.presets.blog_posts.name",
+      "settings": {
+        "blog": "News"
+      }
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  },
+  "locales": {
+    "de": {
+      "blogs": {
+        "article": {
+          "view_all": "Alle anzeigen",
+          "tags": "Tags",
+          "read_more": "Weiterlesen",
+          "featured_product": "Vorgestelltes Produkt",
+          "popular_posts": "Populäre Artikel",
+          "latest_posts": "Neueste Artikel",
+          "explore_more": "Erkunde mehr",
+          "more_from": "Mehr von",
+          "back_to_blog": "Zurück zu {{ title }}"
+        },
+        "comments": {
+          "title": "Hinterlassen Sie einen Kommentar",
+          "name": "Name",
+          "email": "E-Mail",
+          "message": "Nachricht",
+          "post": "Kommentar posten",
+          "moderated": "Bitte beachten Sie, dass Kommentare vor der Veröffentlichung freigegeben werden müssen",
+          "success_moderated": "Ihr Kommentar wurde erfolgreich gepostet. Da unser Blog moderiert wird, werden wir ihn erst kurze Zeit später veröffentlichen.",
+          "success": "Ihr Kommentar wurde erfolgreich gepostet. Danke!",
+          "with_count": {
+            "one": "{{ count }} Kommentar",
+            "other": "{{ count }} Kommentare"
+          }
+        }
+      }
+    },
+    "en": {
+      "blogs": {
+        "article": {
+          "view_all": "View all",
+          "tags": "Tags",
+          "read_more": "Continue reading",
+          "featured_product": "Featured product",
+          "popular_posts": "Popular posts",
+          "latest_posts": "Latest posts",
+          "explore_more": "Explore more",
+          "more_from": "More from",
+          "back_to_blog": "Back to {{ title }}"
+        },
+        "comments": {
+          "title": "Leave a comment",
+          "name": "Name",
+          "email": "Email",
+          "message": "Message",
+          "post": "Post comment",
+          "moderated": "Please note, comments must be approved before they are published",
+          "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+          "success": "Your comment was posted successfully! Thank you!",
+          "with_count": {
+            "one": "{{ count }} comment",
+            "other": "{{ count }} comments"
+          }
+        }
+      },
+      "snippet_name": "article-grid-item"
+    },
+    "es": {
+      "blogs": {
+        "article": {
+          "view_all": "Ver todo",
+          "tags": "Etiquetas",
+          "read_more": "Leer más",
+          "featured_product": "Producto destacado",
+          "popular_posts": "Articulos populares",
+          "latest_posts": "Últimos artículos",
+          "explore_more": "Explora más",
+          "more_from": "Mas de",
+          "back_to_blog": "Volver a {{ title }}"
+        },
+        "comments": {
+          "title": "Dejar un comentario",
+          "name": "Nombre",
+          "email": "Correo electrónico",
+          "message": "Mensaje",
+          "post": "Publicar comentario",
+          "moderated": "Por favor tenga en cuenta que los comentarios deben ser aprobados antes de ser publicados",
+          "success_moderated": "Su comentario se ha compartido con éxito. Lo publicaremos en un momento, en tanto nuestro blog sea moderado.",
+          "success": "¡Su comentario se ha compartido con éxito! ¡Gracias!",
+          "with_count": {
+            "one": "{{ count }} comentario",
+            "other": "{{ count }} comentarios"
+          }
+        }
+      },
+      "snippet_name": "article-grid-item"
+    },
+    "fr": {
+      "blogs": {
+        "article": {
+          "view_all": "Voir toutes",
+          "tags": "Tags",
+          "read_more": "Plus",
+          "featured_product": "Produit en vedette",
+          "popular_posts": "Articles populaires",
+          "latest_posts": "Derniers articles",
+          "explore_more": "Explore plus",
+          "more_from": "Plus de",
+          "back_to_blog": "Retour à {{ title }}"
+        },
+        "comments": {
+          "title": "Laissez un commentaire",
+          "name": "Nom",
+          "email": "Courriel",
+          "message": "Message",
+          "post": "Publier le commentaire",
+          "moderated": "Veuillez noter que les commentaires doivent être approvés avant d'être affichés",
+          "success_moderated": "Votre commentaire a été soumis avec succès. Nous le publierons sous peu, suite à notre processus de modération.",
+          "success": "Votre commentaire a été publié avec succès!",
+          "with_count": {
+            "one": "{{ count }} commentaire",
+            "other": "{{ count }} commentaires"
+          }
+        }
+      },
+      "snippet_name": "article-grid-item"
+    },
+    "it": {
+      "blogs": {
+        "article": {
+          "view_all": "Visualizza tutto",
+          "tags": "Tags",
+          "read_more": "Continua a leggere",
+          "featured_product": "Sezione \"prodotto in primo piano\"",
+          "popular_posts": "Messaggi popolari",
+          "latest_posts": "Ultimi messaggi",
+          "explore_more": "Esplora di più",
+          "more_from": "Più da",
+          "back_to_blog": "Torna a {{ title }}"
+        },
+        "comments": {
+          "title": "Lascia un commento",
+          "name": "Nome",
+          "email": "Indirizzo email",
+          "message": "Messaggio",
+          "post": "Pubblica commento",
+          "moderated": "Attenzione, i commenti devono essere approvati prima di essere pubblicati",
+          "success_moderated": "Il tuo commento è stato pubblicato. Lo pubblicheremo fra poco, il nostro blog è soggetto a moderazione.",
+          "success": "Il tuo commento è stato pubblicato! Grazie!",
+          "with_count": {
+            "one": "{{ count }} commento",
+            "other": "{{ count }} commenti"
+          }
+        }
+      }
+    },
+    "pt-BR": {
+      "blogs": {
+        "article": {
+          "view_all": "Ver todo",
+          "tags": "Marcadores",
+          "read_more": "Ler mais",
+          "featured_product": "Produto em destaque",
+          "popular_posts": "Artigos populares",
+          "latest_posts": "Artigos Mais Recentes",
+          "explore_more": "Explore mais",
+          "more_from": "Mais de",
+          "back_to_blog": "Voltar para {{ title }}"
+        },
+        "comments": {
+          "title": "Deixe um comentário",
+          "name": "Nome",
+          "email": "E-mail",
+          "message": "Mensagem",
+          "post": "Postar comentário",
+          "moderated": "Observe que os comentários precisam ser aprovados antes de serem publicados",
+          "success_moderated": "Seu comentário foi postado. Nós o publicaremos em alguns instantes, já que o nosso blog é moderado.",
+          "success": "Seu comentário foi postado! Obrigado!",
+          "with_count": {
+            "one": "{{ count }} comentário",
+            "other": "{{ count }} comentários"
+          }
+        }
+      }
+    },
+    "pt-PT": {
+      "blogs": {
+        "article": {
+          "view_all": "Ver todo",
+          "tags": "Etiquetas",
+          "read_more": "Ler mais",
+          "featured_product": "Produto em destaque",
+          "popular_posts": "Artigos populares",
+          "latest_posts": "Artigos Mais Recentes",
+          "explore_more": "Explore mais",
+          "more_from": "Mais de",
+          "back_to_blog": "Regressar a {{ title }}"
+        },
+        "comments": {
+          "title": "Deixe um comentário",
+          "name": "Nome",
+          "email": "Email",
+          "message": "Mensagem",
+          "post": "Publicar comentário",
+          "moderated": "Tenha em atenção que os comentários precisam de ser aprovados antes de serem exibidos",
+          "success_moderated": "O seu comentário foi publicado com sucesso! Obrigado!",
+          "success": "Seu comentário foi postado! Obrigado!",
+          "with_count": {
+            "one": "{{ count }} comentário",
+            "other": "{{ count }} comentários"
+          }
+        }
+      }
+    }
+  }
+}
+{% endschema %}
