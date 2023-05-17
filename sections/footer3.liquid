@@ -1,13 +1,10 @@
-{% if customer.metafields.custom.test == "Food Vendor" %}
-  {%- render 'foodvendorfooter' -%}
+{% if customer.metafields.custom.test == "Both" %}
+  {%- render 'bothfooter.liquid' -%}
 {% endif %}
-
-
-
 
 {% schema %}
 {
-  "name": "t:sections.footer.name",
+  "name": "Footer 3",
   "max_blocks": 12,
   "settings": [
     {
@@ -250,19 +247,10 @@
       ]
     }
   ],
-  "default": {
-    "settings": {},
-    "blocks": [
-      {
-        "type": "menu",
-        "settings": {}
-      },
-      {
-        "type": "payment",
-        "settings": {}
-      }
-    ]
-  },
+  "presets": [{
+    "name": "Footer 3",
+    "category": "Custom"
+  }],
   "disabled_on": {
     "groups": ["header", "custom.popups"]
   }
