@@ -14,6 +14,8 @@
   <link rel="dns-prefetch" href="https://maps.googleapis.com">
   <link rel="dns-prefetch" href="https://maps.gstatic.com">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
   {%- if settings.favicon != blank -%}
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
   {%- endif -%}
@@ -33,6 +35,7 @@
   {%- render 'font-face' -%}
   {{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
   {{ 'next.css' | asset_url | stylesheet_tag }}
+  {{ 'customcode-custom-styles.css' | asset_url | stylesheet_tag }}
   {%- render 'css-variables' -%}
 
   {%- liquid
@@ -97,6 +100,7 @@
       themeVersion: "4.3.4"
     };
   </script>
+  <script src="{{ 'customcode-custom-scripts.js' | asset_url }}"></script>
 
   {{ content_for_header }}
 
