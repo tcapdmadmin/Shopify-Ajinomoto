@@ -89,6 +89,7 @@
         "@media only screen and (max-width: 768px) {.text-with-icons__blocks .text-with-icons__block {padding: 0 0 10px !important; }}"
       ],
       "settings": {
+        "t:common.text_with_icons.settings.title.label": "",
         "align_text": "center",
         "desktop_columns_per_row": 4,
         "icon_color": "#000000",
@@ -174,7 +175,10 @@
         "products_per_row": 4,
         "mobile_scrollable": true,
         "view_all": true,
-        "divider": false
+        "divider": false,
+        "countdown_timer": "May 21, 2023",
+        "background_color": "#FFF",
+        "font_color": "#000"
       }
     },
     "af966d2c-f455-4fe9-b444-5364bcff565c": {
@@ -262,7 +266,10 @@
         "products_per_row": 4,
         "mobile_scrollable": true,
         "view_all": true,
-        "divider": false
+        "divider": false,
+        "countdown_timer": "Jan 9, 1997 15:37:25",
+        "background_color": "#FFF",
+        "font_color": "#000"
       }
     },
     "df82034f-23a7-4dd9-b563-6d65eb6a2642": {
@@ -299,7 +306,10 @@
         "products_per_row": 4,
         "mobile_scrollable": true,
         "view_all": true,
-        "divider": false
+        "divider": false,
+        "countdown_timer": "Jan 9, 1997 15:37:25",
+        "background_color": "#FFF",
+        "font_color": "#000"
       }
     },
     "2515597e-a792-4817-9b03-2d8cd345bddf": {
