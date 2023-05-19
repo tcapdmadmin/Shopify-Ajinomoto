@@ -1,0 +1,17 @@
+<style>
+    .customcode-counter-{{ block.id }} > .customcode-digit {
+        background-color: {{ block.settings.background_color }};
+        color: {{ block.settings.font_color }};
+    }
+</style>
+
+<div class="customcode-counter customcode-counter-{{ block.id }}">
+    <span class="customcode-digit custom-days">00</span> :
+    <span class="customcode-digit custom-hours">00</span> :
+    <span class="customcode-digit custom-minutes">00</span> :
+    <span class="customcode-digit custom-seconds">00</span>
+</div>
+
+<script>
+    renderCountDown(`{{ block.settings.countdown_timer }}`, `customcode-counter-{{ block.id }}`);
+</script>

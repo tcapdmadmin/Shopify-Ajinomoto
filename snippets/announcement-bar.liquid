@@ -34,7 +34,7 @@
                 class="slideshow__slide announcement-slider__slide"
                 data-index="{{ slide_index }}"
                 {{ block.shopify_attributes }}>
-                <div class="announcement-slider__content">
+                <div class="announcement-slider__content custom-announcement-slider">
                   {%- if block.settings.richtext_mobile != blank -%}
                     <div class="medium-up--hide">
                       {{ block.settings.richtext_mobile }}
@@ -45,6 +45,7 @@
                   {%- else -%}
                     {{ block.settings.richtext }}
                   {%- endif -%}
+                {% render 'customcode-countdown-timer', block: block %}
                 </div>
               </div>
               {%- assign slide_index = slide_index | plus: 1 -%}

@@ -1,0 +1,23 @@
+/* announcement-bar.liquid */
+.custom-announcement-slider {
+    display: flex !important;
+}
+
+@media screen and (max-width: 768px) {
+    .custom-announcement-slider {
+        flex-direction: column;
+    }
+}
+
+/* announcement-bar.liquid */
+
+/* customcode-countdown-timer.liquid */
+.customcode-counter {
+    margin: 0 10px;
+}
+.customcode-digit {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* customcode-countdown-timer.liquid */
