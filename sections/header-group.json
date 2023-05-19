@@ -11,10 +11,18 @@
             "richtext": "<p><strong>FREE DELIVERY<\/strong> FOR ORDERS OVER $100<\/p>",
             "richtext_mobile": "<p><strong>FREE DELIVERY<\/strong> FOR ORDERS OVER $100<\/p>"
           }
+        },
+        "b3fdc406-4239-4067-9630-4e8cc84bd038": {
+          "type": "announcement",
+          "settings": {
+            "richtext": "<p>Hassle-free returns. 30-day postage paid returns<\/p>",
+            "richtext_mobile": ""
+          }
         }
       },
       "block_order": [
-        "toolbar-0"
+        "toolbar-0",
+        "b3fdc406-4239-4067-9630-4e8cc84bd038"
       ],
       "settings": {
         "announcement_center": false,
