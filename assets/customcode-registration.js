@@ -1,10 +1,7 @@
 // Line Functions
 
 document.addEventListener("DOMContentLoaded", () => {
-
   // Line Functions
-  // http://s7.devpad.transcosmos-api.local.com/
-  // https://ajinomoto.tcapdm.com
   // Handle form submission
   const handleFormSubmission = async (event) => {
     event.preventDefault();
@@ -22,18 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Set Line Login URL
   const setLineLoginURL = () => {
     const loginLineURL = document.getElementById("loginLineURL");
-    fetch(
-      "https://ajinomoto.tcapdm.com/api/line/login/getlink?mode=login",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          mode: "register",
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
+    fetch("https://ajinomoto.tcapdm.com/api/line/login/getlink?mode=login", {
+      method: "POST",
+      body: JSON.stringify({
+        mode: "register",
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error("API request failed");
@@ -68,6 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
       const lineUserId = document.getElementById("line_user_id");
       lineUserId.value = data.results.user_id;
+      document.getElementById("lineindication").style.display = "block";
+      document.getElementById("signuplinebtn").style.display = "none";
+
       const lineConnectionText = document.getElementById("lineConnectionText");
       lineConnectionText.innerHTML = "Connected";
       const lineConnectionColor = document.getElementById(
@@ -108,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }),
       {}
     );
-    console.log(obj)
 
     const selectedRadio = document.querySelector(
       'input[name="shop_group"]:checked'
@@ -142,5 +138,4 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("create_customer");
 
   form.addEventListener("submit", handleFormSubmission);
-
 });
