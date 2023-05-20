@@ -28,11 +28,12 @@
     <div class="page-width">
       <div class="footer__blocks">
         {%- for block in section.blocks -%}
+          {% if customer.metafields.custom.customer_type.value == block.settings.customer_type or block.settings.customer_type == "none" %}
           <div {{ block.shopify_attributes }} class="footer__block" data-type="{{ block.type }}">
             {%- liquid
               case block.type
                 when 'menu'
-                  render 'footer-menu', block: block
+                    render 'footer-menu', block: block
                 when 'payment'
                   assign show_currency_flags = block.settings.show_currency_flags
                   render 'footer-payments', block: block, show_currency_flags: show_currency_flags
@@ -43,6 +44,7 @@
               endcase
             -%}
           </div>
+         {% endif %}
         {%- endfor -%}
       </div>
     </div>
@@ -127,6 +129,26 @@
       "limit": 1,
       "settings": [
         {
+          "type": "select",
+          "id": "customer_type",
+          "label": "Customer Type",
+          "options": [
+            {
+              "value": "food_vendor",
+              "label": "Food Vendor"
+            },
+            {
+              "value": "retailer",
+              "label": "Retailer"
+            },
+            {
+              "value": "both",
+              "label": "Both"
+            }
+          ],
+          "default": "both"
+        },
+        {
           "type": "checkbox",
           "id": "show_payment_icons",
           "label": "t:sections.footer.blocks.payments_and_localization.settings.show_payment_icons.label",
@@ -159,10 +181,31 @@
       "name": "t:sections.footer.blocks.navigation.name",
       "settings": [
         {
+          "type": "select",
+          "id": "customer_type",
+          "label": "Customer Type",
+          "options": [
+            {
+              "value": "food_vendor",
+              "label": "Food Vendor"
+            },
+            {
+              "value": "retailer",
+              "label": "Retailer"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ],
+          "default": "none"
+        },
+        {
           "type": "text",
           "id": "title",
           "label": "t:sections.footer.blocks.navigation.settings.title.label",
           "info": "t:sections.footer.blocks.navigation.settings.title.info"
+
         },
         {
           "type": "link_list",
@@ -182,6 +225,26 @@
       "type": "contact",
       "name": "t:sections.footer.blocks.contact_and_social.name",
       "settings": [
+        {
+          "type": "select",
+          "id": "customer_type",
+          "label": "Customer Type",
+          "options": [
+            {
+              "value": "food_vendor",
+              "label": "Food Vendor"
+            },
+            {
+              "value": "retailer",
+              "label": "Retailer"
+            },
+            {
+              "value": "both",
+              "label": "Both"
+            }
+          ],
+          "default": "both"
+        },
         {
           "type": "header",
           "content": "t:sections.footer.blocks.contact_and_social.settings.header_contact"
@@ -217,6 +280,26 @@
       "type": "image",
       "name": "Image",
       "settings": [
+        {
+          "type": "select",
+          "id": "customer_type",
+          "label": "Customer Type",
+          "options": [
+            {
+              "value": "food_vendor",
+              "label": "Food Vendor"
+            },
+            {
+              "value": "retailer",
+              "label": "Retailer"
+            },
+            {
+              "value": "both",
+              "label": "Both"
+            }
+          ],
+          "default": "both"
+        },
         {
           "type": "image_picker",
           "id": "image",
