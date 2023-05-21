@@ -30,12 +30,13 @@
 
         {%- if show_selectors -%}
           <div class="toolbar__item small--hide">
-            {%- render 'multi-selectors',
+            {% comment %}{%- render 'multi-selectors',
               locale_selector: locale_selector,
               currency_selector: currency_selector,
               location: 'toolbar',
               show_currency_flags: section.settings.show_currency_flags
-            -%}
+            -%}{% endcomment %}
+            {%- render 'customcode-language-selector-desktop' -%}
           </div>
         {%- endif -%}
       </div>
