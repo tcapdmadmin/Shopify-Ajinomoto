@@ -125,30 +125,52 @@ function disconnectLine() {
   const sh_id = document.getElementById("sh_id").value;
   lineDisplayStatus.addEventListener("click", function () {
     if (lineConnection === 1) {
-      const confirmDisconnect = confirm("Do you want to remove line?");
-      if (confirmDisconnect) {
-        const apiUrl = "https://ajinomoto.tcapdm.com/api/line/account/update";
-        const payload = { mode: "remove_line", sh_id: sh_id };
-        const options = {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        };
+      Swal.fire({
+        title: "Remove Line?",
+        text: "Line will be disconnected from this account.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Remove Line",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const apiUrl = "https://ajinomoto.tcapdm.com/api/line/account/update";
+          const payload = { mode: "remove_line", sh_id: sh_id };
+          const options = {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          };
 
-        fetch(apiUrl, options)
-          .then((response) => {
-            if (response.ok) {
-              location.reload();
-            } else {
-              throw new Error("API request failed");
-            }
-          })
-          .catch((error) => {
-            console.error(error);
-            alert("Failed to disconnect line");
-          });
+          fetch(apiUrl, options)
+            .then((response) => {
+              if (response.ok) {
+                Swal.fire("Removed!", "Line is now removed", "success");
+                location.reload();
+              } else {
+                Swal.fire({
+                  icon: "error",
+                  title: "Error",
+                  text: "Failed to disconnect line",
+                });
+              }
+            })
+            .catch((error) => {
+              console.error(error);
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Failed to disconnect line",
+              });
+            });
+        }
+      });
+
+      return false;
+      if (confirmDisconnect) {
       }
     }
   });
