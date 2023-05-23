@@ -20,7 +20,7 @@
   <div class="toolbar">
     <div class="page-width">
       <div class="toolbar__content">
-        {%- render 'announcement-bar', section: section -%}
+        {%- render 'announcement-bar', section: section, block: block -%}
 
         {%- if section.settings.toolbar_social -%}
           <div class="toolbar__item small--hide">
@@ -30,12 +30,13 @@
 
         {%- if show_selectors -%}
           <div class="toolbar__item small--hide">
-            {%- render 'multi-selectors',
+            {% comment %}{%- render 'multi-selectors',
               locale_selector: locale_selector,
               currency_selector: currency_selector,
               location: 'toolbar',
               show_currency_flags: section.settings.show_currency_flags
-            -%}
+            -%}{% endcomment %}
+            {%- render 'customcode-language-selector-desktop' -%}
           </div>
         {%- endif -%}
       </div>
@@ -104,6 +105,24 @@
           "type": "richtext",
           "id": "richtext_mobile",
           "label": "t:sections.toolbar.blocks.announcement.settings.richtext_mobile.label"
+        },
+        {
+          "type": "text",
+          "id": "countdown_timer",
+          "default": "Jan 9, 1997 15:37:25",
+          "label": "Countdown (Jan 5, 2024 15:37:25)"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Timer Box Color",
+          "default": "#FFF"
+        },
+        {
+          "type": "color",
+          "id": "font_color",
+          "label": "Timer Font Color",
+          "default": "#000"
         }
       ]
     }

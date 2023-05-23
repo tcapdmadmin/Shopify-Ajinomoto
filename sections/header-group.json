@@ -9,7 +9,10 @@
           "type": "announcement",
           "settings": {
             "richtext": "<p><strong>FREE DELIVERY<\/strong> FOR ORDERS OVER $100<\/p>",
-            "richtext_mobile": "<p><strong>FREE DELIVERY<\/strong> FOR ORDERS OVER $100<\/p>"
+            "richtext_mobile": "<p><strong>FREE DELIVERY<\/strong> FOR ORDERS OVER $100<\/p>",
+            "countdown_timer": "May 21, 2023",
+            "background_color": "#ffffff",
+            "font_color": "#000000"
           }
         },
         "b3fdc406-4239-4067-9630-4e8cc84bd038": {
@@ -17,7 +20,10 @@
           "disabled": true,
           "settings": {
             "richtext": "<p>Hassle-free returns. 30-day postage paid returns<\/p>",
-            "richtext_mobile": ""
+            "richtext_mobile": "",
+            "countdown_timer": "Jan 9, 1997 15:37:25",
+            "background_color": "#ffffff",
+            "font_color": "#000000"
           }
         }
       },
@@ -54,9 +60,10 @@
         "main_menu_alignment": "left",
         "mega_products": true,
         "header_sticky": true,
-        "header_footer_menu": true,
+        "header_footer_menu": false,
         "sticky_index": false,
-        "sticky_collection": false
+        "sticky_collection": false,
+        "language_selector": true
       }
     }
   },
