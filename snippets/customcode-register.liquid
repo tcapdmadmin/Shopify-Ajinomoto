@@ -251,5 +251,46 @@
 
 <!-- FORM End -->
 
-<script src="{{ 'customcode-line-functions.js' | asset_url }}"></script>
+<script>
+//function for customcode-register.liquid
+
+    const group1 = document.getElementsByName('shop_group');
+    const options1 = document.getElementById('Shop-group-retailer-main');
+    const options2 = document.getElementById('Shop-group-fv-main');
+
+    function toggleOptions() {
+      if (group1[0].checked) {
+        options1.style.display = 'block';
+        options2.style.display = 'block';
+      } else if (group1[1].checked) {
+        options1.style.display = 'none';
+        options2.style.display = 'none';
+      }
+    }
+
+    group1.forEach((radio) => {
+      radio.addEventListener('change', toggleOptions);
+    });
+
+
+    const group1a = document.getElementsByName('shop_group');
+    const options1a = document.getElementById('Shop-group-fv');
+    const options2a = document.getElementById('Shop-group-retailer');
+
+    function toggleOptions() {
+      if (group1a[0].checked) {
+        options1a.style.display = 'block';
+        options2a.style.display = 'none';
+      } else if (group1[1].checked) {
+        options1a.style.display = 'none';
+        options2a.style.display = 'block';
+      }
+    }
+
+    group1a.forEach((radio) => {
+      radio.addEventListener('change', toggleOptions);
+    });
+
+//function for customcode-register.liquid
+</script>
 
