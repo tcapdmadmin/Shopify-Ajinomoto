@@ -61,9 +61,9 @@
         "footer-0": {
           "type": "menu",
           "settings": {
-            "customer_type": "retailer",
-            "title": "Retailer",
-            "menu": "retailer",
+            "customer_type": "food_vendor",
+            "title": "Food Test Vendor",
+            "menu": "food-vendor-footer-for-qa-testing",
             "enable_account_link": false
           }
         },
