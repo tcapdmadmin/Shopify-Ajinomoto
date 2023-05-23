@@ -61,14 +61,16 @@
         "footer-0": {
           "type": "menu",
           "settings": {
+            "customer_type": "retailer",
             "title": "AJINOMOTO PRODUCTS",
-            "menu": "ajinomoto-products",
+            "menu": "retailer-footer-for-qa-testing",
             "enable_account_link": false
           }
         },
         "8c396db5-ef97-4f4b-babd-37d2013af1d3": {
           "type": "menu",
           "settings": {
+            "customer_type": "none",
             "title": "ABOUT US",
             "menu": "about-us",
             "enable_account_link": false
@@ -77,6 +79,7 @@
         "footer-1": {
           "type": "contact",
           "settings": {
+            "customer_type": "none",
             "phone": "+66 2 462 6331",
             "contact": "contact",
             "chat": "",
