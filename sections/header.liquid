@@ -153,6 +153,9 @@
               {%- if section.settings.header_footer_menu -%}
                 <div id="MobileNavFooter"></div>
               {%- endif -%}
+              {%- if section.settings.language_selector -%}
+                {%- render 'customcode-language-selector' -%}
+              {%- endif -%}
             </div>
           </div>
         </div>
@@ -234,6 +237,12 @@
       "id": "sticky_collection",
       "label": "t:sections.header.settings.sticky_collection.label",
       "info": "t:sections.header.settings.sticky_collection.info",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "language_selector",
+      "label": "Show Language Selector",
       "default": false
     }
   ],

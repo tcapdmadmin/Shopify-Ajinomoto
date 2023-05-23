@@ -56,8 +56,8 @@
     <div class="page-width text-{{ section.settings.heading_position }}">
       <div class="section-header{% if section.settings.view_all and section.settings.title != blank %} section-header--with-link{% endif %}">
         {% if section.settings.title != blank%}
-          <h2 class="section-header__title {{ section.settings.heading_size }}">
-            {{ section.settings.title }}
+          <h2 class="section-header__title {{ section.settings.heading_size }} custom-section-header__title">
+            {{ section.settings.title }} {% render 'customcode-countdown-timer', block: section %}
           </h2>
         {% endif %}
         {%- if section.settings.view_all -%}
@@ -228,6 +228,28 @@
       "id": "divider",
       "label": "t:sections.featured-collection.settings.divider.label",
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "Countdown Timer Settings"
+    },
+    {
+      "type": "text",
+      "id": "countdown_timer",
+      "default": "Jan 9, 1997 15:37:25",
+      "label": "Countdown (Jan 5, 2024 15:37:25)"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Timer Box Color",
+      "default": "#FFF"
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "Timer Font Color",
+      "default": "#000"
     }
   ],
   "presets": [
