@@ -63,7 +63,7 @@
           "settings": {
             "customer_type": "retailer",
             "title": "Retailer",
-            "menu": "retailer-footer-for-qa-testing",
+            "menu": "retailer",
             "enable_account_link": false
           }
         },
