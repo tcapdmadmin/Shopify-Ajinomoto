@@ -1,25 +1,3 @@
-{%- comment -%}
-{% if customer %}
-  {% if customer.metafields.custom.customer_type == 'food_vendor' %}
-    <!-- Customer is logged in and has customer_type set to 'food_vendor' -->
-    <p>Welcome, food vendor {{ customer.first_name }}!</p>
-    {% assign main_menu = linklists[section.settings.food_vendor] %}
-  {% elsif customer.metafields.custom.customer_type == 'retailer' %}
-    <!-- Customer is logged in and has customer_type set to 'retailer' -->
-    <p>Welcome, retailer {{ customer.first_name }}!</p>
-    {% assign main_menu = linklists[section.settings.retailer] %}
-  {% else %}
-    <!-- Customer is logged in but has an unknown customer_type or set to none -->
-    <p>Welcome, valued customer {{ customer.first_name }}!</p>
-    {% assign main_menu = linklists[section.settings.none] %}
-  {% endif %}
-{% else %}
-  <!-- Customer is not logged in -->
-  <p>Please log in to access the content.</p>
-  {% assign main_menu = linklists[section.settings.default] %}
-{% endif %}
-{%- endcomment -%}
-
 {%- liquid
   if customer
     if customer.metafields.custom.customer_type == 'food_vendor'
