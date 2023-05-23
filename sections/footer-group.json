@@ -62,7 +62,7 @@
           "type": "menu",
           "settings": {
             "customer_type": "retailer",
-            "title": "AJINOMOTO PRODUCTS",
+            "title": "Retailer",
             "menu": "retailer-footer-for-qa-testing",
             "enable_account_link": false
           }
