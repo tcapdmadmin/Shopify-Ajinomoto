@@ -1,0 +1,49 @@
+<!-- CUSTOM LANGUAGE SELECTOR Start -->
+<div class="language_selector"">
+  <label for="Language_selector_id">Language</label>
+  <select id="Language_selector_id" onchange="redirect()">
+    <option value="English">English</option>
+    <option value="Thai">ภาษาไทย</option>
+  </select>
+</div>
+<!-- CUSTOM LANGUAGE SELECTOR End -->
+<style>
+  .language_selector {
+    margin-top: 30px;
+  }
+
+  select#Language_selector_id {
+    font-size: 15px !important;
+    line-height: 24px;
+  }
+</style>
+
+<script>
+  // Function for Language Selector in Header
+    function redirect() {
+        var dropdown = document.getElementById("Language_selector_id");
+        var selectedOption = dropdown.value;
+        var url;
+
+        if (selectedOption === "English") {
+          url = "/en";
+        } else if (selectedOption === "Thai") {
+          url = "/";
+        }
+
+        if (url) {
+          window.location.href = url;
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", function() {
+        var currentUrl = window.location.href;
+        var dropdown = document.getElementById("Language_selector_id");
+
+        if (currentUrl === "https://ajinomotosales-th.myshopify.com/") {
+          dropdown.value = "Thai";
+        } else if (currentUrl === "https://ajinomotosales-th.myshopify.com/en") {
+          dropdown.value = "English";
+        }
+      });
+</script>
