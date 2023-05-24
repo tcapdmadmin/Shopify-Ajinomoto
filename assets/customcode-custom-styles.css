@@ -42,22 +42,126 @@
 /* customcode-featured-collection.liquid */
 
 /* customcode-register.liquid */
+.reg-page-content {
+	margin-top: 3rem;
+}
 .form-container {
-    border: 1px solid var(--colorBorder);
-    padding: var(--pageTopPadding);
+	color: #7c7c7c;
+	border: 1px solid var(--colorBorder);
+	padding: var(--pageTopPadding) 2rem;
 }
 .form-container header {
-    position: relative;
+	position: relative;
 }
 .form-container header h1 {
-    position: absolute;
-    top: -3.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #fff;
-    padding: 0 3rem;
+	color: #333;
+	position: absolute;
+	top: -2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #fff;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.field-wrap {
+	display: flex;
+	flex-direction: column;
 }
 .field-input {
-    padding: 1rem 1.5rem;
+	padding: .5rem 1.5rem;
+}
+.field-radio-wrap {
+	display: flex;
+}
+.field-radio-hor .field-radio-wrap > .field-radio-child:not(:last-child) {
+	margin-right: 1rem;
+}
+
+.form-account {
+	display: flex;
+	flex-direction: column-reverse;
+	margin-top: 5rem;
+}
+.form-account-text {
+	color: #373a5e;
+	text-align: center;
+	margin-top: 1rem;
+	margin-bottom: 0;
+}
+.form-account-text span {
+	font-weight: bold;
+}
+.form-account-login-or {
+	position: relative;
+	text-align: center;
+}
+.form-account-login-or:before {
+	content: '';
+	background: #b8b8b8;
+	position: absolute;
+	height: 1px;
+	width: calc(50% - 2rem);
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.form-account-login-or:after {
+	content: '';
+	background: #b8b8b8;
+	position: absolute;
+	height: 1px;
+	width: calc(50% - 2rem);
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.login-create-btn {
+	width: 100%;
+	background: #373a5e;
+	margin-bottom: 15px !important;
+}
+
+.form-account .socialplus-login-button-component {
+	text-align: center !important;
+}
+
+@media (min-width: 768px) {
+	.reg-page-content {
+		margin-top: 0;
+	}
+	.form-container {
+		padding: var(--pageTopPadding) 10rem;
+	}
+	.form-container header h1 {
+		top: -3.5rem;
+		padding: 0 3rem;
+		width: unset;
+	}
+	.field-wrap {
+		flex-direction: row;
+		column-gap: 2rem;
+	}
+	.field-wrap > * {
+		flex: 0 0 calc(50% - 1rem);
+	}
+	.field-input {
+		padding: 1rem 1.5rem;
+	}
+
+	.form-account {
+		flex-direction: row;
+		margin-top: 0;
+		justify-content: space-between;
+	}
+  	.form-account > * {
+		flex: 1;
+	}
+	.form-account-text {
+		text-align: left;
+		margin: 0;
+	}
 }
 /* customcode-register.liquid */
