@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.stopImmediatePropagation();
 
     const parallelRegistration = await submitFormWithApiAndShopify();
-    console.log(parallelRegistration);
+    // console.log(parallelRegistration);
     if (parallelRegistration === 1) {
       event.target.submit();
     } else {
@@ -66,7 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("signuplinebtn").style.display = "none";
 
       const lineConnectionText = document.getElementById("lineConnectionText");
+
       lineConnectionText.innerHTML = "Connected";
+
       const lineConnectionColor = document.getElementById(
         "lineConnectionColor"
       );
@@ -83,36 +85,63 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitFormWithApiAndShopify = async () => {
     const form = document.getElementById("create_customer");
     const formData = new FormData(form);
-    const parallelFields = [];
+    const parallelFields = {};
 
     const parallelElems = document.querySelectorAll(".parallel");
-    const inputs = document.getElementsByClassName("input-full");
-
     parallelElems.forEach((elem) => {
       const fieldName = elem.getAttribute("name");
       if (fieldName.startsWith("customer[") && fieldName.endsWith("]")) {
         const customerField = fieldName.substring(9, fieldName.length - 1);
         const value = elem.value;
-        parallelFields.push({
-          [customerField]: value,
-        });
+        if (fieldName === "customer[metafields][custom][telephone]") {
+          parallelFields.telephone = value;
+        } else {
+          parallelFields[customerField] = value;
+        }
+      } else {
+        const modifiedFieldName = fieldName.replace(/-/g, "_");
+        parallelFields[modifiedFieldName] = elem.value;
       }
     });
-    const obj = parallelFields.reduce(
-      (acc, curr) => ({
-        ...acc,
-        ...curr,
-      }),
-      {}
+
+    const checkedUmamiSeasoningUsage = document.querySelectorAll(
+      "input.parallel-umami-seasoning-usage:checked"
     );
+    const storedUmamiSeasoningUsage = Array.from(
+      checkedUmamiSeasoningUsage
+    ).map((input) => input.value);
+    if (storedUmamiSeasoningUsage.length > 0) {
+      parallelFields.umami_seasoning_usage = storedUmamiSeasoningUsage;
+    }
+
+    const checkedFlavorSeasoningUsage = document.querySelectorAll(
+      "input.parallel-flavor-seasoning-usage:checked"
+    );
+    const storedFlavorSeasoningUsage = Array.from(
+      checkedFlavorSeasoningUsage
+    ).map((input) => input.value);
+    if (storedFlavorSeasoningUsage.length > 0) {
+      parallelFields.flavored_seasoning_usage = storedFlavorSeasoningUsage;
+    }
+
+    const checkedShopTypes = document.querySelectorAll(
+      "input.parallel-shop-type:checked"
+    );
+    const storedShopTypes = Array.from(checkedShopTypes).map(
+      (input) => input.value
+    );
+    if (storedShopTypes.length > 0) {
+      parallelFields.shop_type = storedShopTypes;
+    }
 
     const selectedRadio = document.querySelector(
       'input[name="shop_group"]:checked'
     );
     if (selectedRadio) {
-      obj["account_type"] = selectedRadio.value;
+      parallelFields.shop_group = selectedRadio.value;
     }
-
+    console.log(parallelFields)
+    return false;
     try {
       const response = await fetch(
         "https://ajinomoto.tcapdm.com/api/shopify_account",
@@ -121,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(obj),
+          body: parallelFields,
         }
       );
       const data = await response.json();
