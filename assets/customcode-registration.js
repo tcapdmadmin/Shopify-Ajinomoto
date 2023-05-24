@@ -1,4 +1,5 @@
 // Line Functions
+var base_url = window.location.origin;
 
 document.addEventListener("DOMContentLoaded", () => {
   // Line Functions
@@ -75,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lineConnectionColor.setAttribute("fill", "#06C755");
     } catch (error) {
       console.error(error);
-      alert("Failed to fetch Line ID");
+      window.location.href = base_url + "/account/register";
     }
   }
 
@@ -140,8 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (selectedRadio) {
       parallelFields.shop_group = selectedRadio.value;
     }
-    console.log(parallelFields)
-    return false;
     try {
       const response = await fetch(
         "https://ajinomoto.tcapdm.com/api/shopify_account",
@@ -150,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: parallelFields,
+          body: JSON.stringify(parallelFields),
         }
       );
       const data = await response.json();
