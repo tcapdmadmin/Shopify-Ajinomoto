@@ -8,11 +8,14 @@ resetPasswordForm.addEventListener("submit", async function (event) {
   // your code to handle the form submission
   event.stopImmediatePropagation();
   var parallel_update = await submitFormWithApiAndShopify(); // wait for the result
-
   if (parallel_update == 1) {
     this.submit();
   } else {
-    // handle the case where the registration failed
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Unexpected Error occurred",
+    });
   }
 });
 
@@ -39,8 +42,12 @@ function submitFormWithApiAndShopify() {
   // Call the API to register the user
   const obj = parallelFields.reduce((acc, curr) => ({ ...acc, ...curr }), {});
   const email = document.getElementById("email_address");
+  const password = document.getElementById("ResetPassword");
+  const confirm_password = document.getElementById("PasswordConfirmation");
   if (email.innerHTML) {
     obj["email"] = email.innerHTML;
+    obj["password"] = password.value;
+    obj["confirm_password"] = confirm_password.value;
   }
 
   return fetch("https://ajinomoto.tcapdm.com/api/shopify_account/1", {
@@ -54,11 +61,29 @@ function submitFormWithApiAndShopify() {
       if (data.status != "error") {
         return 1;
       } else {
+        var errorMessage = "";
+
+        // Loop through the JSON response and concatenate the error messages
+        for (var key in data.message) {
+          if (data.message.hasOwnProperty(key)) {
+            errorMessage += data.message[key].join("\n");
+          }
+        }
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: errorMessage,
+        });
+
         return 0;
       }
     })
     .catch((error) => {
-      console.error("Error:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Unexpected Error occurred",
+      });
       return 0;
     });
 }
