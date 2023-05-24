@@ -1,5 +1,18 @@
 {%- liquid
-  assign main_menu = linklists[section.settings.main_menu_link_list]
+  if customer
+    if customer.metafields.custom.customer_type == 'food_vendor'
+      assign main_menu = linklists[section.settings.food_vendor]
+
+      elsif customer.metafields.custom.customer_type == 'retailer'
+      assign main_menu = linklists[section.settings.retailer]
+
+     else customer.metafields.custom.customer_type == 'none'
+      assign main_menu = linklists[section.settings.none]
+    endif
+    
+    else
+      assign main_menu = linklists[section.settings.none]
+  endif
 
   assign logo_alignment = 'left'
   assign nav_position = 'below'
@@ -153,6 +166,9 @@
               {%- if section.settings.header_footer_menu -%}
                 <div id="MobileNavFooter"></div>
               {%- endif -%}
+              {%- if section.settings.language_selector -%}
+                {%- render 'customcode-language-selector' -%}
+              {%- endif -%}
             </div>
           </div>
         </div>
@@ -168,8 +184,20 @@
   "settings": [
     {
       "type": "link_list",
-      "id": "main_menu_link_list",
-      "label": "t:sections.header.settings.main_menu_link_list.label",
+      "id": "food_vendor",
+      "label": "Food Vendor Navigation",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "retailer",
+      "label": "Retailer Navigation",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "none",
+      "label": "Retailer and Food Vendor Navigation",
       "default": "main-menu"
     },
     {
@@ -234,6 +262,12 @@
       "id": "sticky_collection",
       "label": "t:sections.header.settings.sticky_collection.label",
       "info": "t:sections.header.settings.sticky_collection.info",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "language_selector",
+      "label": "Show Language Selector",
       "default": false
     }
   ],

@@ -1,3 +1,4 @@
+{% comment %} DEFAULT REGISTER FORM
 <div class="page-width page-width--tiny page-content">
   <header class="section-header">
     <h1 class="section-header__title">{{ 'customer.register.title' | t }}</h1>
@@ -84,5 +85,6 @@
 
 
 </div>
+{% endcomment %}
 
-<script src="{{ 'customcode-registration.js' | asset_url }}"></script>
+{% render 'customcode-register' %}
