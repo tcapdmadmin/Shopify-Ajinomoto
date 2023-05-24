@@ -18,7 +18,7 @@
 			<div class="field-wrap">
 				<input type="number" name="customer[metafields][custom][telephone]" id="Telephone" class="field-input input-full" value="{{ customer.metafields.custom.telephone }}" max="9999999999" maxlength="10" placeholder="Telephone *" onfocus="(this.type='number')" onblur="(this.type='text')" required>
 				<div class="field-wrap">
-					<input type="date" name="birthdate" id="Birthdate" class="field-input input-full" placeholder="Birthdate *" onblur="(this.type='text')" onfocus="(this.type='date')" required>
+					<input type="date" name="birthdate" id="Birthdate" class="field-input field-input-date input-full" placeholder="Birthdate *" onfocus="(this.type='date')" required>
 					<div class="field-select">
 						<select id="Gender" name="gender" class="field-input input-full" required>
 							<option value="" disabled selected hidden>Gender *</option>
@@ -155,7 +155,7 @@
 			</div>
 			<div class="field-wrap">
 				<input type="email" name="customer[email]" id="Email" class="field-input input-full parallel {% if form.errors contains 'email' %} error{% endif %}"{% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off" placeholder="Email Address">
-				<input type="password" name="customer[password]" id="CreatePassword" class="field-input input-full parallel {% if form.errors contains 'password' %} error{% endif %}" placeholder="Password">
+				<input type="password" name="customer[password]" id="CreatePassword" class="field-input field-input-pass input-full parallel {% if form.errors contains 'password' %} error{% endif %}" placeholder="Password">
 			</div>
 			<div class="field-wrap">
 				<input type="text" name="salesman-code" id="Salesman-code" class="field-input input-full" autocomplete="on" placeholder="Salesman Code">

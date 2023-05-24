@@ -72,11 +72,28 @@
 .field-input {
 	padding: .5rem 1.5rem;
 }
+.field-input-pass {
+	background-image: url('https://cdn.shopify.com/s/files/1/0752/7333/9195/files/eyebrow.png');
+	background-position: right 1rem center;
+	background-repeat: no-repeat;
+	background-size: 1.25rem;
+	padding-right: 3rem;
+}
+/*.field-input-date {
+	background-image: url('https://cdn.shopify.com/s/files/1/0752/7333/9195/files/calendar-silhouette.png');
+	background-position: right 1rem center;
+	background-repeat: no-repeat;
+	background-size: 1rem;
+	padding-right: 3rem !important;
+}*/
 .field-radio-wrap {
 	display: flex;
 }
 .field-radio-hor .field-radio-wrap > .field-radio-child:not(:last-child) {
 	margin-right: 1rem;
+}
+.field-select > select {
+	background-image: url('https://cdn.shopify.com/s/files/1/0752/7333/9195/files/down-arrow.png');
 }
 
 .form-account {
@@ -129,9 +146,6 @@
 }
 
 @media (min-width: 768px) {
-	.reg-page-content {
-		margin-top: 0;
-	}
 	.form-container {
 		padding: var(--pageTopPadding) 10rem;
 	}
