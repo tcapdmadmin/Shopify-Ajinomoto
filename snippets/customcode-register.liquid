@@ -53,7 +53,7 @@
 				<input type="text" name="customer[last_name]" id="LastName" class="field-input input-full parallel"{% if form.last_name %} value="{{ form.last_name }}"{% endif %} autocapitalize="words" placeholder="Last Name *" required>
 			</div>
 			<div class="field-wrap">
-				<input type="number" name="customer[metafields][custom][telephone]" id="Telephone" class="field-input input-full" value="{{ customer.metafields.custom.telephone }}" max="9999999999" maxlength="10" placeholder="Telephone *" onfocus="(this.type='number')" onblur="(this.type='text')" required>
+				<input type="number" name="customer[metafields][custom][telephone]" id="Telephone" class="field-input input-full" value="{{ customer.metafields.custom.telephone }}" max="9999999999" maxlength="10" placeholder="Telephone" onfocus="(this.type='number')" onblur="(this.type='text')">
 				<div class="field-wrap">
 					<input type="date" name="birthdate" id="Birthdate" class="field-input field-input-date input-full" placeholder="Birthdate *" onfocus="(this.type='date')" required>
 					<div class="field-select">
@@ -68,13 +68,13 @@
 			</div>
 			<div class="field-wrap">
 				<input type="text" name="shop_name" id="Shop-name" class="field-input input-full" maxlength="50" placeholder="Shop Name *"  required>
-				<input type="number" name="branch_number" id="Branch-number" class="field-input input-full" max="99" maxlength="2" placeholder="Branch No" onfocus="(this.type='number')" onblur="(this.type='text')" required>
+				<input type="number" name="branch_number" id="Branch-number" class="field-input input-full" max="99" maxlength="2" placeholder="Branch No. *" onfocus="(this.type='number')" onblur="(this.type='text')" required>
 			</div>
 			<div class="field-radio field-radio-hor">
 				<label>Shop Group *</label>
 				<div class="field-radio-wrap">
 					<div class="field-radio-child">
-						<input type="radio" name="shop_group" id="Shop-group" class="input-full Shop-group" value="Food Vendor" required>
+						<input type="radio" name="shop_group" id="Shop-group" class="input-full Shop-group" value="Food Vendor" required checked>
 						<span>Food Vendor</span>
 					</div>
 					<div class="field-radio-child">
@@ -99,7 +99,7 @@
 				<input type="checkbox" name="shop_type" class="input-full" value="Others"> <span>Others</span><br>
 			</div>
 			<div>
-				<input type="text" name="address" id="Address" class="field-input input-full" autocomplete="on" placeholder="Address *" required>
+				<input type="text" name="address" id="Address" class="field-input input-full" autocomplete="on" placeholder="Address">
 			</div>
 			<div class="field-wrap">
 				<input type="text" name="district" id="District" class="field-input input-full" autocomplete="on" placeholder="District">
@@ -191,14 +191,14 @@
 				</div>
 			</div>
 			<div class="field-wrap">
-				<input type="email" name="customer[email]" id="Email" class="field-input input-full parallel {% if form.errors contains 'email' %} error{% endif %}"{% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off" placeholder="Email Address">
-				<input type="password" name="customer[password]" id="CreatePassword" class="field-input field-input-pass input-full parallel {% if form.errors contains 'password' %} error{% endif %}" placeholder="Password">
+				<input type="email" name="customer[email]" id="Email" class="field-input input-full parallel {% if form.errors contains 'email' %} error{% endif %}"{% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off" placeholder="Email Address *" required>
+				<input type="password" name="customer[password]" id="CreatePassword" class="field-input field-input-pass input-full parallel {% if form.errors contains 'password' %} error{% endif %}" placeholder="Password *" required>
 			</div>
 			<div class="field-wrap">
 				<input type="text" name="salesman-code" id="Salesman-code" class="field-input input-full" autocomplete="on" placeholder="Salesman Code">
 			</div>
 
-			<div id="Shop-group-retailer-main" style="display: none;">
+			<div id="Shop-group-retailer-main" style="display: block;">
 				<label>Main umami seasoning usage </label>
 				<input type="checkbox" name="shop_type" class="input-full" value="Ajinomoto"> <span>Ajinomoto</span><br>
 				<input type="checkbox" name="shop_type" class="input-full" value="ThaiChuros"> <span>ThaiChuros</span><br>
@@ -206,7 +206,7 @@
 				<input type="checkbox" name="shop_type" class="input-full" value="Others"> <span>Others</span><br>
 			</div>
 
-			<div id="Shop-group-fv-main" style="display: none;">
+			<div id="Shop-group-fv-main" style="display: block;">
 				<label>Main flavor seasoning usage </label>
 				<input type="checkbox" name="shop_type" class="input-full" value="Rosdee"> <span>Rosdee</span><br>
 				<input type="checkbox" name="shop_type" class="input-full" value="FahThai"> <span>FahThai</span><br>
