@@ -54,11 +54,7 @@
 				<input type="text" name="customer[last_name]" id="LastName" class="field-input input-full parallel"{% if form.last_name %} value="{{ form.last_name }}"{% endif %} autocapitalize="words" placeholder="Last Name *" required>
 			</div>
 			<div class="field-wrap">
-<<<<<<< HEAD
-				<input type="number" name="customer[metafields][custom][telephone]" id="Telephone" class="field-input input-full parallel" value="{{ customer.metafields.custom.telephone }}" max="9999999999" maxlength="10" placeholder="Telephone *" onfocus="(this.type='number')" onblur="(this.type='text')" required>
-=======
 				<input type="number" name="customer[metafields][custom][telephone]" id="Telephone" class="field-input input-full" value="{{ customer.metafields.custom.telephone }}" max="9999999999" maxlength="10" placeholder="Telephone" onfocus="(this.type='number')" onblur="(this.type='text')">
->>>>>>> 8d868ff2b33ae654f5197b2a8dc1bd5a94561b4f
 				<div class="field-wrap">
 					<input type="date" name="birthdate" id="Birthdate" class="field-input field-input-date input-full parallel" placeholder="Birthdate *" onfocus="(this.type='date')" required>
 					<div class="field-select">
@@ -72,23 +68,14 @@
 				</div>
 			</div>
 			<div class="field-wrap">
-<<<<<<< HEAD
-				<input type="text" name="shop_name" id="Shop-name" class="field-input input-full parallel" maxlength="50" placeholder="Shop Name *"  required>
-				<input type="number" name="branch_number" id="Branch-number" class="field-input input-full parallel" max="99" maxlength="2" placeholder="Branch No" onfocus="(this.type='number')" onblur="(this.type='text')" required>
-=======
 				<input type="text" name="shop_name" id="Shop-name" class="field-input input-full" maxlength="50" placeholder="Shop Name *"  required>
 				<input type="number" name="branch_number" id="Branch-number" class="field-input input-full" max="99" maxlength="2" placeholder="Branch No. *" onfocus="(this.type='number')" onblur="(this.type='text')" required>
->>>>>>> 8d868ff2b33ae654f5197b2a8dc1bd5a94561b4f
 			</div>
 			<div class="field-radio field-radio-hor">
 				<label>Shop Group *</label>
 				<div class="field-radio-wrap">
 					<div class="field-radio-child">
-<<<<<<< HEAD
-						<input type="radio" name="shop_group" id="Shop-group" class="input-full Shop-group parallel-shop-group" value="Food Vendor" required>
-=======
 						<input type="radio" name="shop_group" id="Shop-group" class="input-full Shop-group" value="Food Vendor" required checked>
->>>>>>> 8d868ff2b33ae654f5197b2a8dc1bd5a94561b4f
 						<span>Food Vendor</span>
 					</div>
 					<div class="field-radio-child">
@@ -113,11 +100,7 @@
 				<input type="checkbox" name="shop_type" class="input-full  parallel-shop-type" value="Others"> <span>Others</span><br>
 			</div>
 			<div>
-<<<<<<< HEAD
-				<input type="text" name="address" id="Address" class="field-input input-full parallel" autocomplete="on" placeholder="Address *" required>
-=======
 				<input type="text" name="address" id="Address" class="field-input input-full" autocomplete="on" placeholder="Address">
->>>>>>> 8d868ff2b33ae654f5197b2a8dc1bd5a94561b4f
 			</div>
 			<div class="field-wrap">
 				<input type="text" name="district" id="District" class="field-input input-full parallel" autocomplete="on" placeholder="District">
