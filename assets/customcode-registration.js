@@ -154,6 +154,25 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       const data = await response.json();
       if (data.status === "error") {
+
+        var errorMessage = "";
+
+        // Loop through the JSON response and concatenate the error messages
+        for (var key in data.message) {
+          if (data.message.hasOwnProperty(key)) {
+            errorMessage += data.message[key].join("\n");
+          }
+        }
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: errorMessage,
+        });
+
+        setLineLoginURL();
+        document.getElementById("lineindication").style.display = "none";
+        document.getElementById("signuplinebtn").style.display = "block";
+
         throw new Error(data.message);
       }
       return 1;
