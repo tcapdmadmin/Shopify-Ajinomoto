@@ -1,189 +1,24 @@
-/* announcement-bar.liquid */
-.custom-announcement-slider {
-    display: flex !important;
-}
-
-@media screen and (max-width: 768px) {
-    .custom-announcement-slider {
-        flex-direction: column;
-    }
-}
-
-/* announcement-bar.liquid */
-
-/* customcode-countdown-timer.liquid */
-.customcode-counter {
-    margin: 0 10px;
-}
-
-.customcode-digit {
-    padding: 5px;
-    border-radius: 5px;
-}
-
-/* customcode-countdown-timer.liquid */
-
-/* customcode-featured-collection.liquid */
-.custom-section-header__title {
-    display: flex !important;
-}
-
-@media screen and (max-width: 425px) {
-    .custom-section-header__title {
-        flex-direction: column;
-        line-height: 30px;
-    }
-
-    .custom-section-header__title > .customcode-counter {
-        margin: 0;
-    }
-}
-
-/* customcode-featured-collection.liquid */
-
-/* customcode-register.liquid */
-.reg-page-content {
-	margin-top: 3rem;
-}
-.form-container {
-	color: #7c7c7c;
-	border: 1px solid var(--colorBorder);
-	padding: var(--pageTopPadding) 2rem;
-}
-.form-container header {
-	position: relative;
-}
-.form-container header h1 {
-	color: #333;
-	position: absolute;
-	top: -2rem;
-	left: 50%;
-	transform: translateX(-50%);
-	background: #fff;
-	padding: 0;
-	width: 100%;
-	text-align: center;
-}
-
-.field-wrap {
-	display: flex;
-	flex-direction: column;
-}
 .field-input {
-	border-radius: 4px;
-	padding: .5rem 1.5rem;
-  	margin-bottom: 1rem !important;
-}
-.field-input-pass {
-	background-image: url('https://cdn.shopify.com/s/files/1/0752/7333/9195/files/eyebrow.png');
-	background-position: right 1rem center;
-	background-repeat: no-repeat;
-	background-size: 1.25rem;
-	padding-right: 3rem;
-  	margin-bottom: 1rem !important;
-}
-/*.field-input-date {
-	background-image: url('https://cdn.shopify.com/s/files/1/0752/7333/9195/files/calendar-silhouette.png');
-	background-position: right 1rem center;
-	background-repeat: no-repeat;
-	background-size: 1rem;
-	padding-right: 3rem !important;
-}*/
-.field-radio-wrap {
-	display: flex;
-}
-.field-radio-hor .field-radio-wrap > .field-radio-child:not(:last-child) {
-	margin-right: 1rem;
-}
-.field-select > select {
-	background-image: url('https://cdn.shopify.com/s/files/1/0752/7333/9195/files/down-arrow.png');
-	border-radius: 4px;
-  	margin-bottom: 1rem !important;
-}
-
-.form-account {
-	display: flex;
-	flex-direction: column-reverse;
-	margin-top: 5rem;
-}
-.form-account-text {
-	color: #373a5e;
-	text-align: center;
-	margin-top: 1rem;
-	margin-bottom: 0;
-}
-.form-account-text span {
-	font-weight: bold;
-}
-.form-account-login-or {
-	position: relative;
-	text-align: center;
-}
-.form-account-login-or:before {
-	content: '';
-	background: #b8b8b8;
-	position: absolute;
-	height: 1px;
-	width: calc(50% - 2rem);
-	left: 0;
-	top: 50%;
-	transform: translateY(-50%);
-}
-.form-account-login-or:after {
-	content: '';
-	background: #b8b8b8;
-	position: absolute;
-	height: 1px;
-	width: calc(50% - 2rem);
-	right: 0;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-.login-create-btn {
-	width: 100%;
-	background: #373a5e;
-	margin-bottom: 15px !important;
-}
-
-.form-account .socialplus-login-button-component {
-	text-align: center !important;
-}
-
-@media (min-width: 768px) {
-	.form-container {
-		padding: var(--pageTopPadding) 10rem;
-	}
-	.form-container header h1 {
-		top: -3.5rem;
-		padding: 0 3rem;
-		width: unset;
-	}
-	.field-wrap {
-		flex-direction: row;
-		column-gap: 2rem;
-	}
-	.field-wrap > * {
-		flex: 0 0 calc(50% - 1rem);
-	}
-	.field-input {
-		padding: 1rem 1.5rem;
+		padding: .5rem 1.5rem;
+		border-radius: 4px;
+		padding: .5rem 1.5rem;
+		margin-bottom: 1rem !important;
 	}
 
-	.form-account {
-		flex-direction: row;
-		margin-top: 0;
-		justify-content: space-between;
+	.field-input-pass {
+		background-image: url('https://cdn.shopify.com/s/files/1/0752/7333/9195/files/eyebrow.png');
+		background-position: right 1rem center;
+		background-repeat: no-repeat;
+		background-size: 1.25rem;
+		padding-right: 3rem;
+		margin-bottom: 1rem !important;
 	}
-  	.form-account > * {
-		flex: 1;
+
+	.field-select > select {
+		background-image: url('https://cdn.shopify.com/s/files/1/0752/7333/9195/files/down-arrow.png');
+		border-radius: 4px;
+		margin-bottom: 1rem !important;
 	}
-	.form-account-text {
-		text-align: left;
-		margin: 0;
-	}
-}
-/* customcode-register.liquid */
 
 /* customcode-login.liquid */
 .login-page-content {
