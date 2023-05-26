@@ -1,5 +1,18 @@
 {%- liquid
-  assign main_menu = linklists[section.settings.main_menu_link_list]
+  if customer
+    if customer.metafields.custom.customer_type == 'food_vendor'
+      assign main_menu = linklists[section.settings.food_vendor]
+
+      elsif customer.metafields.custom.customer_type == 'retailer'
+      assign main_menu = linklists[section.settings.retailer]
+
+     else customer.metafields.custom.customer_type == 'none'
+      assign main_menu = linklists[section.settings.none]
+    endif
+    
+    else
+      assign main_menu = linklists[section.settings.none]
+  endif
 
   assign logo_alignment = 'left'
   assign nav_position = 'below'
@@ -171,8 +184,20 @@
   "settings": [
     {
       "type": "link_list",
-      "id": "main_menu_link_list",
-      "label": "t:sections.header.settings.main_menu_link_list.label",
+      "id": "food_vendor",
+      "label": "Food Vendor Navigation",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "retailer",
+      "label": "Retailer Navigation",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "none",
+      "label": "Retailer and Food Vendor Navigation",
       "default": "main-menu"
     },
     {
