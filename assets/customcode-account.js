@@ -102,8 +102,27 @@ document.addEventListener("DOMContentLoaded", function () {
       fetch(apiUrl, options)
         .then((response) => response.json())
         .then((data) => {
-          window.location.href =
-            "https://ajinomotosales-th.myshopify.com/account";
+          if (data.status === "error") {
+            var errorMessage = "";
+
+            // Loop through the JSON response and concatenate the error messages
+            for (var key in data.message) {
+              if (data.message.hasOwnProperty(key)) {
+                errorMessage += data.message[key].join("\n");
+              }
+            }
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: errorMessage,
+            }).then(() => {
+              window.location.href =
+                "https://ajinomotosales-th.myshopify.com/account";
+            });
+          } else {
+            window.location.href =
+              "https://ajinomotosales-th.myshopify.com/account";
+          }
         })
         .catch((error) => console.error(error));
     }

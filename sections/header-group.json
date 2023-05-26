@@ -57,7 +57,7 @@
       "settings": {
         "food_vendor": "main-menu",
         "retailer": "main-menu",
-        "none": "retailer-footer-for-qa-testing",
+        "none": "food-vendor",
         "hover_menu": true,
         "main_menu_alignment": "left",
         "mega_products": true,
