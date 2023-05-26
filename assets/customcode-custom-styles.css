@@ -70,6 +70,7 @@
 	flex-direction: column;
 }
 .field-input {
+	padding: .5rem 1.5rem;
 	border-radius: 4px;
 	padding: .5rem 1.5rem;
   	margin-bottom: 1rem !important;
@@ -183,6 +184,7 @@
 		margin: 0;
 	}
 }
+/* customcode-register.liquid */
 /* customcode-register.liquid */
 
 /* customcode-login.liquid */
