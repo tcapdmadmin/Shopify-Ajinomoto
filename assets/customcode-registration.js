@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const parallelRegistration = await submitFormWithApiAndShopify();
     // console.log(parallelRegistration);
+
     if (parallelRegistration === 1) {
       event.target.submit();
     } else {
@@ -62,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       const data = await response.json();
       const lineUserId = document.getElementById("line_user_id");
+      
       lineUserId.value = data.results.user_id;
       document.getElementById("lineindication").style.display = "block";
       document.getElementById("signuplinebtn").style.display = "none";
@@ -141,6 +143,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (selectedRadio) {
       parallelFields.shop_group = selectedRadio.value;
     }
+    const telephone = document.getElementById("Telephone").value;
+    if(telephone){
+      parallelFields.telephone = telephone;
+    }
+
     try {
       const response = await fetch(
         "https://ajinomoto.tcapdm.com/api/shopify_account",
