@@ -6,40 +6,72 @@
     }
 
     .cis_block {
-        min-width: 320px;
-        background-color: #373A5C;
-        margin: 20px auto;
+        max-width: 90vw;
+        background-color: #373A5D;
+        margin: 20px 10px;
         border-radius: 15px;
+        width: 610px;
+        color: white;
+        padding: 2rem 0;
     }
 
     .cis_block_heading {
         text-align: center;
+        margin: 1rem 0 2rem 0;
+    }
+    .cis_information_block {
+        margin: 0 15%;
+    }
+    .cis_information_block > div > a {
+        color: white;
+        margin: auto 20px;
+    }
+    .cis_information_img {
+        height: 35px;
+        width: 35px;
+    }
+    .cis_info_line {
+        display: flex;
+        margin: 1.5rem 0;
+        text-decoration: underline;
+    }
+    .cis_info_qr {
+        width: 90%;
+        margin: auto;
+    }
+
+    @media screen and (max-width: 425px) {
+        .cis_information_block {
+            margin: 0 1.5rem;
+        }
     }
 
 </style>
 
 <div class="cis_container">
+    {% for block in section.blocks %}
     <div class="cis_block">
-        <h2 class="cis_block_heading"> Product Information</h2>
-        <div>
-            <div>
-                <img>
-                <a>1-800-888333</a>
+        <h2 class="cis_block_heading h2"> {{ block.settings.cis_block_text }}</h2>
+        <div class="cis_information_block">
+            <div class="cis_info_line">
+                <img class="cis_information_img" src="https://cdn.shopify.com/s/files/1/0752/7333/9195/files/Phone_Icon_1.png?v=1685426852">
+                <a href="{{block.settings.cis_block_phone_link.url}}"><p>{{ block.settings.cis_block_phone_text }}</p></a>
             </div>
-            <div>
-                <img>
-                <a>sample@email.com</a>
+            <div class="cis_info_line">
+                <img class="cis_information_img" src="https://cdn.shopify.com/s/files/1/0752/7333/9195/files/Email_Icon_1.png?v=1685426853">
+                <a href="{{block.settings.cis_block_mail_link.url}}"><p>{{ block.settings.cis_block_mail_text }}</p></a>
             </div>
-            <div>
-                <img>
-                <a>Product Information Customer care</a>
+            <div class="cis_info_line">
+                <img class="cis_information_img" src="https://cdn.shopify.com/s/files/1/0752/7333/9195/files/LINE_Icon_034a31b6-3697-45ed-9c3a-c77789eb76b5.png?v=1685426853">
+                <a href="{{block.settings.cis_block_line_link.url}}"><p>{{ block.settings.cis_block_line_text }}</p></a>
+            </div>
+            <div class="cis_info_line">
+                <img class="cis_info_qr" src="{{ block.settings.cis_block_qr_img | img_url: 'master' }}">
             </div>
         </div>
         <img>
     </div>
-    <div class="cis_block">
-
-    </div>
+    {% endfor %}
 </div>
 
 {% schema %}
@@ -53,7 +85,42 @@
         {
           "type": "text",
           "id": "cis_block_text",
-          "label": "text"
+          "label": "Header"
+        },
+        {
+          "type": "text",
+          "id": "cis_block_phone_text",
+          "label": "Phone Text"
+        },
+        {
+          "type": "url",
+          "id": "cis_block_phone_link",
+          "label": "Phone Link"
+        },
+        {
+          "type": "text",
+          "id": "cis_block_mail_text",
+          "label": "Mail Text"
+        },
+        {
+          "type": "url",
+          "id": "cis_block_mail_link",
+          "label": "Mail Link"
+        },
+        {
+          "type": "text",
+          "id": "cis_block_line_text",
+          "label": "LINE Text"
+        },
+        {
+          "type": "url",
+          "id": "cis_block_line_link",
+          "label": "LINE Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "cis_block_qr_img",
+          "label": "QR"
         }
       ]
     }
