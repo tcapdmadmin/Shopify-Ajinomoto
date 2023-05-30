@@ -1,0 +1,72 @@
+<style>
+    .cis_container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cis_block {
+        min-width: 320px;
+        background-color: #373A5C;
+        margin: 20px auto;
+        border-radius: 15px;
+    }
+
+    .cis_block_heading {
+        text-align: center;
+    }
+
+</style>
+
+<div class="cis_container">
+    <div class="cis_block">
+        <h2 class="cis_block_heading"> Product Information</h2>
+        <div>
+            <div>
+                <img>
+                <a>1-800-888333</a>
+            </div>
+            <div>
+                <img>
+                <a>sample@email.com</a>
+            </div>
+            <div>
+                <img>
+                <a>Product Information Customer care</a>
+            </div>
+        </div>
+        <img>
+    </div>
+    <div class="cis_block">
+
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Information",
+  "blocks": [
+    {
+      "type": "information",
+      "name": "Information",
+      "settings": [
+        {
+          "type": "text",
+          "id": "cis_block_text",
+          "label": "text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Information",
+      "blocks": [
+        {
+          "type": "information"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
