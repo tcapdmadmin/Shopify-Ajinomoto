@@ -19,12 +19,12 @@
       "female": "Female",
       "others": "Others"
     },
-    "shop_group":{
+    "shop_group": {
       "shop_group": "Shop Group",
       "food_vendor": "Food Vendor",
       "retailer": "Retailer"
     },
-    "shop_type":{
+    "shop_type": {
       "shop_type": "Shop Type",
       "a_la_carte_shop": "A La Carte Shop",
       "rice_and_curry_restaurant": "Rice and Curry Restaurant",
@@ -36,7 +36,7 @@
       "candy_and_snack_store": "Candy and Snack Store",
       "condiment_store": "Condiment Store"
     },
-    "province":{
+    "province": {
       "province": "Province",
       "bangkok": "Bangkok",
       "amnat_charoen": "Amnat Charoen",
@@ -116,14 +116,14 @@
       "yala": "Yala",
       "yasothon": "Yasothon"
     },
-    "main_umami_seasoning_usage":{
+    "main_umami_seasoning_usage": {
       "main_umami_seasoning_usage": "Main Umami Seasoning Usage",
       "ajinomoto": "Ajinomoto",
       "thaichuros": "ThaiChuros",
       "aro": "Aro",
       "others": "Others"
     },
-    "main_flavor_seasoning_usage":{
+    "main_flavor_seasoning_usage": {
       "main_flavor_seasoning_usage": "Main Flavor Seasoning Usage",
       "rosdee": "Rosdee",
       "fahhtai": "FahThai",
