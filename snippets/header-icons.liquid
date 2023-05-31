@@ -11,6 +11,11 @@
       <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58ZM54 54 41.94 42" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px"/></svg>
       <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
     </a>
+    {%- if section.settings.delivery_icon -%}
+      <a href="{{ section.settings.delivery_link }}" class="site-nav__link site-nav__link--icon" target= _blank>
+        <img src="https://cdn.shopify.com/s/files/1/0752/7333/9195/files/delivery-truck.png?v=1685427095"></img>
+      </a>
+    {%- endif -%}
 
     {%- if shop.customer_accounts_enabled -%}
       <a class="site-nav__link site-nav__link--icon small--hide" href="{{ routes.account_url }}">
