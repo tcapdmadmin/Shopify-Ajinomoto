@@ -63,6 +63,9 @@
         {%- endif -%}
         {%- if linklists[section.settings.policies_menu].links.size > 0 -%}
           {%- for link in linklists[section.settings.policies_menu].links -%}
+            {%- comment %}<locksmith:eba2>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[section.settings.policies_menu], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:eba2>{% endcomment -%}
             <a href="{{ link.url }}">{{ link.title }}</a>
           {%- endfor -%}
         {%- endif -%}
