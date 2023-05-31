@@ -3,7 +3,7 @@
   fiddle with what's below, but your changes may be reset the next time that
   Locksmith interacts with this theme.
 
-  Last updated: Wed, 31 May 2023 07:38:32 +0000
+  Last updated: Wed, 31 May 2023 07:43:21 +0000
   Integration version: v2161
 {% endcomment -%}
 
@@ -86,7 +86,7 @@
 </div>{%endcomment%}{%render 'customcode-register'%}{%endcapture%}{{_9|replace:'</form>', '<input type="hidden" name="return_to" value=""></form>'}}
 
         <script data-locksmith>
-          document.body.className = "template-customers-login";
+          document.body.className = "template-customers-register";
           
           window.document.title = "สร้างบัญชีผู้ใช้\n– Ajinomotosales TH";
           var redirectUrl = window.location.href.replace('/account/register', '/');
