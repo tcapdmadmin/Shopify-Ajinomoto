@@ -42,6 +42,10 @@
 /* customcode-featured-collection.liquid */
 
 /* customcode-register.liquid */
+#register-submit {
+	min-width: 320px;
+}
+
 .reg-page-content {
 	margin-top: 3rem;
 }
@@ -172,9 +176,10 @@
 	}
 
 	.form-account {
-		flex-direction: row;
+		flex-direction: column;
 		margin-top: 0;
 		justify-content: space-between;
+		align-items: center;
 	}
   	.form-account > * {
 		flex: 1;
