@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Set Line Login URL
   const setLineLoginURL = () => {
     const loginLineURL = document.getElementById("loginLineURL");
-    fetch("https://ajinomoto.tcapdm.com/api/line/login/getlink?mode=login", {
+    fetch("https://ajith-api.tcapdm.com/api/line/login/getlink?mode=login", {
       method: "POST",
       body: JSON.stringify({
         mode: "register",
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!code) {
         return;
       }
-      const apiUrl = `https://ajinomoto.tcapdm.com/api/register/line/fetch_line_id?code=${code}`;
+      const apiUrl = `https://ajith-api.tcapdm.com/api/register/line/fetch_line_id?code=${code}`;
       const response = await fetch(apiUrl);
       if (!response.ok) {
         throw new Error("Failed to fetch Line ID");
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const response = await fetch(
-        "https://ajinomoto.tcapdm.com/api/shopify_account",
+        "https://ajith-api.tcapdm.com/api/shopify_account",
         {
           method: "POST",
           headers: {
