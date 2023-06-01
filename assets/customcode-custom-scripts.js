@@ -13,6 +13,8 @@ function renderCountDown(countDown, containerJq) {
         // Find the distance between now and the count down date
         let distance = countDownDate - now;
 
+        $('.' + containerJq).show();
+
         // Time calculations for days, hours, minutes and seconds
         let days = Math.floor(distance / (1000 * 60 * 60 * 24));
         days = ('0' + days).slice(-2)

@@ -11,11 +11,16 @@
       <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58ZM54 54 41.94 42" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px"/></svg>
       <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
     </a>
+    {%- if section.settings.delivery_icon -%}
+      <a href="{{ section.settings.delivery_link }}" class="site-nav__link site-nav__link--icon" target= _blank>
+        <img src="https://cdn.shopify.com/s/files/1/0752/7333/9195/files/delivery-truck.png?v=1685427095"></img>
+      </a>
+    {%- endif -%}
 
     {%- if shop.customer_accounts_enabled -%}
-      <a class="site-nav__link site-nav__link--icon small--hide" href="{{ routes.account_url }}">
+      <a class="site-nav__link site-nav__link--icon" href="{{ routes.account_url }}">
         <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-user" viewBox="0 0 64 64"><path d="M35 39.84v-2.53c3.3-1.91 6-6.66 6-11.42 0-7.63 0-13.82-9-13.82s-9 6.19-9 13.82c0 4.76 2.7 9.51 6 11.42v2.53c-10.18.85-18 6-18 12.16h42c0-6.19-7.82-11.31-18-12.16Z" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px"/></svg>
-        <span class="site-nav__icon-label small--hide{% if hide_icon_labels %} icon__fallback-text{% endif %}">
+        <span class="site-nav__icon-label {% if hide_icon_labels %} icon__fallback-text{% endif %}">
           {{ 'layout.customer.account' | t }}
         </span>
       </a>
