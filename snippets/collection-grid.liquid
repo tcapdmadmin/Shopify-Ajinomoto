@@ -95,9 +95,6 @@
     data-scroll-to
   >
     {%- for item in items -%}
-      {%- comment %}<locksmith:7da3>{% endcomment -%}
-        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: item, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
-      {%- comment %}</locksmith:7da3>{% endcomment -%}
       {%- if item.object_type == 'product' -%}
         {%- render 'product-grid-item', product: item -%}
 

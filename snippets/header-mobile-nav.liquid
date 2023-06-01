@@ -1,14 +1,8 @@
 <div class="slide-nav__wrapper" data-level="1">
   <ul class="slide-nav">
-    {%- comment %}<locksmith:1dee>{% endcomment -%}
-      {%- assign locksmith_9286_forloop__size = 0 %}{%- for link in main_menu.links -%}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: main_menu, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_9286_forloop__size = locksmith_9286_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_9286_forloop__index = nil -%}
-    {%- comment %}</locksmith:1dee>{% endcomment -%}
     {%- for link in main_menu.links -%}
-      {%- comment %}<locksmith:6726>{% endcomment -%}
-        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: main_menu, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_9286_forloop__index == nil %}{% assign locksmith_9286_forloop__index = 1 %}{% assign locksmith_9286_forloop__index0 = 0 %}{% else %}{% assign locksmith_9286_forloop__index = locksmith_9286_forloop__index | plus: 1 %}{% assign locksmith_9286_forloop__index0 = locksmith_9286_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_9286_forloop__index == 1 %}{% assign locksmith_9286_forloop__first = true %}{% else %}{% assign locksmith_9286_forloop__first = false %}{% endif %}{% if locksmith_9286_forloop__index == locksmith_9286_forloop__size %}{% assign locksmith_9286_forloop__last = true %}{% else %}{% assign locksmith_9286_forloop__last = false %}{% endif %}{% assign locksmith_9286_forloop__rindex = locksmith_9286_forloop__size | minus: locksmith_9286_forloop__index | minus: 1 %}{% assign locksmith_9286_forloop__rindex0 = locksmith_9286_forloop__size | minus: locksmith_9286_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
-      {%- comment %}</locksmith:6726>{% endcomment -%}
       {%- liquid
-        assign link_index = locksmith_9286_forloop__index
+        assign link_index = forloop.index
         assign child_list_handle = link.title | handleize | append: link_index
 
         assign is_collection = false
@@ -78,9 +72,6 @@
             {%- endif -%}
 
             {%- for childlink in link.links -%}
-              {%- comment %}<locksmith:134d>{% endcomment -%}
-                {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: childlink, subject_parent: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
-              {%- comment %}</locksmith:134d>{% endcomment -%}
               {%- liquid
                 assign grand_child_list_handle = childlink.title | handleize
                 assign grand_child_link_id = grand_child_list_handle | append: link_index
@@ -125,9 +116,6 @@
                     {%- endif -%}
 
                     {%- for grandchildlink in childlink.links -%}
-                      {%- comment %}<locksmith:907c>{% endcomment -%}
-                        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: grandchildlink, subject_parent: childlink, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
-                      {%- comment %}</locksmith:907c>{% endcomment -%}
                       <li class="slide-nav__item">
                         <a href="{{ grandchildlink.url }}" class="slide-nav__link">
                           <span>{{ grandchildlink.title | escape }}</span>
