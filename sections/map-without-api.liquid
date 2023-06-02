@@ -1,20 +1,17 @@
-<div class="map-section__overlay-inner text-{{ section.settings.heading_position }}">
-{%- if section.settings.map_title != blank -%}
-              <h3 class="text-spacing {{ section.settings.heading_size }}">{{ section.settings.map_title | escape }}</h3>
-            {%- endif -%}
-{%- if section.settings.address != blank -%}
-              <div class="rte-setting text-spacing">{{ section.settings.address }}</div>
-{%- endif -%}
-<div class="google-map-section">
-  <iframe
-    width="100%"
-    height="450"
-    frameborder="0"
-    style="border:0"
-    src="https://www.google.com/maps?q={{ section.settings.pinned_address | url_encode }}&output=embed"
-    allowfullscreen
-  ></iframe>
-</div>
+<div class="page-width" style="padding-bottom: 40px;">
+  <div class="map-section__overlay-inner text-{{ section.settings.heading_position }}" style="margin-left: auto; margin-right: auto; max-width: inherit; padding: 0px;">
+      {%- if section.settings.map_title != blank -%}
+        <h3 class="text-spacing {{ section.settings.heading_size }}">{{ section.settings.map_title | escape }}</h3>
+      {%- endif -%}
+
+      {%- if section.settings.address != blank -%}
+        <div class="rte-setting text-spacing">{{ section.settings.address }}</div>
+      {%- endif -%}
+    <div class="google-map-section">
+      <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps?q={{ section.settings.pinned_address | url_encode }}&output=embed" allowfullscreen>
+      </iframe>
+    </div>
+  </div>
 </div>
 {% schema %}
 {
@@ -75,7 +72,7 @@
       "id": "address",
       "type": "richtext",
       "label": "t:sections.map.settings.address.label",
-      "default": "<p>Enter Address Here</p>"
+      "default": "<p>Ajinomoto Foundation | 487/1, 12th Floor, Thanon Si Ayutthaya, Thanon Phaya Thai,<br>Ratchathewi, Bangkok 10400, Thailand</p>"
     },
     {
       "type": "text",
@@ -90,7 +87,7 @@
       "name": "Map without API",
       "category": "Custom",
       "settings": {
-        "pinned_address": "487/1, 12th Floor, Thanon Si Ayutthaya, Thanon Phaya Thai, Ratchathewi, Bangkok 10400, Thailand"
+        "pinned_address": "Ajinomoto Foundation | 487/1, 12th Floor, Thanon Si Ayutthaya, Thanon Phaya Thai, Ratchathewi, Bangkok 10400, Thailand"
       }
     }
   ],
