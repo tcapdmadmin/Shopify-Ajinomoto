@@ -1,0 +1,101 @@
+<div class="map-section__overlay-inner text-{{ section.settings.heading_position }}">
+{%- if section.settings.map_title != blank -%}
+              <h3 class="text-spacing {{ section.settings.heading_size }}">{{ section.settings.map_title | escape }}</h3>
+            {%- endif -%}
+{%- if section.settings.address != blank -%}
+              <div class="rte-setting text-spacing">{{ section.settings.address }}</div>
+{%- endif -%}
+<div class="google-map-section">
+  <iframe
+    width="100%"
+    height="450"
+    frameborder="0"
+    style="border:0"
+    src="https://www.google.com/maps?q={{ section.settings.pinned_address | url_encode }}&output=embed"
+    allowfullscreen
+  ></iframe>
+</div>
+</div>
+{% schema %}
+{
+  "name": "Map without API",
+  "class": "index-section--flush",
+  "settings": [
+    {
+      "id": "map_title",
+      "type": "text",
+      "label": "t:sections.map.settings.map_title.label",
+      "default": "Ajinomoto Co., (Thailand) Ltd."
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:common.heading_size.label",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h3",
+          "label": "t:common.heading_size.options.small.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:common.heading_size.options.medium.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:common.heading_size.options.large.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:common.heading_size.options.extra_large.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "heading_position",
+      "label": "t:common.heading_position.label",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:common.heading_position.options.left.label"
+        },
+        {
+          "value": "center",
+          "label": "t:common.heading_position.options.center.label"
+        },
+        {
+          "value": "right",
+          "label": "t:common.heading_position.options.right.label"
+        }
+      ]
+    },
+    {
+      "id": "address",
+      "type": "richtext",
+      "label": "t:sections.map.settings.address.label",
+      "default": "<p>Enter Address Here</p>"
+    },
+    {
+      "type": "text",
+      "label": "Pinned Address",
+      "id": "pinned_address",
+      "default": "Ajinomoto",
+      "info": "Enter the address to be pinned on the map."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Map without API",
+      "category": "Custom",
+      "settings": {
+        "pinned_address": "487/1, 12th Floor, Thanon Si Ayutthaya, Thanon Phaya Thai, Ratchathewi, Bangkok 10400, Thailand"
+      }
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}
