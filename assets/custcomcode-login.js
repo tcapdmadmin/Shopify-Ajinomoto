@@ -64,7 +64,7 @@ function autoFillLogin() {
       .then((data) => {
         if (data.code == 200) {
           let CustomerEmail = document.getElementById("CustomerEmail");
-          CustomerEmail.value = data.results.email_address;
+          CustomerEmail.value = data.results.email;
           let CustomerPassword = document.getElementById("CustomerPassword");
           CustomerPassword.value = data.results.password;
           setTimeout(() => {
@@ -85,7 +85,9 @@ function autoFillLogin() {
           });
         }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.log(error)
+      });
   }
 }
 autoFillLogin();
