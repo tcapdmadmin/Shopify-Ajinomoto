@@ -9,7 +9,7 @@
      else customer.metafields.custom.customer_type == 'none'
       assign main_menu = linklists[section.settings.none]
     endif
-    
+
     else
       assign main_menu = linklists[section.settings.none]
   endif
@@ -269,6 +269,17 @@
       "id": "language_selector",
       "label": "Show Language Selector",
       "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "delivery_icon",
+      "label": "Show Delivery Icon",
+      "default": false
+    },
+    {
+      "type": "url",
+      "id": "delivery_link",
+      "label": "Redirect Link"
     }
   ],
   "blocks": [

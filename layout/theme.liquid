@@ -1,6 +1,6 @@
-{%- comment %}<locksmith:8c3e>{% endcomment -%}
+{%- comment %}<locksmith:869a>{% endcomment -%}
   {%- include 'locksmith' -%}
-{%- comment %}</locksmith:8c3e>{% endcomment -%}
+{%- comment %}</locksmith:869a>{% endcomment -%}
 
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
@@ -29,10 +29,10 @@
   {%- render 'seo-title' -%}
 
   {%- if page_description -%}
-  {%- comment %}<locksmith:fa9b>{% endcomment -%}
+  {%- comment %}<locksmith:2a71>{% endcomment -%}
     {%- capture var %}{% render 'locksmith-variables', variable: 'transparent', hiding_scope: 'resource' %}{% endcapture %}{% if var == 'true' %}<meta name="description" content="{{ page_description | escape }}">{% endif -%}
     {%- comment %}original: <meta name="description" content="{{ page_description | escape }}">{%- endcomment %}
-  {%- comment %}</locksmith:fa9b>{% endcomment -%}
+  {%- comment %}</locksmith:2a71>{% endcomment -%}
   {%- endif -%}
 
   {%- render 'social-meta-tags' -%}
@@ -139,9 +139,22 @@
       {%- sections 'header-group' -%}
       {%- sections 'popup-group' -%}
 
+  {% if customer %}
+    <main class="main-content" id="MainContent">
+      {{ content_for_layout }}
+    </main>
+  {% else %}
+    {% if request.path == '/en/account/login' or request.path == '/account/login' %}
       <main class="main-content" id="MainContent">
         {{ content_for_layout }}
       </main>
+    {% else %}
+      {% assign redirect_url = 'https://ajinomotosales-th.myshopify.com/account/login' %}
+      <script>
+        window.location.href = "{{ redirect_url }}";
+      </script>
+    {% endif %}
+  {% endif %}
 
       {%- sections 'footer-group' -%}
     </div>
