@@ -510,12 +510,27 @@
             "cis_block_mail_text": "testingemail@net.com",
             "cis_block_mail_link": "#",
             "cis_block_line_text": "Product Customer Care Info.",
-            "cis_block_line_link": ""
+            "cis_block_line_link": "",
+            "cis_block_qr_img": "shopify:\/\/shop_images\/qrrr.png"
+          }
+        },
+        "0d9110cd-da38-409f-9dfe-3d65a8d7da3e": {
+          "type": "information",
+          "settings": {
+            "cis_block_text": "Order Status Inquiry",
+            "cis_block_phone_text": "1-800-000",
+            "cis_block_phone_link": "#",
+            "cis_block_mail_text": "sample@email.com",
+            "cis_block_mail_link": "",
+            "cis_block_line_text": "Order Status Inquiry",
+            "cis_block_line_link": "",
+            "cis_block_qr_img": "shopify:\/\/shop_images\/qrrr_5e64e317-29a3-4b2d-9dab-7468567be0f0.png"
           }
         }
       },
       "block_order": [
-        "template--19123769409851__fbd1ded3-7f01-4be8-99c1-6e78dec5f1b0-1685944648a207c9d0-0"
+        "template--19123769409851__fbd1ded3-7f01-4be8-99c1-6e78dec5f1b0-1685944648a207c9d0-0",
+        "0d9110cd-da38-409f-9dfe-3d65a8d7da3e"
       ],
       "settings": {
       }
