@@ -144,7 +144,9 @@
       {{ content_for_layout }}
     </main>
   {% else %}
-    {% if request.path == '/en/account/login' or request.path == '/account/login' %}
+    {% comment %}Insert URL here to be Whitelisted{% endcomment %}
+    {% if request.path ==
+      '/en/account/login' or request.path == '/account/login' or request.path == 'en/account/register' or request.path == '/account/register'%}
       <main class="main-content" id="MainContent">
         {{ content_for_layout }}
       </main>
