@@ -668,17 +668,17 @@
     },
     "main_umami_seasoning_usage": {
       "main_umami_seasoning_usage": "การใช้เครื่องปรุงรสอูมามิหลัก",
-      "ajinomoto": "",
-      "thaichuros": "",
-      "aro": "",
+      "ajinomoto": "อายิโนะโมะโต๊ะ",
+      "thaichuros": " ไทยชูรส",
+      "aro": "อาโร",
       "others": "คนอื่น"
     },
     "main_flavor_seasoning_usage": {
       "main_flavor_seasoning_usage": " การใช้เครื่องปรุงรสหลัก",
-      "rosdee": "",
-      "fahhtai": "",
-      "knorr": "",
-      "termthip": "",
+      "rosdee": "รสดี",
+      "fahhtai": "ฟ้าไต",
+      "knorr": "คนอร์",
+      "termthip": " เติมทิพย์",
       "others": "คนอื่น"
     }
   }
