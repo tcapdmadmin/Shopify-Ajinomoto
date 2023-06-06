@@ -648,38 +648,38 @@
       "samut_sakhon": "สมุทรสาคร",
       "samut_songkhram": "สมุทรสงคราม",
       "saraburi": "สระบุรี",
-      "satun": "",
-      "sing_buri": "",
-      "sisaket": "",
-      "songkhla": "",
-      "sukhothai": "",
-      "suphan_buri": "",
-      "surat_thani": "",
-      "surin": "",
-      "tak": "",
-      "trang": "",
-      "trat": "",
-      "ubon_ratchathani": "",
-      "udon_thani": "",
-      "uthai_thani": "",
-      "uttaradit": "",
-      "yala": "",
-      "yasothon": ""
+      "satun": "สตูล",
+      "sing_buri": "สิงห์บุรี",
+      "sisaket": "ศรีสะเกษ",
+      "songkhla": "สงขลา",
+      "sukhothai": "สุโขทัย",
+      "suphan_buri": "สุพรรณบุรี",
+      "surat_thani": " สุราษฎร์ธานี",
+      "surin": "สุรินทร์",
+      "tak": "ตาก",
+      "trang": "ตรัง",
+      "trat": "ตราด",
+      "ubon_ratchathani": "อุบลราชธานี",
+      "udon_thani": "อุดรธานี",
+      "uthai_thani": "อุทัยธานี",
+      "uttaradit": "อุตรดิตถ์",
+      "yala": "ยะลา",
+      "yasothon": "ยโสธร"
     },
     "main_umami_seasoning_usage": {
-      "main_umami_seasoning_usage": "",
+      "main_umami_seasoning_usage": "การใช้เครื่องปรุงรสอูมามิหลัก",
       "ajinomoto": "",
       "thaichuros": "",
       "aro": "",
-      "others": ""
+      "others": "คนอื่น"
     },
     "main_flavor_seasoning_usage": {
-      "main_flavor_seasoning_usage": "",
+      "main_flavor_seasoning_usage": " การใช้เครื่องปรุงรสหลัก",
       "rosdee": "",
       "fahhtai": "",
       "knorr": "",
       "termthip": "",
-      "others": ""
+      "others": "คนอื่น"
     }
   }
 }
