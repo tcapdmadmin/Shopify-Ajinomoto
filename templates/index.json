@@ -118,42 +118,21 @@
         "00b51f4a-a1af-4da4-bd16-41c5d0b44a73": {
           "type": "collection",
           "settings": {
-            "collection": "rosdee-menu™",
+            "collection": "retailer-all-products",
             "title": ""
           }
         },
         "20b60a3b-e9d3-4fa4-bd57-405c2d05e2c2": {
           "type": "collection",
           "settings": {
-            "collection": "blendy®",
-            "title": ""
-          }
-        },
-        "faef4955-58aa-4df8-80fa-4bfbd80c1b39": {
-          "type": "collection",
-          "settings": {
-            "collection": "ajinomoto-japanese-liquid-sauce",
-            "title": ""
-          }
-        },
-        "9dc09382-f188-4ea1-a516-50f7bfc6b20c": {
-          "type": "collection",
-          "settings": {
-            "collection": "gyoza",
-            "title": ""
-          }
-        },
-        "8bf258ca-8e88-49bb-b6ca-9640f5dca465": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
+            "collection": "food-vendor-all-products",
             "title": ""
           }
         },
         "28531dcd-b69d-4041-9608-f7f21d568feb": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "fv-ret",
             "title": ""
           }
         }
@@ -163,9 +142,6 @@
         "939184ab-9616-4578-9047-efc0c455e40b",
         "00b51f4a-a1af-4da4-bd16-41c5d0b44a73",
         "20b60a3b-e9d3-4fa4-bd57-405c2d05e2c2",
-        "faef4955-58aa-4df8-80fa-4bfbd80c1b39",
-        "9dc09382-f188-4ea1-a516-50f7bfc6b20c",
-        "8bf258ca-8e88-49bb-b6ca-9640f5dca465",
         "28531dcd-b69d-4041-9608-f7f21d568feb"
       ],
       "custom_css": [
