@@ -561,7 +561,10 @@
       "postal_code": "รหัสไปรษณีย์",
       "email_address": "ที่อยู่อีเมล",
       "password": "รหัสผ่าน",
-      "salesman_code": "รหัสพนักงานขาย"
+      "salesman_code": "รหัสพนักงานขาย",
+      "branch_number": "เลขที่สาขา",
+      "I_accept_the_privacy_policy": "ฉันยอมรับนโยบายความเป็นส่วนตัว",
+      "back_to_login": "กลับไปที่เข้าสู่ระบบ"
     },
     "gender": {
       "gender": "เพศ",
