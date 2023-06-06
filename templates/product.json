@@ -19,7 +19,6 @@
         },
         "sales_point": {
           "type": "sales_point",
-          "disabled": true,
           "settings": {
             "icon": "globe",
             "text": "Free worldwide shipping"
@@ -27,7 +26,6 @@
         },
         "sales_point2": {
           "type": "sales_point",
-          "disabled": true,
           "settings": {
             "icon": "truck",
             "text": "Free returns"
@@ -35,7 +33,6 @@
         },
         "sales_point3": {
           "type": "sales_point",
-          "disabled": true,
           "settings": {
             "icon": "leaf",
             "text": "Carbon neutral"
@@ -43,7 +40,6 @@
         },
         "sales_point4": {
           "type": "sales_point",
-          "disabled": true,
           "settings": {
             "icon": "lock",
             "text": "Secure payments"
@@ -51,7 +47,6 @@
         },
         "inventory_status": {
           "type": "inventory_status",
-          "disabled": true,
           "settings": {
             "inventory_threshold": 10,
             "inventory_transfers_enable": true

@@ -1,6 +1,11 @@
+{%- comment %}<locksmith:869a>{% endcomment -%}
+  {%- include 'locksmith' -%}
+{%- comment %}</locksmith:869a>{% endcomment -%}
+
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
 <head>
+  {{ locksmith_initializations }}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -24,7 +29,10 @@
   {%- render 'seo-title' -%}
 
   {%- if page_description -%}
-  <meta name="description" content="{{ page_description | escape }}">
+  {%- comment %}<locksmith:2a71>{% endcomment -%}
+    {%- capture var %}{% render 'locksmith-variables', variable: 'transparent', hiding_scope: 'resource' %}{% endcapture %}{% if var == 'true' %}<meta name="description" content="{{ page_description | escape }}">{% endif -%}
+    {%- comment %}original: <meta name="description" content="{{ page_description | escape }}">{%- endcomment %}
+  {%- comment %}</locksmith:2a71>{% endcomment -%}
   {%- endif -%}
 
   {%- render 'social-meta-tags' -%}
@@ -131,9 +139,24 @@
       {%- sections 'header-group' -%}
       {%- sections 'popup-group' -%}
 
+  {% if customer %}
+    <main class="main-content" id="MainContent">
+      {{ content_for_layout }}
+    </main>
+  {% else %}
+    {% comment %}Insert URL here to be Whitelisted{% endcomment %}
+    {% if request.path ==
+      '/en/account/login' or request.path == '/account/login' or request.path == 'en/account/register' or request.path == '/account/register' or request.path == '/account/challenge'  or request.path == 'en/account/challenge' %}
       <main class="main-content" id="MainContent">
         {{ content_for_layout }}
       </main>
+    {% else %}
+      {% assign redirect_url = 'https://ajinomotosales-th.myshopify.com/account/login' %}
+      <script>
+        window.location.href = "{{ redirect_url }}";
+      </script>
+    {% endif %}
+  {% endif %}
 
       {%- sections 'footer-group' -%}
     </div>

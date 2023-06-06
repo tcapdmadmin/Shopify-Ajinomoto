@@ -42,6 +42,10 @@
 /* customcode-featured-collection.liquid */
 
 /* customcode-register.liquid */
+#register-submit {
+	min-width: 320px;
+}
+
 .reg-page-content {
 	margin-top: 3rem;
 }
@@ -71,6 +75,9 @@
 }
 .field-input {
 	padding: .5rem 1.5rem;
+	border-radius: 4px;
+	padding: .5rem 1.5rem;
+  	margin-bottom: 1rem !important;
 }
 .field-input-pass {
 	background-image: url('https://cdn.shopify.com/s/files/1/0752/7333/9195/files/eyebrow.png');
@@ -78,6 +85,7 @@
 	background-repeat: no-repeat;
 	background-size: 1.25rem;
 	padding-right: 3rem;
+	margin-bottom: 1rem !important;
 }
 /*.field-input-date {
 	background-image: url('https://cdn.shopify.com/s/files/1/0752/7333/9195/files/calendar-silhouette.png');
@@ -94,6 +102,8 @@
 }
 .field-select > select {
 	background-image: url('https://cdn.shopify.com/s/files/1/0752/7333/9195/files/down-arrow.png');
+	border-radius: 4px;
+  	margin-bottom: 1rem !important;
 }
 
 .form-account {
@@ -166,9 +176,10 @@
 	}
 
 	.form-account {
-		flex-direction: row;
+		flex-direction: column;
 		margin-top: 0;
 		justify-content: space-between;
+		align-items: center;
 	}
   	.form-account > * {
 		flex: 1;
@@ -179,3 +190,20 @@
 	}
 }
 /* customcode-register.liquid */
+
+/* customcode-login.liquid */
+.login-page-content {
+	margin-top: 3rem;
+}
+.login-page-content .section-header__title {
+	text-align: center;
+}
+.login-page-content #RecoverPassword {
+	margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+	.login-page-content .field-input-email {
+		margin-bottom: 2rem !important;
+	}
+}
+/* customcode-login.liquid */

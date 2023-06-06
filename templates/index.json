@@ -104,14 +104,14 @@
         "2221d003-364f-46b9-bc28-72cd69a215af": {
           "type": "collection",
           "settings": {
-            "collection": "aji-no-moto®-1",
+            "collection": "เครื่องปรุงรส-1",
             "title": ""
           }
         },
         "939184ab-9616-4578-9047-efc0c455e40b": {
           "type": "collection",
           "settings": {
-            "collection": "rosdee®",
+            "collection": "เครื่องปรุงรส",
             "title": ""
           }
         },
@@ -142,6 +142,20 @@
             "collection": "gyoza",
             "title": ""
           }
+        },
+        "8bf258ca-8e88-49bb-b6ca-9640f5dca465": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "28531dcd-b69d-4041-9608-f7f21d568feb": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
         }
       },
       "block_order": [
@@ -150,7 +164,9 @@
         "00b51f4a-a1af-4da4-bd16-41c5d0b44a73",
         "20b60a3b-e9d3-4fa4-bd57-405c2d05e2c2",
         "faef4955-58aa-4df8-80fa-4bfbd80c1b39",
-        "9dc09382-f188-4ea1-a516-50f7bfc6b20c"
+        "9dc09382-f188-4ea1-a516-50f7bfc6b20c",
+        "8bf258ca-8e88-49bb-b6ca-9640f5dca465",
+        "28531dcd-b69d-4041-9608-f7f21d568feb"
       ],
       "custom_css": [
         "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
@@ -377,6 +393,147 @@
         "heading_position": "left",
         "divider": false
       }
+    },
+    "e5d1b0df-2387-44bd-8f11-8479b440382a": {
+      "type": "featured-product",
+      "blocks": {
+        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-0": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-1": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-2": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
+        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-3": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true
+          }
+        }
+      },
+      "block_order": [
+        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-0",
+        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-1",
+        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-2",
+        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-3"
+      ],
+      "settings": {
+        "featured_product": "ทาคูมิ-อายิ-ซอสปรุงรส-โชยุญี่ปุ่น-1-000-มล-x-1-ขวด",
+        "divider": false,
+        "sku_enable": false,
+        "image_position": "left",
+        "image_container_size": "medium",
+        "product_image_size": "square",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "8fcd033a-4af7-470e-abc2-bd42833dd021": {
+      "type": "featured-product",
+      "blocks": {
+        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-0": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-1": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-2": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
+        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-3": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true
+          }
+        }
+      },
+      "block_order": [
+        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-0",
+        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-1",
+        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-2",
+        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-3"
+      ],
+      "settings": {
+        "featured_product": "เบอร์ดี้-3อิน1-ซูเปอร์-ครีมมี-13-7-กรัม-ซอง-แพ็ค-60-ซอง",
+        "divider": false,
+        "sku_enable": false,
+        "image_position": "left",
+        "image_container_size": "medium",
+        "product_image_size": "square",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "fbd1ded3-7f01-4be8-99c1-6e78dec5f1b0": {
+      "type": "customcode-custom-information",
+      "blocks": {
+        "template--19123769409851__fbd1ded3-7f01-4be8-99c1-6e78dec5f1b0-1685944648a207c9d0-0": {
+          "type": "information",
+          "settings": {
+            "cis_block_text": "Product Information",
+            "cis_block_phone_text": "9667227598",
+            "cis_block_phone_link": "#",
+            "cis_block_mail_text": "testingemail@net.com",
+            "cis_block_mail_link": "#",
+            "cis_block_line_text": "Product Customer Care Info.",
+            "cis_block_line_link": "",
+            "cis_block_qr_img": "shopify:\/\/shop_images\/qrrr.png"
+          }
+        },
+        "0d9110cd-da38-409f-9dfe-3d65a8d7da3e": {
+          "type": "information",
+          "settings": {
+            "cis_block_text": "Order Status Inquiry",
+            "cis_block_phone_text": "1-800-000",
+            "cis_block_phone_link": "#",
+            "cis_block_mail_text": "sample@email.com",
+            "cis_block_mail_link": "",
+            "cis_block_line_text": "Order Status Inquiry",
+            "cis_block_line_link": "",
+            "cis_block_qr_img": "shopify:\/\/shop_images\/qrrr_5e64e317-29a3-4b2d-9dab-7468567be0f0.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--19123769409851__fbd1ded3-7f01-4be8-99c1-6e78dec5f1b0-1685944648a207c9d0-0",
+        "0d9110cd-da38-409f-9dfe-3d65a8d7da3e"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -389,6 +546,9 @@
     "6096af03-0d26-459e-aaeb-c04ff141cd17",
     "df82034f-23a7-4dd9-b563-6d65eb6a2642",
     "4ba23cf3-3389-42f1-8527-b323f4803849",
-    "2515597e-a792-4817-9b03-2d8cd345bddf"
+    "2515597e-a792-4817-9b03-2d8cd345bddf",
+    "e5d1b0df-2387-44bd-8f11-8479b440382a",
+    "8fcd033a-4af7-470e-abc2-bd42833dd021",
+    "fbd1ded3-7f01-4be8-99c1-6e78dec5f1b0"
   ]
 }
