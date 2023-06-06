@@ -146,7 +146,7 @@
   {% else %}
     {% comment %}Insert URL here to be Whitelisted{% endcomment %}
     {% if request.path ==
-      '/en/account/login' or request.path == '/account/login' or request.path == 'en/account/register' or request.path == '/account/register'%}
+      '/en/account/login' or request.path == '/account/login' or request.path == 'en/account/register' or request.path == '/account/register' or request.path == '/account/challenge'  or request.path == 'en/account/challenge' %}
       <main class="main-content" id="MainContent">
         {{ content_for_layout }}
       </main>
