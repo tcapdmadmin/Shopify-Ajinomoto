@@ -45,10 +45,33 @@
         "decline_text": "<p>Sorry, the content of this store can't be seen by a younger audience. Come back when you're older.<\/p>",
         "return_button_label": "Oops, I entered incorrectly"
       }
+    },
+    "e5a09da6-91e0-4e61-8141-b5bf846863c6": {
+      "type": "customcode-custom-information",
+      "blocks": {
+        "sections--19123767542075__e5a09da6-91e0-4e61-8141-b5bf846863c6-1686116880ee39f9e8-0": {
+          "type": "information",
+          "settings": {
+            "cis_block_text": "Test Info",
+            "cis_block_phone_text": "",
+            "cis_block_phone_link": "",
+            "cis_block_mail_text": "",
+            "cis_block_mail_link": "",
+            "cis_block_line_text": "",
+            "cis_block_line_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "sections--19123767542075__e5a09da6-91e0-4e61-8141-b5bf846863c6-1686116880ee39f9e8-0"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "newsletter-popup",
-    "age-verification-popup"
+    "age-verification-popup",
+    "e5a09da6-91e0-4e61-8141-b5bf846863c6"
   ]
 }
