@@ -22,11 +22,13 @@
     -%}
 
     {%- for block in section.blocks -%}
-      {%- liquid
-        assign collection = collections[block.settings.collection]
-        assign sizeVariable = section.blocks.size | at_most: 6
-        render 'collection-grid-item', collection: collection, block: block, sizeVariable: sizeVariable, fallback: 'variable'
-      -%}
+      {% if customer.metafields.custom.customer_type.value == block.settings.customer_type or block.settings.customer_type == "none" %}
+        {%- liquid
+          assign collection = collections[block.settings.collection]
+          assign sizeVariable = section.blocks.size | at_most: 6
+          render 'collection-grid-item', collection: collection, block: block, sizeVariable: sizeVariable, fallback: 'variable'
+        -%}
+      {% endif %}
     {%- endfor -%}
 
     {%- if isEmpty -%}
@@ -41,6 +43,7 @@
 </div>
 
 {%- if section.settings.divider -%}</div>{%- endif -%}
+
 
 
 {% schema %}
@@ -110,6 +113,26 @@
       "type": "collection",
       "name": "t:sections.featured-collections.blocks.collection.name",
       "settings": [
+        {
+          "type": "select",
+          "id": "customer_type",
+          "label": "Customer Type",
+          "options": [
+            {
+              "value": "food_vendor",
+              "label": "Food Vendor"
+            },
+            {
+              "value": "retailer",
+              "label": "Retailer"
+            },
+            {
+              "value": "none",
+              "label": "Both"
+            }
+          ],
+          "default": "none"
+        },
         {
           "id": "collection",
           "type": "collection",
