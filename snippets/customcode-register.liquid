@@ -67,10 +67,10 @@
                 <div class="field-wrap">
                     <input type="text" name="customer[first_name]" id="FirstName"
                            class="field-input input-full parallel"{% if form.first_name %} value="{{ form.first_name }}"{% endif %}
-                           autocapitalize="words" placeholder="First Name *" autofocus required>
+                           autocapitalize="words" placeholder="{{ 'custom.registration.first_name' | t }} *" autofocus required>
                     <input type="text" name="customer[last_name]" id="LastName"
                            class="field-input input-full parallel"{% if form.last_name %} value="{{ form.last_name }}"{% endif %}
-                           autocapitalize="words" placeholder="Last Name *" required>
+                           autocapitalize="words" placeholder="{{ 'custom.registration.last_name' | t }} *" required>
                 </div>
                 <div class="field-wrap">
                     <input type="date" name="birthdate" id="Birthdate"
@@ -78,204 +78,205 @@
                            onfocus="(this.type='date')" required>
                     <div class="field-select">
                         <select id="Gender" name="gender" class="field-input input-full parallel" required>
-                            <option value="" disabled selected hidden>Gender *</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Others">Others</option>
+                            <option value="" disabled selected hidden>{{ 'custom.gender.gender' | t }} *</option>
+                            <option value="Male">{{ 'custom.gender.male' | t }}</option>
+                            <option value="Female">{{ 'custom.gender.female' | t }}</option>
+                            <option value="Others">{{ 'custom.gender.others' | t }}</option>
                         </select>
                     </div>
                 </div>
                 <div class="field-wrap">
                     <input type="number" name="customer[metafields][custom][telephone]" id="Telephone"
                            class="field-input input-full" value="{{ customer.metafields.custom.telephone }}"
-                           max="9999999999" maxlength="10" placeholder="Telephone" onfocus="(this.type='number')"
+                           max="9999999999" maxlength="10" placeholder="{{ 'custom.registration.telephone' | t }}" onfocus="(this.type='number')"
                            onblur="(this.type='text')">
                     <input type="email" name="customer[email]" id="Email"
                            class="field-input input-full parallel {% if form.errors contains 'email' %} error{% endif %}"{% if form.email %} value="{{ form.email }}"{% endif %}
-                           autocorrect="off" autocapitalize="off" placeholder="Email Address *" required>
+                           autocorrect="off" autocapitalize="off" placeholder="{{ 'custom.registration.email_address' | t }} *" required>
                 </div>
                 <div class="field-wrap">
                     <input type="password" name="customer[password]" id="CreatePassword"
                            class="field-input field-input-pass input-full parallel {% if form.errors contains 'password' %} error{% endif %}"
-                           placeholder="Password *" required>
+                           placeholder="{{ 'custom.registration.password' | t }} *" required>
                 </div>
                 <div class="field-wrap">
                     <input type="text" name="shop_name" id="Shop-name" class="field-input input-full parallel"
-                           maxlength="50" placeholder="Shop Name *" required>
+                           maxlength="50" placeholder="{{ 'custom.registration.shop_name' | t }} *" required>
                     <input type="number" name="branch_number" id="Branch-number" class="field-input input-full parallel"
-                           max="99" maxlength="2" placeholder="Branch No. *" onfocus="(this.type='number')"
+                           max="99" maxlength="2" placeholder="{{ 'custom.registration.branch_number' | t }} *" onfocus="(this.type='number')"
                            onblur="(this.type='text')" required>
                 </div>
 
                 <div class="field-wrap">
                     <div class="field-radio field-radio-hor">
-                        <label>Shop Group *</label>
+                        <label>{{ 'custom.shop_group.shop_group' | t }} *</label>
                         <div class="field-radio-wrap">
                             <div class="field-radio-child">
                                 <input type="radio" name="shop_group" id="Shop-group" class="input-full Shop-group"
                                        value="Food Vendor" required checked>
-                                <span>Food Vendor</span>
+                                <span>{{ 'custom.shop_group.food_vendor' | t }}</span>
                             </div>
                             <div class="field-radio-child">
                                 <input type="radio" name="shop_group" id="Shop-group"
                                        class="input-full Shop-group parallel-shop-group" value="Retailer" required>
-                                <span>Retailer</span>
+                                <span>{{ 'custom.shop_group.retailer' | t }}</span>
                             </div>
                         </div>
                     </div>
                     <div id="Shop-group-retailer" style="display: none;">
-                        <label>Shop Type *</label>
+                        <label>{{ 'custom.shop_type.shop_type' | t }} *</label>
                         <input type="checkbox" name="shop_type" class="input-full  parallel-shop-type"
-                               value="Beverage store"> <span>Beverage store</span><br>
+                               value="Beverage store"> <span>{{ 'custom.shop_type.beverage_store' | t }}</span><br>
                         <input type="checkbox" name="shop_type" class="input-full  parallel-shop-type"
-                               value="Candy and snack store"> <span>Candy and snack store</span><br>
+                               value="Candy and snack store"> <span>{{ 'custom.shop_type.candy_and_snack_store' | t }}</span><br>
                         <input type="checkbox" name="shop_type" class="input-full  parallel-shop-type"
-                               value="Condiment store"> <span>Condiment store</span><br>
+                               value="Condiment store"> <span>{{ 'custom.shop_type.condiment_store' | t }}</span><br>
                     </div>
                     <div id="Shop-group-fv">
-                        <label>Shop Type *</label>
+                        <label>{{ 'custom.shop_type.shop_type' | t }}
+ *</label>
                         <input type="checkbox" name="shop_type" class="input-full  parallel-shop-type"
-                               value="A la carte shop"> <span>A la carte shop</span><br>
+                               value="A la carte shop"> <span>{{ 'custom.shop_type.a_la_carte_shop' | t }}</span><br>
                         <input type="checkbox" name="shop_type" class="input-full  parallel-shop-type"
-                               value="Rice and curry restaurant"> <span>Rice and curry restaurant</span><br>
+                               value="Rice and curry restaurant"> <span>{{ 'custom.shop_type.rice_and_curry_restaurant' | t }}</span><br>
                         <input type="checkbox" name="shop_type" class="input-full  parallel-shop-type"
-                               value="Isaan restaurant"> <span>Isaan restaurant</span><br>
+                               value="Isaan restaurant"> <span>{{ 'custom.shop_type.isaan_restaurant' | t }}</span><br>
                         <input type="checkbox" name="shop_type" class="input-full  parallel-shop-type"
-                               value="Yum restaurant"> <span>Yum restaurant</span><br>
+                               value="Yum restaurant"> <span>{{ 'custom.shop_type.yum_restaurant' | t }}</span><br>
                         <input type="checkbox" name="shop_type" class="input-full  parallel-shop-type"
-                               value="Noodle shop"> <span>Noodle shop</span><br>
+                               value="Noodle shop"> <span>{{ 'custom.shop_type.noodle_shop' | t }}</span><br>
                         <input type="checkbox" name="shop_type" class="input-full  parallel-shop-type" value="Others">
-                        <span>Others</span><br>
+                        <span>{{ 'custom.shop_type.others' | t }}</span><br>
                     </div>
                 </div>
                 <div class="field-wrap">
                     <div class="field-select">
                         <select id="Province" name="provinces" class="field-input input-full parallel" required>
-                            <option value="" disabled selected hidden>Province</option>
-                            <option value="Bangkok">Bangkok</option>
-                            <option value="Amnat Charoen">Amnat Charoen</option>
-                            <option value="Ang Thong">Ang Thong</option>
-                            <option value="Bueng Kan">Bueng Kan</option>
-                            <option value="Buriram">Buriram</option>
-                            <option value="Chachoengsao">Chachoengsao</option>
-                            <option value="Chai Nat">Chai Nat</option>
-                            <option value="Chaiyaphum">Chaiyaphum</option>
-                            <option value="Chanthaburi">Chanthaburi</option>
-                            <option value="Chiang Mai">Chiang Mai</option>
-                            <option value="Chiang Rai">Chiang Rai</option>
-                            <option value="Chonburi">Chonburi</option>
-                            <option value="Chumphon">Chumphon</option>
-                            <option value="Kalasin">Kalasin</option>
-                            <option value="Kamphaeng Phet">Kamphaeng Phet</option>
-                            <option value="Kanchanaburi">Kanchanaburi</option>
-                            <option value="Khon Kaen">Khon Kaen</option>
-                            <option value="Krabi">Krabi</option>
-                            <option value="Lampang">Lampang</option>
-                            <option value="Lamphun">Lamphun</option>
-                            <option value="Loei">Loei</option>
-                            <option value="Lopburi">Lopburi</option>
-                            <option value="Mae Hong Son">Mae HongSon</option>
-                            <option value="Maha Sarakham">Maha Sarakham</option>
-                            <option value="Mukdahan">Mukdahan</option>
-                            <option value="Nakhon Nayok">Nakhon Nayok</option>
-                            <option value="Nakhon Pathom">Nakhon Pathom</option>
-                            <option value="Nakhon Phanom">Nakhon Phanom</option>
-                            <option value="Nakhon Ratchasima">Nakhon Ratchasima</option>
-                            <option value="Nakhon Sawan">Nakhon Sawan</option>
-                            <option value="Nakhon Si Thammarat">Nakhon Si Thammarat</option>
-                            <option value="Nan">Nan</option>
-                            <option value="Narathiwat">Narathiwat</option>
-                            <option value="Nong Bua Lamphu">Nong Bua Lamphu</option>
-                            <option value="Nong Khai">Nong Khai</option>
-                            <option value="Nonthaburi">Nonthaburi</option>
-                            <option value="Pathum Thani">Pathum Thani</option>
-                            <option value="Pattani">Pattani</option>
-                            <option value="Phang Nga">Phang Nga</option>
-                            <option value="Phatthalung">Phatthalung</option>
-                            <option value="Phayao">Phayao</option>
-                            <option value="Phetchabun">Phetchabun</option>
-                            <option value="Phetchaburi">Phetchaburi</option>
-                            <option value="Phichit">Phichit</option>
-                            <option value="Phitsanulok">Phitsanulok</option>
-                            <option value="Phra Nakhon Si Ayutthaya">PhraNakhonSiAyutthaya</option>
-                            <option value="Phrae">Phrae</option>
-                            <option value="Phuket">Phuket</option>
-                            <option value="Prachinburi">Prachinburi</option>
-                            <option value="Prachuap Khiri Khan">Prachuap Khiri Khan</option>
-                            <option value="Ranong">Ranong</option>
-                            <option value="Ratchaburi">Ratchaburi</option>
-                            <option value="Rayong">Rayong</option>
-                            <option value="Roi Et">Roi Et</option>
-                            <option value="Sa Kaeo">Sa Kaeo</option>
-                            <option value="Sakon Nakhon">Sakon Nakhon</option>
-                            <option value="Samut Prakan">Samut Prakan</option>
-                            <option value="Samut Sakhon">Samut Sakhon</option>
-                            <option value="Samut Songkhram">Samut Songkhram</option>
-                            <option value="Saraburi">Saraburi</option>
-                            <option value="Satun">Satun</option>
-                            <option value="SingBuri">SingBuri</option>
-                            <option value="Sisaket">Sisaket</option>
-                            <option value="Songkhla">Songkhla</option>
-                            <option value="Sukhothai">Sukhothai</option>
-                            <option value="Suphan Buri">Suphan Buri</option>
-                            <option value="Surat Thani">Surat Thani</option>
-                            <option value="Surin">Surin</option>
-                            <option value="Tak">Tak</option>
-                            <option value="Trang">Trang</option>
-                            <option value="Trat">Trat</option>
-                            <option value="Ubon Ratchathani">Ubon Ratchathani</option>
-                            <option value="Udon Thani">Udon Thani</option>
-                            <option value="Uthai Thani">Uthai Thani</option>
-                            <option value="Uttaradit">Uttaradit</option>
-                            <option value="Yala">Yala</option>
-                            <option value="Yasothon">Yasothon</option>
+                            <option value="" disabled selected hidden>{{ 'custom.province.province' | t }}</option>
+                            <option value="Bangkok">{{ 'custom.province.bangkok' | t }}</option>
+                            <option value="Amnat Charoen">{{ 'custom.province.amnat_charoen' | t }}</option>
+                            <option value="Ang Thong">{{ 'custom.province.ang_thong' | t }}</option>
+                            <option value="Bueng Kan">{{ 'custom.province.bueng_kan' | t }}</option>
+                            <option value="Buriram">{{ 'custom.province.buriram' | t }}</option>
+                            <option value="Chachoengsao">{{ 'custom.province.chachoengsao' | t }}</option>
+                            <option value="Chai Nat">{{ 'custom.province.chai_nat' | t }}</option>
+                            <option value="Chaiyaphum">{{ 'custom.province.chaiyaphum' | t }}</option>
+                            <option value="Chanthaburi">{{ 'custom.province.chanthaburi' | t }}</option>
+                            <option value="Chiang Mai">{{ 'custom.province.chiang_mai' | t }}</option>
+                            <option value="Chiang Rai">{{ 'custom.province.chiang_rai' | t }}</option>
+                            <option value="Chonburi">{{ 'custom.province.chonburi' | t }}</option>
+                            <option value="Chumphon">{{ 'custom.province.chumphon' | t }}</option>
+                            <option value="Kalasin">{{ 'custom.province.kalasin' | t }}</option>
+                            <option value="Kamphaeng Phet">{{ 'custom.province.kamphaeng_phet' | t }}</option>
+                            <option value="Kanchanaburi">{{ 'custom.province.kanchanaburi' | t }}</option>
+                            <option value="Khon Kaen">{{ 'custom.province.khon_kaen' | t }}</option>
+                            <option value="Krabi">{{ 'custom.province.krabi' | t }}</option>
+                            <option value="Lampang">{{ 'custom.province.lampang' | t }}</option>
+                            <option value="Lamphun">{{ 'custom.province.lamphun' | t }}</option>
+                            <option value="Loei">{{ 'custom.province.loei' | t }}</option>
+                            <option value="Lopburi">{{ 'custom.province.lopburi' | t }}</option>
+                            <option value="Mae Hong Son">{{ 'custom.province.mae_hong_son' | t }}</option>
+                            <option value="Maha Sarakham">{{ 'custom.province.maha_sarakham' | t }}</option>
+                            <option value="Mukdahan">{{ 'custom.province.mukdahan' | t }}</option>
+                            <option value="Nakhon Nayok">{{ 'custom.province.nakhon_nayok' | t }}</option>
+                            <option value="Nakhon Pathom">{{ 'custom.province.nakhon_pathom' | t }}</option>
+                            <option value="Nakhon Phanom">{{ 'custom.province.nakhon_phanom' | t }}</option>
+                            <option value="Nakhon Ratchasima">{{ 'custom.province.nakhon_ratchasima' | t }}</option>
+                            <option value="Nakhon Sawan">{{ 'custom.province.nakhon_sawan' | t }}</option>
+                            <option value="Nakhon Si Thammarat">{{ 'custom.province.nakhon_si_thammarat' | t }}</option>
+                            <option value="Nan">{{ 'custom.province.nan' | t }}</option>
+                            <option value="Narathiwat">{{ 'custom.province.narathiwat' | t }}</option>
+                            <option value="Nong Bua Lamphu">{{ 'custom.province.nong_bua_lamphu' | t }}</option>
+                            <option value="Nong Khai">{{ 'custom.province.nong_khai' | t }}</option>
+                            <option value="Nonthaburi">{{ 'custom.province.nonthaburi' | t }}</option>
+                            <option value="Pathum Thani">{{ 'custom.province.pathum_thani' | t }}</option>
+                            <option value="Pattani">{{ 'custom.province.pattani' | t }}</option>
+                            <option value="Phang Nga">{{ 'custom.province.phang_nga' | t }}</option>
+                            <option value="Phatthalung">{{ 'custom.province.phatthalung' | t }}</option>
+                            <option value="Phayao">{{ 'custom.province.phayao' | t }}</option>
+                            <option value="Phetchabun">{{ 'custom.province.phetchabun' | t }}</option>
+                            <option value="Phetchaburi">{{ 'custom.province.phetchaburi' | t }}</option>
+                            <option value="Phichit">{{ 'custom.province.phichit' | t }}</option>
+                            <option value="Phitsanulok">{{ 'custom.province.phitsanulok' | t }}</option>
+                            <option value="Phra Nakhon Si Ayutthaya">{{ 'custom.province.phra_nakhin_si_ayutthaya' | t }}</option>
+                            <option value="Phrae">{{ 'custom.province.phrae' | t }}</option>
+                            <option value="Phuket">{{ 'custom.province.phuket' | t }}</option>
+                            <option value="Prachinburi">{{ 'custom.province.prachinburi' | t }}</option>
+                            <option value="Prachuap Khiri Khan">{{ 'custom.province.prachuap_khiri_khan' | t }}</option>
+                            <option value="Ranong">{{ 'custom.province.ranong' | t }}</option>
+                            <option value="Ratchaburi">{{ 'custom.province.ratchaburi' | t }}</option>
+                            <option value="Rayong">{{ 'custom.province.rayong' | t }}</option>
+                            <option value="Roi Et">{{ 'custom.province.roi_et' | t }}</option>
+                            <option value="Sa Kaeo">{{ 'custom.province.sa_kaeo' | t }}</option>
+                            <option value="Sakon Nakhon">{{ 'custom.province.sakon_nakhon' | t }}</option>
+                            <option value="Samut Prakan">{{ 'custom.province.samut_prakan' | t }}</option>
+                            <option value="Samut Sakhon">{{ 'custom.province.samut_sakhon' | t }}</option>
+                            <option value="Samut Songkhram">{{ 'custom.province.samut_songkhram' | t }}</option>
+                            <option value="Saraburi">{{ 'custom.province.saraburi' | t }}</option>
+                            <option value="Satun">{{ 'custom.province.satun' | t }}</option>
+                            <option value="SingBuri">{{ 'custom.province.sing_buri' | t }}</option>
+                            <option value="Sisaket">{{ 'custom.province.sisaket' | t }}</option>
+                            <option value="Songkhla">{{ 'custom.province.songkhla' | t }}</option>
+                            <option value="Sukhothai">{{ 'custom.province.sukhothai' | t }}</option>
+                            <option value="Suphan Buri">{{ 'custom.province.suphan_buri' | t }}</option>
+                            <option value="Surat Thani">{{ 'custom.province.surat_thani' | t }}</option>
+                            <option value="Surin">{{ 'custom.province.surin' | t }}</option>
+                            <option value="Tak">{{ 'custom.province.tak' | t }}</option>
+                            <option value="Trang">{{ 'custom.province.trang' | t }}</option>
+                            <option value="Trat">{{ 'custom.province.trat' | t }}</option>
+                            <option value="Ubon Ratchathani">{{ 'custom.province.ubon_ratchathani' | t }}</option>
+                            <option value="Udon Thani">{{ 'custom.province.udon_thani' | t }}</option>
+                            <option value="Uthai Thani">{{ 'custom.province.uthai_thani' | t }}</option>
+                            <option value="Uttaradit">{{ 'custom.province.uttaradit' | t }}</option>
+                            <option value="Yala">{{ 'custom.province.yala' | t }}</option>
+                            <option value="Yasothon">{{ 'custom.province.yasothon' | t }}</option>
                         </select>
                     </div>
                     <input type="text" name="district" id="District" class="field-input input-full parallel"
-                           autocomplete="on" placeholder="District">
+                           autocomplete="on" placeholder="{{ 'custom.registration.district' | t }}">
                 </div>
                 <div class="field-wrap">
                     <input type="text" name="sub-district" id="Sub-district" class="field-input input-full parallel"
-                           autocomplete="on" placeholder="Sub District">
+                           autocomplete="on" placeholder="{{ 'custom.registration.sub_district' | t }}">
                     <input type="text" name="address" id="Address" class="field-input input-full parallel"
-                           autocomplete="on" placeholder="Address">
+                           autocomplete="on" placeholder="{{ 'custom.registration.address' | t }}">
                 </div>
                 <div class="field-wrap">
                     <input type="text" name="postal-code" id="Postal-code" class="field-input input-full parallel"
-                           autocomplete="on" placeholder="Postal Code">
+                           autocomplete="on" placeholder="{{ 'custom.registration.postal_code' | t }}">
                     <input type="text" name="salesman-code" id="Salesman-code" class="field-input input-full parallel"
-                           autocomplete="on" placeholder="Salesman Code">
+                           autocomplete="on" placeholder="{{ 'custom.registration.salesman_code' | t }}">
                 </div>
             <div class="field-wrap">
                 <div id="Shop-group-retailer-main" style="display: block;">
-                    <label>Main umami seasoning usage </label>
+                    <label>{{ 'custom.main_umami_seasoning_usage.main_umami_seasoning_usage' | t }} </label>
                     <input type="checkbox" name="shop_type" class="input-full parallel-umami-seasoning-usage"
-                           value="Ajinomoto"> <span>Ajinomoto</span><br>
+                           value="Ajinomoto"> <span>{{ 'custom.main_umami_seasoning_usage.ajinomoto' | t }}</span><br>
                     <input type="checkbox" name="shop_type" class="input-full parallel-umami-seasoning-usage"
-                           value="ThaiChuros"> <span>ThaiChuros</span><br>
+                           value="ThaiChuros"> <span>{{ 'custom.main_umami_seasoning_usage.thaichuros' | t }}</span><br>
                     <input type="checkbox" name="shop_type" class="input-full parallel-umami-seasoning-usage"
-                           value="Aro"> <span>Aro</span><br>
+                           value="Aro"> <span>{{ 'custom.main_umami_seasoning_usage.aro' | t }}</span><br>
                     <input type="checkbox" name="shop_type" class="input-full parallel-umami-seasoning-usage"
-                           value="Others"> <span>Others</span><br>
+                           value="Others"> <span>{{ 'custom.main_umami_seasoning_usage.others' | t }}</span><br>
                 </div>
 
                 <div id="Shop-group-fv-main" style="display: block;">
-                    <label>Main flavor seasoning usage </label>
+                    <label>{{ 'custom.main_flavor_seasoning_usage.main_flavor_seasoning_usage' | t }} </label>
                     <input type="checkbox" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
-                           value="Rosdee"> <span>Rosdee</span><br>
+                           value="Rosdee"> <span>{{ 'custom.main_flavor_seasoning_usage.rosdee' | t }}</span><br>
                     <input type="checkbox" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
-                           value="FahThai"> <span>FahThai</span><br>
+                           value="FahThai"> <span>{{ 'custom.main_flavor_seasoning_usage.fahhtai' | t }}</span><br>
                     <input type="checkbox" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
-                           value="Knorr"> <span>Knorr</span><br>
+                           value="Knorr"> <span>{{ 'custom.main_flavor_seasoning_usage.knorr' | t }}</span><br>
                     <input type="checkbox" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
-                           value="Termthip"> <span>Termthip</span><br>
+                           value="Termthip"> <span>{{ 'custom.main_flavor_seasoning_usage.termthip' | t }}</span><br>
                     <input type="checkbox" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
-                           value="Others"> <span>Others</span><br>
+                           value="Others"> <span>{{ 'custom.main_flavor_seasoning_usage.others' | t }}</span><br>
                 </div>
             </div>
                 <div style="margin-top: 40px;">
                 <input type="checkbox" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
-                       value="accept_checkbox"> <span>I accept the Privacy Policy</span><br>
+                       value="accept_checkbox" required> <span>{{ 'custom.registration.I_accept_the_privacy_policy' | t }}</span><br>
                 </div>
 
                 <section class="form-account">
@@ -287,7 +288,7 @@
                                    class="btn btn--full login-create-btn">
                         </div>
                     </div>
-                    <p class="form-account-text"><a href="/account/login">Back to Login</a></p>
+                    <p class="form-account-text"><a href="/account/login">{{ 'custom.registration.back_to_login' | t }}</a></p>
                 </section>
 
             {%- endform -%}
