@@ -139,24 +139,9 @@
       {%- sections 'header-group' -%}
       {%- sections 'popup-group' -%}
 
-  {% if customer %}
     <main class="main-content" id="MainContent">
       {{ content_for_layout }}
     </main>
-  {% else %}
-    {% comment %}Insert URL here to be Whitelisted{% endcomment %}
-    {% if request.path ==
-      '/en/account/login' or request.path == '/account/login' or request.path == 'en/account/register' or request.path == '/account/register' or request.path == '/account/challenge'  or request.path == 'en/account/challenge' %}
-      <main class="main-content" id="MainContent">
-        {{ content_for_layout }}
-      </main>
-    {% else %}
-      {% assign redirect_url = 'https://ajinomotosales-th.myshopify.com/account/login' %}
-      <script>
-        window.location.href = "{{ redirect_url }}";
-      </script>
-    {% endif %}
-  {% endif %}
 
       {%- sections 'footer-group' -%}
     </div>
