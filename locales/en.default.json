@@ -11,7 +11,10 @@
       "postal_code": "Postal Code",
       "email_address": "Email Address",
       "password": "Password",
-      "salesman_code": "Salesman Code"
+      "salesman_code": "Salesman Code",
+      "branch_number": "Branch No.",
+      "I_accept_the_privacy_policy": "I accept the Privacy Policy",
+      "back_to_login": "Back to Login"
     },
     "gender": {
       "gender": "Gender",
