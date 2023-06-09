@@ -74,6 +74,9 @@
         "template--19123768590651__5e0d3472-07b1-4789-955d-4cb334e5e833-168627879484d557e2-0",
         "854fbf64-44b7-4562-ab1c-ea62b2cc6e14"
       ],
+      "custom_css": [
+        "{margin-top: 40px;}"
+      ],
       "settings": {
       }
     },
