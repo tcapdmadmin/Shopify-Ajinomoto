@@ -24,7 +24,7 @@
     "color_scheme_1_texture": "none",
     "color_scheme_2_bg": "#904820",
     "color_scheme_2_text": "#ffffff",
-    "color_scheme_2_texture": "paper.jpg",
+    "color_scheme_2_texture": "none",
     "color_scheme_3_bg": "#ee1c25",
     "color_scheme_3_text": "#ffffff",
     "color_scheme_3_texture": "none",
@@ -355,7 +355,6 @@
         "header": {
           "type": "header",
           "settings": {
-            "main_menu_link_list": "main-menu",
             "main_menu_alignment": "below",
             "mega_products": true,
             "header_sticky": true,
@@ -577,7 +576,6 @@
         "header": {
           "type": "header",
           "settings": {
-            "main_menu_link_list": "main-menu",
             "main_menu_alignment": "below",
             "mega_products": true,
             "header_sticky": true,

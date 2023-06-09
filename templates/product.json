@@ -145,6 +145,27 @@
       "settings": {
         "color_scheme": "2"
       }
+    },
+    "016865e7-ce4d-4bac-92fe-f69c6a45e535": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19123770130747__016865e7-ce4d-4bac-92fe-f69c6a45e535-1686303306f40da265-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>← <\/strong>Back to Our Products<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19123770130747__016865e7-ce4d-4bac-92fe-f69c6a45e535-1686303306f40da265-1"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "2",
+        "divider": false
+      }
     }
   },
   "order": [
@@ -154,6 +175,7 @@
     "more-products-vendor",
     "more-products-collection",
     "recently-viewed",
-    "collection-return"
+    "collection-return",
+    "016865e7-ce4d-4bac-92fe-f69c6a45e535"
   ]
 }
