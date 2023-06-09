@@ -31,6 +31,9 @@
         "template--19123768590651__55be6067-e72c-426e-8ad9-9a5967ef9e0e-16862783984e31c14b-0",
         "template--19123768590651__55be6067-e72c-426e-8ad9-9a5967ef9e0e-16862783984e31c14b-1"
       ],
+      "custom_css": [
+        "h1 {margin-bottom: 5px !important;}"
+      ],
       "settings": {
         "full_width": true,
         "space_around": false,
