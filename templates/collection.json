@@ -40,6 +40,7 @@
     },
     "recently-viewed": {
       "type": "recently-viewed",
+      "disabled": true,
       "settings": {
       }
     }
