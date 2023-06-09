@@ -162,7 +162,7 @@
       ],
       "custom_css": [
         "p {background: #ffffff; color: #8d471f; padding-top: 18px; width: 300px; padding-bottom: 18px; margin: auto;}",
-        "a {text-decoration: none !important;}"
+        "a {text-decoration: none !important;font-weight: 600;}"
       ],
       "settings": {
         "align_text": "center",
