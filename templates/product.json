@@ -153,12 +153,16 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><strong>← <\/strong>Back to Our Products<\/p>"
+            "text": "<p><a href=\"#\" title=\"#\"><strong>← <\/strong>Back to Our Products<\/a><\/p>"
           }
         }
       },
       "block_order": [
         "template--19123770130747__016865e7-ce4d-4bac-92fe-f69c6a45e535-1686303306f40da265-1"
+      ],
+      "custom_css": [
+        "p {background: #ffffff; color: #8d471f; padding-top: 18px; width: 300px; padding-bottom: 18px; margin: auto;}",
+        "a {text-decoration: none !important;}"
       ],
       "settings": {
         "align_text": "center",
