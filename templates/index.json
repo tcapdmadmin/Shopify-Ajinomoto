@@ -118,28 +118,21 @@
         "00b51f4a-a1af-4da4-bd16-41c5d0b44a73": {
           "type": "collection",
           "settings": {
-            "collection": "rosdee-menu™",
+            "collection": "retailer-all-products",
             "title": ""
           }
         },
         "20b60a3b-e9d3-4fa4-bd57-405c2d05e2c2": {
           "type": "collection",
           "settings": {
-            "collection": "blendy®",
+            "collection": "food-vendor-all-products",
             "title": ""
           }
         },
-        "faef4955-58aa-4df8-80fa-4bfbd80c1b39": {
+        "28531dcd-b69d-4041-9608-f7f21d568feb": {
           "type": "collection",
           "settings": {
-            "collection": "ajinomoto-japanese-liquid-sauce",
-            "title": ""
-          }
-        },
-        "9dc09382-f188-4ea1-a516-50f7bfc6b20c": {
-          "type": "collection",
-          "settings": {
-            "collection": "gyoza",
+            "collection": "fv-ret",
             "title": ""
           }
         }
@@ -149,8 +142,7 @@
         "939184ab-9616-4578-9047-efc0c455e40b",
         "00b51f4a-a1af-4da4-bd16-41c5d0b44a73",
         "20b60a3b-e9d3-4fa4-bd57-405c2d05e2c2",
-        "faef4955-58aa-4df8-80fa-4bfbd80c1b39",
-        "9dc09382-f188-4ea1-a516-50f7bfc6b20c"
+        "28531dcd-b69d-4041-9608-f7f21d568feb"
       ],
       "custom_css": [
         "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
@@ -481,6 +473,43 @@
         "enable_video_looping": true,
         "product_video_style": "muted"
       }
+    },
+    "fbd1ded3-7f01-4be8-99c1-6e78dec5f1b0": {
+      "type": "customcode-custom-information",
+      "blocks": {
+        "template--19123769409851__fbd1ded3-7f01-4be8-99c1-6e78dec5f1b0-1685944648a207c9d0-0": {
+          "type": "information",
+          "settings": {
+            "cis_block_text": "Product Information",
+            "cis_block_phone_text": "9667227598",
+            "cis_block_phone_link": "#",
+            "cis_block_mail_text": "testingemail@net.com",
+            "cis_block_mail_link": "#",
+            "cis_block_line_text": "Product Customer Care Info.",
+            "cis_block_line_link": "",
+            "cis_block_qr_img": "shopify:\/\/shop_images\/qrrr.png"
+          }
+        },
+        "0d9110cd-da38-409f-9dfe-3d65a8d7da3e": {
+          "type": "information",
+          "settings": {
+            "cis_block_text": "Order Status Inquiry",
+            "cis_block_phone_text": "1-800-000",
+            "cis_block_phone_link": "#",
+            "cis_block_mail_text": "sample@email.com",
+            "cis_block_mail_link": "",
+            "cis_block_line_text": "Order Status Inquiry",
+            "cis_block_line_link": "",
+            "cis_block_qr_img": "shopify:\/\/shop_images\/qrrr_5e64e317-29a3-4b2d-9dab-7468567be0f0.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--19123769409851__fbd1ded3-7f01-4be8-99c1-6e78dec5f1b0-1685944648a207c9d0-0",
+        "0d9110cd-da38-409f-9dfe-3d65a8d7da3e"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -495,6 +524,7 @@
     "4ba23cf3-3389-42f1-8527-b323f4803849",
     "2515597e-a792-4817-9b03-2d8cd345bddf",
     "e5d1b0df-2387-44bd-8f11-8479b440382a",
-    "8fcd033a-4af7-470e-abc2-bd42833dd021"
+    "8fcd033a-4af7-470e-abc2-bd42833dd021",
+    "fbd1ded3-7f01-4be8-99c1-6e78dec5f1b0"
   ]
 }
