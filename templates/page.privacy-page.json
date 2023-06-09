@@ -3,6 +3,9 @@
     "main": {
       "type": "main-page",
       "disabled": true,
+      "custom_css": [
+
+      ],
       "settings": {
       }
     },
@@ -28,6 +31,9 @@
         "template--19453274194235__5a7d3a95-541b-48b4-91ab-a3335265a85f-168628012809eaaef5-0",
         "template--19453274194235__5a7d3a95-541b-48b4-91ab-a3335265a85f-168628012809eaaef5-1"
       ],
+      "custom_css": [
+        ".color-scheme-1 {background-color: #878787;}"
+      ],
       "settings": {
         "align_text": "left",
         "narrow_column": true,
@@ -41,7 +47,7 @@
         "template--19453274194235__ef7a4d83-1513-49fd-8836-3a3a94c00068-168628012809eaaef5-1": {
           "type": "text",
           "settings": {
-            "enlarge_text": true,
+            "enlarge_text": false,
             "text": "<p>Text content here<\/p>"
           }
         }
