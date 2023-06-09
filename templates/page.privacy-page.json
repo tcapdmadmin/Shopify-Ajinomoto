@@ -2,11 +2,67 @@
   "sections": {
     "main": {
       "type": "main-page-full-width",
+      "disabled": true,
       "settings": {
+      }
+    },
+    "00db5a8a-794e-4f1b-9714-b05f28c41efd": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19453528080699__00db5a8a-794e-4f1b-9714-b05f28c41efd-1686282013bdfc25e7-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Privacy Note",
+            "heading_size": "h0"
+          }
+        },
+        "template--19453528080699__00db5a8a-794e-4f1b-9714-b05f28c41efd-1686282013bdfc25e7-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>For Business Partner<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19453528080699__00db5a8a-794e-4f1b-9714-b05f28c41efd-1686282013bdfc25e7-0",
+        "template--19453528080699__00db5a8a-794e-4f1b-9714-b05f28c41efd-1686282013bdfc25e7-1"
+      ],
+      "custom_css": [
+        ".color-scheme-1 {background-color: #878787;}"
+      ],
+      "settings": {
+        "align_text": "left",
+        "narrow_column": false,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
+    "6694705d-93b3-47a8-bf8d-e16d1e3af74e": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19453528080699__6694705d-93b3-47a8-bf8d-e16d1e3af74e-1686282013bdfc25e7-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<br\/><br\/>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<br\/><br\/>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<br\/><br\/>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19453528080699__6694705d-93b3-47a8-bf8d-e16d1e3af74e-1686282013bdfc25e7-1"
+      ],
+      "settings": {
+        "align_text": "left",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "00db5a8a-794e-4f1b-9714-b05f28c41efd",
+    "6694705d-93b3-47a8-bf8d-e16d1e3af74e"
   ]
 }
