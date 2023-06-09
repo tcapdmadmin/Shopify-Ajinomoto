@@ -21,7 +21,7 @@
         "template--19123768590651__55be6067-e72c-426e-8ad9-9a5967ef9e0e-16862783984e31c14b-1": {
           "type": "liquid",
           "settings": {
-            "code": "<div align=\"right\">\n<h1 style=\"color: #ee1c25;\">Customer Service<\/h1><p>Domestic Free Call<\/p><\/div>",
+            "code": "<div align=\"right\">\n<h1 style=\"color: #ee1c25;\">Customer Service<\/h1><p><b>Domestic Free Call<b><\/p><\/div>",
             "width": "33%",
             "alignment": "center"
           }
