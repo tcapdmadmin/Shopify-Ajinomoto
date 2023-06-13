@@ -55,9 +55,9 @@
         "70de1558-f19e-4597-b5ab-19b195f5253b"
       ],
       "settings": {
-        "food_vendor": "main-menu",
-        "retailer": "main-menu",
-        "none": "food-vendor",
+        "food_vendor": "retailer-footer-for-qa-testing",
+        "retailer": "retailer",
+        "none": "retailer",
         "hover_menu": true,
         "main_menu_alignment": "left",
         "mega_products": true,
