@@ -99,7 +99,7 @@
         "heading_size": "h2",
         "heading_position": "left",
         "text": "",
-        "show_phone": false,
+        "show_phone": true,
         "narrow_column": true,
         "color_scheme": "1"
       }
