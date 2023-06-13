@@ -62,7 +62,7 @@
         "350fb6c5-614e-406a-bb72-840fa997de34": {
           "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
           "settings": {
-            "stars_fill_color": "#302090",
+            "stars_fill_color": "{{ shop.brand.colors.primary[0].background }}",
             "star_size": 25,
             "text_align": "flex-start",
             "product": "{{product}}",
@@ -83,7 +83,7 @@
       ],
       "settings": {
         "sku_enable": false,
-        "image_position": "left",
+        "image_position": "right",
         "image_container_size": "medium",
         "product_image_size": "square",
         "product_zoom_enable": true,
