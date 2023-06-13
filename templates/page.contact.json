@@ -91,12 +91,25 @@
         "padding_top": 40,
         "padding_bottom": 40
       }
+    },
+    "368e7f89-25f8-44bc-a754-d10f7ac9dde2": {
+      "type": "contact-form",
+      "settings": {
+        "title": "Contact us",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "text": "",
+        "show_phone": false,
+        "narrow_column": true,
+        "color_scheme": "1"
+      }
     }
   },
   "order": [
     "main",
     "55be6067-e72c-426e-8ad9-9a5967ef9e0e",
     "5e0d3472-07b1-4789-955d-4cb334e5e833",
-    "22539769-2885-4504-96c8-c47fc4a01924"
+    "22539769-2885-4504-96c8-c47fc4a01924",
+    "368e7f89-25f8-44bc-a754-d10f7ac9dde2"
   ]
 }
