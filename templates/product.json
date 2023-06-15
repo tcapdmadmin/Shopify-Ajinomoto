@@ -64,7 +64,7 @@
           "settings": {
             "stars_fill_color": "{{ shop.brand.colors.primary[0].background }}",
             "star_size": 25,
-            "text_align": "center",
+            "text_align": "flex-end",
             "product": "{{product}}",
             "stars_text_empty": "No reviews"
           }
