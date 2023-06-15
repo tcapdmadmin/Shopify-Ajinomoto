@@ -8,8 +8,8 @@
         "toolbar-0": {
           "type": "announcement",
           "settings": {
-            "richtext": "<p><strong>FREE DELIVERY<\/strong> FOR ORDERS OVER $100<\/p>",
-            "richtext_mobile": "<p><strong>FREE DELIVERY<\/strong> FOR ORDERS OVER $100<\/p>",
+            "richtext": "<p><strong>ส่งฟรี<\/strong> FOR ORDERS OVER $100<\/p>",
+            "richtext_mobile": "<p><strong>ส่งฟรี<\/strong> FOR ORDERS OVER $100<\/p>",
             "countdown_timer": "May 21, 2023",
             "background_color": "#ffffff",
             "font_color": "#000000"
