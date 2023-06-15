@@ -179,7 +179,7 @@
         "template--18841254035771__af966d2c-f455-4fe9-b444-5364bcff565c-1683786389e6a115f6-0": {
           "type": "heading",
           "settings": {
-            "title": "Up to 50% OFF on Selected Seasonings",
+            "title": "ลดสูงสุด 20% สำหรับสินค้าที่ร่วมรายการ",
             "heading_size": "h2"
           }
         },
@@ -187,7 +187,7 @@
           "type": "button",
           "settings": {
             "link": "",
-            "link_text": "Browse Sale Items"
+            "link_text": "ช้อปเลย"
           }
         }
       },
@@ -250,7 +250,7 @@
     "6096af03-0d26-459e-aaeb-c04ff141cd17": {
       "type": "featured-collection",
       "settings": {
-        "title": "RosDee menu™",
+        "title": "รสดีเมนู",
         "heading_size": "h2",
         "heading_position": "left",
         "home_featured_products": "popular-picks",
