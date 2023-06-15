@@ -150,7 +150,7 @@
         ".collection-image img {padding: 0px;}"
       ],
       "settings": {
-        "title": "Shop by Brand",
+        "title": "แบรนด์สินค้า",
         "heading_size": "h2",
         "heading_position": "left",
         "divider": false
