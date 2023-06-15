@@ -98,6 +98,75 @@
         "divider": false
       }
     },
+    "2d44e835-29c6-46c9-8cfd-817fc12c4e3b": {
+      "type": "text-columns",
+      "blocks": {
+        "template--19123769409851__2d44e835-29c6-46c9-8cfd-817fc12c4e3b-16868181829fd141a4-0": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/AJINOMOTO_B2B_Website_Guarantees_-_Value.png",
+            "image_mask": "none",
+            "image_width": 120,
+            "title": "ช้อปคุ้ม ครบตรงใจ",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "template--19123769409851__2d44e835-29c6-46c9-8cfd-817fc12c4e3b-16868181829fd141a4-1": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/AJINOMOTO_B2B_Website_Guarantees_-_Delivery.png",
+            "image_mask": "none",
+            "image_width": 120,
+            "title": "ส่งฟรี",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "template--19123769409851__2d44e835-29c6-46c9-8cfd-817fc12c4e3b-16868181829fd141a4-2": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/AJINOMOTO_B2B_Website_Guarantees_-_Payments.png",
+            "image_mask": "none",
+            "image_width": 120,
+            "title": "ชำระเงินปลอดภัย",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "547935f7-e52b-4d78-9b70-99c6ebf9ae81": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/AJINOMOTO_B2B_Website_Guarantees_-_Anywhere.png",
+            "image_mask": "none",
+            "image_width": 120,
+            "title": "สั่งง่าย อยู่ที่ไหนก็ช้อปได้",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19123769409851__2d44e835-29c6-46c9-8cfd-817fc12c4e3b-16868181829fd141a4-0",
+        "template--19123769409851__2d44e835-29c6-46c9-8cfd-817fc12c4e3b-16868181829fd141a4-1",
+        "template--19123769409851__2d44e835-29c6-46c9-8cfd-817fc12c4e3b-16868181829fd141a4-2",
+        "547935f7-e52b-4d78-9b70-99c6ebf9ae81"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
     "6ad483fa-923f-4899-93f9-afabe46b411d": {
       "type": "featured-collections",
       "blocks": {
@@ -515,6 +584,7 @@
   "order": [
     "eca8ba47-47c4-423e-8aec-fe96b61cf4dd",
     "d24f4364-4ae3-42f8-aa7a-429e70e7fde7",
+    "2d44e835-29c6-46c9-8cfd-817fc12c4e3b",
     "6ad483fa-923f-4899-93f9-afabe46b411d",
     "315640e3-51da-43fe-a9d2-d7eaa59f9dc9",
     "af966d2c-f455-4fe9-b444-5364bcff565c",
