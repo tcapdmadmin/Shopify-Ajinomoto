@@ -6,38 +6,110 @@
       "settings": {
       }
     },
-    "rich-text": {
-      "type": "rich-text",
+    "55be6067-e72c-426e-8ad9-9a5967ef9e0e": {
+      "type": "advanced-content",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "template--19123768590651__55be6067-e72c-426e-8ad9-9a5967ef9e0e-16862783984e31c14b-0": {
+          "type": "image",
           "settings": {
-            "title": "Get in touch"
+            "image": "shopify:\/\/shop_images\/customer_service.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
           }
         },
-        "text": {
-          "type": "text",
+        "template--19123768590651__55be6067-e72c-426e-8ad9-9a5967ef9e0e-16862783984e31c14b-1": {
+          "type": "liquid",
           "settings": {
+            "code": "<div align=\"right\">\n<h1 style=\"color: #ee1c25;\">Customer Service<\/h1><p><b>Domestic Free Call<b><\/p><\/div>",
+            "width": "33%",
+            "alignment": "center"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "template--19123768590651__55be6067-e72c-426e-8ad9-9a5967ef9e0e-16862783984e31c14b-0",
+        "template--19123768590651__55be6067-e72c-426e-8ad9-9a5967ef9e0e-16862783984e31c14b-1"
+      ],
+      "custom_css": [
+        "h1 {margin-bottom: 5px !important;}"
       ],
       "settings": {
-        "color_scheme": "none"
+        "full_width": true,
+        "space_around": false,
+        "lazyload_images": true
       }
     },
-    "form": {
+    "5e0d3472-07b1-4789-955d-4cb334e5e833": {
+      "type": "customcode-custom-information",
+      "blocks": {
+        "template--19123768590651__5e0d3472-07b1-4789-955d-4cb334e5e833-168627879484d557e2-0": {
+          "type": "information",
+          "settings": {
+            "cis_block_text": "Product Testing Information",
+            "cis_block_phone_text": "1-800-888333",
+            "cis_block_phone_link": "",
+            "cis_block_mail_text": "sample@email.com",
+            "cis_block_mail_link": "",
+            "cis_block_line_text": "Product Information Customer Care Test",
+            "cis_block_line_link": "",
+            "cis_block_qr_img": "shopify:\/\/shop_images\/image_20.png"
+          }
+        },
+        "854fbf64-44b7-4562-ab1c-ea62b2cc6e14": {
+          "type": "information",
+          "settings": {
+            "cis_block_text": "Order Status Inquiry",
+            "cis_block_phone_text": "1-800-888333",
+            "cis_block_phone_link": "",
+            "cis_block_mail_text": "sample@email.com",
+            "cis_block_mail_link": "",
+            "cis_block_line_text": "Order Status Inquiry Customer Care",
+            "cis_block_line_link": "",
+            "cis_block_qr_img": "shopify:\/\/shop_images\/image_20.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--19123768590651__5e0d3472-07b1-4789-955d-4cb334e5e833-168627879484d557e2-0",
+        "854fbf64-44b7-4562-ab1c-ea62b2cc6e14"
+      ],
+      "custom_css": [
+        "{margin-top: 40px;}"
+      ],
+      "settings": {
+      }
+    },
+    "22539769-2885-4504-96c8-c47fc4a01924": {
+      "type": "map-without-api",
+      "settings": {
+        "map_title": "Ajinomoto Co., (Thailand) Ltd.",
+        "heading_size": "h2",
+        "heading_position": "center",
+        "address": "<p>Ajinomoto Foundation | 487\/1, 12th Floor, Thanon Si Ayutthaya, Thanon Phaya Thai,<br\/>Ratchathewi, Bangkok 10400, Thailand<\/p>",
+        "pinned_address": "Ajinomoto Foundation | 487\/1, 12th Floor, Thanon Si Ayutthaya, Thanon Phaya Thai, Ratchathewi, Bangkok 10400, Thailand",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "368e7f89-25f8-44bc-a754-d10f7ac9dde2": {
       "type": "contact-form",
       "settings": {
+        "title": "Contact us",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "text": "",
+        "show_phone": true,
+        "narrow_column": true,
+        "color_scheme": "1"
       }
     }
   },
   "order": [
     "main",
-    "rich-text",
-    "form"
+    "55be6067-e72c-426e-8ad9-9a5967ef9e0e",
+    "5e0d3472-07b1-4789-955d-4cb334e5e833",
+    "22539769-2885-4504-96c8-c47fc4a01924",
+    "368e7f89-25f8-44bc-a754-d10f7ac9dde2"
   ]
 }

@@ -12,7 +12,18 @@
         "slideshow-0": {
           "type": "hero",
           "settings": {
-            "link_text": ""
+            "top_subheading": "",
+            "title": "",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/image_14.png",
+            "overlay_opacity": 0
           }
         }
       },
@@ -20,6 +31,13 @@
         "slideshow-0"
       ],
       "settings": {
+        "full_width": true,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": false,
+        "autoplay_speed": 7,
+        "lazyload_images": true
       }
     },
     "rich-text": {
@@ -28,25 +46,30 @@
         "heading": {
           "type": "heading",
           "settings": {
+            "title": "What is AJI-NO-MOTO® and how is it made?",
+            "heading_size": "h1"
           }
         },
-        "text": {
+        "b1968e89-c2bf-4e3f-9314-534c7eb8f391": {
           "type": "text",
           "settings": {
+            "enlarge_text": true,
+            "text": "<p>A popular seasoning and flavor enhancer, AJI-NO-MOTO®, an <a href=\"https:\/\/www.ajinomoto.com\/msg\/what-is-msg-and-how-is-it-made\" target=\"_blank\" title=\"https:\/\/www.ajinomoto.com\/msg\/what-is-msg-and-how-is-it-made\">MSG<\/a> (monosodium glutamate) product, is the purest form of umami, the fifth taste, altogether different from sweet, salty, sour and bitter. AJI-NO-MOTO® is widely used to intensify and enhance umami flavors in sauces, broths, soups and many more foods. It can also be considered a healthy alternative to table salt, containing just one-third the sodium. AJI-NO-MOTO® is used around the world to bring out the delicious flavor of foods.<\/p>"
           }
         }
       },
       "block_order": [
         "heading",
-        "text"
+        "b1968e89-c2bf-4e3f-9314-534c7eb8f391"
+      ],
+      "custom_css": [
+        "h2 {text-align: center;}"
       ],
       "settings": {
-        "color_scheme": "none"
-      }
-    },
-    "map": {
-      "type": "map",
-      "settings": {
+        "align_text": "left",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
       }
     },
     "text-columns": {
@@ -55,16 +78,40 @@
         "column1": {
           "type": "text_block",
           "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/630c40a85a212_1.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "column2": {
           "type": "text_block",
           "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/image_15.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "column3": {
           "type": "text_block",
           "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/image_16.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
           }
         }
       },
@@ -73,17 +120,13 @@
         "column2",
         "column3"
       ],
+      "custom_css": [
+        "{margin-top: -50px;margin-bottom: -50px;}"
+      ],
       "settings": {
-      }
-    },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-      }
-    },
-    "form": {
-      "type": "contact-form",
-      "settings": {
+        "title": "",
+        "align_text": "left",
+        "divider": false,
         "color_scheme": "none"
       }
     }
@@ -92,9 +135,6 @@
     "main",
     "slideshow",
     "rich-text",
-    "text-columns",
-    "map",
-    "featured-collection",
-    "form"
+    "text-columns"
   ]
 }

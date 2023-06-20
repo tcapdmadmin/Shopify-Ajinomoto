@@ -9,32 +9,6 @@
         "parallax_direction": "top"
       }
     },
-    "promo-grid": {
-      "type": "promo-grid",
-      "disabled": true,
-      "blocks": {
-        "banner": {
-          "type": "banner",
-          "settings": {
-            "heading": "Banner promotion",
-            "text": "Add the details of your promotion in smaller text",
-            "link": "",
-            "label": "Shop now",
-            "color_scheme": "1"
-          }
-        }
-      },
-      "block_order": [
-        "banner"
-      ],
-      "settings": {
-        "full_width": false,
-        "gutter_size": 20,
-        "space_above": true,
-        "space_below": false,
-        "lazyload_images": true
-      }
-    },
     "main-collection": {
       "type": "main-collection",
       "blocks": {
@@ -46,7 +20,7 @@
         "product_grid": {
           "type": "product_grid",
           "settings": {
-            "grid_style": "medium"
+            "grid_style": "large"
           }
         }
       },
@@ -55,7 +29,7 @@
         "product_grid"
       ],
       "custom_css": [
-        "@media only screen and (min-width: 769px) {[data-view=\"medium\"] .grid-item {flex: 0 0 25%; }}"
+
       ],
       "settings": {
         "enable_sidebar": true,
@@ -66,13 +40,13 @@
     },
     "recently-viewed": {
       "type": "recently-viewed",
+      "disabled": true,
       "settings": {
       }
     }
   },
   "order": [
     "collection-header",
-    "promo-grid",
     "main-collection",
     "recently-viewed"
   ]

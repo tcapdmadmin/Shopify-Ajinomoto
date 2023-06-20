@@ -380,8 +380,8 @@
       "last_name": "นามสกุล",
       "company": "บริษัท",
       "address1": "ที่อยู่ 1",
-      "address2": "ที่อยู่ 2",
-      "city": "เมือง",
+      "address2": "เขต\/อำเภอ",
+      "city": "แขวง\/ตำบล",
       "country": "ประเทศ",
       "province": "จังหวัด",
       "zip": "รหัสไปรษณีย์",
@@ -556,8 +556,8 @@
       "telephone": "โทรศัพท์",
       "shop_name": "ชื่อร้าน",
       "address": "ที่อยู่",
-      "district": "เขต",
-      "sub_district": "ตำบล",
+      "district": "เขต\/อำเภอ",
+      "sub_district": "แขวง\/ตำบล",
       "postal_code": "รหัสไปรษณีย์",
       "email_address": "ที่อยู่อีเมล",
       "password": "รหัสผ่าน",
@@ -683,6 +683,15 @@
       "knorr": "คนอร์",
       "termthip": " เติมทิพย์",
       "others": "คนอื่น"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "optional_address2_label": "เขต\/อำเภอ",
+        "city_label": "แขวง\/ตำบล",
+        "address2_label": "เขต\/อำเภอ"
+      }
     }
   }
 }

@@ -344,8 +344,8 @@
       "last_name": "Last name",
       "company": "Company",
       "address1": "Address1",
-      "address2": "Address2",
-      "city": "City",
+      "address2": "District",
+      "city": "Sub-district",
       "country": "Country",
       "province": "Province",
       "zip": "Postal\/Zip code",
@@ -512,5 +512,13 @@
   },
   "date_formats": {
     "month_day_year": "%b %d, %Y"
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "optional_address2_label": "District",
+        "city_label": "Sub-district"
+      }
+    }
   }
 }

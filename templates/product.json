@@ -3,6 +3,16 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "350fb6c5-614e-406a-bb72-840fa997de34": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+            "stars_fill_color": "{{ shop.brand.colors.primary[0].background }}",
+            "star_size": 25,
+            "text_align": "center",
+            "product": "{{product}}",
+            "stars_text_empty": "No reviews"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -61,6 +71,7 @@
         }
       },
       "block_order": [
+        "350fb6c5-614e-406a-bb72-840fa997de34",
         "variant_picker",
         "price",
         "sales_point",
@@ -118,12 +129,41 @@
         "products_per_row": 4
       }
     },
-    "more-products-vendor": {
-      "type": "more-products-vendor",
+    "collection-return": {
+      "type": "collection-return",
+      "settings": {
+        "color_scheme": "2"
+      }
+    },
+    "016865e7-ce4d-4bac-92fe-f69c6a45e535": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19123770130747__016865e7-ce4d-4bac-92fe-f69c6a45e535-1686303306f40da265-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><a href=\"#\" title=\"#\"><strong>← <\/strong>Back to Our Products<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19123770130747__016865e7-ce4d-4bac-92fe-f69c6a45e535-1686303306f40da265-1"
+      ],
+      "custom_css": [
+        "p {background: #ffffff; color: #8d471f; padding-top: 18px; width: 300px; padding-bottom: 18px; margin: auto;}",
+        "a {text-decoration: none !important; font-weight: 600;}"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "2",
+        "divider": false
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
       "disabled": true,
       "settings": {
-        "products_per_row": 3,
-        "max_products": 5
       }
     },
     "more-products-collection": {
@@ -134,16 +174,12 @@
         "max_products": 5
       }
     },
-    "recently-viewed": {
-      "type": "recently-viewed",
+    "more-products-vendor": {
+      "type": "more-products-vendor",
       "disabled": true,
       "settings": {
-      }
-    },
-    "collection-return": {
-      "type": "collection-return",
-      "settings": {
-        "color_scheme": "2"
+        "products_per_row": 3,
+        "max_products": 5
       }
     }
   },
@@ -151,9 +187,10 @@
     "main",
     "sub",
     "recommendations",
-    "more-products-vendor",
-    "more-products-collection",
+    "collection-return",
+    "016865e7-ce4d-4bac-92fe-f69c6a45e535",
     "recently-viewed",
-    "collection-return"
+    "more-products-collection",
+    "more-products-vendor"
   ]
 }
