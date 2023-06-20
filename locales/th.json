@@ -381,7 +381,7 @@
       "company": "บริษัท",
       "address1": "ที่อยู่ 1",
       "address2": "ที่อยู่ 2",
-      "city": "เมือง",
+      "city": "แขวง\/ตำบล",
       "country": "ประเทศ",
       "province": "จังหวัด",
       "zip": "รหัสไปรษณีย์",
@@ -688,7 +688,8 @@
   "shopify": {
     "checkout": {
       "contact": {
-        "optional_address2_label": "เขต\/อำเภอ"
+        "optional_address2_label": "เขต\/อำเภอ",
+        "city_label": "แขวง\/ตำบล"
       }
     }
   }
