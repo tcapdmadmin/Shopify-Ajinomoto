@@ -39,9 +39,32 @@
         </button>
       </div>
 
-      <div class="collection-filter__item collection-filter__item--count small--hide">
-        {{ count_label | t: count: count }}
-      </div>
+      {% assign food_vendor_count = 0 %}
+      {% assign retailer_count = 0 %}
+      
+      {%- for item in items -%}
+        {%- assign productType = item.object_type -%}
+        {%- if productType == 'product' -%}
+          {%- if customer.metafields.custom.customer_type == 'retailer' and item.tags contains 'Retailer' -%}
+            {% assign retailer_count = retailer_count | plus: 1 %}
+          {%- elsif customer.metafields.custom.customer_type == 'food_vendor' and item.tags contains 'Food Vendor' -%}
+            {% assign food_vendor_count = food_vendor_count | plus: 1 %}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+      
+      {% assign total_count = food_vendor_count | plus: retailer_count %}
+      
+      {% if customer.metafields.custom.customer_type == 'food_vendor' or customer.metafields.custom.customer_type == 'retailer' %}
+        <div class="collection-filter__item collection-filter__item--count small--hide">
+          {{ count_label | t: count: total_count }}
+        </div>
+      {% else %}
+        <div class="collection-filter__item collection-filter__item--count small--hide">
+          {{ count_label | t: count: count }}
+        </div>
+      {% endif %}
+      
 
       <div class="collection-filter__item collection-filter__item--right">
         {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
@@ -94,16 +117,23 @@
     data-view="{{ productGridView }}"
     data-scroll-to
   >
-    {%- for item in items -%}
-      {%- if item.object_type == 'product' -%}
-        {%- render 'product-grid-item', product: item -%}
-
+    {%- for item in items -%}     
+      {%- if productType == 'product' -%}
+        {%- if customer.metafields.custom.customer_type == 'retailer' and item.tags contains 'Retailer' -%}
+          {%- render 'product-grid-item', product: item -%}
+        {%- elsif customer.metafields.custom.customer_type == 'food_vendor' and item.tags contains 'Food Vendor' -%}
+          {%- render 'product-grid-item', product: item -%}
+        {%- elsif customer.metafields.custom.customer_type == 'none' -%}
+          {%- render 'product-grid-item', product: item -%}
+        {%- endif -%}
+  
         {%- if quick_shop_enable -%}
-            {%- render 'quick-shop-modal', product: item -%}
+          {%- render 'quick-shop-modal', product: item -%}
         {%- endif -%}
       {%- else -%}
         {%- render 'search-grid-item', item: item -%}
       {%- endif -%}
     {%- endfor -%}
   </div>
+  
 </div>
