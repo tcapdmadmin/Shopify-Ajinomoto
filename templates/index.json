@@ -42,6 +42,7 @@
     },
     "d24f4364-4ae3-42f8-aa7a-429e70e7fde7": {
       "type": "text-with-icons",
+      "disabled": true,
       "blocks": {
         "template--18841254035771__d24f4364-4ae3-42f8-aa7a-429e70e7fde7-1683786056dfbfdd36-0": {
           "type": "text_block",
@@ -159,6 +160,9 @@
         "template--19123769409851__2d44e835-29c6-46c9-8cfd-817fc12c4e3b-16868181829fd141a4-1",
         "template--19123769409851__2d44e835-29c6-46c9-8cfd-817fc12c4e3b-16868181829fd141a4-2",
         "547935f7-e52b-4d78-9b70-99c6ebf9ae81"
+      ],
+      "custom_css": [
+        ".grid.grid--uniform.grid--flush-bottom {display: flex;}"
       ],
       "settings": {
         "title": "",
