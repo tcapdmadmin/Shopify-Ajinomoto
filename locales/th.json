@@ -689,7 +689,8 @@
     "checkout": {
       "contact": {
         "optional_address2_label": "เขต\/อำเภอ",
-        "city_label": "แขวง\/ตำบล"
+        "city_label": "แขวง\/ตำบล",
+        "address2_label": "เขต\/อำเภอ"
       }
     }
   }
