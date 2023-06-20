@@ -516,7 +516,8 @@
   "shopify": {
     "checkout": {
       "contact": {
-        "optional_address2_label": "District"
+        "optional_address2_label": "District",
+        "city_label": "Sub-district"
       }
     }
   }
