@@ -684,5 +684,12 @@
       "termthip": " เติมทิพย์",
       "others": "คนอื่น"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "optional_address2_label": "เขต\/อำเภอ"
+      }
+    }
   }
 }
