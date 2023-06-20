@@ -32,16 +32,10 @@
       -%}
       {%- if section.settings.sort == 'products_low' or section.settings.sort == 'date' or section.settings.sort == 'alphabetical' -%}
         {%- for collection in collections -%}
-          {%- comment %}<locksmith:04c7>{% endcomment -%}
-            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
-          {%- comment %}</locksmith:04c7>{% endcomment -%}
           {%- render 'collection-grid-item', collection: collection, sizeVariable: sizeVariable, fallback: 'variable', -%}
         {%- endfor -%}
       {%- else -%}
         {%- for collection in collections reversed -%}
-          {%- comment %}<locksmith:564a>{% endcomment -%}
-            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
-          {%- comment %}</locksmith:564a>{% endcomment -%}
           {%- render 'collection-grid-item', collection: collection, sizeVariable: sizeVariable, fallback: 'variable', -%}
         {%- endfor -%}
       {%- endif -%}

@@ -52,9 +52,6 @@
         <div class="product-recommendations page-width">
           <div class="new-grid product-grid scrollable-grid--small" data-view="{{ gridView }}">
             {%- for product in related_collection.products -%}
-              {%- comment %}<locksmith:4cc0>{% endcomment -%}
-                {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: related_collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
-              {%- comment %}</locksmith:4cc0>{% endcomment -%}
               {%- render 'product-grid-item', product: product, sizeVariable: section.settings.products_per_row, fallback: '45vw' -%}
             {%- endfor -%}
           </div>
