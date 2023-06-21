@@ -3,27 +3,65 @@
     "eca8ba47-47c4-423e-8aec-fe96b61cf4dd": {
       "type": "slideshow",
       "blocks": {
+        "5779c804-58a8-4af0-b21f-98471b77412d": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<h1>แบรนด์ชูรสและผงปรุงรสอันดับที่ 1 ของประเทศไทย<\/h1>",
+            "title_size": 45,
+            "subheading": "",
+            "link": "",
+            "link_text": "ช้อปสินค้าผงปรุงรส",
+            "link_2": "",
+            "link_text_2": "เมนูที่น่าสนใจ",
+            "color_accent": "#1c1c1e",
+            "text_align": "vertical-center horizontal-left",
+            "image": "shopify:\/\/shop_images\/AJINOMOTO_B2B_Website_Banner_Image-_Seasoning_-_Web.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/AJINOMOTO_B2B_Website_Banner_Image-_Seasoning_-_Mobile.jpg",
+            "overlay_opacity": 0
+          }
+        },
         "template--18841254035771__eca8ba47-47c4-423e-8aec-fe96b61cf4dd-16837857478463458e-1": {
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<h1>Create a <strong>Healthy Living Society<\/strong> with the Power of Amino Acids<\/h1>",
+            "title": "<h1>กาแฟปรุงสำเร็จรสชาติเข้มข้น หอมกาแฟคั่วบด<\/h1>",
             "title_size": 45,
             "subheading": "",
             "link": "",
-            "link_text": "SHOP RosDee PRODUCTS",
+            "link_text": "ช้อปสินค้าเครื่องดื่ม",
             "link_2": "",
-            "link_text_2": "VIEW RECIPE",
+            "link_text_2": "",
             "color_accent": "#1c1c1e",
             "text_align": "vertical-center horizontal-left",
-            "image": "shopify:\/\/shop_images\/lp-banner.webp",
-            "image_mobile": "shopify:\/\/shop_images\/lp-banner-m.webp",
+            "image": "shopify:\/\/shop_images\/AJINOMOTO_B2B_Website_Banner_Image-_Baverage_-_Web.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/AJINOMOTO_B2B_Website_Banner_Image-_Baverage_-_Mobile.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "aba27af0-3304-47a4-964b-a1c00ee0c359": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<h1>บะหมี่กึ่งสำเร็จรูปแบบซองและแบบถ้วย ให้คุณอร่อยเต็มอิ่มกับเส้นที่เหนี่ยวลื่นนุ่ม อร่อยลงตัว<\/h1>",
+            "title_size": 45,
+            "subheading": "",
+            "link": "",
+            "link_text": "ช้อปสินค้าบะหมี่กึ่งสำเร็จรูป",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#1c1c1e",
+            "text_align": "vertical-center horizontal-left",
+            "image": "shopify:\/\/shop_images\/AJINOMOTO_B2B_Website_Banner_Image-_Noodle_-_Web.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/AJINOMOTO_B2B_Website_Banner_Image-_Noodle_-_Mobile.jpg",
             "overlay_opacity": 0
           }
         }
       },
       "block_order": [
-        "template--18841254035771__eca8ba47-47c4-423e-8aec-fe96b61cf4dd-16837857478463458e-1"
+        "5779c804-58a8-4af0-b21f-98471b77412d",
+        "template--18841254035771__eca8ba47-47c4-423e-8aec-fe96b61cf4dd-16837857478463458e-1",
+        "aba27af0-3304-47a4-964b-a1c00ee0c359"
       ],
       "custom_css": [
         "h1 {color: #000000;}",
@@ -177,6 +215,7 @@
         "2221d003-364f-46b9-bc28-72cd69a215af": {
           "type": "collection",
           "settings": {
+            "customer_type": "none",
             "collection": "เครื่องปรุงรส-1",
             "title": ""
           }
@@ -184,6 +223,7 @@
         "939184ab-9616-4578-9047-efc0c455e40b": {
           "type": "collection",
           "settings": {
+            "customer_type": "none",
             "collection": "เครื่องปรุงรส",
             "title": ""
           }
@@ -191,6 +231,7 @@
         "00b51f4a-a1af-4da4-bd16-41c5d0b44a73": {
           "type": "collection",
           "settings": {
+            "customer_type": "none",
             "collection": "retailer-all-products",
             "title": ""
           }
@@ -198,6 +239,7 @@
         "20b60a3b-e9d3-4fa4-bd57-405c2d05e2c2": {
           "type": "collection",
           "settings": {
+            "customer_type": "none",
             "collection": "food-vendor-all-products",
             "title": ""
           }
@@ -205,6 +247,7 @@
         "28531dcd-b69d-4041-9608-f7f21d568feb": {
           "type": "collection",
           "settings": {
+            "customer_type": "none",
             "collection": "fv-ret",
             "title": ""
           }
@@ -383,6 +426,7 @@
         "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-0": {
           "type": "collection",
           "settings": {
+            "customer_type": "none",
             "collection": "aji-no-moto®-1",
             "title": ""
           }
@@ -390,6 +434,7 @@
         "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-1": {
           "type": "collection",
           "settings": {
+            "customer_type": "none",
             "collection": "rosdee®",
             "title": ""
           }
@@ -397,6 +442,7 @@
         "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-2": {
           "type": "collection",
           "settings": {
+            "customer_type": "none",
             "collection": "rosdee-menu™",
             "title": ""
           }
@@ -404,6 +450,7 @@
         "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-3": {
           "type": "collection",
           "settings": {
+            "customer_type": "none",
             "collection": "blendy®",
             "title": ""
           }
@@ -411,6 +458,7 @@
         "619da1f8-7640-4231-acba-3fe2f454a714": {
           "type": "collection",
           "settings": {
+            "customer_type": "none",
             "collection": "birdy®",
             "title": ""
           }
@@ -418,6 +466,7 @@
         "16c3aaf8-52d8-42e3-8137-c8fdd7fcb97d": {
           "type": "collection",
           "settings": {
+            "customer_type": "none",
             "collection": "gyoza",
             "title": ""
           }
