@@ -56,9 +56,9 @@
       ],
       "settings": {
         "food_vendor": "fv-navigation-menu",
-        "retailer": "ajinomoto-products",
-        "none": "food-vendor",
-        "hover_menu": true,
+        "retailer": "retailer-navigation-menu",
+        "none": "",
+        "hover_menu": false,
         "main_menu_alignment": "left",
         "mega_products": true,
         "header_sticky": true,
