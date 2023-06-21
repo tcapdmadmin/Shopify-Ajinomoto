@@ -55,7 +55,7 @@
         "70de1558-f19e-4597-b5ab-19b195f5253b"
       ],
       "settings": {
-        "food_vendor": "food-vendor",
+        "food_vendor": "fv-navigation-menu",
         "retailer": "ajinomoto-products",
         "none": "food-vendor",
         "hover_menu": true,
