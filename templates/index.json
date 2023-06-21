@@ -215,7 +215,7 @@
         "2221d003-364f-46b9-bc28-72cd69a215af": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
+            "customer_type": "retailer",
             "collection": "เครื่องปรุงรส-1",
             "title": ""
           }
