@@ -58,7 +58,7 @@
         "food_vendor": "fv-navigation-menu",
         "retailer": "retailer-navigation-menu",
         "none": "",
-        "hover_menu": false,
+        "hover_menu": true,
         "main_menu_alignment": "left",
         "mega_products": true,
         "header_sticky": true,
