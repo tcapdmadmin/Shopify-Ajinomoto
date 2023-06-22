@@ -69,7 +69,8 @@
       "custom_css": [
         "h1 {color: #000000;}",
         "a.btn.js-no-transition {border: 2px solid #1c1c1e;}",
-        "a.btn.js-no-transition:hover {background: none !important; border: 2px solid #1c1c1e; transition: 0.3s !important; color: #000000;}"
+        "a.btn.js-no-transition:hover {background: none !important; border: 2px solid #1c1c1e; transition: 0.3s !important; color: #000000;}",
+        "@media only screen and (max-width: 768px) {.hero__text-content.vertical-center {vertical-align: baseline; top: 50px;}}"
       ],
       "settings": {
         "full_width": true,
