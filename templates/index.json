@@ -167,7 +167,7 @@
         "939184ab-9616-4578-9047-efc0c455e40b": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
+            "customer_type": "retailer",
             "collection": "เครื่องปรุงรส",
             "title": ""
           }
@@ -175,24 +175,32 @@
         "00b51f4a-a1af-4da4-bd16-41c5d0b44a73": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
+            "customer_type": "retailer",
             "collection": "retailer-all-products",
             "title": ""
           }
         },
-        "20b60a3b-e9d3-4fa4-bd57-405c2d05e2c2": {
+        "0c3fee48-9827-40a5-bd50-9b80c49e7821": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
-            "collection": "food-vendor-all-products",
+            "customer_type": "food_vendor",
+            "collection": "",
             "title": ""
           }
         },
-        "28531dcd-b69d-4041-9608-f7f21d568feb": {
+        "1750b593-7ade-485c-86fa-5c02ace0b3b0": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
-            "collection": "fv-ret",
+            "customer_type": "food_vendor",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "88a7199c-74fe-4d97-ab06-12fe8b2729cd": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "",
             "title": ""
           }
         }
@@ -201,15 +209,13 @@
         "2221d003-364f-46b9-bc28-72cd69a215af",
         "939184ab-9616-4578-9047-efc0c455e40b",
         "00b51f4a-a1af-4da4-bd16-41c5d0b44a73",
-        "20b60a3b-e9d3-4fa4-bd57-405c2d05e2c2",
-        "28531dcd-b69d-4041-9608-f7f21d568feb"
+        "0c3fee48-9827-40a5-bd50-9b80c49e7821",
+        "1750b593-7ade-485c-86fa-5c02ace0b3b0",
+        "88a7199c-74fe-4d97-ab06-12fe8b2729cd"
       ],
       "custom_css": [
-        "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
         ".collection-image--is-collection img,.collection-image-fill-space--true img {-o-object-fit: cover; object-fit: contain;}",
-        ".collection-image img {padding: 0px;}",
-        "[data-view=\"scrollable-5\"] .grid-item,[data-view=\"xsmall\"] .grid-item {flex: 0 0 25%;}",
-        "@media only screen and (max-width: 768px) {[data-view=\"xsmall\"] .grid-item, [data-view=\"small\"] .grid-item, [data-view=\"medium\"] .grid-item {flex: 0 0 50%; }}"
+        ".collection-image img {padding: 0px;}"
       ],
       "settings": {
         "title": "แบรนด์สินค้า",
