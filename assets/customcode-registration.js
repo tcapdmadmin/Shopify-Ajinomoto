@@ -2,8 +2,6 @@
 var base_url = window.location.origin;
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Line Functions
-  // Handle form submission
   const handleFormSubmission = async (event) => {
     event.preventDefault();
     event.stopImmediatePropagation();
@@ -19,9 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Set Line Login URL
-  const setLineLoginURL= (param = '') => {
+  const setLineLoginURL = (param = "") => {
     return fetch(
-      "https://ajith-api.tcapdm.com/api/line/login/getlink?mode=login&shop_type="+param,
+      "https://ajith-api.tcapdm.com/api/line/login/getlink?mode=login&shop_type=" +
+        param,
       {
         method: "POST",
         body: JSON.stringify({
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .then((data) => {
         if (data.results) {
-          return data.results;
+          return data;
         }
       })
       .catch((error) => {
@@ -164,7 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (data.status === "error") {
         var errorMessage = "";
 
-        // Loop through the JSON response and concatenate the error messages
         for (var key in data.message) {
           if (data.message.hasOwnProperty(key)) {
             errorMessage += data.message[key].join("\n");
@@ -211,27 +209,49 @@ document.addEventListener("DOMContentLoaded", () => {
       if (result.isConfirmed) {
         // Redirect to Food Vendor page
         Swal.showLoading();
-        setLineLoginURL('food_vendor').then((url) => {
-          if (url) {
-            window.location.href = url;
+        setLineLoginURL("food_vendor").then((url) => {
+          console.log(url);
+          if (url.results) {
+            storeShopType("food_vendor");
+
+            window.location.href = url.results;
           }
         });
       } else if (result.isDenied) {
-        // Redirect to Retailer page
         Swal.showLoading();
-        setLineLoginURL('retailer').then((url) => {
-          if (url) {
-            window.location.href = url;
+        setLineLoginURL("retailer").then((url) => {
+          if (url.results) {
+            storeShopType("retailer");
+            window.location.href = url.results;
           }
         });
       } else {
-        // Cancel button is clicked or modal is closed
-        // Handle cancellation logic here, if needed
       }
     });
   }
 
-  // Add event listener to signuplinebtn
   const signupLineBtn = document.getElementById("signuplinebtn");
   signupLineBtn.addEventListener("click", handleSignInToLine);
+
+  function storeShopType(shopType) {
+    sessionStorage.setItem("shopType", shopType);
+  }
+
+  function retrieveShopType() {
+    return sessionStorage.getItem("shopType");
+  }
+  function autoSelectShopGroup() {
+    const shopType = retrieveShopType();
+    if (shopType === "food_vendor") {
+      document.querySelector(
+        'input[name="shop_group"][value="Food Vendor"]'
+      ).checked = true;
+    } else if (shopType === "retailer") {
+      document.querySelector(
+        'input[name="shop_group"][value="Retailer"]'
+      ).checked = true;
+    }
+  }
+
+  autoSelectShopGroup();
 });
