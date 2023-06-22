@@ -366,6 +366,73 @@
         "bottom_padding": true,
         "lazyload_images": true
       }
+    },
+    "212b5f7b-0956-4090-9db0-f0deff8c6426": {
+      "type": "featured-collections",
+      "blocks": {
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-0": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-1": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-2": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-3": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-4": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-5": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-0",
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-1",
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-2",
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-3",
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-4",
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-5"
+      ],
+      "settings": {
+        "title": "Popular categories",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
     }
   },
   "order": [
@@ -376,6 +443,7 @@
     "af966d2c-f455-4fe9-b444-5364bcff565c",
     "1515c956-2002-4b57-92e9-62d87f600ed0",
     "6096af03-0d26-459e-aaeb-c04ff141cd17",
-    "df82034f-23a7-4dd9-b563-6d65eb6a2642"
+    "df82034f-23a7-4dd9-b563-6d65eb6a2642",
+    "212b5f7b-0956-4090-9db0-f0deff8c6426"
   ]
 }
