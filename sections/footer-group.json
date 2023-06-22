@@ -61,9 +61,18 @@
         "footer-0": {
           "type": "menu",
           "settings": {
-            "customer_type": "none",
+            "customer_type": "food_vendor",
             "title": "สินค้าอายิโนะโมะโต๊ะ",
-            "menu": "food-vendor-footer-for-qa-testing",
+            "menu": "fv-footer-menu",
+            "enable_account_link": false
+          }
+        },
+        "e3d9f605-a3ff-443b-baa6-d71a0973fecc": {
+          "type": "menu",
+          "settings": {
+            "customer_type": "retailer",
+            "title": "",
+            "menu": "r-footer-menu",
             "enable_account_link": false
           }
         },
@@ -72,7 +81,7 @@
           "settings": {
             "customer_type": "none",
             "title": "เกี่ยวกับเรา",
-            "menu": "about-us",
+            "menu": "both-about-us",
             "enable_account_link": false
           }
         },
@@ -89,6 +98,7 @@
       },
       "block_order": [
         "footer-0",
+        "e3d9f605-a3ff-443b-baa6-d71a0973fecc",
         "8c396db5-ef97-4f4b-babd-37d2013af1d3",
         "footer-1"
       ],
