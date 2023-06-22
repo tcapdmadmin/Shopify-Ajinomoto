@@ -18,6 +18,12 @@
     <!-- LINE CONNECTION -->
     <input type="text" id="sh_id" name="line[sh_id]" value="{{ customer.id }}" hidden>
     <input type="text" id="sh_email" name="line[sh_email]" value="{{ customer.email }}" hidden>
+    <input type="text" id="gender" name="gender" value="{{ customer.metafields.custom.gender.value  }}" hidden>
+    <input type="text" id="birthday" name="birthday" value="{{ customer.metafields.custom.birthday }}" hidden>
+    <input type="text" id="telephone" name="telephone" value="{{ customer.metafields.custom.telephone }}" hidden>
+    <input type="text" id="branch_number" name="branch_number" value="{{ customer.metafields.custom.branch_number }}" hidden>
+    <input type="text" id="customer_type" name="customer_type" value="{{ customer.metafields.custom.customer_type }}" hidden>
+    <input type="text" id="salesman_code" name="salesman_code" value="{{ customer.metafields.custom.salesman_code }}" hidden>
 
   <!-- LINE CONNECT BUTTON -->
     <div id="lineConnectBtn" class="socialplus-login-button-component" style="text-align: left; margin-bottom: 2rem;">

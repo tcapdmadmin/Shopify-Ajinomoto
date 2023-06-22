@@ -3,6 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Line Functions
   const sh_id = document.getElementById("sh_id");
   const sh_email = document.getElementById("sh_email");
+  const gender = document.getElementById("gender");
+  const birthday = document.getElementById("birthday");
+  const telephone = document.getElementById("telephone");
+  const branch_number = document.getElementById("branch_number");
+  const customer_type = document.getElementById("customer_type");
+  const salesman_code = document.getElementById("salesman_code");
 
   const lineConnectBtn = document.getElementById("lineConnectBtn");
   lineConnectBtn.style.display = "none";
@@ -12,6 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const requestData = {
       sh_id: sh_id.value,
       sh_email: sh_email.value,
+      gender: gender.value,
+      birthday: birthday.value,
+      telephone: telephone.value,
+      branch_number: branch_number.value,
+      customer_type: customer_type.value,
+      salesman_code: salesman_code.value,
     };
 
     fetch(apiUrl + "/api/myaccount", {
