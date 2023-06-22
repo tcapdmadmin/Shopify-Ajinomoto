@@ -1,5 +1,23 @@
 {%- liquid
-  assign collection = collections[section.settings.home_featured_products]
+  if customer
+    if customer.metafields.custom.customer_type == 'food_vendor'
+      assign collection = collections[section.settings.food_vendor]
+      assign customer_type_href = collections[section.settings.food_vendor].url
+
+    elsif customer.metafields.custom.customer_type == 'retailer'
+      assign collection = collections[section.settings.retailer]
+      assign customer_type_href = collections[section.settings.retailer].url
+
+    else customer.metafields.custom.customer_type == 'none'
+      assign collection = collections[section.settings.none]
+      assign customer_type_href = collections[section.settings.none].url
+    endif
+
+  else
+    assign collection = collections[section.settings.none]
+    assign customer_type_href = collections[section.settings.none].url
+  endif
+
   assign product_limit = section.settings.count | plus: 1
   if section.settings.mobile_scrollable
     assign product_limit = section.settings.count
@@ -61,7 +79,9 @@
           </h2>
         {% endif %}
         {%- if section.settings.view_all -%}
-          <a href="{{ collections[section.settings.home_featured_products].url }}" class="section-header__link">{{ 'collections.general.all_of_collection' | t }}</a>
+          {%- if customer and customer_type_href -%}
+            <a href="{{ customer_type_href }}" class="section-header__link">{{ 'collections.general.all_of_collection' | t }}</a>
+          {%- endif -%}
         {%- endif -%}
       </div>
     </div>
@@ -85,28 +105,46 @@
     <div
       class="new-grid product-grid{% if section.settings.mobile_scrollable %} scrollable-grid--small{% endif %}"
       data-view="{{ gridView }}">
-      {%- if section.settings.home_featured_products == blank or collections[section.settings.home_featured_products].empty? or collections[section.settings.home_featured_products].products_count == 0 -%}
-
-        {%- liquid
-          for i in (1..product_limit)
-            unless section.settings.mobile_scrollable
-              assign item_classes = ''
-              if forloop.index > section.settings.count
-                assign item_classes = 'hide'
-                assign mod = forloop.index | modulo: 2
-                if mod == 0
-                  assign item_classes = 'medium-up--hide'
+      {%- if customer.metafields.custom.customer_type == 'food_vendor' -%}
+        {%- if section.settings.food_vendor == blank or collections[section.settings.food_vendor].empty? or collections[section.settings.food_vendor].products_count == 0 -%}
+          {%- liquid
+            for i in (1..product_limit)
+              unless section.settings.mobile_scrollable
+                assign item_classes = ''
+                if forloop.index > section.settings.count
+                  assign item_classes = 'hide'
+                  assign mod = forloop.index | modulo: 2
+                  if mod == 0
+                    assign item_classes = 'medium-up--hide'
+                  endif
                 endif
+              endunless
+              render 'onboarding-product-grid-item', i: i, classes: item_classes
+            endfor
+          -%}
+        {%- else -%}
+          {%- liquid
+            for product in collections[section.settings.food_vendor].products limit: product_limit
+              assign item_classes = ''
+              unless section.settings.mobile_scrollable
+                if forloop.index > section.settings.count
+                  assign item_classes = 'hide'
+                  assign mod = forloop.index | modulo: 2
+                  if mod == 0
+                    assign item_classes = 'medium-up--hide'
+                  endif
+                endif
+              endunless
+              render 'product-grid-item', product: product, collection: collection, classes: item_classes, sizeVariable: section.settings.products_per_row, fallback: fallback
+              if settings.quick_shop_enable
+                render 'quick-shop-modal', product: product
               endif
-            endunless
-            render 'onboarding-product-grid-item', i: i, classes: item_classes
-          endfor
-        -%}
-
-      {%- else -%}
-
+            endfor
+          -%}
+        {%- endif -%}
+      {%- elsif customer.metafields.custom.customer_type == 'retailer' -%}
         {%- liquid
-          for product in collections[section.settings.home_featured_products].products limit: product_limit
+          for product in collections[section.settings.retailer].products limit: product_limit
             assign item_classes = ''
             unless section.settings.mobile_scrollable
               if forloop.index > section.settings.count
@@ -117,16 +155,33 @@
                 endif
               endif
             endunless
-
             render 'product-grid-item', product: product, collection: collection, classes: item_classes, sizeVariable: section.settings.products_per_row, fallback: fallback
-
             if settings.quick_shop_enable
               render 'quick-shop-modal', product: product
             endif
           endfor
         -%}
-
+      {%- elsif customer.metafields.custom.customer_type == 'none' -%}
+        {%- liquid
+          for product in collections[section.settings.none].products limit: product_limit
+            assign item_classes = ''
+            unless section.settings.mobile_scrollable
+              if forloop.index > section.settings.count
+                assign item_classes = 'hide'
+                assign mod = forloop.index | modulo: 2
+                if mod == 0
+                  assign item_classes = 'medium-up--hide'
+                endif
+              endif
+            endunless
+            render 'product-grid-item', product: product, collection: collection, classes: item_classes, sizeVariable: section.settings.products_per_row, fallback: fallback
+            if settings.quick_shop_enable
+              render 'quick-shop-modal', product: product
+            endif
+          endfor
+        -%}
       {%- endif -%}
+      
     </div>
   </div>
 </div>
@@ -190,8 +245,18 @@
     },
     {
       "type": "collection",
-      "id": "home_featured_products",
-      "label": "t:sections.featured-collection.settings.home_featured_products.label"
+      "id": "food_vendor",
+      "label": "Food Vendor Navigation"
+    },
+    {
+      "type": "collection",
+      "id": "retailer",
+      "label": "Retailer Navigation"
+    },
+    {
+      "type": "collection",
+      "id": "none",
+      "label": "Retailer and Food Vendor Navigation"
     },
     {
       "type": "range",

@@ -70,6 +70,7 @@
               {% endif %}
               data-slide-count="{{ section.blocks.size }}">
               {%- for block in section.blocks -%}
+{% if customer.metafields.custom.customer_type.value == block.settings.customer_type or block.settings.customer_type == "none" %}
                 <div
                   {{ block.shopify_attributes }}
                   class="slideshow__slide slideshow__slide--{{ block.id }}"
@@ -225,6 +226,7 @@
                     </div>
                   {%- endif -%}
                 </div>
+{%- endif -%}
               {%- endfor -%}
             </div>
           </div>
@@ -327,6 +329,26 @@
       "type": "hero",
       "name": "t:sections.slideshow.blocks.hero.name",
       "settings": [
+            {
+              "type": "select",
+              "id": "customer_type",
+              "label": "Customer Type",
+              "options": [
+                  {
+                    "value": "food_vendor",
+                    "label": "Food Vendor"
+                  },
+                  {
+                    "value": "retailer",
+                    "label": "Retailer"
+                  },
+                  {
+                    "value": "none",
+                    "label": "Both"
+                  }
+              ],
+                "default": "none"
+              },
         {
           "type": "text",
           "id": "top_subheading",

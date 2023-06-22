@@ -3,11 +3,11 @@
 {%- liquid
   assign image_width = section.settings.image_width
   assign overlap_images = true
-  if section.settings.image == blank or section.settings.image2 == blank
+  if section.settings.image_food_vendor == blank or section.settings.image_retailer == blank or section.settings.image_none == blank
     assign overlap_images = false
   endif
 
-  if section.settings.image == blank and section.settings.image2 == blank
+  if section.settings.image_food_vendor == blank and section.settings.image_retailer == blank and section.settings.image_none == blank
     assign overlap_images = true
     assign placeholder_images = true
   endif
@@ -62,105 +62,93 @@
 
   <div class="page-width feature-row-wrapper feature-row--{{ image_width }}">
     {%- capture image_layout -%}
-      <div class="feature-row__item feature-row__images{% if overlap_images %} feature-row__item--overlap-images{% endif %} {% if placeholder_images %}feature-row__item--placeholder-images{% endif %}">
-          {%- if section.settings.image != blank -%}
-            <div class="feature-row__first-image">
-              {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}<a href="{{ section.settings.button_link }}">{%- endif -%}
-                <div class="image-wrap {% if section.settings.image_mask != 'none' %}svg-mask svg-mask--{{ section.settings.image_mask }}{% endif %}" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;">
-                  {%- liquid
-                    if section.settings.image2 == blank
-                      assign sizeVariable = section.settings.image_width | append: 'vw'
-                      assign fallback = '100vw'
-                    else
-                      assign sizeVariable = 'calc(0.4 * 50vw)'
-                      assign fallback = '40vw'
-                    endif
-
-                    assign imageWidth = section.settings.image_width | times: 1
-                    if imageWidth >= 50
-                      assign loading = section.settings.lazyload_images
-                    else
-                      assign loading = true
-                    endif
-                  -%}
-                  {%- render 'image-element',
-                    img: section.settings.image,
-                    widths: '180, 360, 540, 750, 900, 1080',
-                    loading: loading,
-                    sizeVariable: sizeVariable,
-                    fallback: fallback,
-                    classes: 'feature-row__image',
-                  -%}
-                </div>
-              {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}</a>{%- endif -%}
-            </div>
-          {%- endif -%}
-          {%- if section.settings.image2 != blank -%}
-            <div class="feature-row__second-image">
-              {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}<a href="{{ section.settings.button_link }}">{%- endif -%}
-                <div class="image-wrap {% if section.settings.image2_mask != 'none' %}svg-mask svg-mask--{{ section.settings.image2_mask }}{% endif %}" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image2.aspect_ratio }}%;">
-                  {%- liquid
-                    if section.settings.image == blank
-                      assign sizeVariable = section.settings.image_width | append: 'vw'
-                      assign fallback = '100vw'
-                    else
-                      assign sizeVariable = 'calc(0.6 * 50vw)'
-                      assign fallback = '60vw'
-                    endif
-                  -%}
-                  {%- render 'image-element',
-                    img: section.settings.image2,
-                    widths: '180, 360, 540, 750, 900, 1080',
-                    sizeVariable: sizeVariable,
-                    fallback: fallback,
-                    classes: 'feature-row__image',
-                  -%}
-                </div>
-              {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}</a>{%- endif -%}
-            </div>
-          {%- endif -%}
-          {%- if section.settings.image == blank and section.settings.image2 == blank -%}
-            <div class="placeholder-image-wrap">
-              <div class="image-wrap">
-                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-              </div>
-            </div>
-            <div class="placeholder-image-wrap">
-              <div class="image-wrap">
-                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-              </div>
-            </div>
-          {%- endif -%}
+  <div class="feature-row__item feature-row__images{% if overlap_images %} feature-row__item--overlap-images{% endif %} {% if placeholder_images %}feature-row__item--placeholder-images{% endif %}">
+    {%- if customer.metafields.custom.customer_type == 'food_vendor' and section.settings.image_food_vendor != blank -%}
+      <div class="feature-row__first-image">
+        {%- if section.settings.button_label_food_vendor != blank and section.settings.button_link_food_vendor != blank -%}<a href="{{ section.settings.button_link_food_vendor }}">{%- endif -%}
+        <div class="image-wrap {% if section.settings.image_mask_food_vendor != 'none' %}svg-mask svg-mask--{{ section.settings.image_mask_food_vendor }}{% endif %}" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image_food_vendor.aspect_ratio }}%;">
+          {%- liquid
+            assign sizeVariable = section.settings.image_width | append: 'vw'
+            assign fallback = '100vw'
+          -%}
+          {%- render 'image-element',
+            img: section.settings.image_food_vendor,
+            widths: '180, 360, 540, 750, 900, 1080',
+            sizeVariable: sizeVariable,
+            fallback: fallback,
+            classes: 'feature-row__image',
+          -%}
+        </div>
+        {%- if section.settings.button_label_food_vendor != blank and section.settings.button_link_food_vendor != blank -%}</a>{%- endif -%}
       </div>
-    {%- endcapture -%}
+    {%- elsif customer.metafields.custom.customer_type == 'retailer' and section.settings.image_retailer != blank -%}
+      <div class="feature-row__first-image">
+        {%- if section.settings.button_label_retailer != blank and section.settings.button_link_retailer != blank -%}<a href="{{ section.settings.button_link_retailer }}">{%- endif -%}
+        <div class="image-wrap {% if section.settings.image_mask_retailer != 'none' %}svg-mask svg-mask--{{ section.settings.image_mask_retailer }}{% endif %}" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image_retailer.aspect_ratio }}%;">
+          {%- liquid
+            assign sizeVariable = section.settings.image_width | append: 'vw'
+            assign fallback = '100vw'
+          -%}
+          {%- render 'image-element',
+            img: section.settings.image_retailer,
+            widths: '180, 360, 540, 750, 900, 1080',
+            sizeVariable: sizeVariable,
+            fallback: fallback,
+            classes: 'feature-row__image',
+          -%}
+        </div>
+        {%- if section.settings.button_label_retailer != blank and section.settings.button_link_retailer != blank -%}</a>{%- endif -%}
+      </div>
 
-    <div class="feature-row">
-      {%- if section.settings.layout == 'left' -%}
-        {{ image_layout }}
+    {%- else -%}
+      <div class="placeholder-image-wrap">
+        <div class="image-wrap">
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+{%- endcapture -%}
+
+
+  
+
+  <div class="feature-row">
+    {%- if section.settings.layout == 'left' -%}
+      {{ image_layout }}
+    {%- endif -%}
+
+    <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }} text-{{ section.settings.align_text }}">
+      {%- if section.settings.subtitle_food_vendor != blank and customer.metafields.custom.customer_type == 'food_vendor' -%}
+        <p class="accent-subtitle">{{ section.settings.subtitle_food_vendor }}</p>
+      {%- elsif section.settings.subtitle_retailer != blank and customer.metafields.custom.customer_type == 'retailer' -%}
+        <p class="accent-subtitle">{{ section.settings.subtitle_retailer }}</p>
       {%- endif -%}
-
-      <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }} text-{{ section.settings.align_text }}">
-        {%- if section.settings.subtitle != blank -%}
-          <p class="accent-subtitle">{{ section.settings.subtitle }}</p>
-        {%- endif -%}
-        {%- if section.settings.title != blank -%}
-          <h2 class="{{ section.settings.heading_size }}">{{ section.settings.title | escape }}</h2>
-        {%- endif -%}
-        {%- if section.settings.text != blank -%}
-          <div class="rte featured-row__subtext">{{ section.settings.text }}</div>
-        {%- endif -%}
-        {%- if section.settings.button_label != blank -%}
-          <a href="{{ section.settings.button_link }}" class="btn btn--{{ section.settings.button_style }}">
-            {{ section.settings.button_label }}
-          </a>
-        {%- endif -%}
-      </div>
-
-      {%- if section.settings.layout == 'right' -%}
-        {{ image_layout }}
+      {%- if section.settings.title_food_vendor != blank and customer.metafields.custom.customer_type == 'food_vendor' -%}
+        <h2 class="{{ section.settings.heading_size }}">{{ section.settings.title_food_vendor | escape }}</h2>
+      {%- elsif section.settings.title_retailer != blank and customer.metafields.custom.customer_type == 'retailer' -%}
+        <h2 class="{{ section.settings.heading_size }}">{{ section.settings.title_retailer | escape }}</h2>
+      {%- endif -%}
+      {%- if customer.metafields.custom.customer_type == 'food_vendor' and section.settings.text_food_vendor != blank -%}
+        <div class="rte featured-row__subtext">{{ section.settings.text_food_vendor }}</div>
+      {%- elsif customer.metafields.custom.customer_type == 'retailer' and section.settings.text_retailer != blank -%}
+        <div class="rte featured-row__subtext">{{ section.settings.text_retailer }}</div>
+      {%- endif -%}
+      {%- if customer.metafields.custom.customer_type == 'food_vendor' and section.settings.button_label_food_vendor != blank and section.settings.button_link_food_vendor != blank -%}
+        <a href="{{ section.settings.button_link_food_vendor }}" class="btn btn--{{ section.settings.button_style }}">{{ section.settings.button_label_food_vendor }}</a>
+      {%- elsif customer.metafields.custom.customer_type == 'retailer' and section.settings.button_label_retailer != blank and section.settings.button_link_retailer != blank -%}
+        <a href="{{ section.settings.button_link_retailer }}" class="btn btn--{{ section.settings.button_style }}">{{ section.settings.button_label_retailer }}</a>
       {%- endif -%}
     </div>
+    
+
+    {%- if section.settings.layout == 'right' -%}
+      {{ image_layout }}
+    {%- endif -%}
   </div>
+</div>
+
+  
 
 </div>
 
@@ -172,16 +160,16 @@
   "settings": [
     {
       "type": "header",
-      "content": "t:sections.text-and-image.settings.image.label"
+      "content": "Image for Food Vendor"
     },
     {
       "type": "image_picker",
-      "id": "image",
+      "id": "image_food_vendor",
       "label": "t:sections.text-and-image.settings.image.label"
     },
     {
       "type": "select",
-      "id": "image_mask",
+      "id": "image_mask_food_vendor",
       "label": "t:common.image_mask.label",
       "default": "none",
       "options": [
@@ -237,16 +225,16 @@
     },
     {
       "type": "header",
-      "content": "t:sections.text-and-image.settings.image2.label"
+      "content": "Image for Retailer"
     },
     {
       "type": "image_picker",
-      "id": "image2",
-      "label": "t:sections.text-and-image.settings.image2.label"
+      "id": "image_retailer",
+      "label": "t:sections.text-and-image.settings.image.label"
     },
     {
       "type": "select",
-      "id": "image2_mask",
+      "id": "image_mask_retailer",
       "label": "t:common.image_mask.label",
       "default": "none",
       "options": [
@@ -306,13 +294,24 @@
     },
     {
       "type": "text",
-      "id": "subtitle",
-      "label": "t:sections.text-and-image.settings.subtitle.label"
+      "id": "subtitle_food_vendor",
+      "label": "Subheading for Food Vendor"
     },
     {
       "type": "text",
-      "id": "title",
-      "label": "t:sections.text-and-image.settings.title.label",
+      "id": "subtitle_retailer",
+      "label": "Subheading for Retailer"
+    },
+    {
+      "type": "text",
+      "id": "title_food_vendor",
+      "label": "Heading for Food Vendor",
+      "default": "Image with text"
+    },
+    {
+      "type": "text",
+      "id": "title_retailer",
+      "label": "Heading for Retailer",
       "default": "Image with text"
     },
     {
@@ -341,19 +340,35 @@
     },
     {
       "type": "richtext",
-      "id": "text",
-      "label": "t:sections.text-and-image.settings.text.label",
+      "id": "text_food_vendor",
+      "label": "Text for Food Vendor",
+      "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "text_retailer",
+      "label": "Text for Retailer",
       "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
     },
     {
       "type": "text",
-      "id": "button_label",
-      "label": "t:sections.text-and-image.settings.button_label.label"
+      "id": "button_label_food_vendor",
+      "label": "Button Label for Food Vendor"
+    },
+    {
+      "type": "text",
+      "id": "button_label_retailer",
+      "label": "Button Label for Retailer"
     },
     {
       "type": "url",
-      "id": "button_link",
-      "label": "t:sections.text-and-image.settings.button_link.label"
+      "id": "button_link_food_vendor",
+      "label": "Button Link for Food Vendor"
+    },
+    {
+      "type": "url",
+      "id": "button_link_retailer",
+      "label": "Button Link for Retailer"
     },
     {
       "type": "select",
