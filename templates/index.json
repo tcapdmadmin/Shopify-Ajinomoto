@@ -160,8 +160,8 @@
           "type": "collection",
           "settings": {
             "customer_type": "retailer",
-            "collection": "เครื่องปรุงรส-1",
-            "title": ""
+            "collection": "retailer-brand-รสดีเมนู",
+            "title": "รสดีเมนู"
           }
         },
         "939184ab-9616-4578-9047-efc0c455e40b": {
@@ -169,15 +169,15 @@
           "settings": {
             "customer_type": "retailer",
             "collection": "เครื่องปรุงรส",
-            "title": ""
+            "title": "กาแฟปรุงสำเร็จพร้อมดื่มเบอร์ดี้"
           }
         },
         "00b51f4a-a1af-4da4-bd16-41c5d0b44a73": {
           "type": "collection",
           "settings": {
             "customer_type": "retailer",
-            "collection": "retailer-all-products",
-            "title": ""
+            "collection": "ยำยำ",
+            "title": "ยำยำ"
           }
         },
         "0c3fee48-9827-40a5-bd50-9b80c49e7821": {
