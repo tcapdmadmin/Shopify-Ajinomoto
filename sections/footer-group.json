@@ -61,8 +61,8 @@
         "footer-0": {
           "type": "menu",
           "settings": {
-            "customer_type": "food_vendor",
-            "title": "Food Test Vendor",
+            "customer_type": "none",
+            "title": "สินค้าอายิโนะโมะโต๊ะ",
             "menu": "food-vendor-footer-for-qa-testing",
             "enable_account_link": false
           }
@@ -71,7 +71,7 @@
           "type": "menu",
           "settings": {
             "customer_type": "none",
-            "title": "ABOUT US",
+            "title": "เกี่ยวกับเรา",
             "menu": "about-us",
             "enable_account_link": false
           }
