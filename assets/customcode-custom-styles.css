@@ -206,4 +206,24 @@
 		margin-bottom: 2rem !important;
 	}
 }
+
 /* customcode-login.liquid */
+
+
+.swal2-blue-button {
+	background-color: #373a5e !important;
+	color: white !important;
+  }
+
+.swal2-cancel {
+	display: block;
+	margin-top: 10px;
+}
+
+.clickableDiv{
+	cursor: pointer;
+}
+.clickableDivText{
+    pointer-events: none;
+    user-select: none;
+}
