@@ -19,6 +19,7 @@
     <input type="text" id="sh_id" name="line[sh_id]" value="{{ customer.id }}" hidden>
     <input type="text" id="sh_email" name="line[sh_email]" value="{{ customer.email }}" hidden>
 
+    <input type="text" id="customer_type" name="customer_type" value="{{ customer.metafields.custom.customer_type }}" hidden>
   <!-- LINE CONNECT BUTTON -->
     <div id="lineConnectBtn" class="socialplus-login-button-component" style="text-align: left; margin-bottom: 2rem;">
       <a id="loginLineURL" class="" href="">

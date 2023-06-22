@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Line Functions
   const sh_id = document.getElementById("sh_id");
   const sh_email = document.getElementById("sh_email");
+  const customer_type = document.getElementById("customer_type");
 
   const lineConnectBtn = document.getElementById("lineConnectBtn");
   lineConnectBtn.style.display = "none";
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // LineLogin Setter
   function setLoginLineURL(apiUrl) {
     const loginLineURL = document.getElementById("loginLineURL");
-    fetch(apiUrl + "/api/line/login/getlink?mode=connect", {
+    fetch(apiUrl + "/api/line/login/getlink?mode=connect&shop_type="+customer_type.value, {
       method: "POST",
       body: {
         mode: "connect",

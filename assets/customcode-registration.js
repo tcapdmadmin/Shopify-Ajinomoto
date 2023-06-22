@@ -19,17 +19,19 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Set Line Login URL
-  const setLineLoginURL = () => {
-    const loginLineURL = document.getElementById("loginLineURL");
-    fetch("https://ajith-api.tcapdm.com/api/line/login/getlink?mode=login", {
-      method: "POST",
-      body: JSON.stringify({
-        mode: "register",
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+  const setLineLoginURL= (param = '') => {
+    return fetch(
+      "https://ajith-api.tcapdm.com/api/line/login/getlink?mode=login&shop_type="+param,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          mode: "register",
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error("API request failed");
@@ -38,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .then((data) => {
         if (data.results) {
-          loginLineURL.href = data.results;
+          return data.results;
         }
       })
       .catch((error) => {
@@ -46,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Failed to get login URL");
       });
   };
-  setLineLoginURL();
 
   async function fetchLineId() {
     try {
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       const data = await response.json();
       const lineUserId = document.getElementById("line_user_id");
-      
+
       lineUserId.value = data.results.user_id;
       document.getElementById("lineindication").style.display = "block";
       document.getElementById("signuplinebtn").style.display = "none";
@@ -144,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
       parallelFields.shop_group = selectedRadio.value;
     }
     const telephone = document.getElementById("Telephone").value;
-    if(telephone){
+    if (telephone) {
       parallelFields.telephone = telephone;
     }
 
@@ -161,7 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       const data = await response.json();
       if (data.status === "error") {
-
         var errorMessage = "";
 
         // Loop through the JSON response and concatenate the error messages
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
           text: errorMessage,
         });
 
-        setLineLoginURL();
+        setLineLoginURL(params);
         document.getElementById("lineindication").style.display = "none";
         document.getElementById("signuplinebtn").style.display = "block";
 
@@ -192,4 +192,46 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("create_customer");
 
   form.addEventListener("submit", handleFormSubmission);
+
+  function handleSignInToLine() {
+    Swal.fire({
+      title: "Select Shop Type",
+      html: "After selecting shop type, you will be redirected to Line Login",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Food Vendor",
+      denyButtonText: "Retailer",
+      cancelButtonText: "Cancel",
+      customClass: {
+        confirmButton: "swal2-confirm swal2-styled swal2-blue-button",
+        denyButton: "swal2-deny swal2-styled swal2-blue-button",
+        cancelButton: "swal2-cancel",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Redirect to Food Vendor page
+        Swal.showLoading();
+        setLineLoginURL('food_vendor').then((url) => {
+          if (url) {
+            window.location.href = url;
+          }
+        });
+      } else if (result.isDenied) {
+        // Redirect to Retailer page
+        Swal.showLoading();
+        setLineLoginURL('retailer').then((url) => {
+          if (url) {
+            window.location.href = url;
+          }
+        });
+      } else {
+        // Cancel button is clicked or modal is closed
+        // Handle cancellation logic here, if needed
+      }
+    });
+  }
+
+  // Add event listener to signuplinebtn
+  const signupLineBtn = document.getElementById("signuplinebtn");
+  signupLineBtn.addEventListener("click", handleSignInToLine);
 });
