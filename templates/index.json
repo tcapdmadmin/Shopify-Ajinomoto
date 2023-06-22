@@ -184,7 +184,7 @@
           "type": "collection",
           "settings": {
             "customer_type": "food_vendor",
-            "collection": "",
+            "collection": "อายิโนะโมะโต๊ะ-พลัส",
             "title": ""
           }
         },
@@ -192,7 +192,7 @@
           "type": "collection",
           "settings": {
             "customer_type": "food_vendor",
-            "collection": "",
+            "collection": "retailer-brand-รสดีซุปก้อน",
             "title": ""
           }
         },
