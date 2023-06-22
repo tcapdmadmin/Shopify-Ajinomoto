@@ -68,7 +68,7 @@
         "template--19123768590651__5e0d3472-07b1-4789-955d-4cb334e5e833-168627879484d557e2-0": {
           "type": "information",
           "settings": {
-            "cis_block_text": "Product Testing Information",
+            "cis_block_text": "สอบถามข้อมูลของสินค้า",
             "cis_block_phone_text": "1-800-888333",
             "cis_block_phone_link": "",
             "cis_block_mail_text": "sample@email.com",
@@ -81,7 +81,7 @@
         "854fbf64-44b7-4562-ab1c-ea62b2cc6e14": {
           "type": "information",
           "settings": {
-            "cis_block_text": "Order Status Inquiry",
+            "cis_block_text": "ติดตามสถานะของออเดอร์",
             "cis_block_phone_text": "1-800-888333",
             "cis_block_phone_link": "",
             "cis_block_mail_text": "sample@email.com",
@@ -105,25 +105,13 @@
     "22539769-2885-4504-96c8-c47fc4a01924": {
       "type": "map-without-api",
       "settings": {
-        "map_title": "Ajinomoto Co., (Thailand) Ltd.",
+        "map_title": "ติดต่อ อายิโนะโมะโต๊ะ: บริษัท อายิโนะโมะโต๊ะเซลส์ (ประเทศไทย) จำกัด (สำนักงานใหญ่)",
         "heading_size": "h2",
         "heading_position": "center",
-        "address": "<p>Ajinomoto Foundation | 487\/1, 12th Floor, Thanon Si Ayutthaya, Thanon Phaya Thai,<br\/>Ratchathewi, Bangkok 10400, Thailand<\/p>",
+        "address": "<p>487\/1 ถนนศรีอยุธยา<br\/>แขวงถนนพญาไท<br\/>เขตราชเทวี กรุงเทพมหานคร 10400<\/p>",
         "pinned_address": "Ajinomoto Foundation | 487\/1, 12th Floor, Thanon Si Ayutthaya, Thanon Phaya Thai, Ratchathewi, Bangkok 10400, Thailand",
         "padding_top": 40,
         "padding_bottom": 40
-      }
-    },
-    "368e7f89-25f8-44bc-a754-d10f7ac9dde2": {
-      "type": "contact-form",
-      "settings": {
-        "title": "Contact us",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "text": "",
-        "show_phone": true,
-        "narrow_column": true,
-        "color_scheme": "1"
       }
     }
   },
@@ -132,7 +120,6 @@
     "dbd59859-94d9-45b4-96cd-e4937b8e42ba",
     "55be6067-e72c-426e-8ad9-9a5967ef9e0e",
     "5e0d3472-07b1-4789-955d-4cb334e5e833",
-    "22539769-2885-4504-96c8-c47fc4a01924",
-    "368e7f89-25f8-44bc-a754-d10f7ac9dde2"
+    "22539769-2885-4504-96c8-c47fc4a01924"
   ]
 }
