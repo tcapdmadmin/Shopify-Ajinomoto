@@ -427,6 +427,11 @@
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-4",
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-5"
       ],
+      "custom_css": [
+        "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
+        ".collection-image--is-collection img,.collection-image-fill-space--true img {-o-object-fit: cover; object-fit: contain;}",
+        ".collection-image img {padding: 0px;}"
+      ],
       "settings": {
         "title": "Popular categories",
         "heading_size": "h2",
