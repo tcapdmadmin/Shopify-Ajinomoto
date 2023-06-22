@@ -207,7 +207,9 @@
       "custom_css": [
         "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
         ".collection-image--is-collection img,.collection-image-fill-space--true img {-o-object-fit: cover; object-fit: contain;}",
-        ".collection-image img {padding: 0px;}"
+        ".collection-image img {padding: 0px;}",
+        "[data-view=\"scrollable-5\"] .grid-item,[data-view=\"xsmall\"] .grid-item {flex: 0 0 25%;}",
+        "@media only screen and (max-width: 768px) {[data-view=\"xsmall\"] .grid-item,[data-view=\"small\"] .grid-item,[data-view=\"medium\"] .grid-item {flex: 0 0 50%;}}"
       ],
       "settings": {
         "title": "แบรนด์สินค้า",
