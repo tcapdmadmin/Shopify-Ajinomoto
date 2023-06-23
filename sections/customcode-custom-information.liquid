@@ -50,6 +50,7 @@
 
 <div class="cis_container">
     {% for block in section.blocks %}
+{% if block.type == "information" %}
     <div class="cis_block">
         <h2 class="cis_block_heading h2"> {{ block.settings.cis_block_text }}</h2>
         <div class="cis_information_block">
@@ -71,6 +72,29 @@
         </div>
         <img>
     </div>
+{% elsif block.type == "order_status" %}
+        <div class="cis_block">
+        <h2 class="cis_block_heading h2"> {{ block.settings.cis_block_heading }}</h2>
+        <div class="cis_information_block">
+            <div class="cis_info_line">
+                <img class="cis_information_img" src="https://cdn.shopify.com/s/files/1/0752/7333/9195/files/Phone_Icon_1.png?v=1685426852">
+                <a href="{{block.settings.cis_block_phone_link_1.url}}"><p>{{ block.settings.cis_block_phone_text_1 }}</p></a>
+            </div>
+            <div class="cis_info_line">
+                <img class="cis_information_img" src="https://cdn.shopify.com/s/files/1/0752/7333/9195/files/Phone_Icon_1.png?v=1685426852">
+                <a href="{{block.settings.cis_block_phone_link_2.url}}"><p>{{ block.settings.cis_block_phone_text_2 }}</p></a>
+            </div>
+            <div class="cis_info_line">
+                <img class="cis_information_img" src="https://cdn.shopify.com/s/files/1/0752/7333/9195/files/Phone_Icon_1.png?v=1685426852">
+                <a href="{{block.settings.cis_block_phone_link_3.url}}"><p>{{ block.settings.cis_block_phone_text_3 }}</p></a>
+            </div>
+            <div class="cis_info_line">
+                <img class="cis_info_qr" src="{{ block.settings.cis_block_qr_img | img_url: 'master' }}">
+            </div>
+        </div>
+        <img>
+    </div>
+{% endif %}
     {% endfor %}
 </div>
 
@@ -116,6 +140,52 @@
           "type": "url",
           "id": "cis_block_line_link",
           "label": "LINE Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "cis_block_qr_img",
+          "label": "QR"
+        }
+      ]
+    },
+    {
+      "type": "order_status",
+      "name": "Order Status Inquiry",
+      "settings": [
+        {
+          "type": "text",
+          "id": "cis_block_heading",
+          "label": "Header"
+        },
+        {
+          "type": "text",
+          "id": "cis_block_phone_text_1",
+          "label": "Phone Text"
+        },
+        {
+          "type": "url",
+          "id": "cis_block_phone_link_1",
+          "label": "Phone Link"
+        },
+        {
+          "type": "text",
+          "id": "cis_block_phone_text_2",
+          "label": "Phone Text"
+        },
+        {
+          "type": "url",
+          "id": "cis_block_phone_link_2",
+          "label": "Phone Link"
+        },
+        {
+          "type": "text",
+          "id": "cis_block_phone_text_3",
+          "label": "Phone Text"
+        },
+        {
+          "type": "url",
+          "id": "cis_block_phone_link_3",
+          "label": "Phone Link"
         },
         {
           "type": "image_picker",

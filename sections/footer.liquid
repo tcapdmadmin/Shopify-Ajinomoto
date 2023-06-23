@@ -66,8 +66,9 @@
             <a href="{{ link.url }}">{{ link.title }}</a>
           {%- endfor -%}
         {%- endif -%}
-
-        {{ powered_by_link }}
+        {%- if section.settings.show_powered_by -%}
+          {{ powered_by_link }}
+        {%- endif -%}
       </div>
     </div>
   </div>
@@ -109,6 +110,11 @@
       "type": "checkbox",
       "id": "show_copyright",
       "label": "t:sections.footer.settings.show_copyright.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_powered_by",
+      "label": "Show Powered by"
     },
     {
       "type": "text",
