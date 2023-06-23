@@ -4,6 +4,7 @@
   "sections": {
     "footer-promotions": {
       "type": "footer-promotions",
+      "disabled": true,
       "blocks": {
         "footer-promotions-0": {
           "type": "promotion",
