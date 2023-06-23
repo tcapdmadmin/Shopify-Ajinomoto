@@ -4,6 +4,7 @@
   "sections": {
     "newsletter-popup": {
       "type": "newsletter-popup",
+      "disabled": true,
       "blocks": {
         "reminder-block": {
           "type": "header",

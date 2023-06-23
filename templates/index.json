@@ -186,7 +186,7 @@
           "settings": {
             "customer_type": "food_vendor",
             "collection": "อายิโนะโมะโต๊ะ-พลัส",
-            "title": ""
+            "title": "อายิโนะโมะโต๊ะ พลัส"
           }
         },
         "1750b593-7ade-485c-86fa-5c02ace0b3b0": {
@@ -194,15 +194,15 @@
           "settings": {
             "customer_type": "food_vendor",
             "collection": "retailer-brand-รสดีซุปก้อน",
-            "title": ""
+            "title": "รสดีซุปก้อน"
           }
         },
         "88a7199c-74fe-4d97-ab06-12fe8b2729cd": {
           "type": "collection",
           "settings": {
             "customer_type": "food_vendor",
-            "collection": "",
-            "title": "NUDOLS SOUP NO. 5"
+            "collection": "food-vendor-collection-ก๋วยจั๊บ",
+            "title": "ก๋วยจั๊บ"
           }
         }
       },
@@ -376,49 +376,105 @@
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-0": {
           "type": "collection",
           "settings": {
-            "customer_type": "retailer",
-            "collection": "",
-            "title": ""
+            "customer_type": "food_vendor",
+            "collection": "product-collection-seasoning-aji-no-moto®",
+            "title": "ผงชูรส อายิโนะโมะโต๊ะ"
           }
         },
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-1": {
           "type": "collection",
           "settings": {
-            "customer_type": "retailer",
-            "collection": "",
-            "title": ""
+            "customer_type": "food_vendor",
+            "collection": "product-collection-seasoning-ajinomoto®-plus",
+            "title": "อายิโนะโมะโต๊ะ พลัส"
           }
         },
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-2": {
           "type": "collection",
           "settings": {
-            "customer_type": "retailer",
-            "collection": "",
-            "title": ""
+            "customer_type": "food_vendor",
+            "collection": "food-vendor-product-collection-seasoning-rosdee®",
+            "title": "รสดี"
           }
         },
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-3": {
           "type": "collection",
           "settings": {
             "customer_type": "food_vendor",
-            "collection": "",
-            "title": ""
+            "collection": "food-vendor-product-collection-rosdee-menu™",
+            "title": "รสดีเมนู"
           }
         },
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-4": {
           "type": "collection",
           "settings": {
             "customer_type": "food_vendor",
-            "collection": "",
-            "title": ""
+            "collection": "food-vendor-product-collection-rosdee-cube",
+            "title": "รสดีซุปก้อน"
           }
         },
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-5": {
           "type": "collection",
           "settings": {
             "customer_type": "food_vendor",
-            "collection": "",
-            "title": ""
+            "collection": "food-vendor-product-collection-rosdee-menu™krua-krob-ros",
+            "title": "แป้งรสดีเมนู"
+          }
+        },
+        "9aa669aa-0e5d-42e3-8073-4ab7703704c9": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "product-collection-retailer-beverage-birdy®",
+            "title": "กาแฟปรุงสำเร็จพร้อมดื่มเบอร์ดี้"
+          }
+        },
+        "88c26290-524f-45c2-ab7f-ad10962be7e3": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "product-collection-retailer-beverage-birdy®-3in1",
+            "title": "กาแฟปรุงสำเร็จชนิดผง เบอร์ดี้ 3อิน1"
+          }
+        },
+        "c360d379-d759-4472-943b-3464929cc1cd": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "product-collection-retailer-beverage-lite-sugar™",
+            "title": "ไลท์ ชูการ์"
+          }
+        },
+        "deac2692-50dd-4bf9-86a2-7e12f31a1e0b": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "product-collection-retailer-instant-noodle-yumyum-jumbo™",
+            "title": "ยำยำ จัมโบ้"
+          }
+        },
+        "8b5f92c0-90d2-4df2-9990-363b492f17e4": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "product-collection-retailer-instant-noodle-yumyum-soodded™",
+            "title": "ยำยำ สูตรเด็ด"
+          }
+        },
+        "5908757f-144b-4669-a0b9-75cc45b03469": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "product-collection-retailer-instant-noodle-yumyum-cup™",
+            "title": "ยำยำ คัพ"
+          }
+        },
+        "d5c39495-0bde-4af4-8a66-b7fa5f3826cb": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "product-collection-retailer-instant-noodle-yumyum-changnoi®",
+            "title": "ยำยำ ช้างน้อย"
           }
         }
       },
@@ -428,7 +484,14 @@
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-2",
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-3",
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-4",
-        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-5"
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-5",
+        "9aa669aa-0e5d-42e3-8073-4ab7703704c9",
+        "88c26290-524f-45c2-ab7f-ad10962be7e3",
+        "c360d379-d759-4472-943b-3464929cc1cd",
+        "deac2692-50dd-4bf9-86a2-7e12f31a1e0b",
+        "8b5f92c0-90d2-4df2-9990-363b492f17e4",
+        "5908757f-144b-4669-a0b9-75cc45b03469",
+        "d5c39495-0bde-4af4-8a66-b7fa5f3826cb"
       ],
       "custom_css": [
         "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
@@ -436,7 +499,7 @@
         ".collection-image img {padding: 0px;}"
       ],
       "settings": {
-        "title": "Popular categories",
+        "title": "หมวดหมู่ยอดนิยม",
         "heading_size": "h2",
         "heading_position": "left",
         "divider": false

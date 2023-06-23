@@ -111,7 +111,7 @@
         "input {background: #ffffff;}"
       ],
       "settings": {
-        "show_newsletter": true,
+        "show_newsletter": false,
         "newsletter_richtext": "<p>Receive exclusive discount and product update right to your inboxes.<\/p>",
         "footer_main_menu": false,
         "show_copyright": true,

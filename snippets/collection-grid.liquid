@@ -43,6 +43,9 @@
       {% assign retailer_count = 0 %}
       
       {%- for item in items -%}
+        {%- comment %}<locksmith:019f>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: item, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:019f>{% endcomment -%}
         {%- assign productType = item.object_type -%}
         {%- if productType == 'product' -%}
           {%- if customer.metafields.custom.customer_type == 'retailer' and item.tags contains 'Retailer' -%}
@@ -118,6 +121,9 @@
     data-scroll-to
   >
     {%- for item in items -%}     
+      {%- comment %}<locksmith:c399>{% endcomment -%}
+        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: item, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+      {%- comment %}</locksmith:c399>{% endcomment -%}     
       {%- if productType == 'product' -%}
         {%- if customer.metafields.custom.customer_type == 'retailer' and item.tags contains 'Retailer' -%}
           {%- render 'product-grid-item', product: item -%}
