@@ -417,6 +417,14 @@
             "collection": "food-vendor-product-collection-rosdee-menu™krua-krob-ros",
             "title": "แป้งรสดีเมนู"
           }
+        },
+        "9aa669aa-0e5d-42e3-8073-4ab7703704c9": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "",
+            "title": ""
+          }
         }
       },
       "block_order": [
@@ -425,7 +433,8 @@
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-2",
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-3",
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-4",
-        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-5"
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-5",
+        "9aa669aa-0e5d-42e3-8073-4ab7703704c9"
       ],
       "custom_css": [
         "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
