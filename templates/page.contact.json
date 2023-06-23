@@ -102,7 +102,8 @@
         "85098074-599e-454a-b81b-018806d4d0ca"
       ],
       "custom_css": [
-        "{margin-top: 40px;}"
+        "{margin-top: 40px;}",
+        "@media only screen and (min-width: 769px) {.cis_container {flex-wrap: nowrap; }}"
       ],
       "settings": {
       }
