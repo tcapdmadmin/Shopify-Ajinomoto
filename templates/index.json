@@ -186,7 +186,7 @@
           "settings": {
             "customer_type": "food_vendor",
             "collection": "อายิโนะโมะโต๊ะ-พลัส",
-            "title": ""
+            "title": "อายิโนะโมะโต๊ะ พลัส"
           }
         },
         "1750b593-7ade-485c-86fa-5c02ace0b3b0": {
@@ -194,15 +194,15 @@
           "settings": {
             "customer_type": "food_vendor",
             "collection": "retailer-brand-รสดีซุปก้อน",
-            "title": ""
+            "title": "รสดีซุปก้อน"
           }
         },
         "88a7199c-74fe-4d97-ab06-12fe8b2729cd": {
           "type": "collection",
           "settings": {
             "customer_type": "food_vendor",
-            "collection": "",
-            "title": "NUDOLS SOUP NO. 5"
+            "collection": "food-vendor-collection-ก๋วยจั๊บ",
+            "title": "ก๋วยจั๊บ"
           }
         }
       },
