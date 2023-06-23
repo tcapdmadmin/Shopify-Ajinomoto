@@ -62,6 +62,10 @@
                 <a href="{{block.settings.cis_block_phone_link.url}}"><p class="cis_link">{{ block.settings.cis_block_phone_text }}</p></a>
             </div>
             <div class="cis_info_line">
+                <img class="cis_information_img" src="https://cdn.shopify.com/s/files/1/0752/7333/9195/files/Phone_Icon_1.png?v=1685426852">
+                <a href="{{block.settings.cis_block_phone_link_4.url}}"><p class="cis_link">{{ block.settings.cis_block_phone_text_4 }}</p></a>
+            </div>
+            <div class="cis_info_line">
                 <img class="cis_information_img" src="https://cdn.shopify.com/s/files/1/0752/7333/9195/files/Email_Icon_1.png?v=1685426853">
                 <a href="{{block.settings.cis_block_mail_link.url}}"><p class="cis_link">{{ block.settings.cis_block_mail_text }}</p></a>
             </div>
@@ -82,17 +86,17 @@
             <div class="cis_info_line">
                 <img class="cis_information_img" src="https://cdn.shopify.com/s/files/1/0752/7333/9195/files/Phone_Icon_1.png?v=1685426852">
                 <p style="margin: auto 20px !important;">{{ block.settings.cis_block_title_1 }}</p>
-                <a href="{{block.settings.cis_block_phone_link_1.url}}"><p>{{ block.settings.cis_block_phone_text_1 }}</p></a>
+                <a href="{{block.settings.cis_block_phone_link_1.url}}"><p class="cis_link">{{ block.settings.cis_block_phone_text_1 }}</p></a>
             </div>
             <div class="cis_info_line">
                 <img class="cis_information_img" src="https://cdn.shopify.com/s/files/1/0752/7333/9195/files/Phone_Icon_1.png?v=1685426852">
                 <p style="margin: auto 20px !important;">{{ block.settings.cis_block_title_2 }}</p>
-                <a href="{{block.settings.cis_block_phone_link_2.url}}"><p>{{ block.settings.cis_block_phone_text_2 }}</p></a>
+                <a href="{{block.settings.cis_block_phone_link_2.url}}"><p class="cis_link">{{ block.settings.cis_block_phone_text_2 }}</p></a>
             </div>
             <div class="cis_info_line">
                 <img class="cis_information_img" src="https://cdn.shopify.com/s/files/1/0752/7333/9195/files/Phone_Icon_1.png?v=1685426852">
                 <p style="margin: auto 20px !important;">{{ block.settings.cis_block_title_3 }}</p>
-                <a href="{{block.settings.cis_block_phone_link_3.url}}"><p>{{ block.settings.cis_block_phone_text_3 }}</p></a>
+                <a href="{{block.settings.cis_block_phone_link_3.url}}"><p class="cis_link">{{ block.settings.cis_block_phone_text_3 }}</p></a>
             </div>
             <div class="cis_info_line">
                 <img class="cis_info_qr" src="{{ block.settings.cis_block_qr_img | img_url: 'master' }}">
@@ -125,6 +129,16 @@
         {
           "type": "url",
           "id": "cis_block_phone_link",
+          "label": "Phone Link"
+        },
+        {
+          "type": "text",
+          "id": "cis_block_phone_text_4",
+          "label": "Phone Text"
+        },
+        {
+          "type": "url",
+          "id": "cis_block_phone_link_4",
           "label": "Phone Link"
         },
         {
