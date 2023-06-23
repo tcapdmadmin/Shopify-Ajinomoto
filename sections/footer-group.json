@@ -4,6 +4,7 @@
   "sections": {
     "footer-promotions": {
       "type": "footer-promotions",
+      "disabled": true,
       "blocks": {
         "footer-promotions-0": {
           "type": "promotion",
@@ -114,6 +115,7 @@
         "newsletter_richtext": "<p>Receive exclusive discount and product update right to your inboxes.<\/p>",
         "footer_main_menu": false,
         "show_copyright": true,
+        "show_powered_by": false,
         "copyright_text": "",
         "policies_menu": ""
       }
