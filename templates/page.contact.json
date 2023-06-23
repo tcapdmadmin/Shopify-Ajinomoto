@@ -103,7 +103,8 @@
       ],
       "custom_css": [
         "{margin-top: 40px;}",
-        "@media only screen and (min-width: 769px) {.cis_container {flex-wrap: nowrap; }}"
+        "@media only screen and (min-width: 769px) {.cis_container {flex-wrap: nowrap; }}",
+        "h2.cis_block_heading.h2 {color: #ffffff;}"
       ],
       "settings": {
       }
