@@ -421,7 +421,7 @@
             "title": "แป้งรสดีเมนู"
           }
         },
-        "9aa669aa-0e5d-42e3-8073-4ab7703704c9": {
+        "b92c82d6-b9a9-4c01-a5db-1f28dd61e8ae": {
           "type": "collection",
           "settings": {
             "customer_type": "retailer",
@@ -429,7 +429,7 @@
             "title": "กาแฟปรุงสำเร็จพร้อมดื่มเบอร์ดี้"
           }
         },
-        "88c26290-524f-45c2-ab7f-ad10962be7e3": {
+        "b94b089d-b8fb-4c3f-abd3-6e42f620f041": {
           "type": "collection",
           "settings": {
             "customer_type": "retailer",
@@ -437,7 +437,7 @@
             "title": "กาแฟปรุงสำเร็จชนิดผง เบอร์ดี้ 3อิน1"
           }
         },
-        "c360d379-d759-4472-943b-3464929cc1cd": {
+        "01aab95a-2899-4af6-96f3-020ef22dae8b": {
           "type": "collection",
           "settings": {
             "customer_type": "retailer",
@@ -445,7 +445,7 @@
             "title": "ไลท์ ชูการ์"
           }
         },
-        "deac2692-50dd-4bf9-86a2-7e12f31a1e0b": {
+        "dae87963-f7f1-4f56-831d-9b4a2a38bb2d": {
           "type": "collection",
           "settings": {
             "customer_type": "retailer",
@@ -453,7 +453,7 @@
             "title": "ยำยำ จัมโบ้"
           }
         },
-        "8b5f92c0-90d2-4df2-9990-363b492f17e4": {
+        "fd23ef10-b4ef-4c32-adde-03d226b5aa5d": {
           "type": "collection",
           "settings": {
             "customer_type": "retailer",
@@ -461,7 +461,7 @@
             "title": "ยำยำ สูตรเด็ด"
           }
         },
-        "5908757f-144b-4669-a0b9-75cc45b03469": {
+        "f44dba47-89d3-4912-b1c5-a7ce5aeb1073": {
           "type": "collection",
           "settings": {
             "customer_type": "retailer",
@@ -469,7 +469,7 @@
             "title": "ยำยำ คัพ"
           }
         },
-        "d5c39495-0bde-4af4-8a66-b7fa5f3826cb": {
+        "6301dd79-dc6b-4e73-a173-c733b46328f9": {
           "type": "collection",
           "settings": {
             "customer_type": "retailer",
@@ -485,13 +485,13 @@
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-3",
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-4",
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-5",
-        "9aa669aa-0e5d-42e3-8073-4ab7703704c9",
-        "88c26290-524f-45c2-ab7f-ad10962be7e3",
-        "c360d379-d759-4472-943b-3464929cc1cd",
-        "deac2692-50dd-4bf9-86a2-7e12f31a1e0b",
-        "8b5f92c0-90d2-4df2-9990-363b492f17e4",
-        "5908757f-144b-4669-a0b9-75cc45b03469",
-        "d5c39495-0bde-4af4-8a66-b7fa5f3826cb"
+        "b92c82d6-b9a9-4c01-a5db-1f28dd61e8ae",
+        "b94b089d-b8fb-4c3f-abd3-6e42f620f041",
+        "01aab95a-2899-4af6-96f3-020ef22dae8b",
+        "dae87963-f7f1-4f56-831d-9b4a2a38bb2d",
+        "fd23ef10-b4ef-4c32-adde-03d226b5aa5d",
+        "f44dba47-89d3-4912-b1c5-a7ce5aeb1073",
+        "6301dd79-dc6b-4e73-a173-c733b46328f9"
       ],
       "custom_css": [
         "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
@@ -499,7 +499,7 @@
         ".collection-image img {padding: 0px;}"
       ],
       "settings": {
-        "title": "หมวดหมู่ยอดนิยม",
+        "title": "Popular categories",
         "heading_size": "h2",
         "heading_position": "left",
         "divider": false
