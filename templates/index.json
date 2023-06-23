@@ -413,7 +413,7 @@
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-5": {
           "type": "collection",
           "settings": {
-            "customer_type": "retailer",
+            "customer_type": "food_vendor",
             "collection": "food-vendor-product-collection-rosdee-menu™krua-krob-ros",
             "title": "แป้งรสดีเมนู"
           }
@@ -422,6 +422,78 @@
           "type": "collection",
           "settings": {
             "customer_type": "retailer",
+            "collection": "product-collection-retailer-beverage-birdy®",
+            "title": "กาแฟปรุงสำเร็จพร้อมดื่มเบอร์ดี้"
+          }
+        },
+        "88c26290-524f-45c2-ab7f-ad10962be7e3": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "product-collection-retailer-beverage-birdy®-3in1",
+            "title": "กาแฟปรุงสำเร็จชนิดผง เบอร์ดี้ 3อิน1"
+          }
+        },
+        "c360d379-d759-4472-943b-3464929cc1cd": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "product-collection-retailer-beverage-lite-sugar™",
+            "title": "ไลท์ ชูการ์"
+          }
+        },
+        "deac2692-50dd-4bf9-86a2-7e12f31a1e0b": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "product-collection-retailer-instant-noodle-yumyum-jumbo™",
+            "title": "ยำยำ จัมโบ้"
+          }
+        },
+        "8b5f92c0-90d2-4df2-9990-363b492f17e4": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "none",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "5908757f-144b-4669-a0b9-75cc45b03469": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "none",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "d5c39495-0bde-4af4-8a66-b7fa5f3826cb": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "none",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "a922d778-349f-44d1-afd5-32b1d7e0bc31": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "none",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "fdf0d33f-8f75-4a1d-81ad-ac1155d0b263": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "none",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "47e4a0b8-01e1-454f-a7ff-8f37de0b2891": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "none",
             "collection": "",
             "title": ""
           }
@@ -434,7 +506,16 @@
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-3",
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-4",
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-5",
-        "9aa669aa-0e5d-42e3-8073-4ab7703704c9"
+        "9aa669aa-0e5d-42e3-8073-4ab7703704c9",
+        "88c26290-524f-45c2-ab7f-ad10962be7e3",
+        "c360d379-d759-4472-943b-3464929cc1cd",
+        "deac2692-50dd-4bf9-86a2-7e12f31a1e0b",
+        "8b5f92c0-90d2-4df2-9990-363b492f17e4",
+        "5908757f-144b-4669-a0b9-75cc45b03469",
+        "d5c39495-0bde-4af4-8a66-b7fa5f3826cb",
+        "a922d778-349f-44d1-afd5-32b1d7e0bc31",
+        "fdf0d33f-8f75-4a1d-81ad-ac1155d0b263",
+        "47e4a0b8-01e1-454f-a7ff-8f37de0b2891"
       ],
       "custom_css": [
         "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
