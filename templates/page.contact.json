@@ -70,10 +70,12 @@
           "settings": {
             "cis_block_text": "สอบถามข้อมูลของสินค้า",
             "cis_block_phone_text": "1-800-888333",
-            "cis_block_phone_link": "",
-            "cis_block_mail_text": "sample@email.com",
-            "cis_block_mail_link": "",
-            "cis_block_line_text": "Product Information Customer Care Test",
+            "cis_block_phone_link": "tel:1-800-888333",
+            "cis_block_phone_text_4": "0-2248-7444",
+            "cis_block_phone_link_4": "tel:0-2248-7444",
+            "cis_block_mail_text": "bkk.ajtcic.k48@asv.ajinomoto.com",
+            "cis_block_mail_link": "mailto:bkk.ajtcic.k48@asv.ajinomoto.com",
+            "cis_block_line_text": "Line",
             "cis_block_line_link": "",
             "cis_block_qr_img": "shopify:\/\/shop_images\/image_20.png"
           }
