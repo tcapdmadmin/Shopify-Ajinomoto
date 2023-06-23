@@ -6,8 +6,30 @@
       "settings": {
       }
     },
+    "dbd59859-94d9-45b4-96cd-e4937b8e42ba": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--19123768590651__dbd59859-94d9-45b4-96cd-e4937b8e42ba-16874747719c3558c4-1": {
+          "type": "liquid",
+          "settings": {
+            "code": "<style>\n    \/* Desktop styles *\/\n    @media (min-width: 769px) {\n        .container {\n            position: relative;\n            display: flex;\n            justify-content: flex-end;\n            align-items: flex-start;\n            min-height: 500px;\n            background-image: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0752\/7333\/9195\/files\/AJINOMOTO_B2B_Website_Page_Banner-_Customer_Service_-_Web.jpg\");\n            background-size: cover;\n            background-repeat: no-repeat;\n        }\n\n        .text {\n            position: absolute;\n            top: 50%;\n            left: 60%;\n            transform: translate(0, -50%);\n            padding: 20px;\n            text-align: left;\n        }\n    }\n\n    \/* Mobile styles *\/\n    @media (max-width: 768px) {\n        .container {\n            position: relative;\n            display: flex;\n            justify-content: center;\n            align-items: flex-start;\n            min-height: 60vh;\n            background-image: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0752\/7333\/9195\/files\/AJINOMOTO_B2B_Website_Page_Banner-_Customer_Service_-_Mobile.jpg\");\n            background-size: cover;\n            background-repeat: no-repeat;\n        }\n\n        .text {\n            position: absolute;\n            top: 0%;\n            left: 50%;\n            transform: translate(-50%, 10%);\n            padding: 20px;\n            text-align: center;\n            width: 100%\n        }\n    }\n\n    h1 {\n        color: #ee1c25;\n    }\n\n    h2 {\n        color: #000000;\n    }\n<\/style>\n<div class=\"container\">\n    <div class=\"text\">\n        <h1>ติดต่อศูนย์ข้อมูลผู้บริโภค<\/h1>\n        <b>\n            <h2>ฟรีทั่วไทย<\/h2>\n        <\/b>\n    <\/div>\n<\/div>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--19123768590651__dbd59859-94d9-45b4-96cd-e4937b8e42ba-16874747719c3558c4-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "space_around": false,
+        "lazyload_images": true
+      }
+    },
     "55be6067-e72c-426e-8ad9-9a5967ef9e0e": {
       "type": "advanced-content",
+      "disabled": true,
       "blocks": {
         "template--19123768590651__55be6067-e72c-426e-8ad9-9a5967ef9e0e-16862783984e31c14b-0": {
           "type": "image",
@@ -46,7 +68,7 @@
         "template--19123768590651__5e0d3472-07b1-4789-955d-4cb334e5e833-168627879484d557e2-0": {
           "type": "information",
           "settings": {
-            "cis_block_text": "Product Testing Information",
+            "cis_block_text": "สอบถามข้อมูลของสินค้า",
             "cis_block_phone_text": "1-800-888333",
             "cis_block_phone_link": "",
             "cis_block_mail_text": "sample@email.com",
@@ -59,7 +81,7 @@
         "854fbf64-44b7-4562-ab1c-ea62b2cc6e14": {
           "type": "information",
           "settings": {
-            "cis_block_text": "Order Status Inquiry",
+            "cis_block_text": "ติดตามสถานะของออเดอร์",
             "cis_block_phone_text": "1-800-888333",
             "cis_block_phone_link": "",
             "cis_block_mail_text": "sample@email.com",
@@ -83,33 +105,21 @@
     "22539769-2885-4504-96c8-c47fc4a01924": {
       "type": "map-without-api",
       "settings": {
-        "map_title": "Ajinomoto Co., (Thailand) Ltd.",
+        "map_title": "ติดต่อ อายิโนะโมะโต๊ะ: บริษัท อายิโนะโมะโต๊ะเซลส์ (ประเทศไทย) จำกัด (สำนักงานใหญ่)",
         "heading_size": "h2",
         "heading_position": "center",
-        "address": "<p>Ajinomoto Foundation | 487\/1, 12th Floor, Thanon Si Ayutthaya, Thanon Phaya Thai,<br\/>Ratchathewi, Bangkok 10400, Thailand<\/p>",
+        "address": "<p>487\/1 ถนนศรีอยุธยา<br\/>แขวงถนนพญาไท<br\/>เขตราชเทวี กรุงเทพมหานคร 10400<\/p>",
         "pinned_address": "Ajinomoto Foundation | 487\/1, 12th Floor, Thanon Si Ayutthaya, Thanon Phaya Thai, Ratchathewi, Bangkok 10400, Thailand",
         "padding_top": 40,
         "padding_bottom": 40
-      }
-    },
-    "368e7f89-25f8-44bc-a754-d10f7ac9dde2": {
-      "type": "contact-form",
-      "settings": {
-        "title": "Contact us",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "text": "",
-        "show_phone": true,
-        "narrow_column": true,
-        "color_scheme": "1"
       }
     }
   },
   "order": [
     "main",
+    "dbd59859-94d9-45b4-96cd-e4937b8e42ba",
     "55be6067-e72c-426e-8ad9-9a5967ef9e0e",
     "5e0d3472-07b1-4789-955d-4cb334e5e833",
-    "22539769-2885-4504-96c8-c47fc4a01924",
-    "368e7f89-25f8-44bc-a754-d10f7ac9dde2"
+    "22539769-2885-4504-96c8-c47fc4a01924"
   ]
 }

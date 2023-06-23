@@ -6,13 +6,14 @@
         "5779c804-58a8-4af0-b21f-98471b77412d": {
           "type": "hero",
           "settings": {
+            "customer_type": "none",
             "top_subheading": "",
             "title": "<h1>แบรนด์ชูรสและผงปรุงรสอันดับที่ 1 ของประเทศไทย<\/h1>",
             "title_size": 45,
             "subheading": "",
             "link": "",
             "link_text": "ช้อปสินค้าผงปรุงรส",
-            "link_2": "",
+            "link_2": "https:\/\/www.ajinomoto.co.th\/th\/recipe",
             "link_text_2": "เมนูที่น่าสนใจ",
             "color_accent": "#1c1c1e",
             "text_align": "vertical-center horizontal-left",
@@ -24,6 +25,7 @@
         "template--18841254035771__eca8ba47-47c4-423e-8aec-fe96b61cf4dd-16837857478463458e-1": {
           "type": "hero",
           "settings": {
+            "customer_type": "retailer",
             "top_subheading": "",
             "title": "<h1>กาแฟปรุงสำเร็จรสชาติเข้มข้น หอมกาแฟคั่วบด<\/h1>",
             "title_size": 45,
@@ -42,6 +44,7 @@
         "aba27af0-3304-47a4-964b-a1c00ee0c359": {
           "type": "hero",
           "settings": {
+            "customer_type": "retailer",
             "top_subheading": "",
             "title": "<h1>บะหมี่กึ่งสำเร็จรูปแบบซองและแบบถ้วย ให้คุณอร่อยเต็มอิ่มกับเส้นที่เหนี่ยวลื่นนุ่ม อร่อยลงตัว<\/h1>",
             "title_size": 45,
@@ -66,7 +69,8 @@
       "custom_css": [
         "h1 {color: #000000;}",
         "a.btn.js-no-transition {border: 2px solid #1c1c1e;}",
-        "a.btn.js-no-transition:hover {background: none !important; border: 2px solid #1c1c1e; transition: 0.3s !important; color: #000000;}"
+        "a.btn.js-no-transition:hover {background: none !important; border: 2px solid #1c1c1e; transition: 0.3s !important; color: #000000;}",
+        "@media only screen and (max-width: 768px) {.hero__text-content.vertical-center {vertical-align: baseline; top: 50px; }}"
       ],
       "settings": {
         "full_width": true,
@@ -76,65 +80,6 @@
         "autoplay": false,
         "autoplay_speed": 7,
         "lazyload_images": true
-      }
-    },
-    "d24f4364-4ae3-42f8-aa7a-429e70e7fde7": {
-      "type": "text-with-icons",
-      "disabled": true,
-      "blocks": {
-        "template--18841254035771__d24f4364-4ae3-42f8-aa7a-429e70e7fde7-1683786056dfbfdd36-0": {
-          "type": "text_block",
-          "settings": {
-            "icon": "package",
-            "title": "Convenient Return",
-            "text": ""
-          }
-        },
-        "template--18841254035771__d24f4364-4ae3-42f8-aa7a-429e70e7fde7-1683786056dfbfdd36-1": {
-          "type": "text_block",
-          "settings": {
-            "icon": "globe",
-            "title": "Delivery Guarantee",
-            "text": ""
-          }
-        },
-        "template--18841254035771__d24f4364-4ae3-42f8-aa7a-429e70e7fde7-1683786056dfbfdd36-2": {
-          "type": "text_block",
-          "settings": {
-            "icon": "shield",
-            "title": "Secure Payment",
-            "text": ""
-          }
-        },
-        "b212e048-1e3e-4a5d-971a-57321421eb9d": {
-          "type": "text_block",
-          "settings": {
-            "icon": "sales-tag",
-            "title": "3X Cashback",
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--18841254035771__d24f4364-4ae3-42f8-aa7a-429e70e7fde7-1683786056dfbfdd36-0",
-        "template--18841254035771__d24f4364-4ae3-42f8-aa7a-429e70e7fde7-1683786056dfbfdd36-1",
-        "template--18841254035771__d24f4364-4ae3-42f8-aa7a-429e70e7fde7-1683786056dfbfdd36-2",
-        "b212e048-1e3e-4a5d-971a-57321421eb9d"
-      ],
-      "custom_css": [
-        "@media only screen and (max-width: 768px) {.text-with-icons__blocks {flex-direction: unset !important; } @media only screen and (max-width: 768px) {.text-with-icons__blocks .text-with-icons__block {padding: 0 0 60px; width: 25%; } }}",
-        "@media only screen and (max-width: 768px) {.text-with-icons__block-icon .icon {height: 45px !important; width: 45px !important; }}",
-        "@media only screen and (max-width: 768px) {.h3, h3 {font-size: 14px; }}",
-        "@media only screen and (max-width: 768px) {.text-with-icons__blocks .text-with-icons__block {padding: 0 0 10px !important; }}"
-      ],
-      "settings": {
-        "t:common.text_with_icons.settings.title.label": "",
-        "align_text": "center",
-        "desktop_columns_per_row": 4,
-        "icon_color": "#000000",
-        "button_label": "",
-        "button_link": "",
-        "divider": false
       }
     },
     "2d44e835-29c6-46c9-8cfd-817fc12c4e3b": {
@@ -216,40 +161,48 @@
           "type": "collection",
           "settings": {
             "customer_type": "retailer",
-            "collection": "เครื่องปรุงรส-1",
-            "title": ""
+            "collection": "retailer-brand-รสดีเมนู",
+            "title": "รสดีเมนู"
           }
         },
         "939184ab-9616-4578-9047-efc0c455e40b": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
-            "collection": "เครื่องปรุงรส",
-            "title": ""
+            "customer_type": "retailer",
+            "collection": "เบอร์ดี้",
+            "title": "กาแฟปรุงสำเร็จพร้อมดื่มเบอร์ดี้"
           }
         },
         "00b51f4a-a1af-4da4-bd16-41c5d0b44a73": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
-            "collection": "retailer-all-products",
+            "customer_type": "retailer",
+            "collection": "ยำยำ",
+            "title": "ยำยำ"
+          }
+        },
+        "0c3fee48-9827-40a5-bd50-9b80c49e7821": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "อายิโนะโมะโต๊ะ-พลัส",
             "title": ""
           }
         },
-        "20b60a3b-e9d3-4fa4-bd57-405c2d05e2c2": {
+        "1750b593-7ade-485c-86fa-5c02ace0b3b0": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
-            "collection": "food-vendor-all-products",
+            "customer_type": "food_vendor",
+            "collection": "retailer-brand-รสดีซุปก้อน",
             "title": ""
           }
         },
-        "28531dcd-b69d-4041-9608-f7f21d568feb": {
+        "88a7199c-74fe-4d97-ab06-12fe8b2729cd": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
-            "collection": "fv-ret",
-            "title": ""
+            "customer_type": "food_vendor",
+            "collection": "",
+            "title": "NUDOLS SOUP NO. 5"
           }
         }
       },
@@ -257,8 +210,9 @@
         "2221d003-364f-46b9-bc28-72cd69a215af",
         "939184ab-9616-4578-9047-efc0c455e40b",
         "00b51f4a-a1af-4da4-bd16-41c5d0b44a73",
-        "20b60a3b-e9d3-4fa4-bd57-405c2d05e2c2",
-        "28531dcd-b69d-4041-9608-f7f21d568feb"
+        "0c3fee48-9827-40a5-bd50-9b80c49e7821",
+        "1750b593-7ade-485c-86fa-5c02ace0b3b0",
+        "88a7199c-74fe-4d97-ab06-12fe8b2729cd"
       ],
       "custom_css": [
         "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
@@ -278,7 +232,9 @@
         "title": "สินค้าแนะนำ",
         "heading_size": "h2",
         "heading_position": "left",
-        "home_featured_products": "popular-picks",
+        "food_vendor": "popular-picks-food-vendor",
+        "retailer": "popular-picks-retailer",
+        "none": "",
         "count": 5,
         "products_per_row": 4,
         "mobile_scrollable": true,
@@ -369,7 +325,9 @@
         "title": "รสดีเมนู",
         "heading_size": "h2",
         "heading_position": "left",
-        "home_featured_products": "popular-picks",
+        "food_vendor": "รสดี",
+        "retailer": "retailer-brand-รสดี",
+        "none": "",
         "count": 5,
         "products_per_row": 4,
         "mobile_scrollable": true,
@@ -383,15 +341,21 @@
     "df82034f-23a7-4dd9-b563-6d65eb6a2642": {
       "type": "text-and-image",
       "settings": {
-        "image_mask": "none",
-        "image2": "shopify:\/\/shop_images\/6144012ab71dc_d0f464d9-6c4e-4ba0-b930-b3a2a113018e.webp",
-        "image2_mask": "none",
-        "subtitle": "NEW PRODUCT LAUNCH",
-        "title": "Ajinomoto Blendy®",
+        "image_food_vendor": "shopify:\/\/shop_images\/RDNS_FB_Banner_APPROVED.jpg",
+        "image_mask_food_vendor": "none",
+        "image_retailer": "shopify:\/\/shop_images\/AJINOMOTO_B2B_Website_Product_Image_-_Birdy_3IN1.jpg",
+        "image_mask_retailer": "none",
+        "subtitle_food_vendor": "",
+        "subtitle_retailer": "",
+        "title_food_vendor": "รสดี น้ำซุปก๋วยเตี๋ยว",
+        "title_retailer": "กาแฟเบอร์ดี้ 3in1",
         "heading_size": "h1",
-        "text": "<p>New! Blendy No.1 Brand from Japan provided relaxation both hot and cold type of coffee and beverage which make you enjoy with soft & smooth taste as authentic Japanese style. We have many varieties, Café au Lait (Coffee with milk) and Café au Lait Half Calorie for those who are health concern which imported coffee from Japan, Matcha au Lait from authentic original match from Japan and Cocoa au Lait from well-selected premium Cocoa quality. To serve authentic Japanese style with soft & smooth taste in Thailand, changing your mood to be relax with us “Have a Blendy day”<\/p>",
-        "button_label": "Browse Sale Items",
-        "button_link": "",
+        "text_food_vendor": "<p>ผงทำน้ำซุปก๋วยเตี๋ยวโดยเฉพาะ ช่วยเพิ่มความเข้มข้นกลมกล่อม ให้น้ำซุปมีกลิ่นหอมของน้ำต้มกระดูกและเครื่องเทศ พร้อมความหวานธรรมชาติจากน้ำต้มผัก  ให้น้ำซุปใส เหมาะสำหรับก๋วยเตี๋ยวทุกประเภท ช่วยประหยัดเวลาและต้นทุนในการเตรียมน้ำซุปก๋วยเตี๋ยว<\/p>",
+        "text_retailer": "<p>กาแฟปรุงสำเร็จชนิดผง \"Birdy®\" 3in1 ผลิตจากเมล็ดกาแฟสายพันธุ์โรบัสต้า ที่ให้ความเข้มข้นพร้อมกลิ่นหอมของกาแฟคั่วบด เพื่อให้คุณสัมผัสรสชาติและกลิ่นของกาแฟได้มากยิ่งขึ้น ให้คุณเริ่มต้นวันดีดี ได้อย่างมั่นใจทุกวัน<\/p>",
+        "button_label_food_vendor": "ช้อปเลย",
+        "button_label_retailer": "ช้อปเลย",
+        "button_link_food_vendor": "#",
+        "button_link_retailer": "#",
         "button_style": "primary",
         "align_text": "left",
         "image_width": "50",
@@ -403,82 +367,65 @@
         "lazyload_images": true
       }
     },
-    "4ba23cf3-3389-42f1-8527-b323f4803849": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Beverages",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "home_featured_products": "beverages",
-        "count": 5,
-        "products_per_row": 4,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "divider": false,
-        "countdown_timer": "May 31, 2023",
-        "background_color": "#ffffff",
-        "font_color": "#000000"
-      }
-    },
-    "2515597e-a792-4817-9b03-2d8cd345bddf": {
+    "212b5f7b-0956-4090-9db0-f0deff8c6426": {
       "type": "featured-collections",
       "blocks": {
-        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-0": {
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-0": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
-            "collection": "aji-no-moto®-1",
+            "customer_type": "retailer",
+            "collection": "",
             "title": ""
           }
         },
-        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-1": {
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-1": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
-            "collection": "rosdee®",
+            "customer_type": "retailer",
+            "collection": "",
             "title": ""
           }
         },
-        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-2": {
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-2": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
-            "collection": "rosdee-menu™",
+            "customer_type": "retailer",
+            "collection": "",
             "title": ""
           }
         },
-        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-3": {
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-3": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
-            "collection": "blendy®",
+            "customer_type": "food_vendor",
+            "collection": "",
             "title": ""
           }
         },
-        "619da1f8-7640-4231-acba-3fe2f454a714": {
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-4": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
-            "collection": "birdy®",
+            "customer_type": "food_vendor",
+            "collection": "",
             "title": ""
           }
         },
-        "16c3aaf8-52d8-42e3-8137-c8fdd7fcb97d": {
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-5": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
-            "collection": "gyoza",
+            "customer_type": "food_vendor",
+            "collection": "",
             "title": ""
           }
         }
       },
       "block_order": [
-        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-0",
-        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-1",
-        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-2",
-        "template--18841254035771__2515597e-a792-4817-9b03-2d8cd345bddf-16837868544da33700-3",
-        "619da1f8-7640-4231-acba-3fe2f454a714",
-        "16c3aaf8-52d8-42e3-8137-c8fdd7fcb97d"
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-0",
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-1",
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-2",
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-3",
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-4",
+        "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-5"
       ],
       "custom_css": [
         "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
@@ -486,157 +433,15 @@
         ".collection-image img {padding: 0px;}"
       ],
       "settings": {
-        "title": "Browse by Category",
+        "title": "Popular categories",
         "heading_size": "h2",
         "heading_position": "left",
         "divider": false
-      }
-    },
-    "e5d1b0df-2387-44bd-8f11-8479b440382a": {
-      "type": "featured-product",
-      "blocks": {
-        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-0": {
-          "type": "price",
-          "settings": {
-          }
-        },
-        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-1": {
-          "type": "description",
-          "settings": {
-            "is_tab": false
-          }
-        },
-        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-2": {
-          "type": "variant_picker",
-          "settings": {
-            "variant_labels": true,
-            "picker_type": "button",
-            "product_dynamic_variants_enable": true,
-            "color_swatches": false
-          }
-        },
-        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-3": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "surface_pickup_enable": true
-          }
-        }
-      },
-      "block_order": [
-        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-0",
-        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-1",
-        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-2",
-        "template--19123726811451__e5d1b0df-2387-44bd-8f11-8479b440382a-1685521508f0e1a204-3"
-      ],
-      "settings": {
-        "featured_product": "ทาคูมิ-อายิ-ซอสปรุงรส-โชยุญี่ปุ่น-1-000-มล-x-1-ขวด",
-        "divider": false,
-        "sku_enable": false,
-        "image_position": "left",
-        "image_container_size": "medium",
-        "product_image_size": "square",
-        "product_zoom_enable": true,
-        "thumbnail_position": "beside",
-        "thumbnail_arrows": false,
-        "mobile_layout": "partial",
-        "enable_video_looping": true,
-        "product_video_style": "muted"
-      }
-    },
-    "8fcd033a-4af7-470e-abc2-bd42833dd021": {
-      "type": "featured-product",
-      "blocks": {
-        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-0": {
-          "type": "price",
-          "settings": {
-          }
-        },
-        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-1": {
-          "type": "description",
-          "settings": {
-            "is_tab": false
-          }
-        },
-        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-2": {
-          "type": "variant_picker",
-          "settings": {
-            "variant_labels": true,
-            "picker_type": "button",
-            "product_dynamic_variants_enable": true,
-            "color_swatches": false
-          }
-        },
-        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-3": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "surface_pickup_enable": true
-          }
-        }
-      },
-      "block_order": [
-        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-0",
-        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-1",
-        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-2",
-        "template--19123726811451__8fcd033a-4af7-470e-abc2-bd42833dd021-1685521508f0e1a204-3"
-      ],
-      "settings": {
-        "featured_product": "เบอร์ดี้-3อิน1-ซูเปอร์-ครีมมี-13-7-กรัม-ซอง-แพ็ค-60-ซอง",
-        "divider": false,
-        "sku_enable": false,
-        "image_position": "left",
-        "image_container_size": "medium",
-        "product_image_size": "square",
-        "product_zoom_enable": true,
-        "thumbnail_position": "beside",
-        "thumbnail_arrows": false,
-        "mobile_layout": "partial",
-        "enable_video_looping": true,
-        "product_video_style": "muted"
-      }
-    },
-    "fbd1ded3-7f01-4be8-99c1-6e78dec5f1b0": {
-      "type": "customcode-custom-information",
-      "blocks": {
-        "template--19123769409851__fbd1ded3-7f01-4be8-99c1-6e78dec5f1b0-1685944648a207c9d0-0": {
-          "type": "information",
-          "settings": {
-            "cis_block_text": "Product Information",
-            "cis_block_phone_text": "9667227598",
-            "cis_block_phone_link": "#",
-            "cis_block_mail_text": "testingemail@net.com",
-            "cis_block_mail_link": "#",
-            "cis_block_line_text": "Product Customer Care Info.",
-            "cis_block_line_link": "",
-            "cis_block_qr_img": "shopify:\/\/shop_images\/qrrr.png"
-          }
-        },
-        "0d9110cd-da38-409f-9dfe-3d65a8d7da3e": {
-          "type": "information",
-          "settings": {
-            "cis_block_text": "Order Status Inquiry",
-            "cis_block_phone_text": "1-800-000",
-            "cis_block_phone_link": "#",
-            "cis_block_mail_text": "sample@email.com",
-            "cis_block_mail_link": "",
-            "cis_block_line_text": "Order Status Inquiry",
-            "cis_block_line_link": "",
-            "cis_block_qr_img": "shopify:\/\/shop_images\/qrrr_5e64e317-29a3-4b2d-9dab-7468567be0f0.png"
-          }
-        }
-      },
-      "block_order": [
-        "template--19123769409851__fbd1ded3-7f01-4be8-99c1-6e78dec5f1b0-1685944648a207c9d0-0",
-        "0d9110cd-da38-409f-9dfe-3d65a8d7da3e"
-      ],
-      "settings": {
       }
     }
   },
   "order": [
     "eca8ba47-47c4-423e-8aec-fe96b61cf4dd",
-    "d24f4364-4ae3-42f8-aa7a-429e70e7fde7",
     "2d44e835-29c6-46c9-8cfd-817fc12c4e3b",
     "6ad483fa-923f-4899-93f9-afabe46b411d",
     "315640e3-51da-43fe-a9d2-d7eaa59f9dc9",
@@ -644,10 +449,6 @@
     "1515c956-2002-4b57-92e9-62d87f600ed0",
     "6096af03-0d26-459e-aaeb-c04ff141cd17",
     "df82034f-23a7-4dd9-b563-6d65eb6a2642",
-    "4ba23cf3-3389-42f1-8527-b323f4803849",
-    "2515597e-a792-4817-9b03-2d8cd345bddf",
-    "e5d1b0df-2387-44bd-8f11-8479b440382a",
-    "8fcd033a-4af7-470e-abc2-bd42833dd021",
-    "fbd1ded3-7f01-4be8-99c1-6e78dec5f1b0"
+    "212b5f7b-0956-4090-9db0-f0deff8c6426"
   ]
 }
