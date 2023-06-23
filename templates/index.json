@@ -389,33 +389,33 @@
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-2": {
           "type": "collection",
           "settings": {
-            "customer_type": "retailer",
-            "collection": "",
-            "title": ""
+            "customer_type": "food_vendor",
+            "collection": "food-vendor-product-collection-seasoning-rosdee®",
+            "title": "รสดี"
           }
         },
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-3": {
           "type": "collection",
           "settings": {
             "customer_type": "food_vendor",
-            "collection": "",
-            "title": ""
+            "collection": "food-vendor-product-collection-rosdee-menu™",
+            "title": "รสดีเมนู"
           }
         },
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-4": {
           "type": "collection",
           "settings": {
             "customer_type": "food_vendor",
-            "collection": "",
-            "title": ""
+            "collection": "food-vendor-product-collection-rosdee-cube",
+            "title": "รสดีซุปก้อน"
           }
         },
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-5": {
           "type": "collection",
           "settings": {
-            "customer_type": "food_vendor",
-            "collection": "",
-            "title": ""
+            "customer_type": "retailer",
+            "collection": "food-vendor-product-collection-rosdee-menu™krua-krob-ros",
+            "title": "แป้งรสดีเมนู"
           }
         }
       },
