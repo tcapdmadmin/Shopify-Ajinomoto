@@ -247,6 +247,7 @@
     },
     "af966d2c-f455-4fe9-b444-5364bcff565c": {
       "type": "rich-text",
+      "disabled": true,
       "blocks": {
         "template--18841254035771__af966d2c-f455-4fe9-b444-5364bcff565c-1683786389e6a115f6-0": {
           "type": "heading",
@@ -280,6 +281,7 @@
     },
     "1515c956-2002-4b57-92e9-62d87f600ed0": {
       "type": "text-columns",
+      "disabled": true,
       "blocks": {
         "template--18841254035771__1515c956-2002-4b57-92e9-62d87f600ed0-168378644560097007-0": {
           "type": "text_block",
@@ -321,6 +323,7 @@
     },
     "6096af03-0d26-459e-aaeb-c04ff141cd17": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "รสดีเมนู",
         "heading_size": "h2",
