@@ -373,17 +373,17 @@
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-0": {
           "type": "collection",
           "settings": {
-            "customer_type": "retailer",
-            "collection": "",
-            "title": ""
+            "customer_type": "food_vendor",
+            "collection": "product-collection-seasoning-aji-no-moto®",
+            "title": "ผงชูรส อายิโนะโมะโต๊ะ"
           }
         },
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-1": {
           "type": "collection",
           "settings": {
-            "customer_type": "retailer",
-            "collection": "",
-            "title": ""
+            "customer_type": "food_vendor",
+            "collection": "product-collection-seasoning-ajinomoto®-plus",
+            "title": "อายิโนะโมะโต๊ะ พลัส"
           }
         },
         "template--19123769409851__212b5f7b-0956-4090-9db0-f0deff8c6426-1687428495ec2d85b7-2": {
