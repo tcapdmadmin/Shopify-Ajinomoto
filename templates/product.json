@@ -29,6 +29,7 @@
         },
         "sales_point": {
           "type": "sales_point",
+          "disabled": true,
           "settings": {
             "icon": "globe",
             "text": "Free worldwide shipping"
@@ -36,6 +37,7 @@
         },
         "sales_point2": {
           "type": "sales_point",
+          "disabled": true,
           "settings": {
             "icon": "truck",
             "text": "Free returns"
@@ -43,6 +45,7 @@
         },
         "sales_point3": {
           "type": "sales_point",
+          "disabled": true,
           "settings": {
             "icon": "leaf",
             "text": "Carbon neutral"
@@ -50,6 +53,7 @@
         },
         "sales_point4": {
           "type": "sales_point",
+          "disabled": true,
           "settings": {
             "icon": "lock",
             "text": "Secure payments"
@@ -106,6 +110,7 @@
         },
         "tab": {
           "type": "tab",
+          "disabled": true,
           "settings": {
             "title": "Shipping information",
             "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<\/p><p>Ex: Shipping and return policies, size guides, and other common questions.<\/p>",
