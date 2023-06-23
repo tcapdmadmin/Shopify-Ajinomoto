@@ -78,23 +78,25 @@
             "cis_block_qr_img": "shopify:\/\/shop_images\/image_20.png"
           }
         },
-        "854fbf64-44b7-4562-ab1c-ea62b2cc6e14": {
-          "type": "information",
+        "85098074-599e-454a-b81b-018806d4d0ca": {
+          "type": "order_status",
           "settings": {
-            "cis_block_text": "ติดตามสถานะของออเดอร์",
-            "cis_block_phone_text": "1-800-888333",
-            "cis_block_phone_link": "",
-            "cis_block_mail_text": "sample@email.com",
-            "cis_block_mail_link": "",
-            "cis_block_line_text": "Order Status Inquiry Customer Care",
-            "cis_block_line_link": "",
-            "cis_block_qr_img": "shopify:\/\/shop_images\/image_20.png"
+            "cis_block_heading": "ติดตามสถานะของออเดอร์",
+            "cis_block_title_1": "กรุงเทพและปริมณฑล",
+            "cis_block_phone_text_1": "084-3237351",
+            "cis_block_phone_link_1": "tel:084-3237351",
+            "cis_block_title_2": "ราชบุรี",
+            "cis_block_phone_text_2": "081-1168549",
+            "cis_block_phone_link_2": "tel:081-1168549",
+            "cis_block_title_3": "ลพบุรี",
+            "cis_block_phone_text_3": "081-1168723",
+            "cis_block_phone_link_3": "tel:081-1168723"
           }
         }
       },
       "block_order": [
         "template--19123768590651__5e0d3472-07b1-4789-955d-4cb334e5e833-168627879484d557e2-0",
-        "854fbf64-44b7-4562-ab1c-ea62b2cc6e14"
+        "85098074-599e-454a-b81b-018806d4d0ca"
       ],
       "custom_css": [
         "{margin-top: 40px;}"
