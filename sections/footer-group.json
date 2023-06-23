@@ -4,7 +4,6 @@
   "sections": {
     "footer-promotions": {
       "type": "footer-promotions",
-      "disabled": true,
       "blocks": {
         "footer-promotions-0": {
           "type": "promotion",
@@ -107,7 +106,8 @@
         ".footer__section.footer__section--border {background: #ee1c25;}",
         "p {color: #ffffff;}",
         "input#Email-sections--19050668654907__footer {background: #ffffff;}",
-        "h2.footer__title {text-transform: uppercase;}"
+        "h2.footer__title {text-transform: uppercase;}",
+        "input {background: #ffffff;}"
       ],
       "settings": {
         "show_newsletter": true,
