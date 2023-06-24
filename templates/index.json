@@ -160,7 +160,7 @@
         "2221d003-364f-46b9-bc28-72cd69a215af": {
           "type": "collection",
           "settings": {
-            "customer_type": "retailer",
+            "customer_type": "food_vendor",
             "collection": "retailer-brand-รสดีเมนู",
             "title": "รสดีเมนู"
           }
@@ -184,7 +184,7 @@
         "0c3fee48-9827-40a5-bd50-9b80c49e7821": {
           "type": "collection",
           "settings": {
-            "customer_type": "food_vendor",
+            "customer_type": "retailer",
             "collection": "อายิโนะโมะโต๊ะ-พลัส",
             "title": "อายิโนะโมะโต๊ะ พลัส"
           }
