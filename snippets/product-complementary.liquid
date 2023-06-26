@@ -47,7 +47,13 @@
       <div class="product-recommendations">
         <div class="product-single__related grid grid--uniform" data-aos="overflow__animation" {% if type == 'block' %}data-slideshow data-controls="{{ block.settings.control_type }}" data-per-slide="{{ block.settings.per_slide }}" data-count="{{ number_of_products}}"{% endif %}>
           {% assign currentStep = 1 %}
+          {%- comment %}<locksmith:500e>{% endcomment -%}
+            {%- assign locksmith_42b4_forloop__size = 0 %}{%- for product in related_collection.products limit: number_of_products -%}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: related_collection, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_42b4_forloop__size = locksmith_42b4_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_42b4_forloop__index = nil -%}
+          {%- comment %}</locksmith:500e>{% endcomment -%}
           {%- for product in related_collection.products limit: number_of_products -%}
+            {%- comment %}<locksmith:39ca>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: related_collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_42b4_forloop__index == nil %}{% assign locksmith_42b4_forloop__index = 1 %}{% assign locksmith_42b4_forloop__index0 = 0 %}{% else %}{% assign locksmith_42b4_forloop__index = locksmith_42b4_forloop__index | plus: 1 %}{% assign locksmith_42b4_forloop__index0 = locksmith_42b4_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_42b4_forloop__index == 1 %}{% assign locksmith_42b4_forloop__first = true %}{% else %}{% assign locksmith_42b4_forloop__first = false %}{% endif %}{% if locksmith_42b4_forloop__index == locksmith_42b4_forloop__size %}{% assign locksmith_42b4_forloop__last = true %}{% else %}{% assign locksmith_42b4_forloop__last = false %}{% endif %}{% assign locksmith_42b4_forloop__rindex = locksmith_42b4_forloop__size | minus: locksmith_42b4_forloop__index | minus: 1 %}{% assign locksmith_42b4_forloop__rindex0 = locksmith_42b4_forloop__size | minus: locksmith_42b4_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:39ca>{% endcomment -%}
             {% if currentStep == 1 %}
               <div class="product-recommendations__slide">
             {% endif %}
@@ -61,7 +67,7 @@
               sizes: '112px',
             -%}
 
-            {% if currentStep == block.settings.per_slide or forloop.last %}
+            {% if currentStep == block.settings.per_slide or locksmith_42b4_forloop__last %}
               </div>
               {% assign currentStep = 0 %}
             {% endif %}

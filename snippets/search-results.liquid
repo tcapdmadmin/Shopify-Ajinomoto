@@ -63,6 +63,9 @@
             </h3>
             <ul role="listbox" aria-labelledby="predictive-search-collections">
               {%- for collection in predictive_search.resources.collections -%}
+                {%- comment %}<locksmith:251b>{% endcomment -%}
+                  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: predictive_search.resources, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                {%- comment %}</locksmith:251b>{% endcomment -%}
                 <li role="option">
                   <a href="{{ collection.url }}">
                     <span>{{ collection.title }}</span>
@@ -82,6 +85,9 @@
             </h3>
             <ul role="listbox" aria-labelledby="predictive-search-products">
               {%- for product in predictive_search.resources.products -%}
+                {%- comment %}<locksmith:fe11>{% endcomment -%}
+                  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: predictive_search.resources, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                {%- comment %}</locksmith:fe11>{% endcomment -%}
                 <li role="option">
                   <a href="{{ product.url }}">
                     <div class="results-products__image grid__image-ratio">
@@ -170,6 +176,9 @@
             </h3>
             <ul role="listbox" aria-labelledby="predictive-search-collections">
               {%- for collection in predictive_search.resources.collections -%}
+                {%- comment %}<locksmith:5105>{% endcomment -%}
+                  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: predictive_search.resources, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                {%- comment %}</locksmith:5105>{% endcomment -%}
                 <li role="option">
                   <a href="{{ collection.url }}">
                     <span>{{ collection.title }}</span>
