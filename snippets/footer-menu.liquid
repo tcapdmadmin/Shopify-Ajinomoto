@@ -8,9 +8,6 @@
 
 <ul class="footer__menu">
   {%- for link in linklists[block.settings.menu].links -%}
-    {%- comment %}<locksmith:823f>{% endcomment -%}
-      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[block.settings.menu], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
-    {%- comment %}</locksmith:823f>{% endcomment -%}
     <li><a href="{{ link.url }}">{{ link.title }}</a></li>
   {%- endfor -%}
   {%- if block.settings.enable_account_link -%}

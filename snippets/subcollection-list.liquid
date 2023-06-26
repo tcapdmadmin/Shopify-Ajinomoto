@@ -1,7 +1,4 @@
 {%- for sub_link in link.links -%}
-  {%- comment %}<locksmith:6970>{% endcomment -%}
-    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: sub_link, subject_parent: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
-  {%- comment %}</locksmith:6970>{% endcomment -%}
   {%- if sub_link.url contains '/collections/' -%}
     {%- assign lang_code_string = request.locale.iso_code | prepend: '/' | downcase -%}
     {%- assign sub_handle = sub_link.url | remove: '/collections/' | remove: lang_code_string -%}
