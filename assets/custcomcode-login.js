@@ -2,6 +2,7 @@
 const apiUrl = "https://ajith-api.tcapdm.com";
 var base_url = window.location.origin;
 let is_en = window.location.pathname;
+let selectedGroup = '';
 const segments = is_en.split("/");
 // Check if "en" exists in the first segment (index 1) of the string
 if (segments[1] === "en") {
@@ -9,47 +10,92 @@ if (segments[1] === "en") {
 } else {
   is_en = "";
 }
+document.addEventListener("DOMContentLoaded", () => {
 
-// LineLogin Setter
-function setLoginLineURL(apiUrl) {
-  const loginLineURL = document.getElementById("loginLineURL");
-  fetch(apiUrl + "/api/line/login/getlink?mode=login", {
-    method: "POST",
-    body: {
-      mode: "login",
-    },
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then(function (response) {
-      console.log(response);
-      if (response.ok) {
-        return response.json();
+  function handleSignInToLine() {
+    Swal.fire({
+      title: "Select Shop Type",
+      html: "After selecting shop type, you will be redirected to Line Login",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Food Vendor",
+      denyButtonText: "Retailer",
+      cancelButtonText: "Cancel",
+      customClass: {
+        confirmButton: "swal2-confirm swal2-styled swal2-blue-button",
+        denyButton: "swal2-deny swal2-styled swal2-blue-button",
+        cancelButton: "swal2-cancel",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Redirect to Food Vendor page
+        Swal.showLoading();
+        setLineLoginURLa("food_vendor").then((url) => {
+          console.log(url);
+          if (url.results) {
+            storeShopType("food_vendor");
+            window.location.href = url.results;
+          }
+        });
+      } else if (result.isDenied) {
+        Swal.showLoading();
+        setLineLoginURLa("retailer").then((url) => {
+          if (url.results) {
+            storeShopType("retailer");
+            window.location.href = url.results;
+          }
+        });
       } else {
-        throw new Error("API request failed");
       }
-    })
-    .then(function (data) {
-      if (data.results) {
-        loginLineURL.href = data.results; // Use data.result instead of result
-      }
-    })
-    .catch(function (error) {
-      console.error(error);
-      alert("Failed to get login URL");
     });
-}
+  }
+  const signupLineBtn = document.getElementById("lineConnectBtn");
+  signupLineBtn.addEventListener("click", handleSignInToLine);
 
-setLoginLineURL(apiUrl);
+});
+  // Set Line Login URL
+  const setLineLoginURLa = (param = "") => {
+    return fetch(
+      "https://ajith-api.tcapdm.com/api/line/login/getlink?mode=login&shop_group=" +
+        param,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          mode: "login",
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("API request failed");
+        }
+        return response.json();
+      })
+      .then((data) => {
+
+        if (data.results) {
+          return data;
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Failed to get login URL");
+      });
+  };
+
 
 function autoFillLogin() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const code = urlParams.get("code");
+  const shopType = retrieveShopType();
 
   if (code) {
-    const apiUrl = "https://ajith-api.tcapdm.com/api/login/line/verify";
+    const apiUrl = "https://ajith-api.tcapdm.com/api/login/line/verify?shop_group=" +
+    shopType;
     const payload = { code: code };
     const options = {
       method: "POST",
@@ -63,6 +109,7 @@ function autoFillLogin() {
       .then((response) => response.json())
       .then((data) => {
         if (data.code == 200) {
+          storeShopType('');
           let CustomerEmail = document.getElementById("CustomerEmail");
           CustomerEmail.value = data.results.email;
           let CustomerPassword = document.getElementById("CustomerPassword");
@@ -91,3 +138,11 @@ function autoFillLogin() {
   }
 }
 autoFillLogin();
+
+
+function storeShopType(shopType) {
+  sessionStorage.setItem("shopType", shopType);
+}
+function retrieveShopType() {
+  return sessionStorage.getItem("shopType");
+}
