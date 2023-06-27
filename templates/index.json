@@ -358,7 +358,7 @@
         "button_label_food_vendor": "ช้อปเลย",
         "button_label_retailer": "ช้อปเลย",
         "button_link_food_vendor": "#",
-        "button_link_retailer": "#",
+        "button_link_retailer": "shopify:\/\/collections\/เบอร์ดี้",
         "button_style": "primary",
         "align_text": "left",
         "image_width": "50",
