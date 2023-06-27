@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // LineLogin Setter
   function setLoginLineURL(apiUrl) {
     const loginLineURL = document.getElementById("loginLineURL");
-    fetch(apiUrl + "/api/line/login/getlink?mode=connect&shop_type="+customer_type.value, {
+    fetch(apiUrl + "/api/line/login/getlink?mode=connect&shop_group="+customer_type.value, {
       method: "POST",
       body: {
         mode: "connect",
@@ -68,6 +68,9 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .then(function (data) {
         if (data.results) {
+          console.log(data.results)
+          console.log(data)
+          console.log(apiUrl + "/api/line/login/getlink?mode=connect&shop_type="+customer_type.value)
           loginLineURL.href = data.results; // Use data.result instead of result
         }
       })
