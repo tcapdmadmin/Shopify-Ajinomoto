@@ -73,10 +73,9 @@
                            autocapitalize="words" placeholder="{{ 'custom.registration.last_name' | t }} *" required>
                 </div>
                 <div class="field-wrap">
-                    <input type="date" name="birthdate" id="Birthdate"
-                          style="min-height: 50px;"
-                           class="field-input field-input-date input-full parallel" placeholder="Birthdate *"
-                           onfocus="(this.type='date')" required>
+                    <input type="text" name="birthdate" id="Birthdate"
+                           class="field-input field-input-date input-full parallel" placeholder="DD/MM/YYYY *"
+                            required>
                     <div class="field-select">
                         <select id="Gender" name="gender" class="field-input input-full parallel" required>
                             <option value="" disabled selected hidden>{{ 'custom.gender.gender' | t }} *</option>
