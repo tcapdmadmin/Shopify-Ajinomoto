@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Set Line Login URL
   const setLineLoginURL = (param = "") => {
     return fetch(
-      "https://ajith-api.tcapdm.com/api/line/login/getlink?mode=login&shop_type=" +
+      "https://ajith-api.tcapdm.com/api/line/login/getlink?mode=login&shop_group=" +
         param,
       {
         method: "POST",
