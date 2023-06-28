@@ -42,8 +42,10 @@
 /* customcode-featured-collection.liquid */
 
 /* customcode-register.liquid */
+@media screen and (min-width: 425px) {
 #register-submit {
 	min-width: 320px;
+}
 }
 
 .reg-page-content {
