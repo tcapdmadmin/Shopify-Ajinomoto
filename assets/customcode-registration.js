@@ -56,7 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!code) {
         return;
       }
-      const apiUrl = `https://ajith-api.tcapdm.com/api/register/line/fetch_line_id?code=${code}`;
+      const apiUrl = `https://ajith-api.tcapdm.com/api/register/line/fetch_line_id?code=${code}&shop_group=${retrieveShopType()}`;
+      console.log('API URL')
+      console.log(apiUrl)
       const response = await fetch(apiUrl);
       if (!response.ok) {
         throw new Error("Failed to fetch Line ID");
