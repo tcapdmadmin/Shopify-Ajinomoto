@@ -499,7 +499,7 @@
         ".collection-image img {padding: 0px;}"
       ],
       "settings": {
-        "title": "Popular categories",
+        "title": "หมวดหมู่ยอดนิยม",
         "heading_size": "h2",
         "heading_position": "left",
         "divider": false
