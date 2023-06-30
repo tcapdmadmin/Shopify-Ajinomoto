@@ -8,8 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const parallelRegistration = await submitFormWithApiAndShopify();
     // console.log(parallelRegistration);
-
+    // return false;
     if (parallelRegistration === 1) {
+      storeUserReg();
       event.target.submit();
     } else {
       // Handle the case where the registration failed
@@ -139,9 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
       parallelFields.shop_type = storedShopTypes;
     }
 
-    const selectedRadio = document.querySelector(
-      'input[name="shop_group"]:checked'
-    );
+    const selectedRadio = document.querySelector('.Shop-group:checked');
     if (selectedRadio) {
       parallelFields.shop_group = selectedRadio.value;
     }
@@ -149,7 +148,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (telephone) {
       parallelFields.telephone = telephone;
     }
-
+    // console.log(parallelFields)
+    // return false;
     try {
       const response = await fetch(
         "https://ajith-api.tcapdm.com/api/shopify_account",
@@ -245,15 +245,23 @@ document.addEventListener("DOMContentLoaded", () => {
   function autoSelectShopGroup() {
     const shopType = retrieveShopType();
     if (shopType === "food_vendor") {
-      document.querySelector(
-        'input[name="shop_group"][value="Food Vendor"]'
-      ).checked = true;
+      console.log('shop group select')
+      var shopGroup = document.getElementsByClassName("Shop-group");
+      console.log(shopGroup)
+      document.querySelector('.Shop-group[value="Food Vendor"]').checked = true;
+
     } else if (shopType === "retailer") {
-      document.querySelector(
-        'input[name="shop_group"][value="Retailer"]'
-      ).checked = true;
+      document.querySelector('.Shop-group[value="Retailer"]').checked = true;
     }
   }
 
   autoSelectShopGroup();
 });
+
+
+function storeUserReg() {
+  var setRegistersession = sessionStorage.setItem("newly_registered", 1);
+  let isNewlyRegistered = sessionStorage.getItem("newly_registered");
+  console.log('SET REGISTER SESSION')
+  console.log(isNewlyRegistered)
+}
