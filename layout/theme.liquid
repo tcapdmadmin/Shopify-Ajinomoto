@@ -158,3 +158,24 @@
   <div id="ProductModals"></div>
 </body>
 </html>
+
+
+  <script>
+    function retrieveIsRegistered() {
+      console.log('IS REGISTERED')
+      var base_url = window.location;
+      if(base_url == base_url.origin+'/'){
+            let isNewlyRegistered = sessionStorage.getItem("newly_registered");
+            console.log('isNewlyRegistered = '+ isNewlyRegistered)
+            if(isNewlyRegistered == 1){
+              sessionStorage.setItem("newly_registered", 0);
+              location.reload();
+            }
+
+      }
+    }
+    // setTimeout(retrieveIsRegistered(), 5000);
+    const CheckRegistered = setTimeout(retrieveIsRegistered, 3000);
+
+  </script>
+    
