@@ -3,6 +3,7 @@
     "registration": {
       "first_name": "First Name",
       "last_name": "Last Name",
+      "birthdate": "วันเกิด",
       "telephone": "Telephone",
       "shop_name": "Shop Name",
       "address": "Branch No.",
@@ -13,7 +14,8 @@
       "password": "Password",
       "salesman_code": "Salesman Code",
       "branch_number": "Branch No.",
-      "I_accept_the_privacy_policy": "I accept the Privacy Policy",
+      "I_accept_the_privacy_policy": "I accept the ",
+      "I_accept_the_privacy_policy_link": "Privacy Policy",
       "back_to_login": "Back to Login"
     },
     "gender": {

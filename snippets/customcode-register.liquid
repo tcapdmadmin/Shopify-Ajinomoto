@@ -73,15 +73,13 @@
                            autocapitalize="words" placeholder="{{ 'custom.registration.last_name' | t }} *" required>
                 </div>
                 <div class="field-wrap">
-                    <input type="text" name="birthdate" id="Birthdate"
-                           class="field-input field-input-date input-full parallel" placeholder="DD/MM/YYYY *"
-                            required>
+                  <input type="text" name="birthdate" id="birthdate" class="field-input field-input-date input-full parallel"
+                     placeholder="{{ 'custom.registration.birthdate' | t }} *" required onclick="showDatePicker()">
                     <div class="field-select">
                         <select id="Gender" name="gender" class="field-input input-full parallel" required>
                             <option value="" disabled selected hidden>{{ 'custom.gender.gender' | t }} *</option>
                             <option value="Male">{{ 'custom.gender.male' | t }}</option>
                             <option value="Female">{{ 'custom.gender.female' | t }}</option>
-                            <option value="Others">{{ 'custom.gender.others' | t }}</option>
                         </select>
                     </div>
                 </div>
@@ -103,8 +101,8 @@
                     <input type="text" name="shop_name" id="Shop-name" class="field-input input-full parallel"
                            maxlength="50" placeholder="{{ 'custom.registration.shop_name' | t }} *" required>
                     <input type="number" name="branch_number" id="Branch-number" class="field-input input-full parallel"
-                           max="99" maxlength="2" placeholder="{{ 'custom.registration.branch_number' | t }} *" onfocus="(this.type='number')"
-                           onblur="(this.type='text')" required>
+                           max="99" maxlength="2" placeholder="{{ 'custom.registration.branch_number' | t }}" onfocus="(this.type='number')"
+                           onblur="(this.type='text')">
                 </div>
 
                 <div class="field-wrap">
@@ -112,17 +110,16 @@
                         <label>{{ 'custom.shop_group.shop_group' | t }} *</label>
                         <div class="field-radio-wrap">
                             <div class="field-radio-child">
-                                <input type="radio" name="shop_group" id="Shop-group" class="input-full Shop-group"
-                                       value="Food Vendor" required checked>
+                                <input type="radio" name="customer[tags]" id="customer_type_food_vendor" class="input-full Shop-group" value="Food Vendor" required checked>
                                 <span>{{ 'custom.shop_group.food_vendor' | t }}</span>
                             </div>
                             <div class="field-radio-child">
-                                <input type="radio" name="shop_group" id="Shop-group"
-                                       class="input-full Shop-group parallel-shop-group" value="Retailer" required>
+                                <input type="radio" name="customer[tags]" id="customer_type_retailer" class="input-full Shop-group parallel-shop-group" value="Retailer" required>
                                 <span>{{ 'custom.shop_group.retailer' | t }}</span>
                             </div>
                         </div>
                     </div>
+
                     <div id="Shop-group-retailer" style="display: none;">
                         <label>{{ 'custom.shop_type.shop_type' | t }} *</label>
                         <input type="checkbox" name="shop_type" class="input-full  parallel-shop-type"
@@ -133,8 +130,7 @@
                                value="Condiment store"> <span>{{ 'custom.shop_type.condiment_store' | t }}</span><br>
                     </div>
                     <div id="Shop-group-fv">
-                        <label>{{ 'custom.shop_type.shop_type' | t }}
- *</label>
+                        <label>{{ 'custom.shop_type.shop_type' | t }} *</label>
                         <input type="checkbox" name="shop_type" class="input-full  parallel-shop-type"
                                value="A la carte shop"> <span>{{ 'custom.shop_type.a_la_carte_shop' | t }}</span><br>
                         <input type="checkbox" name="shop_type" class="input-full  parallel-shop-type"
@@ -244,39 +240,39 @@
                 <div class="field-wrap">
                     <input type="text" name="postal-code" id="Postal-code" class="field-input input-full parallel"
                            autocomplete="on" placeholder="{{ 'custom.registration.postal_code' | t }}">
-                    <input type="text" name="salesman-code" id="Salesman-code" class="field-input input-full parallel"
+                    <input type="number" name="salesman-code" id="Salesman-code" class="field-input input-full parallel" maxlength="5" max="99999"
                            autocomplete="on" placeholder="{{ 'custom.registration.salesman_code' | t }}">
                 </div>
             <div class="field-wrap">
                 <div id="Shop-group-retailer-main" style="display: block;">
                     <label>{{ 'custom.main_umami_seasoning_usage.main_umami_seasoning_usage' | t }} </label>
-                    <input type="checkbox" name="shop_type" class="input-full parallel-umami-seasoning-usage"
+                    <input type="radio" name="shop_type" class="input-full parallel-umami-seasoning-usage"
                            value="Ajinomoto"> <span>{{ 'custom.main_umami_seasoning_usage.ajinomoto' | t }}</span><br>
-                    <input type="checkbox" name="shop_type" class="input-full parallel-umami-seasoning-usage"
+                    <input type="radio" name="shop_type" class="input-full parallel-umami-seasoning-usage"
                            value="ThaiChuros"> <span>{{ 'custom.main_umami_seasoning_usage.thaichuros' | t }}</span><br>
-                    <input type="checkbox" name="shop_type" class="input-full parallel-umami-seasoning-usage"
+                    <input type="radio" name="shop_type" class="input-full parallel-umami-seasoning-usage"
                            value="Aro"> <span>{{ 'custom.main_umami_seasoning_usage.aro' | t }}</span><br>
-                    <input type="checkbox" name="shop_type" class="input-full parallel-umami-seasoning-usage"
+                    <input type="radio" name="shop_type" class="input-full parallel-umami-seasoning-usage"
                            value="Others"> <span>{{ 'custom.main_umami_seasoning_usage.others' | t }}</span><br>
                 </div>
 
                 <div id="Shop-group-fv-main" style="display: block;">
                     <label>{{ 'custom.main_flavor_seasoning_usage.main_flavor_seasoning_usage' | t }} </label>
-                    <input type="checkbox" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
+                    <input type="radio" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
                            value="Rosdee"> <span>{{ 'custom.main_flavor_seasoning_usage.rosdee' | t }}</span><br>
-                    <input type="checkbox" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
+                    <input type="radio" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
                            value="FahThai"> <span>{{ 'custom.main_flavor_seasoning_usage.fahhtai' | t }}</span><br>
-                    <input type="checkbox" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
+                    <input type="radio" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
                            value="Knorr"> <span>{{ 'custom.main_flavor_seasoning_usage.knorr' | t }}</span><br>
-                    <input type="checkbox" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
+                    <input type="radio" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
                            value="Termthip"> <span>{{ 'custom.main_flavor_seasoning_usage.termthip' | t }}</span><br>
-                    <input type="checkbox" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
+                    <input type="radio" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
                            value="Others"> <span>{{ 'custom.main_flavor_seasoning_usage.others' | t }}</span><br>
                 </div>
             </div>
                 <div style="margin-top: 40px;">
                 <input type="checkbox" name="shop_type" class="input-full parallel-flavor-seasoning-usage"
-                       value="accept_checkbox" required> <span>{{ 'custom.registration.I_accept_the_privacy_policy' | t }}</span><br>
+                       value="accept_checkbox" required> <span>{{ 'custom.registration.I_accept_the_privacy_policy' | t }}</span><a href="https://ajinomotosalesth.com/policies/privacy-policy" target="_blank">{{ 'custom.registration.I_accept_the_privacy_policy_link' | t }}</a><br>
                 </div>
 
                 <section class="form-account">
@@ -298,7 +294,7 @@
 <!-- FORM End -->
 
 <script>
-    const group1 = document.getElementsByName('shop_group');
+    const group1 = document.getElementsByName('customer[tags]');
     const options1 = document.getElementById('Shop-group-retailer-main');
     const options2 = document.getElementById('Shop-group-fv-main');
 
@@ -318,7 +314,7 @@
 </script>
 
 <script>
-    const group1a = document.getElementsByName('shop_group');
+    const group1a = document.getElementsByName('customer[tags]');
     const options1a = document.getElementById('Shop-group-fv');
     const options2a = document.getElementById('Shop-group-retailer');
 
@@ -337,5 +333,23 @@
     });
 </script>
 
+<script>
+  function showDatePicker() {
+    // Create a new date input element
+    var datePicker = document.createElement('input');
+    datePicker.type = 'date';
+    datePicker.name = 'birthdate';
+    datePicker.id = 'birthdate';
+    datePicker.className = 'field-input field-input-date input-full parallel';
+    datePicker.required = true;
+
+    // Replace the placeholder input with the date picker
+    var placeholderInput = document.getElementById('birthdate');
+    placeholderInput.parentNode.replaceChild(datePicker, placeholderInput);
+
+    // Automatically focus on the date picker
+    datePicker.focus();
+  }
+</script>
 
 <script src="{{ 'customcode-registration.js' | asset_url }}"></script>
