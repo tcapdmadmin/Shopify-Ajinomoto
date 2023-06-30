@@ -551,19 +551,21 @@
   },
   "custom": {
     "registration": {
-      "first_name": "ชื่อจริง",
+      "first_name": "ชื่อ",
       "last_name": "นามสกุล",
+      "birthdate": "วันเกิด",
       "telephone": "โทรศัพท์",
       "shop_name": "ชื่อร้าน",
       "address": "ที่อยู่",
       "district": "เขต\/อำเภอ",
       "sub_district": "แขวง\/ตำบล",
       "postal_code": "รหัสไปรษณีย์",
-      "email_address": "ที่อยู่อีเมล",
+      "email_address": " อีเมลล์",
       "password": "รหัสผ่าน",
       "salesman_code": "รหัสพนักงานขาย",
-      "branch_number": "เลขที่สาขา",
-      "I_accept_the_privacy_policy": "ฉันยอมรับนโยบายความเป็นส่วนตัว",
+      "branch_number": "สาขาที่",
+      "I_accept_the_privacy_policy": "ข้าพเจ้าตกลงให้ความยินยอมแก่บริษัท อายิโนะโมะโต๊ะเซลส์(ประเทศไทย) จำกัด ในการเก็บรวบรวม ใช้ และเปิดเผยข้อมูลส่วนบุคคล (แล้วแต่กรณี) ของข้าพเจ้าตามที่ระบุไว้ใน",
+      "I_accept_the_privacy_policy_link": "นโยบายคุ้มครองข้อมูลส่วนบุคคล",
       "back_to_login": "กลับไปที่เข้าสู่ระบบ"
     },
     "gender": {
@@ -574,8 +576,8 @@
     },
     "shop_group": {
       "shop_group": " กลุ่มร้านค้า",
-      "food_vendor": "คนขายอาหาร",
-      "retailer": "ผู้ค้าปลีก"
+      "food_vendor": "ร้านอาหาร",
+      "retailer": "ร้านค้าปลีก"
     },
     "shop_type": {
       "shop_type": "ประเภทร้านค้า",
@@ -584,7 +586,7 @@
       "isaan_restaurant": "ร้านอาหารอีสาน",
       "yum_restaurant": "ร้านอาหารยำ",
       "noodle_shop": " ร้านก๋วยเตี๋ยว",
-      "others": "คนอื่น",
+      "others": "อื่นๆ",
       "beverage_store": "ร้านขายเครื่องดื่ม",
       "candy_and_snack_store": "ร้านขายขนมและของว่าง",
       "condiment_store": " ร้านขายเครื่องปรุง"
@@ -674,7 +676,7 @@
       "ajinomoto": "อายิโนะโมะโต๊ะ",
       "thaichuros": " ไทยชูรส",
       "aro": "อาโร",
-      "others": "คนอื่น"
+      "others": "อื่นๆ"
     },
     "main_flavor_seasoning_usage": {
       "main_flavor_seasoning_usage": " การใช้เครื่องปรุงรสหลัก",
@@ -682,7 +684,7 @@
       "fahhtai": "ฟ้าไต",
       "knorr": "คนอร์",
       "termthip": " เติมทิพย์",
-      "others": "คนอื่น"
+      "others": "อื่นๆ"
     }
   },
   "shopify": {
