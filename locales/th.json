@@ -696,7 +696,9 @@
       },
       "order_summary": {
         "subtotal_label": "รวมค่าสินค้า",
-        "shipping_label": "ค่าจัดส่ง"
+        "shipping_label": "ค่าจัดส่ง",
+        "total_label": "รวมทั้งหมด",
+        "partial_total_label": "รวมทั้งหมด"
       }
     }
   }
