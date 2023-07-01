@@ -693,6 +693,9 @@
         "optional_address2_label": "เขต\/อำเภอ",
         "city_label": "แขวง\/ตำบล",
         "address2_label": "เขต\/อำเภอ"
+      },
+      "order_summary": {
+        "subtotal_label": "รวมค่าสินค้า"
       }
     }
   }
