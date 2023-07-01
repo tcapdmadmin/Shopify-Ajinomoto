@@ -67,7 +67,7 @@
                 <div class="field-wrap">
                     <input type="text" name="customer[first_name]" id="FirstName"
                            class="field-input input-full parallel"{% if form.first_name %} value="{{ form.first_name }}"{% endif %}
-                           autocapitalize="words" placeholder="{{ 'custom.registration.first_name' | t }} *" autofocus required>
+                           autocapitalize="words" placeholder="{{ 'custom.registration.first_name' | t }} *" oninvalid="this.setCustomValidity('Hello')" autofocus required>
                     <input type="text" name="customer[last_name]" id="LastName"
                            class="field-input input-full parallel"{% if form.last_name %} value="{{ form.last_name }}"{% endif %}
                            autocapitalize="words" placeholder="{{ 'custom.registration.last_name' | t }} *" required>
