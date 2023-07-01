@@ -67,14 +67,14 @@
                 <div class="field-wrap">
                     <input type="text" name="customer[first_name]" id="FirstName"
                            class="field-input input-full parallel"{% if form.first_name %} value="{{ form.first_name }}"{% endif %}
-                           autocapitalize="words" placeholder="{{ 'custom.registration.first_name' | t }} *" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')" autofocus required>
+                           autocapitalize="words" placeholder="{{ 'custom.registration.first_name' | t }} *" autofocus required>
                     <input type="text" name="customer[last_name]" id="LastName"
                            class="field-input input-full parallel"{% if form.last_name %} value="{{ form.last_name }}"{% endif %}
-                           autocapitalize="words" placeholder="{{ 'custom.registration.last_name' | t }} *" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')" required>
+                           autocapitalize="words" placeholder="{{ 'custom.registration.last_name' | t }} *" required>
                 </div>
                 <div class="field-wrap">
                   <input type="text" name="birthdate" id="birthdate" class="field-input field-input-date input-full parallel"
-                     placeholder="{{ 'custom.registration.birthdate' | t }} *" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')" required onclick="showDatePicker()">
+                     placeholder="{{ 'custom.registration.birthdate' | t }} *" required onclick="showDatePicker()">
                     <div class="field-select">
                         <select id="Gender" name="gender" class="field-input input-full parallel" required oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')">
                             <option value="" disabled selected hidden>{{ 'custom.gender.gender' | t }} *</option>
