@@ -695,7 +695,8 @@
         "address2_label": "เขต\/อำเภอ"
       },
       "order_summary": {
-        "subtotal_label": "รวมค่าสินค้า"
+        "subtotal_label": "รวมค่าสินค้า",
+        "shipping_label": "ค่าจัดส่ง"
       }
     }
   }
