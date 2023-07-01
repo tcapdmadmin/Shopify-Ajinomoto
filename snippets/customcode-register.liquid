@@ -95,11 +95,11 @@
                 <div class="field-wrap">
                     <input type="password" name="customer[password]" id="CreatePassword"
                            class="field-input field-input-pass input-full parallel {% if form.errors contains 'password' %} error{% endif %}"
-                           placeholder="{{ 'custom.registration.password' | t }} *" required>
+                           placeholder="{{ 'custom.registration.password' | t }} *" required oninput="setCustomValidity('') oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')">
                 </div>
                 <div class="field-wrap">
                     <input type="text" name="shop_name" id="Shop-name" class="field-input input-full parallel"
-                           maxlength="50" placeholder="{{ 'custom.registration.shop_name' | t }} *" required>
+                           maxlength="50" placeholder="{{ 'custom.registration.shop_name' | t }} *" required oninput="setCustomValidity('') oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')">
                     <input type="number" name="branch_number" id="Branch-number" class="field-input input-full parallel"
                            max="99" maxlength="2" placeholder="{{ 'custom.registration.branch_number' | t }}" onfocus="(this.type='number')"
                            onblur="(this.type='text')">
