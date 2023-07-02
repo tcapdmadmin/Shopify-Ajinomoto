@@ -692,7 +692,8 @@
       "contact": {
         "optional_address2_label": "เขต\/อำเภอ",
         "city_label": "แขวง\/ตำบล",
-        "address2_label": "เขต\/อำเภอ"
+        "address2_label": "เขต\/อำเภอ",
+        "title": "ข้อมูล"
       },
       "order_summary": {
         "subtotal_label": "รวมค่าสินค้า",
