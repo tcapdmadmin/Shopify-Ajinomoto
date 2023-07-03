@@ -194,14 +194,22 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", handleFormSubmission);
 
   function handleSignInToLine() {
+
+    const swal_shop_type_select_doc = document.getElementById("swal_shop_type_select").innerHTML;
+    const swal_shop_type_description_doc = document.getElementById("swal_shop_type_description").innerHTML;
+    const swal_shop_type_confirm_doc = document.getElementById("swal_shop_type_confirm").innerHTML;
+    const swal_shop_type_deny_doc = document.getElementById("swal_shop_type_deny").innerHTML;
+    const swal_shop_type_cancel_doc = document.getElementById("swal_shop_type_cancel").innerHTML;
+
+
     Swal.fire({
-      title: "Select Shop Type",
-      html: "After selecting shop type, you will be redirected to Line Login",
+      title: swal_shop_type_select_doc,
+      html: swal_shop_type_description_doc,
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: "Food Vendor",
-      denyButtonText: "Retailer",
-      cancelButtonText: "Cancel",
+      confirmButtonText: swal_shop_type_confirm_doc,
+      denyButtonText: swal_shop_type_deny_doc,
+      cancelButtonText: swal_shop_type_cancel_doc,
       customClass: {
         confirmButton: "swal2-confirm swal2-styled swal2-blue-button",
         denyButton: "swal2-deny swal2-styled swal2-blue-button",

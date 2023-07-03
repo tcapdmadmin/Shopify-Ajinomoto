@@ -16,7 +16,12 @@
       "branch_number": "Branch No.",
       "I_accept_the_privacy_policy": "I accept the ",
       "I_accept_the_privacy_policy_link": "Privacy Policy",
-      "back_to_login": "Back to Login"
+      "back_to_login": "Back to Login",
+      "swal_shop_type_select": "Select Shop Type",
+      "swal_shop_type_description": "After selecting shop type, you will be redirected to Line Login",
+      "swal_shop_type_confirm": "Food Vendor",
+      "swal_shop_type_deny": "Retailer",
+      "swal_shop_type_cancel": "Cancel"
     },
     "gender": {
       "gender": "Gender",
@@ -368,7 +373,12 @@
       "sign_in": "Sign In",
       "cancel": "Return to Store",
       "guest_title": "Continue as a guest",
-      "guest_continue": "Continue"
+      "guest_continue": "Continue",
+      "swal_shop_type_select": "Select Shop Type",
+      "swal_shop_type_description": "After selecting shop type, you will be redirected to Line Login",
+      "swal_shop_type_confirm": "Food Vendor",
+      "swal_shop_type_deny": "Retailer",
+      "swal_shop_type_cancel": "Cancel"
     },
     "orders": {
       "title": "Order History",

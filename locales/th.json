@@ -402,7 +402,12 @@
       "sign_in": "เข้าสู่ระบบ",
       "cancel": "กลับไปที่ร้านค้า",
       "guest_title": "ดำเนินการต่อในฐานะแขก",
-      "guest_continue": "ดำเนินการต่อ"
+      "guest_continue": "ดำเนินการต่อ",
+      "swal_shop_type_select": "เลือกประเภทร้านค้า",
+      "swal_shop_type_description": "หลังจากเลือกประเภทร้านค้า คุณจะล็อคอินไปยัง Line เพื่อขออนุญาติในการเชื่อมต่อ",
+      "swal_shop_type_confirm": "ร้านอาหาร",
+      "swal_shop_type_deny": "ร้านค้าปลีก",
+      "swal_shop_type_cancel": "ยกเลิก"
     },
     "orders": {
       "title": "ประวัติการสั่งซื้อ",
@@ -566,7 +571,12 @@
       "branch_number": "สาขาที่",
       "I_accept_the_privacy_policy": "ข้าพเจ้าตกลงให้ความยินยอมแก่บริษัท อายิโนะโมะโต๊ะเซลส์(ประเทศไทย) จำกัด ในการเก็บรวบรวม ใช้ และเปิดเผยข้อมูลส่วนบุคคล (แล้วแต่กรณี) ของข้าพเจ้าตามที่ระบุไว้ใน",
       "I_accept_the_privacy_policy_link": "นโยบายคุ้มครองข้อมูลส่วนบุคคล",
-      "back_to_login": "กลับไปที่เข้าสู่ระบบ"
+      "back_to_login": "กลับไปที่เข้าสู่ระบบ",
+      "swal_shop_type_select": "เลือกประเภทร้านค้า",
+      "swal_shop_type_description": "หลังจากเลือกประเภทร้านค้า คุณจะล็อคอินไปยัง Line เพื่อขออนุญาติในการเชื่อมต่อ",
+      "swal_shop_type_confirm": "ร้านอาหาร",
+      "swal_shop_type_deny": "ร้านค้าปลีก",
+      "swal_shop_type_cancel": "ยกเลิก"
     },
     "gender": {
       "gender": "เพศ",
