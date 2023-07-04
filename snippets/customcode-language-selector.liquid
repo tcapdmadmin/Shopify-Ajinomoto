@@ -19,6 +19,18 @@
 </style>
 
 <script>
+    var currentUrl1 = window.location.href;
+    var dropdown1 = document.getElementById("Language_selector_id");
+
+    if (currentUrl1 === "https://ajinomotosales-th.myshopify.com/") {
+    dropdown1.querySelector('option[value=Thai]').findsetAttribute("selected", "selected");
+    dropdown1.value = "Thai";
+  } else if (currentUrl1 === "https://ajinomotosales-th.myshopify.com/en") {
+    dropdown1.querySelector('option[value=English]').findsetAttribute("selected", "selected");
+    dropdown1.value = "English";
+  }
+    
+  
   // Function for Language Selector in Header
     function redirect() {
         var dropdown = document.getElementById("Language_selector_id");
