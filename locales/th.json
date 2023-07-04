@@ -486,7 +486,7 @@
       "contact_title": "ได้รับการติดต่อ",
       "chat_link": "แชทสด",
       "email_link": "ส่งอีเมลถึงเรา",
-      "social_title": "ตามเรามา",
+      "social_title": "ติดตามเราได้ที่",
       "social_platform": "{{ name }} บน {{ platform }}"
     }
   },
