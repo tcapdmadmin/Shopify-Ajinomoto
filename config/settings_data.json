@@ -66,7 +66,7 @@
     "social_twitter_link": "#",
     "social_instagram_link": "#",
     "social_youtube_link": "#",
-    "predictive_search_enabled": false,
+    "predictive_search_enabled": true,
     "show_breadcrumbs": false,
     "show_breadcrumbs_collection_link": true,
     "checkout_logo_position": "left",
