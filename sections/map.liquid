@@ -28,7 +28,7 @@
         <div class="animation-contents">
           <div class="map-section__overlay-inner text-{{ section.settings.heading_position }}">
             {%- if section.settings.map_title != blank -%}
-              <h3 class="text-spacing {{ section.settings.heading_size }}">{{ section.settings.map_title | escape }}</h3>
+              <h3 class="text-spacing {{ section.settings.heading_size }}">{{ section.settings.map_title}}</h3>
             {%- endif -%}
             {%- if section.settings.address != blank -%}
               <div class="rte-setting text-spacing">{{ section.settings.address }}</div>
