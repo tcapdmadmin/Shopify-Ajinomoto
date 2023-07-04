@@ -54,7 +54,7 @@
         var currentUrl = window.location.href;
         var dropdown = document.getElementById("Language_selector_id");
 
-        if (currentUrl.includes("https://ajinomotosalesth.com/")) {
+        if (!currentUrl.includes("/en")) {
           dropdown.value = "Thai";
               console.log("1")
 
