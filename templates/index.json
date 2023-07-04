@@ -357,7 +357,7 @@
         "text_retailer": "<p>กาแฟปรุงสำเร็จชนิดผง \"Birdy®\" 3in1 ผลิตจากเมล็ดกาแฟสายพันธุ์โรบัสต้า ที่ให้ความเข้มข้นพร้อมกลิ่นหอมของกาแฟคั่วบด เพื่อให้คุณสัมผัสรสชาติและกลิ่นของกาแฟได้มากยิ่งขึ้น ให้คุณเริ่มต้นวันดีดี ได้อย่างมั่นใจทุกวัน<\/p>",
         "button_label_food_vendor": "ช้อปเลย",
         "button_label_retailer": "ช้อปเลย",
-        "button_link_food_vendor": "#",
+        "button_link_food_vendor": "shopify:\/\/collections\/รสดี-น้ำซุปก๋วยเตี๋ยว",
         "button_link_retailer": "shopify:\/\/collections\/เบอร์ดี้",
         "button_style": "primary",
         "align_text": "left",
