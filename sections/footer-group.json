@@ -109,7 +109,7 @@
         "input#Email-sections--19050668654907__footer {background: #ffffff;}",
         "h2.footer__title {text-transform: uppercase;}",
         "input {background: #ffffff;}",
-        "@media only screen and (max-width: 768px) {.footer__blocks .footer__block:first-child, .footer__blocks .footer__block:nth-child(3) {flex-basis: 60%; } .footer__blocks .footer__block:nth-child(2), .footer__blocks .footer__block:nth-child(4) {flex-basis: 40%; }}"
+        "@media only screen and (max-width: 768px) {.footer__blocks .footer__block:first-child, .footer__blocks .footer__block--mobile:first-child {flex-basis: 60%; } .footer__blocks .footer__block:nth-child(2), .footer__blocks .footer__block--mobile:last-child {flex-basis: 40%; }}"
       ],
       "settings": {
         "show_newsletter": false,
