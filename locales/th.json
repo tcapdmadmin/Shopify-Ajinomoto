@@ -414,7 +414,7 @@
       "order_number": "คำสั่งซื้อเลขที่",
       "date": "วันที่สั่งซื้อ",
       "payment_status": "",
-      "fulfillment_status": "สถานะการปฏิบัติตาม",
+      "fulfillment_status": "สถานะคำสั่งซื้อ",
       "total": "ทั้งหมด",
       "none": "คุณยังไม่ได้ทำการสั่งซื้อใดๆ"
     },
@@ -426,7 +426,7 @@
       "billing_address": "ที่อยู่เรียกเก็บเงิน",
       "payment_status": "",
       "shipping_address": "ที่อยู่จัดส่ง",
-      "fulfillment_status": "สถานะการปฏิบัติตาม",
+      "fulfillment_status": "สถานะคำสั่งซื้อ",
       "discount": "การลดราคา",
       "shipping": "การส่งสินค้า",
       "tax": "ภาษี",
