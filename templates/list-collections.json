@@ -87,12 +87,30 @@
             "collection": "รสดีเมนู",
             "title": ""
           }
+        },
+        "ac85d622-e429-4420-9b59-3a8a2dde53b4": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "รสดีซุปก้อน",
+            "title": ""
+          }
+        },
+        "4502da1f-8f64-49c2-8c57-9b461699bebc": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "รสดี-น้ำซุปก๋วยเตี๋ยว",
+            "title": ""
+          }
         }
       },
       "block_order": [
         "template--19123726025019__4c42d14a-0257-4709-bcab-34e5dbb18fc4-1688638813f3ac3613-0",
         "e580bf08-cc3d-43fb-ad86-4a306adb8b19",
-        "a2a1172c-1917-4223-b0f4-128b5fdb753f"
+        "a2a1172c-1917-4223-b0f4-128b5fdb753f",
+        "ac85d622-e429-4420-9b59-3a8a2dde53b4",
+        "4502da1f-8f64-49c2-8c57-9b461699bebc"
       ],
       "settings": {
         "title": "",
