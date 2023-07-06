@@ -146,7 +146,8 @@
         "547935f7-e52b-4d78-9b70-99c6ebf9ae81"
       ],
       "custom_css": [
-        ".grid.grid--uniform.grid--flush-bottom {display: flex;}"
+        ".grid.grid--uniform.grid--flush-bottom {display: flex;}",
+        "@media only screen and (max-width: 768px) {h2.h3.rte--block {line-height: 32px;}}"
       ],
       "settings": {
         "title": "",
