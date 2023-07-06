@@ -185,8 +185,6 @@
 
   {%- for address in customer.addresses -%}
     {%- unless address == customer.default_address -%}
-      <p class="h4">{{ 'customer.addresses.default' | t }}</p>
-
 
     {{ address | format_address }}
 
