@@ -147,6 +147,8 @@
         <div id="AddressProvinceContainer_{{form.id}}" style="display: none;">
           <label for="AddressProvince_{{form.id}}">{{ 'customer.addresses.province' | t }}</label>
           <select id="AddressProvince_{{form.id}}" class="input-full" name="address[province]" data-default="{{form.province}}"></select>
+        <option value="{{ form.province }}" selected>{{ form.province }}</option>
+
         </div>
 
         <div class="grid grid--small">
