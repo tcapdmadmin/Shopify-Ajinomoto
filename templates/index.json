@@ -147,7 +147,7 @@
       ],
       "custom_css": [
         ".grid.grid--uniform.grid--flush-bottom {display: flex;}",
-        "@media only screen and (max-width: 768px) {h2.h3.rte--block {line-height: 32px;}}"
+        "@media only screen and (max-width: 768px) {h2.h3.rte--block {line-height: 32px; }}"
       ],
       "settings": {
         "title": "",
@@ -204,7 +204,7 @@
           "settings": {
             "customer_type": "food_vendor",
             "collection": "food-vendor-collection-ก๋วยจั๊บ",
-            "title": "ก๋วยจั๊บ"
+            "title": "รสดี น้ำซุปก๋วยเตี๋ยว"
           }
         }
       },
