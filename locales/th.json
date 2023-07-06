@@ -411,7 +411,7 @@
     },
     "orders": {
       "title": "ประวัติการสั่งซื้อ",
-      "order_number": "คำสั่ง",
+      "order_number": "คำสั่งซื้อเลขที่",
       "date": "วันที่",
       "payment_status": "สถานะการชำระเงิน",
       "fulfillment_status": "สถานะการปฏิบัติตาม",
