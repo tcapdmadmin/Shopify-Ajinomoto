@@ -102,6 +102,8 @@
       <h3>{{ 'customer.account.details' | t }}</h3>
 
       <p class="h5">{{ customer.name }}</p>
+      {{ customer.email }}
+      {{ customer.phone }}
 
       {{ customer.default_address | format_address }}
 
