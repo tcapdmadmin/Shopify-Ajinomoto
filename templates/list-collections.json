@@ -1,20 +1,68 @@
 {
   "sections": {
+    "4a34eb4b-72e3-4d96-b17d-a20117ac0f9b": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19123726025019__4a34eb4b-72e3-4d96-b17d-a20117ac0f9b-1688633486f72a3bf7-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Rich text",
+            "heading_size": "h2"
+          }
+        },
+        "template--19123726025019__4a34eb4b-72e3-4d96-b17d-a20117ac0f9b-1688633486f72a3bf7-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19123726025019__4a34eb4b-72e3-4d96-b17d-a20117ac0f9b-1688633486f72a3bf7-0",
+        "template--19123726025019__4a34eb4b-72e3-4d96-b17d-a20117ac0f9b-1688633486f72a3bf7-1"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
     "main": {
       "type": "list-collections-template",
+      "blocks": {
+        "7e4dcf80-1e30-4f18-91f5-3c452ea38b75": {
+          "type": "collection",
+          "settings": {
+            "collection": "อายิโนะโมะโต๊ะ-พลัส"
+          }
+        },
+        "281bba69-39ac-42a1-a1b5-060fe045d394": {
+          "type": "collection",
+          "settings": {
+            "collection": "ยำยำ"
+          }
+        }
+      },
+      "block_order": [
+        "7e4dcf80-1e30-4f18-91f5-3c452ea38b75",
+        "281bba69-39ac-42a1-a1b5-060fe045d394"
+      ],
       "custom_css": [
         "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
         ".collection-image--is-collection img,.collection-image-fill-space--true img {-o-object-fit: cover; object-fit: contain;}",
         ".collection-image img {padding: 0px;}"
       ],
       "settings": {
-        "title_enable": true,
-        "display_type": "all",
+        "title_enable": false,
+        "display_type": "selected",
         "sort": "alphabetical"
       }
     }
   },
   "order": [
+    "4a34eb4b-72e3-4d96-b17d-a20117ac0f9b",
     "main"
   ]
 }
