@@ -3,7 +3,9 @@
     "main": {
       "type": "list-collections-template",
       "custom_css": [
-
+        "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
+        ".collection-image--is-collection img,.collection-image-fill-space--true img {-o-object-fit: cover; object-fit: contain;}",
+        ".collection-image img {padding: 0px;}"
       ],
       "settings": {
         "title_enable": true,
