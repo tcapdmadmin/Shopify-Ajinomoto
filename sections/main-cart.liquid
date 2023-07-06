@@ -91,7 +91,8 @@
               <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
             {% endif %}
 
-            <a href="{{ routes.all_products_collection_url }}" class="btn btn--secondary cart__continue">
+            {% comment %}<a href="{{ routes.all_products_collection_url }}" class="btn btn--secondary cart__continue">{% endcomment %}
+            <a href="javascript:history.back()" class="btn btn--secondary cart__continue">
               {{ 'cart.general.continue_shopping' | t }}
             </a>
           </div>
