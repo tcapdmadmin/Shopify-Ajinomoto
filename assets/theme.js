@@ -4080,6 +4080,11 @@ if (console && console.log) {
           var countryId = el.dataset.countryId;
           var provinceId = el.dataset.provinceId;
           var provinceContainerId = el.dataset.provinceContainerId;
+          console.log(countryId)
+                    console.log(provinceId)
+
+                    console.log(provinceContainerId)
+
   
           new Shopify.CountryProvinceSelector(
             countryId,
