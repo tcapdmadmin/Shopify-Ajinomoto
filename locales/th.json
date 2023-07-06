@@ -413,7 +413,7 @@
       "title": "ประวัติการสั่งซื้อ",
       "order_number": "คำสั่งซื้อเลขที่",
       "date": "วันที่สั่งซื้อ",
-      "payment_status": "สถานะคำสั่งซื้อ",
+      "payment_status": "",
       "fulfillment_status": "สถานะการปฏิบัติตาม",
       "total": "ทั้งหมด",
       "none": "คุณยังไม่ได้ทำการสั่งซื้อใดๆ"
@@ -424,7 +424,7 @@
       "cancelled_html": "คำสั่งซื้อถูกยกเลิกเมื่อ {{ date }}",
       "cancelled_reason": "เหตุผล: {{ reason }}",
       "billing_address": "ที่อยู่เรียกเก็บเงิน",
-      "payment_status": "สถานะคำสั่งซื้อ",
+      "payment_status": "",
       "shipping_address": "ที่อยู่จัดส่ง",
       "fulfillment_status": "สถานะการปฏิบัติตาม",
       "discount": "การลดราคา",
@@ -710,15 +710,6 @@
         "shipping_label": "ค่าจัดส่ง",
         "total_label": "รวมทั้งหมด",
         "partial_total_label": "รวมทั้งหมด"
-      }
-    }
-  },
-  "customer_accounts": {
-    "B2B": {
-      "draft_order_details": {
-        "payment_status": {
-          "title": "สถานะคำสั่งซื้อ"
-        }
       }
     }
   }
