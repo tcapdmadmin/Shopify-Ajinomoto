@@ -32,7 +32,8 @@
         <div class="grid-product__actions">
           {%- if settings.quick_shop_enable and type != 'horizontal' -%}
             <button class="btn btn--circle btn--icon quick-product__btn quick-product__btn--not-ready js-modal-open-quick-modal-{{ product.id }} small--hide" title="{{ 'products.general.quick_shop' | t }}" data-handle="{{ product.handle }}">
-              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58ZM54 54 41.94 42" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px"/></svg>
+              {% comment %}<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58ZM54 54 41.94 42" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px"/></svg>{% endcomment %}
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64"><path style="fill:#ffffff;stroke:#000;stroke-miterlimit:10;stroke-width:2px" d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3"></path><circle cx="27" cy="53" r="2"></circle><circle cx="47" cy="53" r="2"></circle></svg>
               <span class="icon__fallback-text">{{ 'products.general.quick_shop' | t }}</span>
             </button>
           {%- endif -%}
