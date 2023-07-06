@@ -96,7 +96,7 @@
   {%- for address in customer.addresses -%}
     {%- if address == customer.default_address -%}
       <p class="h4">{{ 'customer.addresses.default' | t }}</p>
-    {%- endif -%}
+
 
     {{ address | format_address }}
 
@@ -180,7 +180,7 @@
     </div>
 
     <hr class="hr--medium">
-
+    {%- endif -%}
   {%- endfor -%}
 
   {%- liquid
