@@ -31,6 +31,7 @@
     },
     "main": {
       "type": "list-collections-template",
+      "disabled": true,
       "blocks": {
         "7e4dcf80-1e30-4f18-91f5-3c452ea38b75": {
           "type": "collection",
@@ -59,10 +60,110 @@
         "display_type": "selected",
         "sort": "alphabetical"
       }
+    },
+    "4c42d14a-0257-4709-bcab-34e5dbb18fc4": {
+      "type": "featured-collections",
+      "blocks": {
+        "template--19123726025019__4c42d14a-0257-4709-bcab-34e5dbb18fc4-1688638813f3ac3613-0": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "อายิโนะโมะโต๊ะ-พลัส",
+            "title": ""
+          }
+        },
+        "e580bf08-cc3d-43fb-ad86-4a306adb8b19": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "อายิโนะโมะโต๊ะ",
+            "title": ""
+          }
+        },
+        "a2a1172c-1917-4223-b0f4-128b5fdb753f": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "รสดีเมนู",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19123726025019__4c42d14a-0257-4709-bcab-34e5dbb18fc4-1688638813f3ac3613-0",
+        "e580bf08-cc3d-43fb-ad86-4a306adb8b19",
+        "a2a1172c-1917-4223-b0f4-128b5fdb753f"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    },
+    "3ea069da-5a5d-44f8-92c5-cdf67898ac59": {
+      "type": "featured-collections",
+      "blocks": {
+        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-1": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "retailer-brand-รสดีเมนู",
+            "title": ""
+          }
+        },
+        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-2": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "ยำยำ",
+            "title": ""
+          }
+        },
+        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-3": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "เบอร์ดี้",
+            "title": ""
+          }
+        },
+        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-4": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "retailer-brand-รสดีซุปก้อน",
+            "title": ""
+          }
+        },
+        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-5": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "อายิโนะโมะโต๊ะ-พลัส",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-1",
+        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-2",
+        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-3",
+        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-4",
+        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-5"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
     }
   },
   "order": [
     "4a34eb4b-72e3-4d96-b17d-a20117ac0f9b",
-    "main"
+    "main",
+    "4c42d14a-0257-4709-bcab-34e5dbb18fc4",
+    "3ea069da-5a5d-44f8-92c5-cdf67898ac59"
   ]
 }
