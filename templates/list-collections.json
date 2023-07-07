@@ -148,7 +148,7 @@
         ".collection-image-wrap:hover {border-radius: var(--roundness); box-shadow: unset;}"
       ],
       "settings": {
-        "title": "Catalog",
+        "title": "",
         "heading_size": "h2",
         "heading_position": "left",
         "divider": false
