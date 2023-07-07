@@ -7,9 +7,18 @@
  -%}
 
 <div class="page-width">
-  {%- if section.settings.title != blank -%}
-    <div class="section-header text-{{ section.settings.heading_position }}">
-      <h2 class="section-header__title {{ section.settings.heading_size }}">{{ section.settings.title }}</h2>
+  {%- if section.settings.title != blank or section.settings.view_all -%}
+    <div class="page-width text-{{ section.settings.heading_position }}">
+      <div class="section-header{% if section.settings.view_all and section.settings.title != blank %} section-header--with-link{% endif %}">
+        {% if section.settings.title != blank%}
+          <h2 class="section-header__title {{ section.settings.heading_size }} custom-section-header__title">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {%- if section.settings.view_all -%}
+            <a href="{{ section.settings.view_all_redirect }}" class="section-header__link">{{ 'collections.general.all_of_collection' | t }}</a>
+        {%- endif -%}
+      </div>
     </div>
   {%- endif -%}
 
@@ -106,6 +115,17 @@
       "id": "divider",
       "label": "t:sections.featured-collections.settings.divider.label",
       "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "view_all",
+      "label": "t:sections.featured-collection.settings.view_all.label",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "view_all_redirect",
+      "label": "View All Redirect"
     }
   ],
   "blocks": [
