@@ -700,8 +700,8 @@
   "shopify": {
     "checkout": {
       "contact": {
-        "optional_address2_label": "เขต\/อำเภอ",
-        "city_label": "แขวง\/ตำบล",
+        "optional_address2_label": "แขวง\/ตำบล",
+        "city_label": "เขต\/อำเภอ",
         "address2_label": "เขต\/อำเภอ",
         "title": "ข้อมูล"
       },
