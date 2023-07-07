@@ -702,7 +702,7 @@
       "contact": {
         "optional_address2_label": "แขวง\/ตำบล",
         "city_label": "เขต\/อำเภอ",
-        "address2_label": "เขต\/อำเภอ",
+        "address2_label": "แขวง\/ตำบล",
         "title": "ข้อมูล"
       },
       "order_summary": {
