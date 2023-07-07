@@ -66,6 +66,7 @@
     "social_twitter_link": "#",
     "social_instagram_link": "#",
     "social_youtube_link": "#",
+    "favicon": "shopify:\/\/shop_images\/AJINOMOTO_Favicon.png",
     "predictive_search_enabled": false,
     "show_breadcrumbs": false,
     "show_breadcrumbs_collection_link": true,
