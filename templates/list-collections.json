@@ -1,46 +1,19 @@
 {
   "sections": {
-    "4a34eb4b-72e3-4d96-b17d-a20117ac0f9b": {
-      "type": "rich-text",
-      "blocks": {
-        "template--19123726025019__4a34eb4b-72e3-4d96-b17d-a20117ac0f9b-1688633486f72a3bf7-0": {
-          "type": "heading",
-          "settings": {
-            "title": "Rich text",
-            "heading_size": "h2"
-          }
-        },
-        "template--19123726025019__4a34eb4b-72e3-4d96-b17d-a20117ac0f9b-1688633486f72a3bf7-1": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "template--19123726025019__4a34eb4b-72e3-4d96-b17d-a20117ac0f9b-1688633486f72a3bf7-0",
-        "template--19123726025019__4a34eb4b-72e3-4d96-b17d-a20117ac0f9b-1688633486f72a3bf7-1"
-      ],
-      "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "color_scheme": "1",
-        "divider": false
-      }
-    },
     "main": {
       "type": "list-collections-template",
       "disabled": true,
       "blocks": {
         "7e4dcf80-1e30-4f18-91f5-3c452ea38b75": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "อายิโนะโมะโต๊ะ-พลัส"
           }
         },
         "281bba69-39ac-42a1-a1b5-060fe045d394": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "ยำยำ"
           }
@@ -56,67 +29,9 @@
         ".collection-image img {padding: 0px;}"
       ],
       "settings": {
-        "title_enable": false,
+        "title_enable": true,
         "display_type": "selected",
         "sort": "alphabetical"
-      }
-    },
-    "4c42d14a-0257-4709-bcab-34e5dbb18fc4": {
-      "type": "featured-collections",
-      "blocks": {
-        "template--19123726025019__4c42d14a-0257-4709-bcab-34e5dbb18fc4-1688638813f3ac3613-0": {
-          "type": "collection",
-          "settings": {
-            "customer_type": "food_vendor",
-            "collection": "อายิโนะโมะโต๊ะ-พลัส",
-            "title": ""
-          }
-        },
-        "e580bf08-cc3d-43fb-ad86-4a306adb8b19": {
-          "type": "collection",
-          "settings": {
-            "customer_type": "food_vendor",
-            "collection": "อายิโนะโมะโต๊ะ",
-            "title": ""
-          }
-        },
-        "a2a1172c-1917-4223-b0f4-128b5fdb753f": {
-          "type": "collection",
-          "settings": {
-            "customer_type": "food_vendor",
-            "collection": "รสดีเมนู",
-            "title": ""
-          }
-        },
-        "ac85d622-e429-4420-9b59-3a8a2dde53b4": {
-          "type": "collection",
-          "settings": {
-            "customer_type": "food_vendor",
-            "collection": "รสดีซุปก้อน",
-            "title": ""
-          }
-        },
-        "4502da1f-8f64-49c2-8c57-9b461699bebc": {
-          "type": "collection",
-          "settings": {
-            "customer_type": "food_vendor",
-            "collection": "รสดี-น้ำซุปก๋วยเตี๋ยว",
-            "title": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--19123726025019__4c42d14a-0257-4709-bcab-34e5dbb18fc4-1688638813f3ac3613-0",
-        "e580bf08-cc3d-43fb-ad86-4a306adb8b19",
-        "a2a1172c-1917-4223-b0f4-128b5fdb753f",
-        "ac85d622-e429-4420-9b59-3a8a2dde53b4",
-        "4502da1f-8f64-49c2-8c57-9b461699bebc"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "divider": false
       }
     },
     "3ea069da-5a5d-44f8-92c5-cdf67898ac59": {
@@ -146,6 +61,22 @@
             "title": ""
           }
         },
+        "de285777-de42-462d-b027-508c804079a0": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "813f5c02-27e9-46be-86b3-a8e5fe522c7d": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "",
+            "title": ""
+          }
+        },
         "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-4": {
           "type": "collection",
           "settings": {
@@ -161,17 +92,63 @@
             "collection": "อายิโนะโมะโต๊ะ-พลัส",
             "title": ""
           }
+        },
+        "b1b809be-c28c-42f4-a72d-ed142aa87a3c": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "ac0785cd-b409-4ce8-8c78-6f00e82966d7": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "none",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "aecc687c-c7f2-4655-9e2d-442e76681098": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "none",
+            "collection": "",
+            "title": ""
+          }
+        },
+        "e4458216-b181-4c8a-8657-04ebec9626bf": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "none",
+            "collection": "",
+            "title": ""
+          }
         }
       },
       "block_order": [
         "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-1",
         "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-2",
         "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-3",
+        "de285777-de42-462d-b027-508c804079a0",
+        "813f5c02-27e9-46be-86b3-a8e5fe522c7d",
         "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-4",
-        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-5"
+        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-5",
+        "b1b809be-c28c-42f4-a72d-ed142aa87a3c",
+        "ac0785cd-b409-4ce8-8c78-6f00e82966d7",
+        "aecc687c-c7f2-4655-9e2d-442e76681098",
+        "e4458216-b181-4c8a-8657-04ebec9626bf"
+      ],
+      "custom_css": [
+        "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
+        ".collection-image--is-collection img,.collection-image-fill-space--true img {-o-object-fit: cover; object-fit: contain;}",
+        ".collection-image img {padding: 0px;}",
+        ".collection-image-wrap {background-color: transparent;}",
+        ".collection-image-wrap:after {background-color: transparent;}",
+        ".collection-image-wrap:hover {border-radius: var(--roundness); box-shadow: unset;}"
       ],
       "settings": {
-        "title": "",
+        "title": "Catalog",
         "heading_size": "h2",
         "heading_position": "left",
         "divider": false
@@ -179,9 +156,7 @@
     }
   },
   "order": [
-    "4a34eb4b-72e3-4d96-b17d-a20117ac0f9b",
     "main",
-    "4c42d14a-0257-4709-bcab-34e5dbb18fc4",
     "3ea069da-5a5d-44f8-92c5-cdf67898ac59"
   ]
 }

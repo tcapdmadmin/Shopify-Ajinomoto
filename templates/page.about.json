@@ -12,6 +12,7 @@
         "slideshow-0": {
           "type": "hero",
           "settings": {
+            "customer_type": "none",
             "top_subheading": "",
             "title": "",
             "title_size": 70,
@@ -20,7 +21,7 @@
             "link_text": "",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#fff",
+            "color_accent": "#ffffff",
             "text_align": "vertical-bottom horizontal-left",
             "image": "shopify:\/\/shop_images\/image_14.png",
             "overlay_opacity": 0
@@ -121,7 +122,7 @@
         "column3"
       ],
       "custom_css": [
-        "{margin-top: -50px;margin-bottom: -50px;}"
+        "{margin-top: -50px; margin-bottom: -50px;}"
       ],
       "settings": {
         "title": "",
