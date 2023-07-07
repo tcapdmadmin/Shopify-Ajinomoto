@@ -73,8 +73,7 @@
                            autocapitalize="words" placeholder="{{ 'custom.registration.last_name' | t }} *" required oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')">
                 </div>
                 <div class="field-wrap">
-                  <input type="text" name="birthdate" id="birthdate" class="field-input field-input-date input-full parallel"
-                     placeholder="{{ 'custom.registration.birthdate' | t }} *" required onclick="showDatePicker()" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')">
+                  <input type="text" name="birthdate" id="birthdate" placeholder="{{ 'custom.registration.birthdate' | t }} *">
                     <div class="field-select">
                         <select id="Gender" name="gender" class="field-input input-full parallel" required oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')">
                             <option value="" disabled selected hidden>{{ 'custom.gender.gender' | t }} *</option>
@@ -341,22 +340,12 @@
 </script>
 
 <script>
-  function showDatePicker() {
-    // Create a new date input element
-    var datePicker = document.createElement('input');
-    datePicker.type = 'date';
-    datePicker.name = 'birthdate';
-    datePicker.id = 'birthdate';
-    datePicker.className = 'field-input field-input-date input-full parallel';
-    datePicker.required = true;
+  $( function() {
+    $( "#birthdate" ).datepicker({
+  dateFormat: "dd/mm/yy"
+});
+  } );
 
-    // Replace the placeholder input with the date picker
-    var placeholderInput = document.getElementById('birthdate');
-    placeholderInput.parentNode.replaceChild(datePicker, placeholderInput);
-
-    // Automatically focus on the date picker
-    datePicker.focus();
-  }
 </script>
 
 <script src="{{ 'customcode-registration.js' | asset_url }}"></script>
