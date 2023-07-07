@@ -229,7 +229,9 @@
         "title": "แบรนด์สินค้า",
         "heading_size": "h2",
         "heading_position": "left",
-        "divider": false
+        "divider": false,
+        "view_all": true,
+        "view_all_redirect": "\/collections"
       }
     },
     "315640e3-51da-43fe-a9d2-d7eaa59f9dc9": {
@@ -511,7 +513,9 @@
         "title": "หมวดหมู่ยอดนิยม",
         "heading_size": "h2",
         "heading_position": "left",
-        "divider": false
+        "divider": false,
+        "view_all": false,
+        "view_all_redirect": ""
       }
     }
   },
