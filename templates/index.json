@@ -222,7 +222,8 @@
         ".collection-image img {padding: 0px;}",
         ".collection-image-wrap {background-color: transparent;}",
         ".collection-image-wrap:after {background-color: transparent;}",
-        ".collection-image-wrap:hover {border-radius: var(--roundness); box-shadow: unset;}"
+        ".collection-image-wrap:hover {border-radius: var(--roundness); box-shadow: unset;}",
+        "img.image-element {transform: scale(1.3);}"
       ],
       "settings": {
         "title": "แบรนด์สินค้า",
