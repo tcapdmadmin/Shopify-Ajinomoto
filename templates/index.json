@@ -195,7 +195,7 @@
           "type": "collection",
           "settings": {
             "customer_type": "food_vendor",
-            "collection": "retailer-brand-รสดีซุปก้อน",
+            "collection": "รสดีซุปก้อน",
             "title": "รสดีซุปก้อน"
           }
         },
