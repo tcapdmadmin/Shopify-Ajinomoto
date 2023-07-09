@@ -145,7 +145,7 @@
           "type": "collection",
           "settings": {
             "customer_type": "food_vendor",
-            "collection": "",
+            "collection": "รสดีซุปก้อน",
             "title": ""
           }
         },
@@ -153,7 +153,7 @@
           "type": "collection",
           "settings": {
             "customer_type": "food_vendor",
-            "collection": "",
+            "collection": "ทาคูมิ-อายิ",
             "title": ""
           }
         },
@@ -161,7 +161,7 @@
           "type": "collection",
           "settings": {
             "customer_type": "food_vendor",
-            "collection": "",
+            "collection": "ผงรสมะนาว",
             "title": ""
           }
         },
@@ -169,7 +169,15 @@
           "type": "collection",
           "settings": {
             "customer_type": "food_vendor",
-            "collection": "",
+            "collection": "รสดี",
+            "title": ""
+          }
+        },
+        "9974363c-0d3a-4e20-8014-0969ed23a8de": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "food_vendor",
+            "collection": "รสดี-น้ำซุปก๋วยเตี๋ยว",
             "title": ""
           }
         }
@@ -191,7 +199,8 @@
         "b1b809be-c28c-42f4-a72d-ed142aa87a3c",
         "ac0785cd-b409-4ce8-8c78-6f00e82966d7",
         "aecc687c-c7f2-4655-9e2d-442e76681098",
-        "cfc620c5-00f1-4ca9-92dd-ccf2b2cf70ba"
+        "cfc620c5-00f1-4ca9-92dd-ccf2b2cf70ba",
+        "9974363c-0d3a-4e20-8014-0969ed23a8de"
       ],
       "custom_css": [
         "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
