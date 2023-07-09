@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const lineConnectBtn = document.getElementById("lineConnectBtn");
   lineConnectBtn.style.display = "none";
-  const apiUrl = "https://ajith-api.tcapdm.com";
+  const apiUrl = "https://apps-qa.ajinomotosalesth.com";
 
   function lineConnectionChecker(apiUrl) {
     const requestData = {
@@ -158,7 +158,7 @@ function disconnectLine() {
         confirmButtonText: "Remove Line",
       }).then((result) => {
         if (result.isConfirmed) {
-          const apiUrl = "https://ajith-api.tcapdm.com/api/line/account/update";
+          const apiUrl = "https://apps-qa.ajinomotosalesth.com/api/line/account/update";
           const payload = { mode: "remove_line", sh_id: sh_id };
           const options = {
             method: "POST",
