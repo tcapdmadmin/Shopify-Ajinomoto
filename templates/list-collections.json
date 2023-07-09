@@ -61,27 +61,75 @@
             "title": ""
           }
         },
+        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-4": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "retailer-brand-รสดีซุปก้อน",
+            "title": ""
+          }
+        },
         "de285777-de42-462d-b027-508c804079a0": {
           "type": "collection",
           "settings": {
-            "customer_type": "food_vendor",
-            "collection": "",
+            "customer_type": "retailer",
+            "collection": "กาแฟเบอร์ดี้-3in1",
             "title": ""
           }
         },
         "813f5c02-27e9-46be-86b3-a8e5fe522c7d": {
           "type": "collection",
           "settings": {
-            "customer_type": "food_vendor",
-            "collection": "",
+            "customer_type": "retailer",
+            "collection": "ซอสทาคูมิ",
             "title": ""
           }
         },
-        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-4": {
+        "70e1b3e0-7a21-416e-8b0f-8d3f504e9115": {
           "type": "collection",
           "settings": {
             "customer_type": "retailer",
-            "collection": "retailer-brand-รสดีซุปก้อน",
+            "collection": "retailer-brand-ยำยำ-จัมโบ้",
+            "title": ""
+          }
+        },
+        "0e8c34b9-9acd-48a2-aeb3-7c8b0ddc7feb": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "retailer-brand-รสดี",
+            "title": ""
+          }
+        },
+        "5eb4038e-4abb-4c3f-8a57-0310d4daead7": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "retailer-brand-อายิโนะโมะโต๊ะ",
+            "title": ""
+          }
+        },
+        "2fc05721-696c-438e-b941-4365d1c11b70": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "retailer-brand-อายิโนะโมะโต๊ะ-พลัส",
+            "title": ""
+          }
+        },
+        "e4458216-b181-4c8a-8657-04ebec9626bf": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "แป้งรสดีเมนู",
+            "title": ""
+          }
+        },
+        "7322c202-89f5-4b6d-b92c-43649ff37e30": {
+          "type": "collection",
+          "settings": {
+            "customer_type": "retailer",
+            "collection": "ไลท์-ชูการ์",
             "title": ""
           }
         },
@@ -104,7 +152,7 @@
         "ac0785cd-b409-4ce8-8c78-6f00e82966d7": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
+            "customer_type": "food_vendor",
             "collection": "",
             "title": ""
           }
@@ -112,15 +160,15 @@
         "aecc687c-c7f2-4655-9e2d-442e76681098": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
+            "customer_type": "food_vendor",
             "collection": "",
             "title": ""
           }
         },
-        "e4458216-b181-4c8a-8657-04ebec9626bf": {
+        "cfc620c5-00f1-4ca9-92dd-ccf2b2cf70ba": {
           "type": "collection",
           "settings": {
-            "customer_type": "none",
+            "customer_type": "food_vendor",
             "collection": "",
             "title": ""
           }
@@ -130,14 +178,20 @@
         "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-1",
         "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-2",
         "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-3",
+        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-4",
         "de285777-de42-462d-b027-508c804079a0",
         "813f5c02-27e9-46be-86b3-a8e5fe522c7d",
-        "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-4",
+        "70e1b3e0-7a21-416e-8b0f-8d3f504e9115",
+        "0e8c34b9-9acd-48a2-aeb3-7c8b0ddc7feb",
+        "5eb4038e-4abb-4c3f-8a57-0310d4daead7",
+        "2fc05721-696c-438e-b941-4365d1c11b70",
+        "e4458216-b181-4c8a-8657-04ebec9626bf",
+        "7322c202-89f5-4b6d-b92c-43649ff37e30",
         "template--19123726025019__3ea069da-5a5d-44f8-92c5-cdf67898ac59-1688638813f3ac3613-5",
         "b1b809be-c28c-42f4-a72d-ed142aa87a3c",
         "ac0785cd-b409-4ce8-8c78-6f00e82966d7",
         "aecc687c-c7f2-4655-9e2d-442e76681098",
-        "e4458216-b181-4c8a-8657-04ebec9626bf"
+        "cfc620c5-00f1-4ca9-92dd-ccf2b2cf70ba"
       ],
       "custom_css": [
         "[data-view=\"6-3\"] .grid-item,[data-view=\"6-2\"] .grid-item {flex: 0 0 32.66667%;}",
@@ -151,7 +205,9 @@
         "title": "",
         "heading_size": "h2",
         "heading_position": "left",
-        "divider": false
+        "divider": false,
+        "view_all": true,
+        "view_all_redirect": ""
       }
     }
   },
