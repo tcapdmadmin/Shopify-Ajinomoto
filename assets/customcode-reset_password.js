@@ -50,7 +50,7 @@ function submitFormWithApiAndShopify() {
     obj["confirm_password"] = confirm_password.value;
   }
 
-  return fetch("https://apps-qa.ajinomotosalesth.com/api/shopify_account/1", {
+  return fetch("https://apps.ajinomotosalesth.com/api/shopify_account/1", {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(obj),

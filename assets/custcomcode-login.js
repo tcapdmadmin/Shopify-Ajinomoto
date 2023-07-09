@@ -1,5 +1,5 @@
 // LINE FUNCTIONS
-const apiUrl = "https://apps-qa.ajinomotosalesth.com";
+const apiUrl = "https://apps.ajinomotosalesth.com";
 var base_url = window.location.origin;
 let is_en = window.location.pathname;
 let selectedGroup = "";
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Set Line Login URL
 const setLineLoginURLa = (param = "") => {
   return fetch(
-    "https://apps-qa.ajinomotosalesth.com/api/line/login/getlink?mode=login&shop_group=" +
+    "https://apps.ajinomotosalesth.com/api/line/login/getlink?mode=login&shop_group=" +
       param,
     {
       method: "POST",
@@ -112,7 +112,7 @@ function autoFillLogin() {
 function autoFillExecute(code) {
   const shopType = retrieveShopType();
   const apiUrl =
-    "https://apps-qa.ajinomotosalesth.com/api/login/line/verify?shop_group=" + shopType;
+    "https://apps.ajinomotosalesth.com/api/login/line/verify?shop_group=" + shopType;
   const payload = { code: code };
   const options = {
     method: "POST",

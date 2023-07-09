@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Set Line Login URL
   const setLineLoginURL = (param = "") => {
     return fetch(
-      "https://apps-qa.ajinomotosalesth.com/api/line/login/getlink?mode=login&shop_group=" +
+      "https://apps.ajinomotosalesth.com/api/line/login/getlink?mode=login&shop_group=" +
         param,
       {
         method: "POST",
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!code) {
         return;
       }
-      const apiUrl = `https://apps-qa.ajinomotosalesth.com/api/register/line/fetch_line_id?code=${code}&shop_group=${retrieveShopType()}`;
+      const apiUrl = `https://apps.ajinomotosalesth.com/api/register/line/fetch_line_id?code=${code}&shop_group=${retrieveShopType()}`;
       console.log('API URL')
       console.log(apiUrl)
       const response = await fetch(apiUrl);
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // return false;
     try {
       const response = await fetch(
-        "https://apps-qa.ajinomotosalesth.com/api/shopify_account",
+        "https://apps.ajinomotosalesth.com/api/shopify_account",
         {
           method: "POST",
           headers: {
