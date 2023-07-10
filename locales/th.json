@@ -303,7 +303,7 @@
       "savings_html": "คุณประหยัด {{saved amount}}",
       "shipping_at_checkout": "ค่าจัดส่ง ภาษี และรหัสส่วนลดคำนวณเมื่อชำระเงิน",
       "update": "อัพเดทรถเข็น",
-      "checkout": "เช็คเอาท์",
+      "checkout": "ชำระเงิน",
       "empty": "รถเข็นของคุณว่างเปล่า",
       "continue_shopping": "ช้อปปิ้งต่อ",
       "close_cart": "ปิดรถเข็น",
