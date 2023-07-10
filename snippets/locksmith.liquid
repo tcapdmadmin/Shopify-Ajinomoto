@@ -3,10 +3,10 @@
   fiddle with what's below, but your changes may be reset the next time that
   Locksmith interacts with this theme.
 
-  Last updated: Mon, 26 Jun 2023 09:49:46 +0700 (+07)
+  Last updated: Mon, 10 Jul 2023 07:30:27 +0700 (+07)
 {% endcomment -%}
 
-{%include 'locksmith-variables', locksmith_scope: nil%}{%if locksmith_access_denied_content == blank%}{%capture locksmith_access_denied_content%}{%if locksmith_manual_lock%}{{content_for_layout}}{%elsif locksmith_server_lock%}<div id="locksmith-content">
+{%include 'locksmith-variables', locksmith_scope: nil%}{%if locksmith_access_denied_content == blank%}{%capture locksmith_access_denied_content%}{%if locksmith_manual_lock%}{{content_for_layout}}{%elsif locksmith_remote_lock%}<div id="locksmith-content">
         <div id="locksmith-spinner-wrapper" style="background:#FFF;z-index:999999;top:0;left:0;right:0;bottom:0;position:fixed">
           <style>
             @keyframes spin { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
