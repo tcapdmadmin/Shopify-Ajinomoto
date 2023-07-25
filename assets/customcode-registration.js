@@ -288,10 +288,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (checkedCount >= 1) {
       return true; 
     } else {
+      const swal_shop_type_error_title = document.getElementById(
+        "swal_shop_type_error_title"
+      ).innerHTML;
+      const swal_shop_type_error_text = document.getElementById(
+        "swal_shop_type_error_text"
+      ).innerHTML;
       Swal.fire({
         icon: "error",
-        title: "Error",
-        text: "Must check at least one Shop Type",
+        title: swal_shop_type_error_title,
+        text: swal_shop_type_error_text,
       });
 
       return false; 
