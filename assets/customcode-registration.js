@@ -317,11 +317,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return is_valid;
   }
+
+
+  function uncheckParallelShopTypes() {
+    const checkboxes = document.querySelectorAll('.parallel-shop-type');
+  
+    checkboxes.forEach(checkbox => {
+      checkbox.checked = false;
+    });
+  }
+  
+  // Get the radio buttons by their IDs
+  const foodVendorRadioButton = document.getElementById('customer_type_food_vendor');
+  const retailerRadioButton = document.getElementById('customer_type_retailer');
+  
+  // Add event listeners to the radio buttons
+  foodVendorRadioButton.addEventListener('change', uncheckParallelShopTypes);
+  retailerRadioButton.addEventListener('change', uncheckParallelShopTypes);
+
+
+
 });
 
 function storeUserReg() {
   var setRegistersession = sessionStorage.setItem("newly_registered", 1);
   let isNewlyRegistered = sessionStorage.getItem("newly_registered");
-  console.log("SET REGISTER SESSION");
-  console.log(isNewlyRegistered);
+
 }
