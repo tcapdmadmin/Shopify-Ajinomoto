@@ -378,9 +378,7 @@
       "swal_shop_type_description": "After selecting shop type, you will be redirected to Line Login",
       "swal_shop_type_confirm": "Food Vendor",
       "swal_shop_type_deny": "Retailer",
-      "swal_shop_type_cancel": "Cancel",
-      "swal_shop_type_error_title": "Error",
-      "swal_shop_type_error_text": "Must check at least one Shop Type"
+      "swal_shop_type_cancel": "Cancel"
     },
     "orders": {
       "title": "Order History",
