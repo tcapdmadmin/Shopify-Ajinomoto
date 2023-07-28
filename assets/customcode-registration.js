@@ -6,14 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     event.stopImmediatePropagation();
 
-    const parallelRegistration = await submitFormWithApiAndShopify();
-    // console.log(parallelRegistration);
-    // return false;
-    if (parallelRegistration === 1) {
-      storeUserReg();
-      event.target.submit();
-    } else {
-      // Handle the case where the registration failed
+    // Perform form validation
+    let isValidForm = formValidator();
+    console.log(isValidForm);
+    if (isValidForm == true) {
+      const parallelRegistration = await submitFormWithApiAndShopify();
+
+      if (parallelRegistration === 1) {
+        storeUserReg();
+        event.target.submit();
+      }
     }
   };
 
@@ -58,8 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
       const apiUrl = `https://apps.ajinomotosalesth.com/api/register/line/fetch_line_id?code=${code}&shop_group=${retrieveShopType()}`;
-      console.log('API URL')
-      console.log(apiUrl)
+      console.log("API URL");
+      console.log(apiUrl);
       const response = await fetch(apiUrl);
       if (!response.ok) {
         throw new Error("Failed to fetch Line ID");
@@ -140,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
       parallelFields.shop_type = storedShopTypes;
     }
 
-    const selectedRadio = document.querySelector('.Shop-group:checked');
+    const selectedRadio = document.querySelector(".Shop-group:checked");
     if (selectedRadio) {
       parallelFields.shop_group = selectedRadio.value;
     }
@@ -194,13 +196,21 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", handleFormSubmission);
 
   function handleSignInToLine() {
-
-    const swal_shop_type_select_doc = document.getElementById("swal_shop_type_select").innerHTML;
-    const swal_shop_type_description_doc = document.getElementById("swal_shop_type_description").innerHTML;
-    const swal_shop_type_confirm_doc = document.getElementById("swal_shop_type_confirm").innerHTML;
-    const swal_shop_type_deny_doc = document.getElementById("swal_shop_type_deny").innerHTML;
-    const swal_shop_type_cancel_doc = document.getElementById("swal_shop_type_cancel").innerHTML;
-
+    const swal_shop_type_select_doc = document.getElementById(
+      "swal_shop_type_select"
+    ).innerHTML;
+    const swal_shop_type_description_doc = document.getElementById(
+      "swal_shop_type_description"
+    ).innerHTML;
+    const swal_shop_type_confirm_doc = document.getElementById(
+      "swal_shop_type_confirm"
+    ).innerHTML;
+    const swal_shop_type_deny_doc = document.getElementById(
+      "swal_shop_type_deny"
+    ).innerHTML;
+    const swal_shop_type_cancel_doc = document.getElementById(
+      "swal_shop_type_cancel"
+    ).innerHTML;
 
     Swal.fire({
       title: swal_shop_type_select_doc,
@@ -253,23 +263,65 @@ document.addEventListener("DOMContentLoaded", () => {
   function autoSelectShopGroup() {
     const shopType = retrieveShopType();
     if (shopType === "food_vendor") {
-      console.log('shop group select')
+      console.log("shop group select");
       var shopGroup = document.getElementsByClassName("Shop-group");
-      console.log(shopGroup)
+      console.log(shopGroup);
       document.querySelector('.Shop-group[value="Food Vendor"]').checked = true;
-
     } else if (shopType === "retailer") {
       document.querySelector('.Shop-group[value="Retailer"]').checked = true;
     }
   }
 
   autoSelectShopGroup();
-});
 
+  function checkboxValidator() {
+    const checkboxes = document.querySelectorAll(".parallel-shop-type");
+
+    let checkedCount = 0;
+
+    checkboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        checkedCount++;
+      }
+    });
+
+    if (checkedCount >= 1) {
+      return true; 
+    } else {
+      const swal_shop_type_error_title = document.getElementById(
+        "swal_shop_type_error_title"
+      ).innerHTML;
+      const swal_shop_type_error_text = document.getElementById(
+        "swal_shop_type_error_text"
+      ).innerHTML;
+      Swal.fire({
+        icon: "error",
+        title: swal_shop_type_error_title,
+        text: swal_shop_type_error_text,
+      });
+
+      return false; 
+    }
+  }
+
+  function formValidator() {
+    let is_valid = false;
+    let isValidCheckbox = checkboxValidator();
+
+    if (!isValidCheckbox) {
+      is_valid = false;
+    } else {
+
+      is_valid = true;
+    }
+
+    return is_valid;
+  }
+});
 
 function storeUserReg() {
   var setRegistersession = sessionStorage.setItem("newly_registered", 1);
   let isNewlyRegistered = sessionStorage.getItem("newly_registered");
-  console.log('SET REGISTER SESSION')
-  console.log(isNewlyRegistered)
+  console.log("SET REGISTER SESSION");
+  console.log(isNewlyRegistered);
 }
