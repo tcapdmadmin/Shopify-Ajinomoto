@@ -15,6 +15,19 @@
         endunless
       endif
       for sub_link in link.links
+        comment
+          <locksmith:3fa1> Code added automatically by the Locksmith app. Do not modify or remove.
+        endcomment
+        capture var
+          render 'locksmith-variables', scope: 'subject', subject: sub_link, subject_parent: link, variable: 'transparent'
+        endcapture
+        if var == "true"
+        else
+          continue
+        endif
+        comment
+          </locksmith:3fa1> End Locksmith code block.
+        endcomment
         if sub_link.active and sub_link.levels > 0 and sub_link.child_active == false
           unless current_items contains sub_link.title
             render 'sub-collections', sub_collection_links: sub_link.links
@@ -22,6 +35,19 @@
           endunless
         endif
         for sub_sub_link in sub_link.links
+          comment
+            <locksmith:53c4> Code added automatically by the Locksmith app. Do not modify or remove.
+          endcomment
+          capture var
+            render 'locksmith-variables', scope: 'subject', subject: sub_sub_link, subject_parent: sub_link, variable: 'transparent'
+          endcapture
+          if var == "true"
+          else
+            continue
+          endif
+          comment
+            </locksmith:53c4> End Locksmith code block.
+          endcomment
           if sub_sub_link.active and sub_sub_link.url == sub_link.url
             unless current_items contains sub_sub_link.title
               render 'sub-collections', parent_url: sub_link.url, sub_collection_links: sub_link.links

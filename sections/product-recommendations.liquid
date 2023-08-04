@@ -52,9 +52,9 @@
         <div class="product-recommendations page-width">
           <div class="new-grid product-grid scrollable-grid--small" data-view="{{ gridView }}">
             {%- for product in related_collection.products -%}
-              {%- comment %}<locksmith:b1a6>{% endcomment -%}
+              {%- comment %}<locksmith:7fbe>{% endcomment -%}
                 {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: related_collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
-              {%- comment %}</locksmith:b1a6>{% endcomment -%}
+              {%- comment %}</locksmith:7fbe>{% endcomment -%}
               {%- render 'product-grid-item', product: product, sizeVariable: section.settings.products_per_row, fallback: '45vw' -%}
             {%- endfor -%}
           </div>
@@ -62,6 +62,19 @@
           {%- liquid
             if settings.quick_shop_enable
               for product in related_collection.products
+                comment
+                  <locksmith:b8cb> Code added automatically by the Locksmith app. Do not modify or remove.
+                endcomment
+                capture var
+                  render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: related_collection, variable: 'transparent'
+                endcapture
+                if var == "true"
+                else
+                  continue
+                endif
+                comment
+                  </locksmith:b8cb> End Locksmith code block.
+                endcomment
                 render 'quick-shop-modal', product: product
               endfor
             endif
