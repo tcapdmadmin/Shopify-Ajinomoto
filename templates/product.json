@@ -78,6 +78,11 @@
             "inventory_transfers_enable": true
           }
         },
+        "a7c58268-7136-496f-baa4-485bec294082": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -97,6 +102,7 @@
         "sales_point3",
         "sales_point4",
         "inventory_status",
+        "a7c58268-7136-496f-baa4-485bec294082",
         "buy_buttons"
       ],
       "settings": {
