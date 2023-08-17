@@ -53,7 +53,8 @@
     <button type="button"
       aria-controls="MobileNav"
       class="site-nav__link site-nav__link--icon medium-up--hide mobile-nav-trigger">
-      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 64 64"><path class="cls-1" d="M7 15h51">.</path><path class="cls-1" d="M7 32h43">.</path><path class="cls-1" d="M7 49h51">.</path></svg>
+      {% comment %}<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 64 64"><path class="cls-1" d="M7 15h51">.</path><path class="cls-1" d="M7 32h43">.</path><path class="cls-1" d="M7 49h51">.</path></svg>{% endcomment %}
+      <p style="margin: 0px !important;">{{ 'custom.text_mobile_menu.mobile_menu' | t }}</p>
       <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
     </button>
   </div>
