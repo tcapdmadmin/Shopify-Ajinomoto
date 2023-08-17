@@ -140,6 +140,9 @@
       "knorr": "Knorr",
       "termthip": "Termthip",
       "others": "Others"
+    },
+    "text_mobile_menu": {
+      "mobile_menu": "Menu"
     }
   },
   "general": {
