@@ -407,7 +407,9 @@
       "swal_shop_type_description": "หลังจากเลือกประเภทร้านค้า คุณจะล็อคอินไปยัง Line เพื่อขออนุญาติในการเชื่อมต่อ",
       "swal_shop_type_confirm": "ร้านอาหาร",
       "swal_shop_type_deny": "ร้านค้าปลีก",
-      "swal_shop_type_cancel": "ยกเลิก"
+      "swal_shop_type_cancel": "ยกเลิก",
+      "swal_shop_type_error_title": "",
+      "swal_shop_type_error_text": ""
     },
     "orders": {
       "title": "ประวัติการสั่งซื้อ",
@@ -715,6 +717,9 @@
         "shipping_label": "ค่าจัดส่ง",
         "total_label": "รวมทั้งหมด",
         "partial_total_label": "รวมทั้งหมด"
+      },
+      "thank_you": {
+        "page_title": "ขอบคุณ คุณ {{ display_name }}"
       }
     }
   }
