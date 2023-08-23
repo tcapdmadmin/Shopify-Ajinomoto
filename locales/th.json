@@ -702,6 +702,9 @@
     },
     "text_mobile_menu": {
       "mobile_menu": "เมนู"
+    },
+    "quick_add_to_cart": {
+      "mobile_quick_atc": "หยิบใส่ตะกร้า"
     }
   },
   "shopify": {
