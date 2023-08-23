@@ -143,6 +143,9 @@
     },
     "text_mobile_menu": {
       "mobile_menu": "Menu"
+    },
+    "quick_add_to_cart": {
+      "mobile_quick_atc": "Add to Cart"
     }
   },
   "general": {
