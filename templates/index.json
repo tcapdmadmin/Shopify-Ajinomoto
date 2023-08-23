@@ -236,6 +236,9 @@
     },
     "315640e3-51da-43fe-a9d2-d7eaa59f9dc9": {
       "type": "featured-collection",
+      "custom_css": [
+        ".mobile_quick_atc {display: none;}"
+      ],
       "settings": {
         "title": "สินค้าแนะนำ",
         "heading_size": "h2",
@@ -255,7 +258,6 @@
     },
     "af966d2c-f455-4fe9-b444-5364bcff565c": {
       "type": "rich-text",
-      "disabled": true,
       "blocks": {
         "template--18841254035771__af966d2c-f455-4fe9-b444-5364bcff565c-1683786389e6a115f6-0": {
           "type": "heading",
@@ -276,6 +278,7 @@
         "template--18841254035771__af966d2c-f455-4fe9-b444-5364bcff565c-1683786389e6a115f6-0",
         "5e39556c-0933-458e-ae18-b93289fd8d24"
       ],
+      "disabled": true,
       "custom_css": [
         ".index-section.color-scheme-2.text-center {padding: 25px;}",
         "h2.h2 {margin: 0 0 -15px !important;}"
@@ -289,7 +292,6 @@
     },
     "1515c956-2002-4b57-92e9-62d87f600ed0": {
       "type": "text-columns",
-      "disabled": true,
       "blocks": {
         "template--18841254035771__1515c956-2002-4b57-92e9-62d87f600ed0-168378644560097007-0": {
           "type": "text_block",
@@ -322,6 +324,7 @@
         "template--18841254035771__1515c956-2002-4b57-92e9-62d87f600ed0-168378644560097007-0",
         "ba963c20-61f6-4307-9f71-8783051919b6"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "align_text": "center",
