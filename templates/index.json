@@ -25,7 +25,7 @@
         "template--18841254035771__eca8ba47-47c4-423e-8aec-fe96b61cf4dd-16837857478463458e-1": {
           "type": "hero",
           "settings": {
-            "customer_type": "food_vendor",
+            "customer_type": "retailer",
             "top_subheading": "",
             "title": "<h1>กาแฟปรุงสำเร็จรสชาติเข้มข้น หอมกาแฟคั่วบด<\/h1>",
             "title_size": 45,
