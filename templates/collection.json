@@ -29,7 +29,7 @@
         "product_grid"
       ],
       "custom_css": [
-        "@media only screen and (max-width: 768px) {.btn--icon {min-width: 0; padding: 8px; margin: 15px 8px; } span.btn.btn--circle.btn--icon {display: flex; align-content: center; justify-content: center; align-items: center; } .btn--circle {border-radius: 0%; } .quick-add-btn .icon {height: 23px; width: 23px; }}",
+        "@media only screen and (max-width: 768px) {.btn--icon {min-width: 0; padding: 8px; margin: 15px 8px; } span.btn.btn--circle.btn--icon {display: flex; align-content: center; justify-content: center; align-items: center; } .btn--circle {border-radius: 0%; } .quick-add-btn .icon {height: 23px; width: 23px; }.grid-item.grid-product {border: 1px solid #000000;}}",
         "@media only screen and (min-width: 769px) {.mobile_quick_atc {display: none; }}"
       ],
       "settings": {
