@@ -61,8 +61,7 @@
             {%- form 'create_customer' -%}
 
                 {{ form.errors | default_errors }}
-                <input type="text" class="parallel" id="line_user_id" name="customer[line_user_id]"
-                       style="display:none;" hidden>
+                <input type="text" class="parallel" id="line_user_id" name="customer[line_user_id]" style="display: none;" >
 
                 <div class="field-wrap">
                     <input type="text" name="customer[first_name]" id="FirstName"
