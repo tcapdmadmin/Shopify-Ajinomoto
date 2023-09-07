@@ -6,7 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Initial Shop Group: food_vendor
-storeShopType("food_vendor");
+// storeShopType("food_vendor");
+  let checkShopGroup = retrieveShopType();
+  if(checkShopGroup){
+    if(checkShopGroup.length > 0){
+       // storeShopType(checkShopGroup);
+    }    
+  }
+
+  console.log(checkShopGroup)
 // Get a reference to the radio button element
 const customer_type_food_vendorlistener = document.getElementById("customer_type_food_vendor");
 const customer_type_retailerlistener = document.getElementById("customer_type_retailer");
@@ -289,11 +297,11 @@ customer_type_retailerlistener.addEventListener("click", function () {
   signupLineBtn.addEventListener("click", handleSignInToLine);
 
   function storeShopType(shopType) {
-    sessionStorage.setItem("shopType", shopType);
+    localStorage.setItem("shopType", shopType);
   }
 
   function retrieveShopType() {
-    return sessionStorage.getItem("shopType");
+    return localStorage.getItem("shopType");
   }
   function autoSelectShopGroup() {
     const shopType = retrieveShopType();
@@ -306,7 +314,7 @@ customer_type_retailerlistener.addEventListener("click", function () {
     }
   }
 
-  autoSelectShopGroup();
+  // autoSelectShopGroup();
 
   function checkboxValidator() {
     const checkboxes = document.querySelectorAll(".parallel-shop-type");
