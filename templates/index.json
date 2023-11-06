@@ -6,12 +6,12 @@
         "5779c804-58a8-4af0-b21f-98471b77412d": {
           "type": "hero",
           "settings": {
-            "customer_type": "none",
+            "customer_type": "food_vendor",
             "top_subheading": "",
             "title": "<h1>แบรนด์ชูรสและผงปรุงรสอันดับที่ 1 ของประเทศไทย<\/h1>",
             "title_size": 45,
             "subheading": "",
-            "link": "",
+            "link": "https:\/\/ajinomotosalesth.com\/collections\/%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B8%A3%E0%B8%AA-1",
             "link_text": "ช้อปสินค้าผงปรุงรส",
             "link_2": "https:\/\/www.ajinomoto.co.th\/th\/recipe",
             "link_text_2": "เมนูที่น่าสนใจ",
