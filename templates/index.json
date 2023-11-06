@@ -6,12 +6,12 @@
         "5779c804-58a8-4af0-b21f-98471b77412d": {
           "type": "hero",
           "settings": {
-            "customer_type": "retailer",
+            "customer_type": "none",
             "top_subheading": "",
             "title": "<h1>แบรนด์ชูรสและผงปรุงรสอันดับที่ 1 ของประเทศไทย<\/h1>",
             "title_size": 45,
             "subheading": "",
-            "link": "shopify:\/\/collections\/เครื่องปรุงรส",
+            "link": "",
             "link_text": "ช้อปสินค้าผงปรุงรส",
             "link_2": "https:\/\/www.ajinomoto.co.th\/th\/recipe",
             "link_text_2": "เมนูที่น่าสนใจ",
