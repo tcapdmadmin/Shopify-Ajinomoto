@@ -11,7 +11,7 @@
             "title": "<h1>แบรนด์ชูรสและผงปรุงรสอันดับที่ 1 ของประเทศไทย<\/h1>",
             "title_size": 45,
             "subheading": "",
-            "link": "https:\/\/ajinomotosalesth.com\/collections\/%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B8%A3%E0%B8%AA-1",
+            "link": "",
             "link_text": "ช้อปสินค้าผงปรุงรส",
             "link_2": "https:\/\/www.ajinomoto.co.th\/th\/recipe",
             "link_text_2": "เมนูที่น่าสนใจ",
@@ -44,7 +44,7 @@
         "aba27af0-3304-47a4-964b-a1c00ee0c359": {
           "type": "hero",
           "settings": {
-            "customer_type": "retailer",
+            "customer_type": "food_vendor",
             "top_subheading": "",
             "title": "<h1>บะหมี่กึ่งสำเร็จรูปแบบซองและแบบถ้วย ให้คุณอร่อยเต็มอิ่มกับเส้นที่เหนี่ยวลื่นนุ่ม อร่อยลงตัว<\/h1>",
             "title_size": 45,
