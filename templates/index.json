@@ -6,7 +6,7 @@
         "5779c804-58a8-4af0-b21f-98471b77412d": {
           "type": "hero",
           "settings": {
-            "customer_type": "food_vendor",
+            "customer_type": "none",
             "top_subheading": "",
             "title": "<h1>แบรนด์ชูรสและผงปรุงรสอันดับที่ 1 ของประเทศไทย<\/h1>",
             "title_size": 45,
@@ -25,7 +25,7 @@
         "template--18841254035771__eca8ba47-47c4-423e-8aec-fe96b61cf4dd-16837857478463458e-1": {
           "type": "hero",
           "settings": {
-            "customer_type": "retailer",
+            "customer_type": "food_vendor",
             "top_subheading": "",
             "title": "<h1>กาแฟปรุงสำเร็จรสชาติเข้มข้น หอมกาแฟคั่วบด<\/h1>",
             "title_size": 45,
@@ -44,7 +44,7 @@
         "aba27af0-3304-47a4-964b-a1c00ee0c359": {
           "type": "hero",
           "settings": {
-            "customer_type": "food_vendor",
+            "customer_type": "retailer",
             "top_subheading": "",
             "title": "<h1>บะหมี่กึ่งสำเร็จรูปแบบซองและแบบถ้วย ให้คุณอร่อยเต็มอิ่มกับเส้นที่เหนี่ยวลื่นนุ่ม อร่อยลงตัว<\/h1>",
             "title_size": 45,
