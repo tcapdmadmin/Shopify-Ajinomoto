@@ -39,14 +39,14 @@ function submitFormWithApiAndShopify() {
     }
   });
 
-  // Call the API to register the user
+  // Call the API to register the usergit
   const obj = parallelFields.reduce((acc, curr) => ({ ...acc, ...curr }), {});
   const emailInput = document.getElementById("email_address");
   const email = emailInput.value;
   const password = document.getElementById("ResetPassword");
   const confirm_password = document.getElementById("PasswordConfirmation");
   if (email.innerHTML) {
-    obj["email"] = email.innerHTML;
+    obj["email"] = email;
     obj["password"] = password.value;
     obj["confirm_password"] = confirm_password.value;
   }
