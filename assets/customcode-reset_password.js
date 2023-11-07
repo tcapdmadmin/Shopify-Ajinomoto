@@ -41,7 +41,8 @@ function submitFormWithApiAndShopify() {
 
   // Call the API to register the user
   const obj = parallelFields.reduce((acc, curr) => ({ ...acc, ...curr }), {});
-  const email = document.getElementById("email_address");
+  const emailInput = document.getElementById("email_address");
+  const email = emailInput.value;
   const password = document.getElementById("ResetPassword");
   const confirm_password = document.getElementById("PasswordConfirmation");
   if (email.innerHTML) {
@@ -50,7 +51,7 @@ function submitFormWithApiAndShopify() {
     obj["confirm_password"] = confirm_password.value;
   }
 
-  return fetch("https://apps.ajinomotosalesth.com/api/shopify_account/1", {
+  return fetch("https://ajith-api.tcapdm.com/api/shopify_account/1", {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(obj),
