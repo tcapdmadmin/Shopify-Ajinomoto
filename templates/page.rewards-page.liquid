@@ -1,6 +1,11 @@
-Premium Items (For both FV and Retailers):
-<div class="yotpo-widget-instance" data-yotpo-instance-id="527520"></div>
-Food Vendor AJ Products:
-<div class="yotpo-widget-instance" data-yotpo-instance-id="527521"></div>
-Retailers AJ Products:
-<div class="yotpo-widget-instance" data-yotpo-instance-id="537723"></div>
+{% if customer.metafields.custom.customer_type == "food_vendor" %}
+  Premium Items (For both FV and Retailers):
+  <div class="yotpo-widget-instance" data-yotpo-instance-id="527520"></div>
+  Food Vendor AJ Products:
+  <div class="yotpo-widget-instance" data-yotpo-instance-id="527521"></div>
+{% elsif customer.metafields.custom.customer_type == "retailer" %}
+  Premium Items (For both FV and Retailers):
+  <div class="yotpo-widget-instance" data-yotpo-instance-id="527520"></div>
+  Retailers AJ Products:
+  <div class="yotpo-widget-instance" data-yotpo-instance-id="537723"></div>
+{% endif %}
