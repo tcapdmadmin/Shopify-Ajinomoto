@@ -21,7 +21,11 @@
         <div class="cart__page-col">
           <div data-products>
             {% for item in cart.items %}
+{% if item.product.type == 'Freebie' %}
+              {%- render 'cart-item-freebie', product: item, sizes: '150px', -%}
+{% else %}
               {%- render 'cart-item', product: item, sizes: '150px', -%}
+{% endif %}
             {% endfor %}
           </div>
 
