@@ -81,21 +81,6 @@
 	padding: .5rem 1.5rem;
   	margin-bottom: 1rem !important;
 }
-.field-pass-container {
-	position: relative;
-}
-.field-pass-container > input {
-	padding-right: 3rem;
-}
-.field-pass-container > img {
-	height: 1.5rem;
-	cursor: pointer;
-	position: absolute;
-	right: 1rem;
-	top: calc(50% - .5rem);
-	transform: translateY(-50%);
-}
-/*
 .field-input-pass {
 	background-image: url('https://cdn.shopify.com/s/files/1/0752/7333/9195/files/eyebrow.png');
 	background-position: right 1rem center;
@@ -104,10 +89,6 @@
 	padding-right: 3rem;
 	margin-bottom: 1rem !important;
 }
-.field-input-pass.show {
-	background-image: url('https://cdn.shopify.com/s/files/1/0752/7333/9195/files/eyes.png');
-}
-*/
 /*.field-input-date {
 	background-image: url('https://cdn.shopify.com/s/files/1/0752/7333/9195/files/calendar-silhouette.png');
 	background-position: right 1rem center;
