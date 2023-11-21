@@ -90,11 +90,34 @@
                            class="field-input input-full parallel {% if form.errors contains 'email' %} error{% endif %}"{% if form.email %} value="{{ form.email }}"{% endif %}
                            autocorrect="off" autocapitalize="off" placeholder="{{ 'custom.registration.email_address' | t }} *" required oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')">
                 </div>
-                <div class="field-wrap">
-                    <input type="password" name="customer[password]" id="CreatePassword"
-                           class="field-input field-input-pass input-full parallel {% if form.errors contains 'password' %} error{% endif %}"
-                           placeholder="{{ 'custom.registration.password' | t }} *" required oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')">
-                </div>
+
+
+<div class="field-wrap">
+	<div class="field-pass-container">
+		<input type="password" name="customer[password]" id="CreatePassword"
+		class="field-input field-input-pass input-full parallel {% if form.errors contains 'password' %} error{% endif %}"
+		placeholder="{{ 'custom.registration.password' | t }} *" required oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')">
+		<img src="https://cdn.shopify.com/s/files/1/0752/7333/9195/files/eyebrow.png" class="trigger" onclick="togglePasswordVisibility()">
+	</div>
+</div>
+
+<script>
+function togglePasswordVisibility() {
+  var passwordInput = document.getElementById('CreatePassword');
+  var triggerImage = document.querySelector('.trigger');
+
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    triggerImage.src = 'https://cdn.shopify.com/s/files/1/0752/7333/9195/files/eyes.png';
+  } else {
+    passwordInput.type = 'password';
+    triggerImage.src = 'https://cdn.shopify.com/s/files/1/0752/7333/9195/files/eyebrow.png';
+  }
+}
+</script>
+
+
+
                 <div class="field-wrap">
                     <input type="text" name="shop_name" id="Shop-name" class="field-input input-full parallel"
                            maxlength="50" placeholder="{{ 'custom.registration.shop_name' | t }} *" required oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')">
@@ -143,104 +166,43 @@
                         <span>{{ 'custom.shop_type.others' | t }}</span><br>
                     </div>
                 </div>
+
                 <div class="field-wrap">
-                    <div class="field-select">
-                        <select id="Province" name="provinces" class="field-input input-full parallel" required>
-                            <option value="" disabled selected hidden>{{ 'custom.province.province' | t }}</option>
-                            <option value="Bangkok">{{ 'custom.province.bangkok' | t }}</option>
-                            <option value="Amnat Charoen">{{ 'custom.province.amnat_charoen' | t }}</option>
-                            <option value="Ang Thong">{{ 'custom.province.ang_thong' | t }}</option>
-                            <option value="Bueng Kan">{{ 'custom.province.bueng_kan' | t }}</option>
-                            <option value="Buriram">{{ 'custom.province.buriram' | t }}</option>
-                            <option value="Chachoengsao">{{ 'custom.province.chachoengsao' | t }}</option>
-                            <option value="Chai Nat">{{ 'custom.province.chai_nat' | t }}</option>
-                            <option value="Chaiyaphum">{{ 'custom.province.chaiyaphum' | t }}</option>
-                            <option value="Chanthaburi">{{ 'custom.province.chanthaburi' | t }}</option>
-                            <option value="Chiang Mai">{{ 'custom.province.chiang_mai' | t }}</option>
-                            <option value="Chiang Rai">{{ 'custom.province.chiang_rai' | t }}</option>
-                            <option value="Chonburi">{{ 'custom.province.chonburi' | t }}</option>
-                            <option value="Chumphon">{{ 'custom.province.chumphon' | t }}</option>
-                            <option value="Kalasin">{{ 'custom.province.kalasin' | t }}</option>
-                            <option value="Kamphaeng Phet">{{ 'custom.province.kamphaeng_phet' | t }}</option>
-                            <option value="Kanchanaburi">{{ 'custom.province.kanchanaburi' | t }}</option>
-                            <option value="Khon Kaen">{{ 'custom.province.khon_kaen' | t }}</option>
-                            <option value="Krabi">{{ 'custom.province.krabi' | t }}</option>
-                            <option value="Lampang">{{ 'custom.province.lampang' | t }}</option>
-                            <option value="Lamphun">{{ 'custom.province.lamphun' | t }}</option>
-                            <option value="Loei">{{ 'custom.province.loei' | t }}</option>
-                            <option value="Lopburi">{{ 'custom.province.lopburi' | t }}</option>
-                            <option value="Mae Hong Son">{{ 'custom.province.mae_hong_son' | t }}</option>
-                            <option value="Maha Sarakham">{{ 'custom.province.maha_sarakham' | t }}</option>
-                            <option value="Mukdahan">{{ 'custom.province.mukdahan' | t }}</option>
-                            <option value="Nakhon Nayok">{{ 'custom.province.nakhon_nayok' | t }}</option>
-                            <option value="Nakhon Pathom">{{ 'custom.province.nakhon_pathom' | t }}</option>
-                            <option value="Nakhon Phanom">{{ 'custom.province.nakhon_phanom' | t }}</option>
-                            <option value="Nakhon Ratchasima">{{ 'custom.province.nakhon_ratchasima' | t }}</option>
-                            <option value="Nakhon Sawan">{{ 'custom.province.nakhon_sawan' | t }}</option>
-                            <option value="Nakhon Si Thammarat">{{ 'custom.province.nakhon_si_thammarat' | t }}</option>
-                            <option value="Nan">{{ 'custom.province.nan' | t }}</option>
-                            <option value="Narathiwat">{{ 'custom.province.narathiwat' | t }}</option>
-                            <option value="Nong Bua Lamphu">{{ 'custom.province.nong_bua_lamphu' | t }}</option>
-                            <option value="Nong Khai">{{ 'custom.province.nong_khai' | t }}</option>
-                            <option value="Nonthaburi">{{ 'custom.province.nonthaburi' | t }}</option>
-                            <option value="Pathum Thani">{{ 'custom.province.pathum_thani' | t }}</option>
-                            <option value="Pattani">{{ 'custom.province.pattani' | t }}</option>
-                            <option value="Phang Nga">{{ 'custom.province.phang_nga' | t }}</option>
-                            <option value="Phatthalung">{{ 'custom.province.phatthalung' | t }}</option>
-                            <option value="Phayao">{{ 'custom.province.phayao' | t }}</option>
-                            <option value="Phetchabun">{{ 'custom.province.phetchabun' | t }}</option>
-                            <option value="Phetchaburi">{{ 'custom.province.phetchaburi' | t }}</option>
-                            <option value="Phichit">{{ 'custom.province.phichit' | t }}</option>
-                            <option value="Phitsanulok">{{ 'custom.province.phitsanulok' | t }}</option>
-                            <option value="Phra Nakhon Si Ayutthaya">{{ 'custom.province.phra_nakhin_si_ayutthaya' | t }}</option>
-                            <option value="Phrae">{{ 'custom.province.phrae' | t }}</option>
-                            <option value="Phuket">{{ 'custom.province.phuket' | t }}</option>
-                            <option value="Prachinburi">{{ 'custom.province.prachinburi' | t }}</option>
-                            <option value="Prachuap Khiri Khan">{{ 'custom.province.prachuap_khiri_khan' | t }}</option>
-                            <option value="Ranong">{{ 'custom.province.ranong' | t }}</option>
-                            <option value="Ratchaburi">{{ 'custom.province.ratchaburi' | t }}</option>
-                            <option value="Rayong">{{ 'custom.province.rayong' | t }}</option>
-                            <option value="Roi Et">{{ 'custom.province.roi_et' | t }}</option>
-                            <option value="Sa Kaeo">{{ 'custom.province.sa_kaeo' | t }}</option>
-                            <option value="Sakon Nakhon">{{ 'custom.province.sakon_nakhon' | t }}</option>
-                            <option value="Samut Prakan">{{ 'custom.province.samut_prakan' | t }}</option>
-                            <option value="Samut Sakhon">{{ 'custom.province.samut_sakhon' | t }}</option>
-                            <option value="Samut Songkhram">{{ 'custom.province.samut_songkhram' | t }}</option>
-                            <option value="Saraburi">{{ 'custom.province.saraburi' | t }}</option>
-                            <option value="Satun">{{ 'custom.province.satun' | t }}</option>
-                            <option value="SingBuri">{{ 'custom.province.sing_buri' | t }}</option>
-                            <option value="Sisaket">{{ 'custom.province.sisaket' | t }}</option>
-                            <option value="Songkhla">{{ 'custom.province.songkhla' | t }}</option>
-                            <option value="Sukhothai">{{ 'custom.province.sukhothai' | t }}</option>
-                            <option value="Suphan Buri">{{ 'custom.province.suphan_buri' | t }}</option>
-                            <option value="Surat Thani">{{ 'custom.province.surat_thani' | t }}</option>
-                            <option value="Surin">{{ 'custom.province.surin' | t }}</option>
-                            <option value="Tak">{{ 'custom.province.tak' | t }}</option>
-                            <option value="Trang">{{ 'custom.province.trang' | t }}</option>
-                            <option value="Trat">{{ 'custom.province.trat' | t }}</option>
-                            <option value="Ubon Ratchathani">{{ 'custom.province.ubon_ratchathani' | t }}</option>
-                            <option value="Udon Thani">{{ 'custom.province.udon_thani' | t }}</option>
-                            <option value="Uthai Thani">{{ 'custom.province.uthai_thani' | t }}</option>
-                            <option value="Uttaradit">{{ 'custom.province.uttaradit' | t }}</option>
-                            <option value="Yala">{{ 'custom.province.yala' | t }}</option>
-                            <option value="Yasothon">{{ 'custom.province.yasothon' | t }}</option>
-                        </select>
-                    </div>
-                    <input type="text" name="district" id="District" class="field-input input-full parallel"
-                           autocomplete="on" placeholder="{{ 'custom.registration.district' | t }}">
+                  <div class="field-select">
+                    <select id="Province" name="provinces" class="field-input input-full parallel" required>
+                      <option value="" disabled selected hidden>{{ 'custom.province.province' | t }}</option>
+                      <option value="Lop Buri">{{ 'custom.province.16' | t }}</option>
+                      <option value="Sing Buri">{{ 'custom.province.17' | t }}</option>
+                      <option value="Saraburi">{{ 'custom.province.19' | t }}</option>
+                      <option value="Ratchaburi">{{ 'custom.province.70' | t }}</option>
+                      <option value="Samut Sakhon">{{ 'custom.province.74' | t }}</option>
+                      <option value="Samut Songkhram">{{ 'custom.province.75' | t }}</option>
+                      <option value="Bangkok">{{ 'custom.province.10' | t }}</option>
+                      <option value="Samut Prakan">{{ 'custom.province.11' | t }}</option>
+                      <option value="Pathum Thani">{{ 'custom.province.13' | t }}</option>
+                      <option value="Nonthaburi">{{ 'custom.province.12' | t }}</option>
+                    </select>
+                  </div>
+                    <select id="District" name="district" class="field-input input-full parallel" required>
+                      <option value="" disabled selected hidden>{{ 'custom.registration.district' | t }}</option>
+                    </select>
                 </div>
+
                 <div class="field-wrap">
-                    <input type="text" name="sub-district" id="Sub-district" class="field-input input-full parallel"
-                           autocomplete="on" placeholder="{{ 'custom.registration.sub_district' | t }}">
+                  <select id="Sub_district" name="sub_district" class="field-input input-full parallel" required>
+                    <option value="" disabled selected hidden>{{ 'custom.registration.sub_district' | t }}</option>
+                  </select>
                     <input type="text" name="address" id="Address" class="field-input input-full parallel"
                            autocomplete="on" placeholder="{{ 'custom.registration.address' | t }}">
                 </div>
+
                 <div class="field-wrap">
                     <input type="text" name="postal-code" id="Postal-code" class="field-input input-full parallel"
                            autocomplete="on" placeholder="{{ 'custom.registration.postal_code' | t }}">
                     <input type="number" name="salesman-code" id="Salesman-code" class="field-input input-full parallel" maxlength="10" max="9999999999"
                            autocomplete="on" placeholder="{{ 'custom.registration.salesman_code' | t }}">
                 </div>
+
             <div class="field-wrap">
                 <div id="Shop-group-retailer-main" style="display: block;">
                     <label>{{ 'custom.main_umami_seasoning_usage.main_umami_seasoning_usage' | t }} </label>
@@ -299,6 +261,1156 @@
     </div>
 </div>
 <!-- FORM End -->
+
+<!-- Province Dropdown Script START -->
+<script>
+    const Province = document.getElementById("Province");
+    const District = document.getElementById("District");
+    const Sub_district = document.getElementById("Sub_district");
+
+    const optionsB = {
+        "Bangkok": [
+            "{{ 'custom.district.1001' | t }}",
+            "{{ 'custom.district.1002' | t }}",
+            "{{ 'custom.district.1003' | t }}",
+            "{{ 'custom.district.1004' | t }}",
+            "{{ 'custom.district.1005' | t }}",
+            "{{ 'custom.district.1006' | t }}",
+            "{{ 'custom.district.1007' | t }}",
+            "{{ 'custom.district.1008' | t }}",
+            "{{ 'custom.district.1009' | t }}",
+            "{{ 'custom.district.1010' | t }}",
+            "{{ 'custom.district.1011' | t }}",
+            "{{ 'custom.district.1012' | t }}",
+            "{{ 'custom.district.1013' | t }}",
+            "{{ 'custom.district.1014' | t }}",
+            "{{ 'custom.district.1015' | t }}",
+            "{{ 'custom.district.1016' | t }}",
+            "{{ 'custom.district.1017' | t }}",
+            "{{ 'custom.district.1018' | t }}",
+            "{{ 'custom.district.1019' | t }}",
+            "{{ 'custom.district.1020' | t }}",
+            "{{ 'custom.district.1021' | t }}",
+            "{{ 'custom.district.1022' | t }}",
+            "{{ 'custom.district.1023' | t }}",
+            "{{ 'custom.district.1024' | t }}",
+            "{{ 'custom.district.1025' | t }}",
+            "{{ 'custom.district.1026' | t }}",
+            "{{ 'custom.district.1027' | t }}",
+            "{{ 'custom.district.1028' | t }}",
+            "{{ 'custom.district.1029' | t }}",
+            "{{ 'custom.district.1030' | t }}",
+            "{{ 'custom.district.1031' | t }}",
+            "{{ 'custom.district.1032' | t }}",
+            "{{ 'custom.district.1033' | t }}",
+            "{{ 'custom.district.1034' | t }}",
+            "{{ 'custom.district.1035' | t }}",
+            "{{ 'custom.district.1036' | t }}",
+            "{{ 'custom.district.1037' | t }}",
+            "{{ 'custom.district.1038' | t }}",
+            "{{ 'custom.district.1039' | t }}",
+            "{{ 'custom.district.1040' | t }}",
+            "{{ 'custom.district.1041' | t }}",
+            "{{ 'custom.district.1042' | t }}",
+            "{{ 'custom.district.1043' | t }}",
+            "{{ 'custom.district.1044' | t }}",
+            "{{ 'custom.district.1045' | t }}",
+            "{{ 'custom.district.1046' | t }}",
+            "{{ 'custom.district.1047' | t }}",
+            "{{ 'custom.district.1048' | t }}",
+            "{{ 'custom.district.1049' | t }}",
+            "{{ 'custom.district.1050' | t }}"
+        ],
+
+        "Samut Prakan": [
+            "{{ 'custom.district.1101' | t }}",
+            "{{ 'custom.district.1102' | t }}",
+            "{{ 'custom.district.1103' | t }}",
+            "{{ 'custom.district.1104' | t }}",
+            "{{ 'custom.district.1105' | t }}",
+            "{{ 'custom.district.1106' | t }}"
+        ],
+        
+        "Nonthaburi": [
+            "{{ 'custom.district.1206' | t }}"
+        ],
+        
+        "Pathum Thani": [
+            "{{ 'custom.district.1301' | t }}",
+            "{{ 'custom.district.1302' | t }}",
+            "{{ 'custom.district.1303' | t }}",
+            "{{ 'custom.district.1304' | t }}",
+            "{{ 'custom.district.1305' | t }}",
+            "{{ 'custom.district.1306' | t }}",
+            "{{ 'custom.district.1307' | t }}"            
+        ],
+
+        "Lop Buri": [
+            "{{ 'custom.district.1601' | t }}",
+            "{{ 'custom.district.1602' | t }}",
+            "{{ 'custom.district.1603' | t }}",
+            "{{ 'custom.district.1604' | t }}",
+            "{{ 'custom.district.1605' | t }}",
+            "{{ 'custom.district.1606' | t }}",
+            "{{ 'custom.district.1607' | t }}",
+            "{{ 'custom.district.1608' | t }}",
+            "{{ 'custom.district.1609' | t }}",
+            "{{ 'custom.district.1610' | t }}",
+            "{{ 'custom.district.1611' | t }}"
+        ],                
+
+        "Sing Buri": [
+            "{{ 'custom.district.1701' | t }}",
+            "{{ 'custom.district.1702' | t }}",
+            "{{ 'custom.district.1703' | t }}",
+            "{{ 'custom.district.1704' | t }}",
+            "{{ 'custom.district.1705' | t }}",
+            "{{ 'custom.district.1706' | t }}"
+        ],
+        
+        "Saraburi": [
+            "{{ 'custom.district.1901' | t }}",
+            "{{ 'custom.district.1902' | t }}",
+            "{{ 'custom.district.1903' | t }}",
+            "{{ 'custom.district.1904' | t }}",
+            "{{ 'custom.district.1905' | t }}",
+            "{{ 'custom.district.1906' | t }}",
+            "{{ 'custom.district.1908' | t }}",
+            "{{ 'custom.district.1909' | t }}",
+            "{{ 'custom.district.1910' | t }}",
+            "{{ 'custom.district.1911' | t }}",
+            "{{ 'custom.district.1912' | t }}",
+            "{{ 'custom.district.1913' | t }}"
+        ],
+
+        "Ratchaburi": [
+            "{{ 'custom.district.7001' | t }}",
+            "{{ 'custom.district.7002' | t }}",
+            "{{ 'custom.district.7003' | t }}",
+            "{{ 'custom.district.7004' | t }}",
+            "{{ 'custom.district.7006' | t }}",
+            "{{ 'custom.district.7007' | t }}",
+            "{{ 'custom.district.7008' | t }}",
+            "{{ 'custom.district.7009' | t }}",
+            "{{ 'custom.district.7010' | t }}"
+        ],
+
+        "Samut Sakhon": [
+            "{{ 'custom.district.7401' | t }}",
+            "{{ 'custom.district.7402' | t }}",
+            "{{ 'custom.district.7403' | t }}"
+        ],        
+
+        "Samut Songkhram": [
+            "{{ 'custom.district.7501' | t }}",
+            "{{ 'custom.district.7502' | t }}",
+            "{{ 'custom.district.7503' | t }}"
+        ] 
+    };
+
+    const optionsC = {
+            "{{ 'custom.district.1001' | t }}": [
+                "{{ 'custom.sub_district.100101' | t }}",
+                "{{ 'custom.sub_district.100102' | t }}",
+                "{{ 'custom.sub_district.100103' | t }}",
+                "{{ 'custom.sub_district.100104' | t }}",
+                "{{ 'custom.sub_district.100105' | t }}",
+                "{{ 'custom.sub_district.100106' | t }}",
+                "{{ 'custom.sub_district.100107' | t }}",
+                "{{ 'custom.sub_district.100108' | t }}",
+                "{{ 'custom.sub_district.100109' | t }}",
+                "{{ 'custom.sub_district.100110' | t }}",
+                "{{ 'custom.sub_district.100111' | t }}",
+                "{{ 'custom.sub_district.100112' | t }}"
+            ],
+            "{{ 'custom.district.1002' | t }}": [
+                "{{ 'custom.sub_district.100201' | t }}",
+                "{{ 'custom.sub_district.100202' | t }}",
+                "{{ 'custom.sub_district.100203' | t }}",
+                "{{ 'custom.sub_district.100204' | t }}",
+                "{{ 'custom.sub_district.100206' | t }}"
+            ],
+            "{{ 'custom.district.1003' | t }}": [
+                "{{ 'custom.sub_district.100301' | t }}",
+                "{{ 'custom.sub_district.100302' | t }}",
+                "{{ 'custom.sub_district.100303' | t }}",
+                "{{ 'custom.sub_district.100304' | t }}",
+                "{{ 'custom.sub_district.100305' | t }}",
+                "{{ 'custom.sub_district.100306' | t }}",
+                "{{ 'custom.sub_district.100307' | t }}",
+                "{{ 'custom.sub_district.100308' | t }}"
+            ],
+            "{{ 'custom.district.1004' | t }}": [
+                "{{ 'custom.sub_district.100401' | t }}",
+                "{{ 'custom.sub_district.100402' | t }}",
+                "{{ 'custom.sub_district.100403' | t }}",
+                "{{ 'custom.sub_district.100404' | t }}",
+                "{{ 'custom.sub_district.100405' | t }}"
+            ],
+            "{{ 'custom.district.1005' | t }}": [
+                "{{ 'custom.sub_district.100502' | t }}",
+                "{{ 'custom.sub_district.100508' | t }}"
+            ],
+            "{{ 'custom.district.1006' | t }}": [
+                "{{ 'custom.sub_district.100601' | t }}",
+                "{{ 'custom.sub_district.100608' | t }}"
+            ],
+            "{{ 'custom.district.1007' | t }}": [
+                "{{ 'custom.sub_district.100701' | t }}",
+                "{{ 'custom.sub_district.100702' | t }}",
+                "{{ 'custom.sub_district.100703' | t }}",
+                "{{ 'custom.sub_district.100704' | t }}"
+            ],
+            "{{ 'custom.district.1008' | t }}": [
+                "{{ 'custom.sub_district.100801' | t }}",
+                "{{ 'custom.sub_district.100802' | t }}",
+                "{{ 'custom.sub_district.100803' | t }}",
+                "{{ 'custom.sub_district.100804' | t }}",
+                "{{ 'custom.sub_district.100805' | t }}"
+            ],
+            "{{ 'custom.district.1009' | t }}": [
+                "{{ 'custom.sub_district.100905' | t }}"
+            ],
+            "{{ 'custom.district.1010' | t }}": [
+                "{{ 'custom.sub_district.101001' | t }}",
+                "{{ 'custom.sub_district.101002' | t }}"
+            ],
+            "{{ 'custom.district.1011' | t }}": [
+                "{{ 'custom.sub_district.101101' | t }}",
+                "{{ 'custom.sub_district.101102' | t }}",
+                "{{ 'custom.sub_district.101103' | t }}",
+                "{{ 'custom.sub_district.101104' | t }}",
+                "{{ 'custom.sub_district.101105' | t }}",
+                "{{ 'custom.sub_district.101106' | t }}"
+            ],
+            "{{ 'custom.district.1012' | t }}": [
+                "{{ 'custom.sub_district.101203' | t }}",
+                "{{ 'custom.sub_district.101204' | t }}"
+            ],
+            "{{ 'custom.district.1013' | t }}": [
+                "{{ 'custom.sub_district.101301' | t }}",
+                "{{ 'custom.sub_district.101302' | t }}",
+                "{{ 'custom.sub_district.101303' | t }}"
+            ],
+            "{{ 'custom.district.1014' | t }}": [
+                "{{ 'custom.sub_district.101401' | t }}"
+            ],
+            "{{ 'custom.district.1015' | t }}": [
+                "{{ 'custom.sub_district.101501' | t }}",
+                "{{ 'custom.sub_district.101502' | t }}",
+                "{{ 'custom.sub_district.101503' | t }}",
+                "{{ 'custom.sub_district.101504' | t }}",
+                "{{ 'custom.sub_district.101505' | t }}",
+                "{{ 'custom.sub_district.101506' | t }}",
+                "{{ 'custom.sub_district.101507' | t }}"
+            ],
+            "{{ 'custom.district.1016' | t }}": [
+                "{{ 'custom.sub_district.101601' | t }}",
+                "{{ 'custom.sub_district.101602' | t }}"
+            ],
+            "{{ 'custom.district.1017' | t }}": [
+                "{{ 'custom.sub_district.101701' | t }}",
+                "{{ 'custom.sub_district.101702' | t }}",
+                "{{ 'custom.sub_district.101704' | t }}"
+            ],
+            "{{ 'custom.district.1018' | t }}": [
+                "{{ 'custom.sub_district.101801' | t }}",
+                "{{ 'custom.sub_district.101802' | t }}",
+                "{{ 'custom.sub_district.101803' | t }}",
+                "{{ 'custom.sub_district.101804' | t }}"
+            ],
+            "{{ 'custom.district.1019' | t }}": [
+                "{{ 'custom.sub_district.101901' | t }}",
+                "{{ 'custom.sub_district.101902' | t }}",
+                "{{ 'custom.sub_district.101903' | t }}",
+                "{{ 'custom.sub_district.101904' | t }}",
+                "{{ 'custom.sub_district.101905' | t }}",
+                "{{ 'custom.sub_district.101907' | t }}"
+            ],
+            "{{ 'custom.district.1020' | t }}": [
+                "{{ 'custom.sub_district.102004' | t }}",
+                "{{ 'custom.sub_district.102005' | t }}",
+                "{{ 'custom.sub_district.102006' | t }}",
+                "{{ 'custom.sub_district.102007' | t }}",
+                "{{ 'custom.sub_district.102009' | t }}"
+            ],
+            "{{ 'custom.district.1021' | t }}": [
+                "{{ 'custom.sub_district.102105' | t }}",
+                "{{ 'custom.sub_district.102107' | t }}"
+            ],
+            "{{ 'custom.district.1022' | t }}": [
+                "{{ 'custom.sub_district.102201' | t }}",
+                "{{ 'custom.sub_district.102202' | t }}",
+                "{{ 'custom.sub_district.102206' | t }}",
+                "{{ 'custom.sub_district.102207' | t }}",
+                "{{ 'custom.sub_district.102208' | t }}",
+                "{{ 'custom.sub_district.102209' | t }}",
+                "{{ 'custom.sub_district.102210' | t }}"
+            ],
+            "{{ 'custom.district.1023' | t }}": [
+                "{{ 'custom.sub_district.102302' | t }}"
+            ],
+            "{{ 'custom.district.1024' | t }}": [
+                "{{ 'custom.sub_district.102401' | t }}",
+                "{{ 'custom.sub_district.102402' | t }}"
+            ],
+            "{{ 'custom.district.1025' | t }}": [
+                "{{ 'custom.sub_district.102501' | t }}",
+                "{{ 'custom.sub_district.102502' | t }}",
+                "{{ 'custom.sub_district.102503' | t }}",
+                "{{ 'custom.sub_district.102504' | t }}"
+            ],
+            "{{ 'custom.district.1026' | t }}": [
+                "{{ 'custom.sub_district.102601' | t }}"
+            ],
+            "{{ 'custom.district.1027' | t }}": [
+                "{{ 'custom.sub_district.102701' | t }}"
+            ],
+            "{{ 'custom.district.1028' | t }}": [
+                "{{ 'custom.sub_district.102704' | t }}",
+                "{{ 'custom.sub_district.102705' | t }}"
+            ],
+            "{{ 'custom.district.1029' | t }}": [
+                "{{ 'custom.sub_district.102801' | t }}",
+                "{{ 'custom.sub_district.102802' | t }}",
+                "{{ 'custom.sub_district.102803' | t }}"
+            ],
+            "{{ 'custom.district.1030' | t }}": [
+                "{{ 'custom.sub_district.102901' | t }}",
+                "{{ 'custom.sub_district.102902' | t }}"
+            ],
+            "{{ 'custom.district.1031' | t }}": [
+                "{{ 'custom.sub_district.103001' | t }}",
+                "{{ 'custom.sub_district.103002' | t }}",
+                "{{ 'custom.sub_district.103003' | t }}"
+            ],
+            "{{ 'custom.district.1032' | t }}": [
+                "{{ 'custom.sub_district.103101' | t }}",
+                "{{ 'custom.sub_district.103102' | t }}",
+                "{{ 'custom.sub_district.103103' | t }}"
+            ],
+            "{{ 'custom.district.1033' | t }}": [
+                "{{ 'custom.sub_district.103201' | t }}",
+                "{{ 'custom.sub_district.103202' | t }}",
+                "{{ 'custom.sub_district.103203' | t }}"
+            ],
+            "{{ 'custom.district.1034' | t }}": [
+                "{{ 'custom.sub_district.103301' | t }}"
+            ],
+            "{{ 'custom.district.1035' | t }}": [
+                "{{ 'custom.sub_district.103401' | t }}",
+                "{{ 'custom.sub_district.103501' | t }}",
+                "{{ 'custom.sub_district.103502' | t }}",
+                "{{ 'custom.sub_district.103503' | t }}",
+                "{{ 'custom.sub_district.103504' | t }}"
+            ],
+            "{{ 'custom.district.1036' | t }}": [
+                "{{ 'custom.sub_district.103602' | t }}",
+                "{{ 'custom.sub_district.103604' | t }}",
+                "{{ 'custom.sub_district.103605' | t }}"
+            ],
+            "{{ 'custom.district.1037' | t }}": [
+                "{{ 'custom.sub_district.103701' | t }}",
+                "{{ 'custom.sub_district.103702' | t }}",
+                "{{ 'custom.sub_district.103703' | t }}",
+                "{{ 'custom.sub_district.103704' | t }}"
+            ],
+            "{{ 'custom.district.1038' | t }}": [
+                "{{ 'custom.sub_district.103801' | t }}",
+                "{{ 'custom.sub_district.103802' | t }}"
+            ],
+            "{{ 'custom.district.1039' | t }}": [
+                "{{ 'custom.sub_district.103901' | t }}",
+                "{{ 'custom.sub_district.103902' | t }}",
+                "{{ 'custom.sub_district.103903' | t }}"
+            ],
+            "{{ 'custom.district.1040' | t }}": [
+                "{{ 'custom.sub_district.104001' | t }}",
+                "{{ 'custom.sub_district.104002' | t }}",
+                "{{ 'custom.sub_district.104003' | t }}",
+                "{{ 'custom.sub_district.104004' | t }}"
+            ],
+            "{{ 'custom.district.1041' | t }}": [
+                "{{ 'custom.sub_district.104101' | t }}",
+                "{{ 'custom.sub_district.104102' | t }}"
+            ],
+            "{{ 'custom.district.1042' | t }}": [
+                "{{ 'custom.sub_district.104201' | t }}",
+                "{{ 'custom.sub_district.104202' | t }}",
+                "{{ 'custom.sub_district.104203' | t }}"
+            ],
+            "{{ 'custom.district.1043' | t }}": [
+                "{{ 'custom.sub_district.104301' | t }}"
+            ],
+            "{{ 'custom.district.1044' | t }}": [
+                "{{ 'custom.sub_district.104401' | t }}"
+            ],
+            "{{ 'custom.district.1045' | t }}": [
+                "{{ 'custom.sub_district.104501' | t }}",
+                "{{ 'custom.sub_district.104502' | t }}",
+                "{{ 'custom.sub_district.104503' | t }}",
+                "{{ 'custom.sub_district.104504' | t }}"
+            ],
+            "{{ 'custom.district.1046' | t }}": [
+                "{{ 'custom.sub_district.104601' | t }}",
+                "{{ 'custom.sub_district.104602' | t }}",
+                "{{ 'custom.sub_district.104603' | t }}",
+                "{{ 'custom.sub_district.104604' | t }}",
+                "{{ 'custom.sub_district.104605' | t }}"
+            ],
+            "{{ 'custom.district.1047' | t }}": [
+                "{{ 'custom.sub_district.104701' | t }}"
+            ],
+            "{{ 'custom.district.1048' | t }}": [
+                "{{ 'custom.sub_district.104801' | t }}"
+            ],
+            "{{ 'custom.district.1049' | t }}": [
+                "{{ 'custom.sub_district.104901' | t }}"
+            ],
+            "{{ 'custom.district.1050' | t }}": [
+                "{{ 'custom.sub_district.105001' | t }}"
+            ],
+            "{{ 'custom.district.1101' | t }}": [
+                "{{ 'custom.sub_district.110101' | t }}",
+                "{{ 'custom.sub_district.110102' | t }}",
+                "{{ 'custom.sub_district.110103' | t }}",
+                "{{ 'custom.sub_district.110104' | t }}",
+                "{{ 'custom.sub_district.110108' | t }}",
+                "{{ 'custom.sub_district.110110' | t }}",
+                "{{ 'custom.sub_district.110111' | t }}",
+                "{{ 'custom.sub_district.110112' | t }}",
+                "{{ 'custom.sub_district.110113' | t }}",
+                "{{ 'custom.sub_district.110114' | t }}",
+                "{{ 'custom.sub_district.110115' | t }}",
+                "{{ 'custom.sub_district.110116' | t }}",
+                "{{ 'custom.sub_district.110117' | t }}"
+            ],
+            "{{ 'custom.district.1102' | t }}": [
+                "{{ 'custom.sub_district.110201' | t }}",
+                "{{ 'custom.sub_district.110202' | t }}",
+                "{{ 'custom.sub_district.110203' | t }}",
+                "{{ 'custom.sub_district.110204' | t }}",
+                "{{ 'custom.sub_district.110205' | t }}",
+                "{{ 'custom.sub_district.110206' | t }}",
+                "{{ 'custom.sub_district.110207' | t }}",
+                "{{ 'custom.sub_district.110208' | t }}"
+            ],
+            "{{ 'custom.district.1103' | t }}": [
+                "{{ 'custom.sub_district.110301' | t }}",
+                "{{ 'custom.sub_district.110302' | t }}",
+                "{{ 'custom.sub_district.110303' | t }}",
+                "{{ 'custom.sub_district.110304' | t }}",
+                "{{ 'custom.sub_district.110308' | t }}",
+                "{{ 'custom.sub_district.110309' | t }}"
+            ],
+            "{{ 'custom.district.1104' | t }}": [
+                "{{ 'custom.sub_district.110401' | t }}",
+                "{{ 'custom.sub_district.110402' | t }}",
+                "{{ 'custom.sub_district.110403' | t }}",
+                "{{ 'custom.sub_district.110404' | t }}",
+                "{{ 'custom.sub_district.110405' | t }}",
+                "{{ 'custom.sub_district.110406' | t }}",
+                "{{ 'custom.sub_district.110407' | t }}",
+                "{{ 'custom.sub_district.110408' | t }}",
+                "{{ 'custom.sub_district.110409' | t }}",
+                "{{ 'custom.sub_district.110410' | t }}",
+                "{{ 'custom.sub_district.110411' | t }}",
+                "{{ 'custom.sub_district.110412' | t }}",
+                "{{ 'custom.sub_district.110413' | t }}",
+                "{{ 'custom.sub_district.110414' | t }}",
+                "{{ 'custom.sub_district.110415' | t }}"
+            ],
+            "{{ 'custom.district.1105' | t }}": [
+                "{{ 'custom.sub_district.110501' | t }}",
+                "{{ 'custom.sub_district.110502' | t }}",
+                "{{ 'custom.sub_district.110503' | t }}",
+                "{{ 'custom.sub_district.110504' | t }}",
+                "{{ 'custom.sub_district.110505' | t }}"
+            ],
+            "{{ 'custom.district.1106' | t }}": [
+                "{{ 'custom.sub_district.110601' | t }}",
+                "{{ 'custom.sub_district.110602' | t }}",
+                "{{ 'custom.sub_district.110603' | t }}"
+            ],
+            "{{ 'custom.district.1206' | t }}": [
+                "{{ 'custom.sub_district.120601' | t }}",
+                "{{ 'custom.sub_district.120602' | t }}",
+                "{{ 'custom.sub_district.120603' | t }}",
+                "{{ 'custom.sub_district.120604' | t }}",
+                "{{ 'custom.sub_district.120605' | t }}",
+                "{{ 'custom.sub_district.120606' | t }}",
+                "{{ 'custom.sub_district.120607' | t }}",
+                "{{ 'custom.sub_district.120608' | t }}",
+                "{{ 'custom.sub_district.120609' | t }}",
+                "{{ 'custom.sub_district.120610' | t }}",
+                "{{ 'custom.sub_district.120611' | t }}",
+                "{{ 'custom.sub_district.120612' | t }}"
+            ],
+            "{{ 'custom.district.1301' | t }}": [
+                "{{ 'custom.sub_district.130101' | t }}",
+                "{{ 'custom.sub_district.130102' | t }}",
+                "{{ 'custom.sub_district.130103' | t }}",
+                "{{ 'custom.sub_district.130104' | t }}",
+                "{{ 'custom.sub_district.130105' | t }}",
+                "{{ 'custom.sub_district.130106' | t }}",
+                "{{ 'custom.sub_district.130107' | t }}",
+                "{{ 'custom.sub_district.130108' | t }}",
+                "{{ 'custom.sub_district.130109' | t }}",
+                "{{ 'custom.sub_district.130110' | t }}",
+                "{{ 'custom.sub_district.130111' | t }}",
+                "{{ 'custom.sub_district.130112' | t }}",
+                "{{ 'custom.sub_district.130113' | t }}",
+                "{{ 'custom.sub_district.130114' | t }}"
+            ],
+            "{{ 'custom.district.1302' | t }}": [
+                "{{ 'custom.sub_district.130201' | t }}",
+                "{{ 'custom.sub_district.130202' | t }}",
+                "{{ 'custom.sub_district.130203' | t }}",
+                "{{ 'custom.sub_district.130204' | t }}",
+                "{{ 'custom.sub_district.130205' | t }}",
+                "{{ 'custom.sub_district.130206' | t }}",
+                "{{ 'custom.sub_district.130207' | t }}"
+            ],
+            "{{ 'custom.district.1303' | t }}": [
+                "{{ 'custom.sub_district.130301' | t }}",
+                "{{ 'custom.sub_district.130302' | t }}",
+                "{{ 'custom.sub_district.130303' | t }}",
+                "{{ 'custom.sub_district.130304' | t }}",
+                "{{ 'custom.sub_district.130305' | t }}",
+                "{{ 'custom.sub_district.130306' | t }}"
+            ],
+            "{{ 'custom.district.1304' | t }}": [
+                "{{ 'custom.sub_district.130401' | t }}",
+                "{{ 'custom.sub_district.130402' | t }}",
+                "{{ 'custom.sub_district.130403' | t }}",
+                "{{ 'custom.sub_district.130404' | t }}",
+                "{{ 'custom.sub_district.130405' | t }}",
+                "{{ 'custom.sub_district.130406' | t }}",
+                "{{ 'custom.sub_district.130407' | t }}"
+            ],
+            "{{ 'custom.district.1305' | t }}": [
+                "{{ 'custom.sub_district.130501' | t }}",
+                "{{ 'custom.sub_district.130502' | t }}",
+                "{{ 'custom.sub_district.130503' | t }}",
+                "{{ 'custom.sub_district.130504' | t }}",
+                "{{ 'custom.sub_district.130505' | t }}",
+                "{{ 'custom.sub_district.130506' | t }}",
+                "{{ 'custom.sub_district.130507' | t }}"
+            ],
+            "{{ 'custom.district.1306' | t }}": [
+                "{{ 'custom.sub_district.130601' | t }}",
+                "{{ 'custom.sub_district.130602' | t }}",
+                "{{ 'custom.sub_district.130603' | t }}",
+                "{{ 'custom.sub_district.130604' | t }}",
+                "{{ 'custom.sub_district.130605' | t }}",
+                "{{ 'custom.sub_district.130606' | t }}",
+                "{{ 'custom.sub_district.130607' | t }}",
+                "{{ 'custom.sub_district.130608' | t }}"
+            ],
+            "{{ 'custom.district.1307' | t }}": [
+                "{{ 'custom.sub_district.130701' | t }}",
+                "{{ 'custom.sub_district.130702' | t }}",
+                "{{ 'custom.sub_district.130703' | t }}",
+                "{{ 'custom.sub_district.130704' | t }}",
+                "{{ 'custom.sub_district.130705' | t }}",
+                "{{ 'custom.sub_district.130706' | t }}",
+                "{{ 'custom.sub_district.130707' | t }}",
+                "{{ 'custom.sub_district.130708' | t }}",
+                "{{ 'custom.sub_district.130709' | t }}",
+                "{{ 'custom.sub_district.130710' | t }}",
+                "{{ 'custom.sub_district.130711' | t }}"
+            ],
+            "{{ 'custom.district.1601' | t }}": [
+                "{{ 'custom.sub_district.160101' | t }}",
+                "{{ 'custom.sub_district.160102' | t }}",
+                "{{ 'custom.sub_district.160103' | t }}",
+                "{{ 'custom.sub_district.160104' | t }}",
+                "{{ 'custom.sub_district.160105' | t }}",
+                "{{ 'custom.sub_district.160106' | t }}",
+                "{{ 'custom.sub_district.160107' | t }}",
+                "{{ 'custom.sub_district.160108' | t }}",
+                "{{ 'custom.sub_district.160109' | t }}",
+                "{{ 'custom.sub_district.160110' | t }}",
+                "{{ 'custom.sub_district.160111' | t }}",
+                "{{ 'custom.sub_district.160112' | t }}",
+                "{{ 'custom.sub_district.160114' | t }}",
+                "{{ 'custom.sub_district.160115' | t }}",
+                "{{ 'custom.sub_district.160116' | t }}",
+                "{{ 'custom.sub_district.160117' | t }}",
+                "{{ 'custom.sub_district.160118' | t }}",
+                "{{ 'custom.sub_district.160119' | t }}",
+                "{{ 'custom.sub_district.160120' | t }}",
+                "{{ 'custom.sub_district.160121' | t }}",
+                "{{ 'custom.sub_district.160122' | t }}",
+                "{{ 'custom.sub_district.160123' | t }}",
+                "{{ 'custom.sub_district.160124' | t }}",
+                "{{ 'custom.sub_district.160125' | t }}"
+            ],
+            "{{ 'custom.district.1602' | t }}": [
+                "{{ 'custom.sub_district.160201' | t }}",
+                "{{ 'custom.sub_district.160202' | t }}",
+                "{{ 'custom.sub_district.160203' | t }}",
+                "{{ 'custom.sub_district.160204' | t }}",
+                "{{ 'custom.sub_district.160205' | t }}",
+                "{{ 'custom.sub_district.160206' | t }}",
+                "{{ 'custom.sub_district.160207' | t }}",
+                "{{ 'custom.sub_district.160208' | t }}",
+                "{{ 'custom.sub_district.160209' | t }}"
+            ],
+            "{{ 'custom.district.1603' | t }}": [
+                "{{ 'custom.sub_district.160301' | t }}",
+                "{{ 'custom.sub_district.160302' | t }}",
+                "{{ 'custom.sub_district.160303' | t }}",
+                "{{ 'custom.sub_district.160304' | t }}",
+                "{{ 'custom.sub_district.160305' | t }}",
+                "{{ 'custom.sub_district.160306' | t }}",
+                "{{ 'custom.sub_district.160307' | t }}",
+                "{{ 'custom.sub_district.160308' | t }}",
+                "{{ 'custom.sub_district.160309' | t }}",
+                "{{ 'custom.sub_district.160310' | t }}",
+                "{{ 'custom.sub_district.160318' | t }}",
+                "{{ 'custom.sub_district.160320' | t }}",
+                "{{ 'custom.sub_district.160322' | t }}"
+            ],
+            "{{ 'custom.district.1604' | t }}": [
+                "{{ 'custom.sub_district.160401' | t }}",
+                "{{ 'custom.sub_district.160402' | t }}",
+                "{{ 'custom.sub_district.160403' | t }}",
+                "{{ 'custom.sub_district.160404' | t }}",
+                "{{ 'custom.sub_district.160405' | t }}",
+                "{{ 'custom.sub_district.160406' | t }}",
+                "{{ 'custom.sub_district.160407' | t }}",
+                "{{ 'custom.sub_district.160408' | t }}",
+                "{{ 'custom.sub_district.160409' | t }}",
+                "{{ 'custom.sub_district.160410' | t }}",
+                "{{ 'custom.sub_district.160411' | t }}",
+                "{{ 'custom.sub_district.160412' | t }}",
+                "{{ 'custom.sub_district.160414' | t }}",
+                "{{ 'custom.sub_district.160417' | t }}",
+                "{{ 'custom.sub_district.160418' | t }}",
+                "{{ 'custom.sub_district.160419' | t }}",
+                "{{ 'custom.sub_district.160422' | t }}"
+            ],
+            "{{ 'custom.district.1605' | t }}": [
+                "{{ 'custom.sub_district.160501' | t }}",
+                "{{ 'custom.sub_district.160502' | t }}",
+                "{{ 'custom.sub_district.160503' | t }}",
+                "{{ 'custom.sub_district.160504' | t }}",
+                "{{ 'custom.sub_district.160505' | t }}",
+                "{{ 'custom.sub_district.160506' | t }}",
+                "{{ 'custom.sub_district.160507' | t }}",
+                "{{ 'custom.sub_district.160508' | t }}",
+                "{{ 'custom.sub_district.160509' | t }}",
+                "{{ 'custom.sub_district.160510' | t }}",
+                "{{ 'custom.sub_district.160511' | t }}"
+            ],
+            "{{ 'custom.district.1606' | t }}": [
+                "{{ 'custom.sub_district.160601' | t }}",
+                "{{ 'custom.sub_district.160602' | t }}",
+                "{{ 'custom.sub_district.160603' | t }}",
+                "{{ 'custom.sub_district.160604' | t }}",
+                "{{ 'custom.sub_district.160605' | t }}",
+                "{{ 'custom.sub_district.160606' | t }}",
+                "{{ 'custom.sub_district.160607' | t }}",
+                "{{ 'custom.sub_district.160608' | t }}",
+                "{{ 'custom.sub_district.160609' | t }}",
+                "{{ 'custom.sub_district.160610' | t }}",
+                "{{ 'custom.sub_district.160611' | t }}",
+                "{{ 'custom.sub_district.160612' | t }}",
+                "{{ 'custom.sub_district.160613' | t }}",
+                "{{ 'custom.sub_district.160614' | t }}",
+                "{{ 'custom.sub_district.160615' | t }}",
+                "{{ 'custom.sub_district.160616' | t }}",
+                "{{ 'custom.sub_district.160617' | t }}",
+                "{{ 'custom.sub_district.160618' | t }}",
+                "{{ 'custom.sub_district.160619' | t }}",
+                "{{ 'custom.sub_district.160620' | t }}",
+                "{{ 'custom.sub_district.160621' | t }}",
+                "{{ 'custom.sub_district.160622' | t }}"
+            ],
+            "{{ 'custom.district.1607' | t }}": [
+                "{{ 'custom.sub_district.160701' | t }}",
+                "{{ 'custom.sub_district.160702' | t }}",
+                "{{ 'custom.sub_district.160703' | t }}",
+                "{{ 'custom.sub_district.160704' | t }}",
+                "{{ 'custom.sub_district.160705' | t }}",
+                "{{ 'custom.sub_district.160706' | t }}"
+            ],
+            "{{ 'custom.district.1608' | t }}": [
+                "{{ 'custom.sub_district.160801' | t }}",
+                "{{ 'custom.sub_district.160802' | t }}",
+                "{{ 'custom.sub_district.160803' | t }}",
+                "{{ 'custom.sub_district.160804' | t }}",
+                "{{ 'custom.sub_district.160805' | t }}"
+            ],
+            "{{ 'custom.district.1609' | t }}": [
+                "{{ 'custom.sub_district.160901' | t }}",
+                "{{ 'custom.sub_district.160902' | t }}",
+                "{{ 'custom.sub_district.160903' | t }}",
+                "{{ 'custom.sub_district.160904' | t }}",
+                "{{ 'custom.sub_district.160905' | t }}"
+            ],
+            "{{ 'custom.district.1610' | t }}": [
+                "{{ 'custom.sub_district.161001' | t }}",
+                "{{ 'custom.sub_district.161002' | t }}",
+                "{{ 'custom.sub_district.161003' | t }}",
+                "{{ 'custom.sub_district.161004' | t }}",
+                "{{ 'custom.sub_district.161005' | t }}",
+                "{{ 'custom.sub_district.161006' | t }}"
+            ],
+            "{{ 'custom.district.1611' | t }}": [
+                "{{ 'custom.sub_district.161101' | t }}",
+                "{{ 'custom.sub_district.161102' | t }}",
+                "{{ 'custom.sub_district.161103' | t }}",
+                "{{ 'custom.sub_district.161104' | t }}",
+                "{{ 'custom.sub_district.161105' | t }}",
+                "{{ 'custom.sub_district.161106' | t }}"
+            ],
+            "{{ 'custom.district.1701' | t }}": [
+                "{{ 'custom.sub_district.170101' | t }}",
+                "{{ 'custom.sub_district.170102' | t }}",
+                "{{ 'custom.sub_district.170103' | t }}",
+                "{{ 'custom.sub_district.170104' | t }}",
+                "{{ 'custom.sub_district.170105' | t }}",
+                "{{ 'custom.sub_district.170106' | t }}",
+                "{{ 'custom.sub_district.170107' | t }}",
+                "{{ 'custom.sub_district.170108' | t }}"
+            ],
+            "{{ 'custom.district.1702' | t }}": [
+                "{{ 'custom.sub_district.170201' | t }}",
+                "{{ 'custom.sub_district.170202' | t }}",
+                "{{ 'custom.sub_district.170203' | t }}",
+                "{{ 'custom.sub_district.170204' | t }}",
+                "{{ 'custom.sub_district.170205' | t }}",
+                "{{ 'custom.sub_district.170206' | t }}",
+                "{{ 'custom.sub_district.170207' | t }}",
+                "{{ 'custom.sub_district.170208' | t }}"
+            ],
+            "{{ 'custom.district.1703' | t }}": [
+                "{{ 'custom.sub_district.170301' | t }}",
+                "{{ 'custom.sub_district.170302' | t }}",
+                "{{ 'custom.sub_district.170303' | t }}",
+                "{{ 'custom.sub_district.170304' | t }}",
+                "{{ 'custom.sub_district.170305' | t }}",
+                "{{ 'custom.sub_district.170306' | t }}"
+            ],
+            "{{ 'custom.district.1704' | t }}": [
+                "{{ 'custom.sub_district.170401' | t }}",
+                "{{ 'custom.sub_district.170402' | t }}",
+                "{{ 'custom.sub_district.170403' | t }}",
+                "{{ 'custom.sub_district.170404' | t }}",
+                "{{ 'custom.sub_district.170405' | t }}",
+                "{{ 'custom.sub_district.170406' | t }}",
+                "{{ 'custom.sub_district.170407' | t }}"
+            ],
+            "{{ 'custom.district.1705' | t }}": [
+                "{{ 'custom.sub_district.170501' | t }}",
+                "{{ 'custom.sub_district.170502' | t }}",
+                "{{ 'custom.sub_district.170503' | t }}",
+                "{{ 'custom.sub_district.170504' | t }}"
+            ],
+            "{{ 'custom.district.1706' | t }}": [
+                "{{ 'custom.sub_district.170601' | t }}",
+                "{{ 'custom.sub_district.170602' | t }}",
+                "{{ 'custom.sub_district.170603' | t }}",
+                "{{ 'custom.sub_district.170604' | t }}",
+                "{{ 'custom.sub_district.170605' | t }}",
+                "{{ 'custom.sub_district.170606' | t }}",
+                "{{ 'custom.sub_district.170607' | t }}",
+                "{{ 'custom.sub_district.170608' | t }}",
+                "{{ 'custom.sub_district.170609' | t }}",
+                "{{ 'custom.sub_district.170610' | t }}"
+            ],
+            "{{ 'custom.district.1901' | t }}": [
+                "{{ 'custom.sub_district.190101' | t }}",
+                "{{ 'custom.sub_district.190105' | t }}",
+                "{{ 'custom.sub_district.190106' | t }}",
+                "{{ 'custom.sub_district.190107' | t }}",
+                "{{ 'custom.sub_district.190108' | t }}",
+                "{{ 'custom.sub_district.190109' | t }}",
+                "{{ 'custom.sub_district.190110' | t }}",
+                "{{ 'custom.sub_district.190111' | t }}",
+                "{{ 'custom.sub_district.190112' | t }}",
+                "{{ 'custom.sub_district.190113' | t }}",
+                "{{ 'custom.sub_district.190114' | t }}"
+            ],
+            "{{ 'custom.district.1902' | t }}": [
+                "{{ 'custom.sub_district.190201' | t }}",
+                "{{ 'custom.sub_district.190202' | t }}",
+                "{{ 'custom.sub_district.190203' | t }}",
+                "{{ 'custom.sub_district.190204' | t }}",
+                "{{ 'custom.sub_district.190205' | t }}",
+                "{{ 'custom.sub_district.190206' | t }}",
+                "{{ 'custom.sub_district.190207' | t }}",
+                "{{ 'custom.sub_district.190208' | t }}",
+                "{{ 'custom.sub_district.190209' | t }}",
+                "{{ 'custom.sub_district.190210' | t }}",
+                "{{ 'custom.sub_district.190211' | t }}",
+                "{{ 'custom.sub_district.190212' | t }}",
+                "{{ 'custom.sub_district.190213' | t }}",
+                "{{ 'custom.sub_district.190215' | t }}"
+            ],
+            "{{ 'custom.district.1903' | t }}": [
+                "{{ 'custom.sub_district.190301' | t }}",
+                "{{ 'custom.sub_district.190302' | t }}",
+                "{{ 'custom.sub_district.190303' | t }}",
+                "{{ 'custom.sub_district.190304' | t }}",
+                "{{ 'custom.sub_district.190305' | t }}",
+                "{{ 'custom.sub_district.190306' | t }}",
+                "{{ 'custom.sub_district.190307' | t }}",
+                "{{ 'custom.sub_district.190308' | t }}",
+                "{{ 'custom.sub_district.190309' | t }}",
+                "{{ 'custom.sub_district.190310' | t }}",
+                "{{ 'custom.sub_district.190311' | t }}",
+                "{{ 'custom.sub_district.190312' | t }}",
+                "{{ 'custom.sub_district.190313' | t }}",
+                "{{ 'custom.sub_district.190314' | t }}",
+                "{{ 'custom.sub_district.190315' | t }}",
+                "{{ 'custom.sub_district.190316' | t }}",
+                "{{ 'custom.sub_district.190317' | t }}",
+                "{{ 'custom.sub_district.190318' | t }}"
+            ],
+            "{{ 'custom.district.1904' | t }}": [
+                "{{ 'custom.sub_district.190401' | t }}",
+                "{{ 'custom.sub_district.190402' | t }}",
+                "{{ 'custom.sub_district.190403' | t }}",
+                "{{ 'custom.sub_district.190404' | t }}",
+                "{{ 'custom.sub_district.190405' | t }}",
+                "{{ 'custom.sub_district.190406' | t }}"
+            ],
+            "{{ 'custom.district.1905' | t }}": [
+                "{{ 'custom.sub_district.190501' | t }}",
+                "{{ 'custom.sub_district.190502' | t }}",
+                "{{ 'custom.sub_district.190503' | t }}",
+                "{{ 'custom.sub_district.190504' | t }}",
+                "{{ 'custom.sub_district.190505' | t }}",
+                "{{ 'custom.sub_district.190506' | t }}",
+                "{{ 'custom.sub_district.190507' | t }}",
+                "{{ 'custom.sub_district.190508' | t }}"
+            ],
+            "{{ 'custom.district.1906' | t }}": [
+                "{{ 'custom.sub_district.190601' | t }}",
+                "{{ 'custom.sub_district.190602' | t }}",
+                "{{ 'custom.sub_district.190603' | t }}",
+                "{{ 'custom.sub_district.190604' | t }}",
+                "{{ 'custom.sub_district.190608' | t }}",
+                "{{ 'custom.sub_district.190609' | t }}"
+            ],
+            "{{ 'custom.district.1908' | t }}": [
+                "{{ 'custom.sub_district.190801' | t }}",
+                "{{ 'custom.sub_district.190802' | t }}",
+                "{{ 'custom.sub_district.190803' | t }}",
+                "{{ 'custom.sub_district.190804' | t }}"
+            ],
+            "{{ 'custom.district.1909' | t }}": [
+                "{{ 'custom.sub_district.190901' | t }}",
+                "{{ 'custom.sub_district.190902' | t }}",
+                "{{ 'custom.sub_district.190903' | t }}",
+                "{{ 'custom.sub_district.190904' | t }}",
+                "{{ 'custom.sub_district.190905' | t }}",
+                "{{ 'custom.sub_district.190906' | t }}",
+                "{{ 'custom.sub_district.190907' | t }}",
+                "{{ 'custom.sub_district.190908' | t }}",
+                "{{ 'custom.sub_district.190909' | t }}"
+            ],
+            "{{ 'custom.district.1910' | t }}": [
+                "{{ 'custom.sub_district.191001' | t }}",
+                "{{ 'custom.sub_district.191002' | t }}",
+                "{{ 'custom.sub_district.191003' | t }}",
+                "{{ 'custom.sub_district.191004' | t }}",
+                "{{ 'custom.sub_district.191005' | t }}",
+                "{{ 'custom.sub_district.191006' | t }}",
+                "{{ 'custom.sub_district.191007' | t }}",
+                "{{ 'custom.sub_district.191008' | t }}",
+                "{{ 'custom.sub_district.191009' | t }}",
+                "{{ 'custom.sub_district.191010' | t }}",
+                "{{ 'custom.sub_district.191011' | t }}",
+                "{{ 'custom.sub_district.191012' | t }}"
+            ],
+            "{{ 'custom.district.1911' | t }}": [
+                "{{ 'custom.sub_district.191101' | t }}",
+                "{{ 'custom.sub_district.191102' | t }}",
+                "{{ 'custom.sub_district.191104' | t }}",
+                "{{ 'custom.sub_district.191105' | t }}",
+                "{{ 'custom.sub_district.191107' | t }}",
+                "{{ 'custom.sub_district.191109' | t }}"
+            ],
+            "{{ 'custom.district.1912' | t }}": [
+                "{{ 'custom.sub_district.191201' | t }}",
+                "{{ 'custom.sub_district.191202' | t }}",
+                "{{ 'custom.sub_district.191203' | t }}"
+            ],
+            "{{ 'custom.district.1913' | t }}": [
+                "{{ 'custom.sub_district.191301' | t }}",
+                "{{ 'custom.sub_district.191302' | t }}",
+                "{{ 'custom.sub_district.191303' | t }}",
+                "{{ 'custom.sub_district.191304' | t }}",
+                "{{ 'custom.sub_district.191305' | t }}",
+                "{{ 'custom.sub_district.191306' | t }}"
+            ],
+            "{{ 'custom.district.7001' | t }}": [
+                "{{ 'custom.sub_district.700101' | t }}",
+                "{{ 'custom.sub_district.700102' | t }}",
+                "{{ 'custom.sub_district.700103' | t }}",
+                "{{ 'custom.sub_district.700104' | t }}",
+                "{{ 'custom.sub_district.700105' | t }}",
+                "{{ 'custom.sub_district.700106' | t }}",
+                "{{ 'custom.sub_district.700107' | t }}",
+                "{{ 'custom.sub_district.700108' | t }}",
+                "{{ 'custom.sub_district.700109' | t }}",
+                "{{ 'custom.sub_district.700110' | t }}",
+                "{{ 'custom.sub_district.700111' | t }}",
+                "{{ 'custom.sub_district.700112' | t }}",
+                "{{ 'custom.sub_district.700113' | t }}",
+                "{{ 'custom.sub_district.700114' | t }}",
+                "{{ 'custom.sub_district.700115' | t }}",
+                "{{ 'custom.sub_district.700116' | t }}",
+                "{{ 'custom.sub_district.700117' | t }}",
+                "{{ 'custom.sub_district.700118' | t }}",
+                "{{ 'custom.sub_district.700119' | t }}",
+                "{{ 'custom.sub_district.700120' | t }}",
+                "{{ 'custom.sub_district.700121' | t }}",
+                "{{ 'custom.sub_district.700122' | t }}"
+            ],
+            "{{ 'custom.district.7002' | t }}": [
+                "{{ 'custom.sub_district.700201' | t }}",
+                "{{ 'custom.sub_district.700202' | t }}",
+                "{{ 'custom.sub_district.700203' | t }}",
+                "{{ 'custom.sub_district.700204' | t }}",
+                "{{ 'custom.sub_district.700205' | t }}",
+                "{{ 'custom.sub_district.700206' | t }}"
+            ],
+            "{{ 'custom.district.7003' | t }}": [
+                "{{ 'custom.sub_district.700301' | t }}",
+                "{{ 'custom.sub_district.700302' | t }}",
+                "{{ 'custom.sub_district.700304' | t }}",
+                "{{ 'custom.sub_district.700307' | t }}"
+            ],
+            "{{ 'custom.district.7004' | t }}": [
+                "{{ 'custom.sub_district.700401' | t }}",
+                "{{ 'custom.sub_district.700402' | t }}",
+                "{{ 'custom.sub_district.700403' | t }}",
+                "{{ 'custom.sub_district.700404' | t }}",
+                "{{ 'custom.sub_district.700405' | t }}",
+                "{{ 'custom.sub_district.700406' | t }}",
+                "{{ 'custom.sub_district.700407' | t }}",
+                "{{ 'custom.sub_district.700408' | t }}",
+                "{{ 'custom.sub_district.700409' | t }}",
+                "{{ 'custom.sub_district.700410' | t }}",
+                "{{ 'custom.sub_district.700411' | t }}",
+                "{{ 'custom.sub_district.700412' | t }}",
+                "{{ 'custom.sub_district.700413' | t }}"
+            ],
+            "{{ 'custom.district.7006' | t }}": [
+                "{{ 'custom.sub_district.700601' | t }}",
+                "{{ 'custom.sub_district.700602' | t }}",
+                "{{ 'custom.sub_district.700603' | t }}",
+                "{{ 'custom.sub_district.700604' | t }}",
+                "{{ 'custom.sub_district.700605' | t }}",
+                "{{ 'custom.sub_district.700606' | t }}",
+                "{{ 'custom.sub_district.700607' | t }}"
+            ],
+            "{{ 'custom.district.7007' | t }}": [
+                "{{ 'custom.sub_district.700701' | t }}",
+                "{{ 'custom.sub_district.700702' | t }}",
+                "{{ 'custom.sub_district.700703' | t }}",
+                "{{ 'custom.sub_district.700704' | t }}",
+                "{{ 'custom.sub_district.700705' | t }}",
+                "{{ 'custom.sub_district.700706' | t }}",
+                "{{ 'custom.sub_district.700707' | t }}",
+                "{{ 'custom.sub_district.700708' | t }}",
+                "{{ 'custom.sub_district.700709' | t }}",
+                "{{ 'custom.sub_district.700710' | t }}",
+                "{{ 'custom.sub_district.700711' | t }}",
+                "{{ 'custom.sub_district.700712' | t }}",
+                "{{ 'custom.sub_district.700713' | t }}",
+                "{{ 'custom.sub_district.700714' | t }}",
+                "{{ 'custom.sub_district.700715' | t }}",
+                "{{ 'custom.sub_district.700716' | t }}",
+                "{{ 'custom.sub_district.700717' | t }}",
+                "{{ 'custom.sub_district.700718' | t }}",
+                "{{ 'custom.sub_district.700719' | t }}"
+            ],
+            "{{ 'custom.district.7008' | t }}": [
+                "{{ 'custom.sub_district.700801' | t }}",
+                "{{ 'custom.sub_district.700802' | t }}",
+                "{{ 'custom.sub_district.700803' | t }}",
+                "{{ 'custom.sub_district.700804' | t }}",
+                "{{ 'custom.sub_district.700805' | t }}",
+                "{{ 'custom.sub_district.700806' | t }}",
+                "{{ 'custom.sub_district.700807' | t }}",
+                "{{ 'custom.sub_district.700808' | t }}",
+                "{{ 'custom.sub_district.700809' | t }}",
+                "{{ 'custom.sub_district.700810' | t }}",
+                "{{ 'custom.sub_district.700811' | t }}",
+                "{{ 'custom.sub_district.700812' | t }}"
+            ],
+            "{{ 'custom.district.7009' | t }}": [
+                "{{ 'custom.sub_district.700901' | t }}",
+                "{{ 'custom.sub_district.700902' | t }}",
+                "{{ 'custom.sub_district.700903' | t }}"
+            ],
+            "{{ 'custom.district.7010' | t }}": [
+                "{{ 'custom.sub_district.701001' | t }}",
+                "{{ 'custom.sub_district.701002' | t }}",
+                "{{ 'custom.sub_district.701003' | t }}"
+            ],
+            "{{ 'custom.district.7401' | t }}": [
+                "{{ 'custom.sub_district.740101' | t }}",
+                "{{ 'custom.sub_district.740102' | t }}",
+                "{{ 'custom.sub_district.740103' | t }}",
+                "{{ 'custom.sub_district.740104' | t }}",
+                "{{ 'custom.sub_district.740105' | t }}",
+                "{{ 'custom.sub_district.740106' | t }}",
+                "{{ 'custom.sub_district.740107' | t }}",
+                "{{ 'custom.sub_district.740108' | t }}",
+                "{{ 'custom.sub_district.740109' | t }}",
+                "{{ 'custom.sub_district.740110' | t }}",
+                "{{ 'custom.sub_district.740111' | t }}",
+                "{{ 'custom.sub_district.740113' | t }}",
+                "{{ 'custom.sub_district.740114' | t }}",
+                "{{ 'custom.sub_district.740115' | t }}",
+                "{{ 'custom.sub_district.740116' | t }}",
+                "{{ 'custom.sub_district.740117' | t }}",
+                "{{ 'custom.sub_district.740118' | t }}"
+            ],
+            "{{ 'custom.district.7402' | t }}": [
+                "{{ 'custom.sub_district.740201' | t }}",
+                "{{ 'custom.sub_district.740203' | t }}",
+                "{{ 'custom.sub_district.740204' | t }}",
+                "{{ 'custom.sub_district.740205' | t }}",
+                "{{ 'custom.sub_district.740206' | t }}",
+                "{{ 'custom.sub_district.740207' | t }}",
+                "{{ 'custom.sub_district.740208' | t }}",
+                "{{ 'custom.sub_district.740209' | t }}",
+                "{{ 'custom.sub_district.740210' | t }}"
+            ],
+            "{{ 'custom.district.7403' | t }}": [
+                "{{ 'custom.sub_district.740301' | t }}",
+                "{{ 'custom.sub_district.740302' | t }}",
+                "{{ 'custom.sub_district.740303' | t }}",
+                "{{ 'custom.sub_district.740304' | t }}",
+                "{{ 'custom.sub_district.740305' | t }}",
+                "{{ 'custom.sub_district.740306' | t }}",
+                "{{ 'custom.sub_district.740307' | t }}",
+                "{{ 'custom.sub_district.740308' | t }}",
+                "{{ 'custom.sub_district.740309' | t }}",
+                "{{ 'custom.sub_district.740310' | t }}",
+                "{{ 'custom.sub_district.740311' | t }}",
+                "{{ 'custom.sub_district.740312' | t }}"
+            ],
+            "{{ 'custom.district.7402' | t }}": [
+                "{{ 'custom.sub_district.740202' | t }}"
+            ],
+            "{{ 'custom.district.7401' | t }}": [
+                "{{ 'custom.sub_district.740112' | t }}"
+            ],
+            "{{ 'custom.district.7501' | t }}": [
+                "{{ 'custom.sub_district.750101' | t }}",
+                "{{ 'custom.sub_district.750102' | t }}",
+                "{{ 'custom.sub_district.750103' | t }}",
+                "{{ 'custom.sub_district.750104' | t }}",
+                "{{ 'custom.sub_district.750105' | t }}",
+                "{{ 'custom.sub_district.750106' | t }}",
+                "{{ 'custom.sub_district.750107' | t }}",
+                "{{ 'custom.sub_district.750108' | t }}",
+                "{{ 'custom.sub_district.750109' | t }}",
+                "{{ 'custom.sub_district.750110' | t }}",
+                "{{ 'custom.sub_district.750111' | t }}"
+            ],
+            "{{ 'custom.district.7502' | t }}": [
+                "{{ 'custom.sub_district.750201' | t }}",
+                "{{ 'custom.sub_district.750202' | t }}",
+                "{{ 'custom.sub_district.750203' | t }}",
+                "{{ 'custom.sub_district.750204' | t }}",
+                "{{ 'custom.sub_district.750205' | t }}",
+                "{{ 'custom.sub_district.750206' | t }}",
+                "{{ 'custom.sub_district.750207' | t }}",
+                "{{ 'custom.sub_district.750208' | t }}",
+                "{{ 'custom.sub_district.750209' | t }}",
+                "{{ 'custom.sub_district.750210' | t }}",
+                "{{ 'custom.sub_district.750211' | t }}",
+                "{{ 'custom.sub_district.750212' | t }}",
+                "{{ 'custom.sub_district.750213' | t }}"
+            ],
+            "{{ 'custom.district.7503' | t }}": [
+                "{{ 'custom.sub_district.750301' | t }}",
+                "{{ 'custom.sub_district.750302' | t }}",
+                "{{ 'custom.sub_district.750303' | t }}",
+                "{{ 'custom.sub_district.750304' | t }}",
+                "{{ 'custom.sub_district.750305' | t }}",
+                "{{ 'custom.sub_district.750306' | t }}",
+                "{{ 'custom.sub_district.750307' | t }}",
+                "{{ 'custom.sub_district.750308' | t }}",
+                "{{ 'custom.sub_district.750309' | t }}",
+                "{{ 'custom.sub_district.750310' | t }}",
+                "{{ 'custom.sub_district.750311' | t }}",
+                "{{ 'custom.sub_district.750312' | t }}"
+            ]
+    };
+
+
+    Province.addEventListener("change", function() {
+        const selectedValueA = Province.value;
+        District.innerHTML = '<option value="" disabled selected hidden>{{ 'custom.registration.district' | t }}</option>';
+        Sub_district.innerHTML = '<option value="" disabled selected hidden>{{ 'custom.registration.sub_district' | t }}</option>';
+        Postal_code.innerHTML = '<option value="" disabled selected hidden>{{ 'custom.registration.postal_code' | t }}</option>';
+
+        if (selectedValueA) {
+            District.disabled = false;
+            const options = optionsB[selectedValueA];
+            options.forEach(option => {
+                const optionElement = document.createElement("option");
+                optionElement.value = option;
+                optionElement.text = option;
+                District.appendChild(optionElement);
+            });
+        } else {
+            District.disabled = true;
+            Sub_district.disabled = true;
+            Postal_code.disabled = true;
+        }
+    });
+
+    District.addEventListener("change", function() {
+        const selectedValueB = District.value;
+        Sub_district.innerHTML = '<option value="" disabled selected hidden>{{ 'custom.registration.sub_district' | t }}</option>';
+        Postal_code.innerHTML = '<option value="" disabled selected hidden>{{ 'custom.registration.postal_code' | t }}</option>';
+
+        if (selectedValueB) {
+            Sub_district.disabled = false;
+            const options = optionsC[selectedValueB];
+            options.forEach(option => {
+                const optionElement = document.createElement("option");
+                optionElement.value = option;
+                optionElement.text = option;
+                Sub_district.appendChild(optionElement);
+            });
+        } else {
+            Sub_district.disabled = true;
+            Postal_code.disabled = true;
+        }
+    });
+
+    Sub_district.addEventListener("change", function() {
+        const selectedValueC = Sub_district.value;
+        Postal_code.innerHTML = '<option value="" disabled selected hidden>{{ 'custom.registration.postal_code' | t }}</option>';
+
+        if (selectedValueC) {
+            Postal_code.disabled = false;
+            const options = optionsD[selectedValueC];
+            options.forEach(option => {
+                const optionElement = document.createElement("option");
+                optionElement.value = option;
+                optionElement.text = option;
+                Postal_code.appendChild(optionElement);
+            });
+        } else {
+            Postal_code.disabled = true;
+        }
+    });
+</script>
+<!-- Province Dropdown Script END -->
 
 <script>
   $( function() {
