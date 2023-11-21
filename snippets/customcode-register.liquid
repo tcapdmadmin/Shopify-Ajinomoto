@@ -197,9 +197,8 @@ function togglePasswordVisibility() {
                 </div>
 
                 <div class="field-wrap">
-                  <select id="Postal_code" name="postal_code" class="field-input input-full parallel" required>
-                    <option value="" disabled selected hidden>{{ 'custom.registration.postal_code' | t }}</option>
-                  </select>
+                    <input type="text" name="postal-code" id="Postal-code" class="field-input input-full parallel"
+                           autocomplete="on" placeholder="{{ 'custom.registration.postal_code' | t }}">
                     <input type="number" name="salesman-code" id="Salesman-code" class="field-input input-full parallel" maxlength="10" max="9999999999"
                            autocomplete="on" placeholder="{{ 'custom.registration.salesman_code' | t }}">
                 </div>
