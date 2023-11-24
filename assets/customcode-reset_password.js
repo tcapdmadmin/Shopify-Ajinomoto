@@ -45,11 +45,11 @@ function submitFormWithApiAndShopify() {
   const email = emailInput.value;
   const password = document.getElementById("ResetPassword");
   const confirm_password = document.getElementById("PasswordConfirmation");
-  if (email.innerHTML) {
+
     obj["email"] = email;
     obj["password"] = password.value;
     obj["confirm_password"] = confirm_password.value;
-  }
+  
 
   return fetch("https://apps.ajinomotosalesth.com/api/shopify_account/1", {
     method: "PUT",
