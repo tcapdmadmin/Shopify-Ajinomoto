@@ -718,7 +718,7 @@
     "custom_css": [
       ".h3,h3 {font-size: calc(var(--typeHeaderSize) * 0.5);}",
       ".page-width.footer-promotions {margin-top: -40px; margin-bottom: -50px;}",
-      "span.tag__text:contains(\"Freebie\") {display: none;}"
+      "span.tag__text:contains(\"Freebie\") {display: none !important;}"
     ]
   }
 }
