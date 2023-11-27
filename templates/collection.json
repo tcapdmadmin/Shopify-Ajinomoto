@@ -3,7 +3,7 @@
     "collection-header": {
       "type": "collection-header",
       "custom_css": [
-        "span.tag__text:contains(\"Freebie\") {display: none;}"
+
       ],
       "settings": {
         "enable": true,
