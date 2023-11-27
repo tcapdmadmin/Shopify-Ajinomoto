@@ -124,10 +124,12 @@
                                     </span>
                                     <span class="tag__text hide">{{ filter_value.label | escape }}</span>
                                   {%- else -%}
+{% unless filter_value.label == 'Freebie' %}
                                     <span class="tag__checkbox"></span>
                                     <span>
                                       <span class="tag__text">{{ filter_value.label | escape }}</span> ({{ filter_value.count }})
                                     </span>
+{% endunless %}
                                   {%- endif -%}
                                 </label>
                               </li>
