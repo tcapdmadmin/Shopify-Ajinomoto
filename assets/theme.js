@@ -1571,7 +1571,11 @@ if (console && console.log) {
     },
   
     changeItem: function(key, qty) {
-  
+      checkAndUpdateFreebieInCart()
+      console.log('CHANGE ITEM FUNCTION')
+
+
+      var masterqty = qty;
       return this._updateCart({
         url: ''.concat(theme.routes.cartChange, '?t=').concat(Date.now()),
         data: JSON.stringify({
@@ -1579,22 +1583,60 @@ if (console && console.log) {
           quantity: qty
         })
       })
+      .then(function(response) {
+        // Process the response if needed
+      
+        // Update the input element
+        console.log('Check Key')
+        console.log(key)
+        var inputElement = document.getElementById('cart_updates_45200291529019:85aaa5866e4c5d92aae7f9f88c25feca');
+      
+        if (inputElement) {
+          var inputName = inputElement.getAttribute('name');
+          console.log('Name attribute:', inputName);
+          inputElement.value = masterqty;
+        } else {
+          console.log('Input element not found');
+        }
+      
+        // Return the response or perform other actions as needed
+        return response;
+      })
+      .catch(function(error) {
+        // Handle errors if needed
+        console.error('Error updating cart:', error);
+      });
     },
   
     _updateCart: function(params) {
-      return fetch(params.url, {
-        method: 'POST',
-        body: params.data,
-        credentials: 'same-origin',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Requested-With': 'XMLHttpRequest',
-          'Accept': 'application/json'
-        }
-      })
-      .then(response => { return response.text() })
-      .then(cart => { return cart; });
-    },
+  console.log('_UPDATECART')
+  checkAndUpdateFreebieInCart();
+  return fetch(params.url, {
+    method: 'POST',
+    body: params.data,
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest',
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => { return response.json() }) // Assuming the response is JSON
+  .then(cart => {
+    console.log('Freebie In cart Run')
+    // $( ".cart__item-sub" ).load(window.location.href + " .cart__item-sub" );
+    if ((cart.total_price >= 500 || cart.total_price <= 499) && !sessionStorage.getItem("isReloaded")) {
+      sessionStorage.setItem("isReloaded", "true");
+      location.reload(true);
+    }
+    return cart; 
+  })
+  .then(() => {
+    if (sessionStorage.getItem("isReloaded")) {
+      sessionStorage.removeItem("isReloaded");
+    }
+  });
+},
   
     updateAttribute: function(key, value) {
       return this._updateCart({
