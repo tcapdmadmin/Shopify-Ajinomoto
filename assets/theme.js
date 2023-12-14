@@ -1592,8 +1592,17 @@ if (console && console.log) {
           'Accept': 'application/json'
         }
       })
-      .then(response => { return response.text() })
-      .then(cart => { return cart; });
+      .then(response => { return response.json() }) // Assuming the server returns JSON
+      .then(cart => {
+        // Assuming 'total_price' is a property in the returned JSON
+        if (cart.total_price > 500 || cart.total_price < 499) {
+          location.reload();
+        }
+        return cart;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
     },
   
     updateAttribute: function(key, value) {
