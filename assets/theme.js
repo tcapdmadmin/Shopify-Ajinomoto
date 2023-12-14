@@ -1582,34 +1582,19 @@ if (console && console.log) {
     },
   
     _updateCart: function(params) {
-    console.log('_UPDATECART')
-    checkAndUpdateFreebieInCart();
-    return fetch(params.url, {
-      method: 'POST',
-      body: params.data,
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Requested-With': 'XMLHttpRequest',
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => { return response.json() }) // Assuming the response is JSON
-    .then(cart => {
-      console.log('Freebie In cart Run')
-      // $( ".cart__item-sub" ).load(window.location.href + " .cart__item-sub" );
-      if ((cart.total_price >= 500 || cart.total_price <= 499) && !sessionStorage.getItem("isReloaded")) {
-        sessionStorage.setItem("isReloaded", "true");
-        location.reload(true);
-      }
-      return cart; 
-    })
-    .then(() => {
-      if (sessionStorage.getItem("isReloaded")) {
-        sessionStorage.removeItem("isReloaded");
-      }
-    });
-  },
+      return fetch(params.url, {
+        method: 'POST',
+        body: params.data,
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => { return response.text() })
+      .then(cart => { return cart; });
+    },
   
     updateAttribute: function(key, value) {
       return this._updateCart({
