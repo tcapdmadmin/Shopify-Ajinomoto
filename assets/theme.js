@@ -1559,7 +1559,7 @@ if (console && console.log) {
   
     getCartProductMarkup: function() {
       var url = ''.concat(theme.routes.cartPage, '?t=').concat(Date.now());
-      console.log('load cart')
+  
       url = url.indexOf('?') === -1 ? (url + '?view=ajax') : (url + '&view=ajax');
   
       return fetch(url, {
@@ -1571,11 +1571,7 @@ if (console && console.log) {
     },
   
     changeItem: function(key, qty) {
-      checkAndUpdateFreebieInCart()
-      console.log('CHANGE ITEM FUNCTION')
-
-
-      var masterqty = qty;
+  
       return this._updateCart({
         url: ''.concat(theme.routes.cartChange, '?t=').concat(Date.now()),
         data: JSON.stringify({
@@ -1583,64 +1579,24 @@ if (console && console.log) {
           quantity: qty
         })
       })
-      .then(function(response) {
-        // Process the response if needed
-      
-        // Update the input element
-        console.log('Check Key')
-        console.log(key)
-        var inputElement = document.getElementById('cart_updates_45200291529019:85aaa5866e4c5d92aae7f9f88c25feca');
-      
-        if (inputElement) {
-          var inputName = inputElement.getAttribute('name');
-          console.log('Name attribute:', inputName);
-          inputElement.value = masterqty;
-        } else {
-          console.log('Input element not found');
-        }
-      
-        // Return the response or perform other actions as needed
-        return response;
-      })
-      .catch(function(error) {
-        // Handle errors if needed
-        console.error('Error updating cart:', error);
-      });
     },
   
     _updateCart: function(params) {
-  console.log('_UPDATECART')
-  checkAndUpdateFreebieInCart();
-  return fetch(params.url, {
-    method: 'POST',
-    body: params.data,
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Requested-With': 'XMLHttpRequest',
-      'Accept': 'application/json'
-    }
-  })
-  .then(response => { return response.json() }) // Assuming the response is JSON
-  .then(cart => {
-    console.log('Freebie In cart Run')
-    // $( ".cart__item-sub" ).load(window.location.href + " .cart__item-sub" );
-    if ((cart.total_price >= 500 || cart.total_price <= 499) && !sessionStorage.getItem("isReloaded")) {
-      sessionStorage.setItem("isReloaded", "true");
-      location.reload(true);
-    }
-    return cart; 
-  })
-  .then(() => {
-    if (sessionStorage.getItem("isReloaded")) {
-      sessionStorage.removeItem("isReloaded");
-    }
-  });
-},
+      return fetch(params.url, {
+        method: 'POST',
+        body: params.data,
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => { return response.text() })
+      .then(cart => { return cart; });
+    },
   
     updateAttribute: function(key, value) {
-      console.log('updateAttribute function')
-      console.log(value)
       return this._updateCart({
         url: '/cart/update.js',
         data: JSON.stringify({
@@ -1652,7 +1608,6 @@ if (console && console.log) {
     },
   
     updateNote: function(note) {
-      console.log('updateNote')
       return this._updateCart({
         url: '/cart/update.js',
         data: JSON.stringify({
@@ -1753,7 +1708,7 @@ if (console && console.log) {
   
       onSubmit: function(evt) {
         this.submitBtn.classList.add(classes.btnLoading);
-
+  
         /*
           Checks for drawer or cart open class on body element
           and then stops the form from being submitted. We are also
@@ -1957,7 +1912,7 @@ if (console && console.log) {
         }
       }
     });
-
+  
     return CartForm;
   })();
   
@@ -2680,7 +2635,6 @@ if (console && console.log) {
           } else {
             var product = data;
             this.success(product);
-
           }
   
           status.loading = false;
@@ -4992,7 +4946,7 @@ if (console && console.log) {
           'quantity': 1
           }]
         };
-        console.log('ADD NEW ITEM', data)
+  
         fetch(theme.routes.cartAdd, {
           method: 'POST',
           body: JSON.stringify(data),
@@ -5015,10 +4969,6 @@ if (console && console.log) {
                 addToCartBtn: btn
               }
             }));
-  
-            checkAndUpdateFreebieInCart();
-
-            
           }
   
           visibleBtn.classList.remove('btn--loading');
@@ -8791,42 +8741,3 @@ if (console && console.log) {
   });
 
 })();
-
-
-
-
-// REFRESHER CLEAR CART
-function removeAndRefreshCookie() {
-    // Check if the "promo_item" cookie exists
-    var promoItemCookie = getCookie("promo_item");
-    if (promoItemCookie) {
-        // Remove the "promo_item" cookie
-        document.cookie = "promo_item=deleted; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-
-        // Delay the refresh by 1.5 seconds
-        setTimeout(function () {
-            // Refresh the page
-            location.reload();
-        }, 1500);
-    }
-}
-
-// Function to get the value of a cookie by name
-function getCookie(name) {
-    var nameEQ = name + "=";
-    var cookies = document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        while (cookie.charAt(0) === ' ') {
-            cookie = cookie.substring(1, cookie.length);
-        }
-        if (cookie.indexOf(nameEQ) === 0) {
-            return cookie.substring(nameEQ.length, cookie.length);
-        }
-    }
-    return null;
-}
-
-// Call the function to check and remove the cookie
-removeAndRefreshCookie();
-
