@@ -1592,15 +1592,17 @@ _updateCart: function(params) {
         }
     })
     .then(response => { return response.json() }) // Assuming the server returns JSON
-    .then(cart => {
+    .then(cart =>
+              // Clear the cart if total price is 0
+        if (cart.total_price === 0) {
+            this.clearCart();
+        }
+      {
         // Assuming 'total_price' is a property in the returned JSON
         if (cart.total_price > 500 || cart.total_price < 499) {
             location.reload();
         }
-        // Clear the cart if total price is 0
-        if (cart.total_price === 0) {
-            this.clearCart();
-        }
+
         return cart;
     })
     .catch(error => {
