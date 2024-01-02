@@ -118,7 +118,7 @@ function checkCartTotal() {
             addItem().then(() => location.reload());
         } else if (cart.total_price < 50000 && cart.items.some(item => item.variant_id === variantId)) {
             removeItem(variantId).then(() => location.reload());
-        } else if (cart.total_price === 0.00) {
+        } else if (cart.total_price === 00) {
             console.log("Cart total is 0");
             // Add your action here when the total cart price is 0
         }
