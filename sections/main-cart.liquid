@@ -164,6 +164,16 @@ var observer = new MutationObserver(callback);
 // Start observing the target node for configured mutations
 observer.observe(targetNode, config);
 
+  // Function to get the cart
+function getCart() {
+    return fetch('/cart.js', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).then(response => response.json());
+}
+
 </script>                    
 
 {% schema %}
