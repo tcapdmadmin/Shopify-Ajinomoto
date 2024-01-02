@@ -120,58 +120,68 @@
     </div>
   </div>
 </div>
-
 <script>
-    // Define the variant ID
-    var variantId = 47491841392955;
+// Function to check if the only item in the cart is the freebie item and remove it
+function checkAndClearFreebieItem() {
+    return getCart().then(cart => {
+        if (cart.items.length === 1 && cart.items[0].variant_id === variantId) {
+            return removeItem(variantId);
+        }
+    });
+}
 
-    // Function to get the cart
-    function getCart() {
-        return fetch('/cart.js', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        }).then(response => response.json());
-    }
+// Define the variant ID
+var variantId = 47491841392955;
 
-    // Function to add item to the cart
-    function addItem() {
-        return fetch('/cart/add.js', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                id: variantId,
-                quantity: 1
-            })
+// Function to get the cart
+function getCart() {
+    return fetch('/cart.js', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).then(response => response.json());
+}
+
+// Function to add item to the cart
+function addItem() {
+    return fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            id: variantId,
+            quantity: 1
         })
-        .then(response => {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response.json();
-        });
-    }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response.json();
+    });
+}
 
-    // Function to remove item from the cart based on variant ID
-    function removeItem(variantId) {
-        return getCart().then(cart => {
-            var line = cart.items.findIndex(item => item.variant_id === variantId) + 1;
-            if (line > 0) {
-                return fetch('/cart/change.js', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        line: line,
-                        quantity: 0
-                    })
-                });
-            }
-        });
-    }
-  
+// Function to remove item from the cart based on variant ID
+function removeItem(variantId) {
+    return getCart().then(cart => {
+        var line = cart.items.findIndex(item => item.variant_id === variantId) + 1;
+        if (line > 0) {
+            return fetch('/cart/change.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    line: line,
+                    quantity: 0
+                })
+            });
+        }
+    });
+}
+
+// Check and clear the freebie item initially
+checkAndClearFreebieItem();
 </script>
