@@ -111,62 +111,41 @@
 </div>
 
 <script>
-// Function to clear the cart
-function clearCart() {
-    return fetch('/cart/clear.js', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
+        // Check the cart total and add/remove item accordingly
+        function checkCartTotal() {
+            getCart().then(cart => {
+                if (cart.total_price >= 50000 && !cart.items.some(item => item.variant_id === variantId)) {
+                    addItem().then(() => location.reload());
+                } else if (cart.total_price < 50000 && cart.items.some(item => item.variant_id === variantId)) {
+                    removeItem(variantId).then(() => location.reload());
+                }
+            });
         }
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw Error(response.statusText);
+
+    // Check the cart total initially
+    checkCartTotal();
+
+    // Select the node that will be observed for mutations
+    var targetNode = document.querySelector('div[data-subtotal]');
+
+    // Options for the observer (which mutations to observe)
+    var config = { attributes: true, childList: true, subtree: true };
+
+    // Callback function to execute when mutations are observed
+    var callback = function(mutationsList, observer) {
+        for(var mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                checkCartTotal();
+            }
         }
-        return response.json();
-    });
-}
+    };
 
-// Check the cart total and add/remove item accordingly
-function checkCartTotal() {
-    getCart().then(cart => {
-        if (cart.total_price >= 50000 && !cart.items.some(item => item.variant_id === variantId)) {
-            addItem().then(() => location.reload());
-        } else if (cart.total_price < 50000 && cart.items.some(item => item.variant_id === variantId)) {
-            removeItem(variantId).then(() => location.reload());
-        } else if (cart.total_price === 0) {
-            clearCart().then(() => location.reload());
-        }
-    });
-}
+    // Create an observer instance linked to the callback function
+    var observer = new MutationObserver(callback);
 
-// Check the cart total initially
-checkCartTotal();
-
-// Select the node that will be observed for mutations
-var targetNode = document.querySelector('div[data-subtotal]');
-
-// Options for the observer (which mutations to observe)
-var config = { attributes: true, childList: true, subtree: true };
-
-// Callback function to execute when mutations are observed
-var callback = function(mutationsList, observer) {
-    for(var mutation of mutationsList) {
-        if (mutation.type === 'childList') {
-            checkCartTotal();
-        }
-    }
-};
-
-// Create an observer instance linked to the callback function
-var observer = new MutationObserver(callback);
-
-// Start observing the target node for configured mutations
-observer.observe(targetNode, config);
-
-</script>    
-
-                    
+    // Start observing the target node for configured mutations
+    observer.observe(targetNode, config);
+</script>                    
 
 {% schema %}
 {
