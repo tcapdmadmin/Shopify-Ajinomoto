@@ -111,15 +111,6 @@
 </div>
 
 <script>
-    // Function to get the cart
-function getCart() {
-    return fetch('/cart.js', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    }).then(response => response.json());
-}
         // Check the cart total and add/remove item accordingly
         function checkCartTotal() {
             getCart().then(cart => {
