@@ -162,9 +162,8 @@ function removeItem(variantId) {
     console.log("Initiating removeItem function");
     return getCart().then(cart => {
         var line = cart.items.findIndex(item => item.variant_id === variantId) + 1;
-        // Check if the item is the only one in the cart
-        if (cart.items.length === 1 && line > 0) {
-            console.log("Only item in the cart is the specified item, removing it");
+        if (line > 0) {
+            console.log("Item found in the cart, removing it");
             return fetch('/cart/change.js', {
                 method: 'POST',
                 headers: {
@@ -178,7 +177,6 @@ function removeItem(variantId) {
         }
     });
 }
-
 
 // Check and clear the freebie item initially
 console.log("Checking and clearing the freebie item initially");
