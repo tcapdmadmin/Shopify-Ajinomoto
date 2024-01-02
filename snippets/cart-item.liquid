@@ -121,3 +121,87 @@
   </div>
 </div>
 
+<script>
+// Function to check if the only item in the cart is the freebie item and remove it
+function checkAndClearFreebieItem() {
+    console.log("Initiating checkAndClearFreebieItem function");
+    return getCart().then(cart => {
+        console.log("Cart fetched successfully");
+        if (cart.items.length === 1 && cart.items[0].variant_id === variantId) {
+            console.log("Only item in the cart is the freebie item, removing it");
+            return removeItem(variantId);
+        }
+    });
+}
+
+// Define the variant ID
+var variantId = 47491841392955;
+
+// Function to get the cart
+function getCart() {
+    console.log("Initiating getCart function");
+    return fetch('/cart.js', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).then(response => response.json());
+}
+
+// Function to add item to the cart
+function addItem() {
+    console.log("Initiating addItem function");
+    return fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            id: variantId,
+            quantity: 1
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response.json();
+    });
+}
+
+// Function to remove item from the cart based on variant ID
+function removeItem(variantId) {
+    console.log("Initiating removeItem function");
+    return getCart().then(cart => {
+        var line = cart.items.findIndex(item => item.variant_id === variantId) + 1;
+        if (line > 0) {
+            console.log("Item found in the cart, removing it");
+            return fetch('/cart/change.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    line: line,
+                    quantity: 0
+                })
+            });
+        }
+    });
+}
+
+// Check and clear the freebie item initially
+console.log("Checking and clearing the freebie item initially");
+checkAndClearFreebieItem();
+
+  // Function to get the cart
+function getCart() {
+    return fetch('/cart.js', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).then(response => response.json());
+}
+
+</script>
