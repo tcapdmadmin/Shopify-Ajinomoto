@@ -1570,61 +1570,40 @@ if (console && console.log) {
       .catch(e => console.error(e));
     },
   
-changeItem: function(key, qty) {
-    return this._updateCart({
+    changeItem: function(key, qty) {
+  
+      return this._updateCart({
         url: ''.concat(theme.routes.cartChange, '?t=').concat(Date.now()),
         data: JSON.stringify({
-            id: key,
-            quantity: qty
+          id: key,
+          quantity: qty
         })
-    })
-},
-
-_updateCart: function(params) {
-    return fetch(params.url, {
+      })
+    },
+  
+    _updateCart: function(params) {
+      return fetch(params.url, {
         method: 'POST',
         body: params.data,
         credentials: 'same-origin',
         headers: {
-            'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest',
-            'Accept': 'application/json'
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+          'Accept': 'application/json'
         }
-    })
-    .then(response => { return response.json() }) // Assuming the server returns JSON
-    .then(cart =>
-              // Clear the cart if total price is 0
-        if (cart.total_price === 0) {
-            this.clearCart();
-        }
-      {
+      })
+      .then(response => { return response.json() }) // Assuming the server returns JSON
+      .then(cart => {
         // Assuming 'total_price' is a property in the returned JSON
         if (cart.total_price > 500 || cart.total_price < 499) {
-            location.reload();
+          location.reload();
         }
-
         return cart;
-    })
-    .catch(error => {
+      })
+      .catch(error => {
         console.error('Error:', error);
-    });
-},
-
-clearCart: function() {
-    return fetch('/cart/clear.js', {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest',
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => { return response.json() }) // Assuming the server returns JSON
-    .catch(error => {
-        console.error('Error:', error);
-    });
-},
+      });
+    },
   
     updateAttribute: function(key, value) {
       return this._updateCart({
