@@ -145,6 +145,18 @@
 
     // Start observing the target node for configured mutations
     observer.observe(targetNode, config);
+
+  
+    // Function to clear the cart when total becomes 0
+    function clearCartWhenTotalZero() {
+        return getCart().then(cart => {
+            if (cart.total_price === 0) {
+                cart.items.forEach(item => {
+                    removeItem(item.variant_id);
+                });
+            }
+        });
+    }
 </script>                    
 
 {% schema %}
