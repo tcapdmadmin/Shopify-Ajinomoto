@@ -122,18 +122,6 @@
 </div>
 
 <script>
-// Function to check if the only item in the cart is the freebie item and remove it
-function checkAndClearFreebieItem() {
-    console.log("Initiating checkAndClearFreebieItem function");
-    return getCart().then(cart => {
-        console.log("Cart fetched successfully");
-        if (cart.items.length === 1 && cart.items[0].variant_id === variantId) {
-            console.log("Only item in the cart is the freebie item, removing it");
-            return removeItem(variantId);
-        }
-    });
-}
-
 // Define the variant ID
 var variantId = 47491841392955;
 
