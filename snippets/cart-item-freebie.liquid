@@ -77,7 +77,7 @@
 {% endcomment %}
         <div class="cart__remove">
           <a href="{{ routes.cart_change_url }}?id={{ product.key }}&amp;quantity=0" class="text-link">
-            {{ 'cart.general.remove' | t }} {% render 'trash-icon' %}
+            {% comment %}{{ 'cart.general.remove' | t }}{% endcomment %} {% render 'trash-icon' %}
           </a>
         </div>
 
