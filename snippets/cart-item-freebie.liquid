@@ -74,13 +74,13 @@
               <span class="icon__fallback-text" aria-hidden="true">+</span>
           </button>
         </div>
-
+{% endcomment %}
         <div class="cart__remove">
           <a href="{{ routes.cart_change_url }}?id={{ product.key }}&amp;quantity=0" class="text-link">
-            {% comment %}{{ 'cart.general.remove' | t }}{% endcomment %} {% render 'trash-icon' %}
+            {{ 'cart.general.remove' | t }} {% render 'trash-icon' %}
           </a>
         </div>
-{% endcomment %}
+
       </div>
 
       <div class="cart__item-price-col text-right">
