@@ -178,28 +178,6 @@ function removeItem(variantId) {
     });
 }
 
-// Function to remove all freebie items from the cart
-function removeFreebieItems() {
-    console.log("Initiating removeFreebieItems function");
-    return getCart().then(cart => {
-        cart.items.forEach((item, index) => {
-            if (item.properties && item.properties.freebie) {
-                console.log("Freebie item found in the cart, removing it");
-                return fetch('/cart/change.js', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        line: index + 1,
-                        quantity: 0
-                    })
-                });
-            }
-        });
-    });
-}
-  
   // Function to get the cart
 function getCart() {
     return fetch('/cart.js', {
