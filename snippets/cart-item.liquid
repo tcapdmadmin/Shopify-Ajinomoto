@@ -124,8 +124,6 @@
 <script>
 // Define the variant ID
 var variantId = 47491841392955;
-var variantIds = [47491841392955, 47330903064891, 47330885599547, 47330816688443, 47330840248635, 47330596749627, 47408173121851, 47330826551611, 47330849882427, 47330861449531, 47330931310907];
-
 
 // Function to get the cart
 function getCart() {
@@ -179,31 +177,6 @@ function removeItem(variantId) {
         }
     });
 }
-
-// Function to remove items from the cart based on an array of variant IDs
-function removeItems(variantIds) {
-    console.log("Initiating removeItems function");
-    return getCart().then(cart => {
-        variantIds.forEach(variantIds => {
-            var line = cart.items.findIndex(item => item.variant_id === variantIds) + 1;
-            // Check if the item is the only one in the cart
-            if (cart.items.length === 1 && line > 0) {
-                console.log("Only item in the cart is the specified item, removing it");
-                return fetch('/cart/change.js', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        line: line,
-                        quantity: 0
-                    })
-                });
-            }
-        });
-    });
-}
-
 
   // Function to get the cart
 function getCart() {
