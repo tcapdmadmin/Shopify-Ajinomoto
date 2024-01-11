@@ -158,26 +158,26 @@ function getCart() {
     }).then(response => response.json());
 }
 
-  // Function to remove item from the cart based on variant ID
-function removeItem(variantId) {
-    console.log("Initiating removeItem function");
-    return getCart().then(cart => {
-        var line = cart.items.findIndex(item => item.variant_id === variantId) + 1;
-        if (line > 0) {
-            console.log("Item found in the cart, removing it");
-            return fetch('/cart/change.js', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    line: line,
-                    quantity: 0
-                })
-            });
-        }
-    });
-}
+//   // Function to remove item from the cart based on variant ID
+// function removeItem(variantId) {
+//     console.log("Initiating removeItem function");
+//     return getCart().then(cart => {
+//         var line = cart.items.findIndex(item => item.variant_id === variantId) + 1;
+//         if (line > 0) {
+//             console.log("Item found in the cart, removing it");
+//             return fetch('/cart/change.js', {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json',
+//                 },
+//                 body: JSON.stringify({
+//                     line: line,
+//                     quantity: 0
+//                 })
+//             });
+//         }
+//     });
+// }
 
   // Function to remove items from the cart based on variant IDs
 function removeItems(variantIds) {
@@ -208,17 +208,15 @@ function removeItems(variantIds) {
 var variantIds = [47330903064891, 47330885599547, 47330816688443, 47330840248635, 47330596749627, 47408173121851, 47330826551611, 47330849882427, 47330861449531, 47330931310907];
 
 // Function to check cart total and remove items if total is 0
+// Function to check cart total and remove items if total is 0
 function checkCartAndRemoveItems() {
     getCart().then(cart => {
         if (cart.total_price === 0) {
-            variantIds.forEach(variantId => {
-                if (cart.items.some(item => item.variant_id === variantId)) {
-                    removeItem(variantId).then(() => location.reload());
-                }
-            });
+            removeItems(variantIds).then(() => location.reload());
         }
     });
 }
+
 
 // Call the function initially
 checkCartAndRemoveItems();
