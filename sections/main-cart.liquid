@@ -182,22 +182,60 @@ function removeItem(variantId) {
 // Define the variant IDs
 var variantIds = [47330903064891, 47330885599547, 47330816688443, 47330840248635, 47330596749627, 47408173121851, 47330826551611, 47330849882427, 47330861449531, 47330931310907];
 
-// Function to check cart total and remove items if total is 0
-function checkCartAndRemoveItems() {
+// Function to get the cart
+function getCart() {
+    return fetch('/cart.js', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).then(response => response.json());
+}
+
+// Function to clear the cart
+function clearCart() {
+    console.log("Initiating clearCart function");
+    return fetch('/cart/clear.js', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    });
+}
+
+// Function to check cart total and clear the cart if total is 0
+function checkCartAndClear() {
     getCart().then(cart => {
         if (cart.total_price === 0) {
-            variantIds.forEach(variantIds => {
-                if (cart.items.some(item => item.variant_id === variantIds)) {
-                    removeItem(variantIds).then(() => location.reload());
-                }
-            });
+            clearCart();
         }
     });
 }
 
 // Call the function initially
-checkCartAndRemoveItems();
-  
+checkCartAndClear();
+
+// Select the node that will be observed for mutations
+var targetNode = document.querySelector('div[data-subtotal]');
+
+// Options for the observer (which mutations to observe)
+var config = { attributes: true, childList: true, subtree: true };
+
+// Callback function to execute when mutations are observed
+var callback = function(mutationsList, observer) {
+    for(var mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+            checkCartAndClear();
+        }
+    }
+};
+
+// Create an observer instance linked to the callback function
+var observer = new MutationObserver(callback);
+
+// Start observing the target node for configured mutations
+observer.observe(targetNode, config);
+
 </script>                    
 
 {% schema %}
