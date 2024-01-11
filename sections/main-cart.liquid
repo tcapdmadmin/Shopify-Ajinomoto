@@ -182,9 +182,6 @@ function removeItem(variantId) {
 // Define the variant IDs
 var variantIds = [47330903064891, 47330885599547, 47330816688443, 47330840248635, 47330596749627, 47408173121851, 47330826551611, 47330849882427, 47330861449531, 47330931310907];
 
-// Flag to track if the cart has been cleared
-var cartCleared = false;
-
 // Function to get the cart
 function getCart() {
     return fetch('/cart.js', {
@@ -203,16 +200,14 @@ function clearCart() {
         headers: {
             'Content-Type': 'application/json',
         }
-    }).then(() => {
-        cartCleared = true;
     });
 }
 
 // Function to check cart total and clear the cart if total is 0
 function checkCartAndClear() {
     getCart().then(cart => {
-        if (cart.total_price === 0 && !cartCleared) {
-            clearCart().then(() => location.reload());
+        if (cart.total_price === 0) {
+            clearCart();
         }
     });
 }
