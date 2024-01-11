@@ -111,18 +111,19 @@
 </div>
 
 <script>
-  // Define the variant ID
-var variantId = 47491841392955;
-        // Check the cart total and add/remove item accordingly
-        function checkCartTotal() {
-            getCart().then(cart => {
-                if (cart.total_price >= 50000 && !cart.items.some(item => item.variant_id === variantId)) {
-                    addItem().then(() => location.reload());
-                } else if (cart.total_price < 50000 && cart.items.some(item => item.variant_id === variantId)) {
-                    removeItem(variantId).then(() => location.reload());
-                }
-            });
-        }
+    // Define the variant ID
+    var variantId = 47491841392955;
+
+    // Check the cart total and add/remove item accordingly
+    function checkCartTotal() {
+        getCart().then(cart => {
+            if (cart.total_price >= 50000 && !cart.items.some(item => item.variant_id === variantId)) {
+                addItem().then(() => location.reload());
+            } else if (cart.total_price < 50000 && cart.items.some(item => item.variant_id === variantId)) {
+                removeItem(variantId).then(() => location.reload());
+            }
+        });
+    }
 
     // Check the cart total initially
     checkCartTotal();
@@ -149,95 +150,84 @@ var variantId = 47491841392955;
     observer.observe(targetNode, config);
 
     // Function to get the cart
-function getCart() {
-    return fetch('/cart.js', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    }).then(response => response.json());
-}
-
-  // Function to remove item from the cart based on variant ID
-function removeItem(variantId) {
-    console.log("Initiating removeItem function");
-    return getCart().then(cart => {
-        var line = cart.items.findIndex(item => item.variant_id === variantId) + 1;
-        if (line > 0) {
-            console.log("Item found in the cart, removing it");
-            return fetch('/cart/change.js', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    line: line,
-                    quantity: 0
-                })
-            });
-        }
-    });
-}
-
-// Function to get the cart
-function getCart() {
-    return fetch('/cart.js', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    }).then(response => response.json());
-}
-
-// Function to clear the cart
-function clearCart() {
-    console.log("Initiating clearCart function");
-    return fetch('/cart/clear.js', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    }).then(() => {
-        console.log("Cart cleared, reloading page");
-        location.reload();
-    });
-}
-
-// Function to check cart total and clear the cart if total is 0
-function checkCartAndClear() {
-    getCart().then(cart => {
-        if (cart.items.length > 0 && cart.total_price === 0) {
-            clearCart();
-        }
-    });
-}
-
-
-// Call the function initially
-checkCartAndClear();
-
-// Select the node that will be observed for mutations
-var targetNode = document.querySelector('div[data-subtotal]');
-
-// Options for the observer (which mutations to observe)
-var config = { attributes: true, childList: true, subtree: true };
-
-// Callback function to execute when mutations are observed
-var callback = function(mutationsList, observer) {
-    for(var mutation of mutationsList) {
-        if (mutation.type === 'childList') {
-            checkCartAndClear();
-        }
+    function getCart() {
+        return fetch('/cart.js', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }).then(response => response.json());
     }
-};
 
-// Create an observer instance linked to the callback function
-var observer = new MutationObserver(callback);
+    // Function to remove item from the cart based on variant ID
+    function removeItem(variantId) {
+        console.log("Initiating removeItem function");
+        return getCart().then(cart => {
+            var line = cart.items.findIndex(item => item.variant_id === variantId) + 1;
+            if (line > 0) {
+                console.log("Item found in the cart, removing it");
+                return fetch('/cart/change.js', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        line: line,
+                        quantity: 0
+                    })
+                });
+            }
+        });
+    }
 
-// Start observing the target node for configured mutations
-observer.observe(targetNode, config);
+    // Function to clear the cart
+    function clearCart() {
+        console.log("Initiating clearCart function");
+        return fetch('/cart/clear.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }).then(() => {
+            console.log("Cart cleared, reloading page");
+            location.reload();
+        });
+    }
 
-</script>                    
+    // Function to check cart total and clear the cart if total is 0
+    function checkCartAndClear() {
+        getCart().then(cart => {
+            if (cart.items.length > 0 && cart.total_price === 0) {
+                clearCart();
+            }
+        });
+    }
+
+    // Call the function initially
+    checkCartAndClear();
+
+    // Select the node that will be observed for mutations
+    var targetNode = document.querySelector('div[data-subtotal]');
+
+    // Options for the observer (which mutations to observe)
+    var config = { attributes: true, childList: true, subtree: true };
+
+    // Callback function to execute when mutations are observed
+    var callback = function(mutationsList, observer) {
+        for(var mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                checkCartAndClear();
+            }
+        }
+    };
+
+    // Create an observer instance linked to the callback function
+    var observer = new MutationObserver(callback);
+
+    // Start observing the target node for configured mutations
+    observer.observe(targetNode, config);
+</script>
+                    
 
 {% schema %}
 {
