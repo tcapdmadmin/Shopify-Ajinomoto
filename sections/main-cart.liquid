@@ -188,7 +188,7 @@ function checkCartAndRemoveItems() {
         if (cart.total_price === 0) {
             variantIds.forEach(variantIds => {
                 if (cart.items.some(item => item.variant_id === variantIds)) {
-                    removeItem(variantId).then(() => location.reload());
+                    removeItem(variantIds).then(() => location.reload());
                 }
             });
         }
