@@ -200,6 +200,9 @@ function clearCart() {
         headers: {
             'Content-Type': 'application/json',
         }
+    }).then(() => {
+        console.log("Cart cleared, reloading page");
+        location.reload();
     });
 }
 
