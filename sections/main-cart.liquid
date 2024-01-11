@@ -206,11 +206,12 @@ function clearCart() {
 // Function to check cart total and clear the cart if total is 0
 function checkCartAndClear() {
     getCart().then(cart => {
-        if (cart.total_price === 0) {
+        if (cart.items.length > 0 && cart.total_price === 0) {
             clearCart();
         }
     });
 }
+
 
 // Call the function initially
 checkCartAndClear();
