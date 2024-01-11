@@ -124,6 +124,7 @@
 <script>
 // Define the variant ID
 var variantId = 47491841392955;
+var variantId1 = 47330903064891;
 
 // Function to get the cart
 function getCart() {
@@ -162,6 +163,27 @@ function removeItem(variantId) {
     console.log("Initiating removeItem function");
     return getCart().then(cart => {
         var line = cart.items.findIndex(item => item.variant_id === variantId) + 1;
+        if (line > 0) {
+            console.log("Item found in the cart, removing it");
+            return fetch('/cart/change.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    line: line,
+                    quantity: 0
+                })
+            });
+        }
+    });
+}
+
+// Function to remove item from the cart based on variant ID
+function removeItem(variantId1) {
+    console.log("Initiating removeItem function");
+    return getCart().then(cart => {
+        var line = cart.items.findIndex(item => item.variant_id === variantId1) + 1;
         if (line > 0) {
             console.log("Item found in the cart, removing it");
             return fetch('/cart/change.js', {
