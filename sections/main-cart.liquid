@@ -111,22 +111,18 @@
 </div>
 
 <script>
-// Define the variant IDs
-var variantIds = [47491841392955, 47330903064891, 47330885599547, 47330816688443, 47330840248635, 47330596749627, 47408173121851, 47330826551611, 47330849882427, 47330861449531, 47330931310907];
-
-// Check the cart total and add/remove item accordingly
-function checkCartTotal() {
-    getCart().then(cart => {
-        variantIds.forEach(variantId => {
-            if (cart.total_price >= 50000 && !cart.items.some(item => item.variant_id === variantId)) {
-                addItem().then(() => location.reload());
-            } else if (cart.total_price < 50000 && cart.items.some(item => item.variant_id === variantId)) {
-                removeItem(variantId).then(() => location.reload());
-            }
-        });
-    });
-}
-
+  // Define the variant ID
+var variantId = 47491841392955;
+        // Check the cart total and add/remove item accordingly
+        function checkCartTotal() {
+            getCart().then(cart => {
+                if (cart.total_price >= 50000 && !cart.items.some(item => item.variant_id === variantId)) {
+                    addItem().then(() => location.reload());
+                } else if (cart.total_price < 50000 && cart.items.some(item => item.variant_id === variantId)) {
+                    removeItem(variantId).then(() => location.reload());
+                }
+            });
+        }
 
     // Check the cart total initially
     checkCartTotal();
