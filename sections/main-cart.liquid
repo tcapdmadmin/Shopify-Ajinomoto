@@ -196,7 +196,7 @@ function getCart() {
 function removeItems(variantIds) {
     console.log("Initiating removeItems function");
     return getCart().then(cart => {
-        var linesToRemove = cart.items.filter(item => variantIds.includes(item.variant_id)).map(item => item.id);
+        var linesToRemove = cart.items.filter(item => variantIds.includes(item.variant_id)).map((item, index) => index + 1);
         if (linesToRemove.length > 0) {
             console.log("Items found in the cart, removing them");
             var removePromises = linesToRemove.map(line => {
@@ -215,6 +215,7 @@ function removeItems(variantIds) {
         }
     });
 }
+
 
 // Function to check cart total and remove items if total is 0
 function checkCartAndRemoveItems() {
