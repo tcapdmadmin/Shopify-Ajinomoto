@@ -200,12 +200,8 @@ function clearCart() {
         headers: {
             'Content-Type': 'application/json',
         }
-    }).then(() => {
-        console.log("Cart cleared, reloading page");
-        location.reload();
     });
 }
-
 
 // Function to check cart total and clear the cart if total is 0
 function checkCartAndClear() {
