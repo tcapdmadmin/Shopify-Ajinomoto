@@ -186,7 +186,7 @@ var variantIds = [47330903064891, 47330885599547, 47330816688443, 47330840248635
 function checkCartAndRemoveItems() {
     getCart().then(cart => {
         if (cart.total_price === 0) {
-            variantIds.forEach(variantId => {
+            variantIds.forEach(variantIds => {
                 if (cart.items.some(item => item.variant_id === variantIds)) {
                     removeItem(variantId).then(() => location.reload());
                 }
