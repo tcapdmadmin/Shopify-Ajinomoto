@@ -15,3 +15,10 @@
 
   <div class="yotpo-widget-instance" data-yotpo-instance-id="537723" go-back-text="กลับไป"></div>
 {% endif %}
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var translatedText = '{{ "custom.shop_type.rice_and_curry_restaurant" | t }}';
+        $('.yotpo-redemption-confirmation-title').text(translatedText);
+    });
+</script>
