@@ -242,7 +242,9 @@ var inputField = document.getElementById('cart_updates_{{ product.key }}');
 // Disable the input field
 inputField.disabled = true;
 
-// Enable the input field
-inputField.disabled = false;
+// Enable the input field after 1.5 seconds
+setTimeout(function() {
+    inputField.disabled = false;
+}, 1500);
 
 </script>
