@@ -228,6 +228,25 @@
 
     // Start observing the target node for configured mutations
     observer.observe(targetNode, config);
+
+
+  window.onload = function() {
+    // Select all buttons
+    var buttons = document.getElementsByTagName('button');
+
+    // Disable all buttons
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+    }
+
+    // Enable all buttons after 4 seconds
+    setTimeout(function() {
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = false;
+        }
+    }, 4000);
+};
+
 </script>
                     
 
