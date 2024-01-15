@@ -24,7 +24,7 @@
 {% if item.product.type == 'Freebie' %}
               {%- render 'cart-item-freebie-remove-icon', product: item, sizes: '150px', -%}
 {% elsif item.product.type == 'Custom Discount' %}
-              {%- render 'cart-item-freebie-no-remove-icon', product: item, sizes: '150px', -%} %}
+              {%- render 'cart-item-freebie-no-remove-icon', product: item, sizes: '150px', -%}
 {% else %}
               {%- render 'cart-item', product: item, sizes: '150px', -%}
 {% endif %}
