@@ -236,5 +236,13 @@ inputField.addEventListener('blur', function() {
     setTimeout(enableAllButtons, 1500);
 });
 
+  // Select the input field
+var inputField = document.getElementById('cart_updates_{{ product.key }}');
+
+// Disable the input field
+inputField.disabled = true;
+
+// Enable the input field
+inputField.disabled = false;
 
 </script>
