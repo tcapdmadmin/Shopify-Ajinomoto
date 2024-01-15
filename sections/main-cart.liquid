@@ -118,6 +118,13 @@
 
     // Check the cart total and add/remove item accordingly
     function checkCartTotal() {
+       // Select all buttons
+      var buttons = document.getElementsByTagName('button');
+  
+      // Disable all buttons
+      for (var i = 0; i < buttons.length; i++) {
+          buttons[i].disabled = true;
+      }
         getCart().then(cart => {
             if (cart.total_price >= 50000 && !cart.items.some(item => item.variant_id === variantId)) {
                 addItem().then(() => location.reload());
