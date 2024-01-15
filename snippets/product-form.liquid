@@ -46,7 +46,16 @@
     </button>
 
     {%- if enable_dynamic_buttons -%}
-      {{ form | payment_button }}
+      <button
+        {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
+          name="add"
+          data-add-to-cart
+          class="btn btn--full add-to-cart{% if enable_dynamic_buttons and product.selling_plan_groups == empty %} btn--primary{% endif %}"
+        {% unless current_variant.available %} disabled="disabled"{% endunless %} style="margin-top:10px;">
+          <span data-add-to-cart-text data-default-text="{{ default_text }}">
+            {{ 'products.product.buy_it_now' | t }}
+          </span>
+      </button>
     {%- endif -%}
 
   {%- if enable_dynamic_buttons -%}

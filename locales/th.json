@@ -527,7 +527,8 @@
       "will_be_in_stock_after": "กลับมาในสต็อก {{ date }}",
       "waiting_for_stock": "สินค้าคงคลังระหว่างทาง",
       "view_in_space": "ดูในพื้นที่ของคุณ",
-      "view_in_space_label": "ดูในพื้นที่ของคุณ โหลดรายการในหน้าต่างความจริงเสริม"
+      "view_in_space_label": "ดูในพื้นที่ของคุณ โหลดรายการในหน้าต่างความจริงเสริม",
+      "buy_it_now": "ซื้อเลย"
     }
   },
   "store_availability": {
