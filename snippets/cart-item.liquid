@@ -128,6 +128,13 @@ var variantId = 47491841392955;
 // Function to get the cart
 function getCart() {
     console.log("Initiating getCart function");
+        // Select all buttons
+      var buttons = document.getElementsByTagName('button');
+  
+      // Disable all buttons
+      for (var i = 0; i < buttons.length; i++) {
+          buttons[i].disabled = true;
+      }
     return fetch('/cart.js', {
         method: 'GET',
         headers: {
@@ -139,6 +146,13 @@ function getCart() {
 // Function to add item to the cart
 function addItem() {
     console.log("Initiating addItem function");
+        // Select all buttons
+      var buttons = document.getElementsByTagName('button');
+  
+      // Disable all buttons
+      for (var i = 0; i < buttons.length; i++) {
+          buttons[i].disabled = true;
+      }
     return fetch('/cart/add.js', {
         method: 'POST',
         headers: {
@@ -160,6 +174,13 @@ function addItem() {
 // Function to remove item from the cart based on variant ID
 function removeItem(variantId) {
     console.log("Initiating removeItem function");
+        // Select all buttons
+      var buttons = document.getElementsByTagName('button');
+  
+      // Disable all buttons
+      for (var i = 0; i < buttons.length; i++) {
+          buttons[i].disabled = true;
+      }
     return getCart().then(cart => {
         var line = cart.items.findIndex(item => item.variant_id === variantId) + 1;
         if (line > 0) {
