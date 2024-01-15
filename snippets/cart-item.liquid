@@ -188,4 +188,26 @@ function getCart() {
     }).then(response => response.json());
 }
 
+  // Select the buttons
+var minusButton = document.querySelector('.js-qty__adjust--minus');
+var plusButton = document.querySelector('.js-qty__adjust--plus');
+
+// Function to disable all buttons
+function disableAllButtons() {
+    var buttons = document.getElementsByTagName('button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+    }
+    setTimeout(function() {
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = false;
+        }
+    }, 1500);
+}
+
+// Add event listeners to the buttons
+minusButton.addEventListener('click', disableAllButtons);
+plusButton.addEventListener('click', disableAllButtons);
+
+
 </script>
