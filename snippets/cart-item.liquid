@@ -210,4 +210,30 @@ minusButton.addEventListener('click', disableAllButtons);
 plusButton.addEventListener('click', disableAllButtons);
 
 
+  // Select the input field
+var inputField = document.getElementById('cart_updates_{{ product.key }}');
+
+// Function to disable all buttons
+function disableAllButtons() {
+    var buttons = document.getElementsByTagName('button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+    }
+}
+
+// Function to enable all buttons
+function enableAllButtons() {
+    var buttons = document.getElementsByTagName('button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false;
+    }
+}
+
+// Add event listeners to the input field
+inputField.addEventListener('focus', disableAllButtons);
+inputField.addEventListener('blur', function() {
+    setTimeout(enableAllButtons, 400);
+});
+
+
 </script>
