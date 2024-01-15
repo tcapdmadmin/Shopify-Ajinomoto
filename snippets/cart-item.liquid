@@ -203,7 +203,7 @@ function disableAllButtons() {
         for (var i = 0; i < buttons.length; i++) {
             buttons[i].disabled = false;
         }
-    }, 1500);
+    }, 2500);
 }
 
 // Add event listeners to the buttons
@@ -233,7 +233,7 @@ function enableAllButtons() {
 // Add event listeners to the input field
 inputField.addEventListener('focus', disableAllButtons);
 inputField.addEventListener('blur', function() {
-    setTimeout(enableAllButtons, 1500);
+    setTimeout(enableAllButtons, 2500);
 });
 
   // Select the input field
