@@ -188,12 +188,9 @@ function getCart() {
     }).then(response => response.json());
 }
 
-// Select the buttons
+  // Select the buttons
 var minusButton = document.querySelector('.js-qty__adjust--minus');
 var plusButton = document.querySelector('.js-qty__adjust--plus');
-
-// Select the input field
-var inputField = document.getElementById('cart_updates_{{ product.key }}');
 
 // Function to disable all buttons
 function disableAllButtons() {
@@ -201,31 +198,12 @@ function disableAllButtons() {
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
     }
-
-    // Check if the input field is selected
-    if (document.activeElement === inputField) {
-        // If the input field is selected, wait until it is deselected before enabling the buttons
-        inputField.addEventListener('blur', function() {
-            setTimeout(enableAllButtons, 1500);
-        }, { once: true });
-    } else {
-        // If the input field is not selected, enable the buttons after 1.5 seconds
-        setTimeout(enableAllButtons, 1500);
-    }
+    setTimeout(function() {
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = false;
+        }
+    }, 1500);
 }
-
-// Function to enable all buttons
-function enableAllButtons() {
-    var buttons = document.getElementsByTagName('button');
-    for (var i = 0; i < buttons.length; i++) {
-        buttons[i].disabled = false;
-    }
-}
-
-// Add event listeners to the buttons
-minusButton.addEventListener('click', disableAllButtons);
-plusButton.addEventListener('click', disableAllButtons);
-
 
 // Add event listeners to the buttons
 minusButton.addEventListener('click', disableAllButtons);
