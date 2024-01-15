@@ -59,7 +59,8 @@
             value="{{ product.quantity }}"
             min="0"
             pattern="[0-9]*"
-            data-id="{{ product.key }}">
+            data-id="{{ product.key }}"
+            disabled>
           <button type="button"
             class="js-qty__adjust js-qty__adjust--minus"
             aria-label="{{ 'cart.general.reduce_quantity' | t }}">
