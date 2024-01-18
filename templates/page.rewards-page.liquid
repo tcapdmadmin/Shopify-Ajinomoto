@@ -1,9 +1,4 @@
-<script>
-  window.onload = function() {
-    var element = document.getElementById("non-visible");
-    element.style.display = "none";
-  }
-</script>
+
 <div id="non-visible" class="yotpo-widget-instance" data-yotpo-instance-id="537744"></div>
 
 {% if customer.metafields.custom.customer_type == "food_vendor" %}
@@ -23,3 +18,9 @@
 
   <div class="yotpo-widget-instance" data-yotpo-instance-id="537723" go-back-text="กลับไป"></div>
 {% endif %}|
+<script>
+  window.onload = function() {
+    var element = document.getElementById("non-visible");
+    element.style.display = "none";
+  }
+</script>
