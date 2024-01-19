@@ -6,7 +6,7 @@
         "template--19453528080699__00db5a8a-794e-4f1b-9714-b05f28c41efd-1686282013bdfc25e7-0": {
           "type": "heading",
           "settings": {
-            "title": "หมายเหตุความเป็นส่วนตัว",
+            "title": "นโยบายคุ้มครองข้อมูลส่วนบุคคล(PrivacyNote)",
             "heading_size": "h0"
           }
         },
@@ -14,7 +14,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>(สำหรับพันธมิตรทางธุรกิจ)<\/p>"
+            "text": "<p><strong>สำหรับคู่ค้า<\/strong><\/p>"
           }
         }
       },
