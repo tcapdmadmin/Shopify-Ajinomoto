@@ -16,34 +16,41 @@
   <div class="yotpo-widget-instance" data-yotpo-instance-id="537723"></div>
 {% endif %}|
 <script>
-// Select the buttons to observe
-var buttons = document.getElementsByClassName('yotpo-action-button-text');
-buttons = Array.from(buttons); // Convert HTMLCollection to array
+// Create a MutationObserver instance
+var observer = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    if (mutation.type === 'childList') {
+      console.log('Change detected in yotpo-points-balance-number');
+      // If a change is detected, reload elements with the class 'yotpo-description-points-balance'
+      var elements = document.getElementsByClassName('yotpo-description-points-balance');
+      elements = Array.from(elements); // Convert HTMLCollection to array
 
-// Add click event listener to each button
-buttons.forEach(function(button) {
-  button.addEventListener('click', function() {
-    console.log('Button with class yotpo-action-button-text clicked');
-
-    // Reload elements with the class 'yotpo-inner-text'
-    var elements = document.getElementsByClassName('yotpo-inner-text');
-    elements = Array.from(elements); // Convert HTMLCollection to array
-
-    elements.forEach(function(element) {
-      console.log('Reloading element with class yotpo-inner-text');
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'https://ajinomotosalesth.com/pages/loyalty', true);
-      xhr.onload = function() {
-        if (xhr.status >= 200 && xhr.status < 400) {
-          // Success!
-          var resp = xhr.responseText;
-          element.innerHTML = resp;
-          console.log('Reloaded element with class yotpo-inner-text');
-        }
-      };
-      xhr.send();
-    });
+      elements.forEach(function(element) {
+        console.log('Reloading yotpo-description-points-balance');
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://ajinomotosalesth.com/pages/loyalty', true);
+        xhr.onload = function() {
+          if (xhr.status >= 200 && xhr.status < 400) {
+            // Success!
+            var resp = xhr.responseText;
+            element.innerHTML = resp;
+            console.log('Reloaded yotpo-description-points-balance');
+          }
+        };
+        xhr.send();
+      });
+    }
   });
+});
+
+// Select the elements to observe
+var elementsToObserve = document.getElementsByClassName('yotpo-points-balance-number');
+elementsToObserve = Array.from(elementsToObserve); // Convert HTMLCollection to array
+
+// Start observing the selected elements for configured mutations
+elementsToObserve.forEach(function(element) {
+  console.log('Starting to observe yotpo-points-balance-number');
+  observer.observe(element, { childList: true });
 });
 
 </script>
