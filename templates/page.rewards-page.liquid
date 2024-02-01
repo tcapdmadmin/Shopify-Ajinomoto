@@ -16,41 +16,30 @@
   <div class="yotpo-widget-instance" data-yotpo-instance-id="537723"></div>
 {% endif %}|
 <script>
-// Create a MutationObserver instance
-var observer = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
-    if (mutation.type === 'childList') {
-      console.log('Change detected in yotpo-points-balance-number');
-      // If a change is detected, reload elements with the class 'yotpo-description-points-balance'
-      var elements = document.getElementsByClassName('yotpo-description-points-balance');
-      elements = Array.from(elements); // Convert HTMLCollection to array
+document.addEventListener('DOMContentLoaded', function() {
+  // Event listener for button clicks
+  document.querySelectorAll('button').forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      console.log('Button clicked:', event.target);
+    });
+  });
 
-      elements.forEach(function(element) {
-        console.log('Reloading yotpo-description-points-balance');
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://ajinomotosalesth.com/pages/loyalty', true);
-        xhr.onload = function() {
-          if (xhr.status >= 200 && xhr.status < 400) {
-            // Success!
-            var resp = xhr.responseText;
-            element.innerHTML = resp;
-            console.log('Reloaded yotpo-description-points-balance');
-          }
-        };
-        xhr.send();
-      });
-    }
+  // Event listener for text changes in input fields
+  document.querySelectorAll('input[type="text"]').forEach(function(input) {
+    input.addEventListener('input', function(event) {
+      console.log('Text changed:', event.target.value);
+    });
   });
 });
 
-// Select the elements to observe
-var elementsToObserve = document.getElementsByClassName('yotpo-points-balance-number');
-elementsToObserve = Array.from(elementsToObserve); // Convert HTMLCollection to array
 
-// Start observing the selected elements for configured mutations
-elementsToObserve.forEach(function(element) {
-  console.log('Starting to observe yotpo-points-balance-number');
-  observer.observe(element, { childList: true });
+  document.addEventListener('DOMContentLoaded', function() {
+  // Event delegation for button clicks
+  document.body.addEventListener('click', function(event) {
+    if (event.target.matches('button')) {
+      console.log('Button clicked:', event.target);
+    }
+  });
 });
 
 </script>
