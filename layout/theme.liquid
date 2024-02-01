@@ -206,9 +206,17 @@ fetch('/cart.js')
       }
     });
 
-    // Log each item in the cart
+    // Get the cart UI container
+    const cartContainer = document.querySelector('.cart-container');
+
+    // Clear the current cart UI
+    cartContainer.innerHTML = '';
+
+    // Create new elements for each item
     cart.items.forEach(item => {
-      console.log(`Product: ${item.product_title}, Quantity: ${item.quantity}, Price: ${item.price}`);
+      const itemElement = document.createElement('div');
+      itemElement.textContent = `Product: ${item.product_title}, Quantity: ${item.quantity}, Price: ${item.price}`;
+      cartContainer.appendChild(itemElement);
     });
   })
   .catch(error => console.error('Error:', error));
