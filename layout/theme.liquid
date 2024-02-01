@@ -190,5 +190,17 @@
     // setTimeout(retrieveIsRegistered(), 5000);
     const CheckRegistered = setTimeout(retrieveIsRegistered, 3000);
 
+
+    // Fetch the current cart
+fetch('/cart.js')
+  .then(response => response.json())
+  .then(cart => {
+    // Log each item in the cart
+    cart.items.forEach(item => {
+      console.log(`Product: ${item.product_title}, Quantity: ${item.quantity}`);
+    });
+  })
+  .catch(error => console.error('Error:', error));
+
   </script>
     
