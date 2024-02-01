@@ -190,36 +190,5 @@
     // setTimeout(retrieveIsRegistered(), 5000);
     const CheckRegistered = setTimeout(retrieveIsRegistered, 3000);
 
-
-    // Fetch the current cart
-fetch('/cart.js')
-  .then(response => response.json())
-  .then(cart => {
-    // Sort the items in the cart
-    cart.items.sort((a, b) => {
-      if (a.price === 0 && b.price !== 0) {
-        return 1;
-      } else if (a.price !== 0 && b.price === 0) {
-        return -1;
-      } else {
-        return 0;
-      }
-    });
-
-    // Get the cart UI container
-    const cartContainer = document.querySelector('.cart-container');
-
-    // Clear the current cart UI
-    cartContainer.innerHTML = '';
-
-    // Create new elements for each item
-    cart.items.forEach(item => {
-      const itemElement = document.createElement('div');
-      itemElement.textContent = `Product: ${item.product_title}, Quantity: ${item.quantity}, Price: ${item.price}`;
-      cartContainer.appendChild(itemElement);
-    });
-  })
-  .catch(error => console.error('Error:', error));
-
   </script>
     
