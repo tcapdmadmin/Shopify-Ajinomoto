@@ -15,3 +15,40 @@
 
   <div class="yotpo-widget-instance" data-yotpo-instance-id="537723"></div>
 {% endif %}|
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Event listener for button clicks
+  document.querySelectorAll('button').forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      refreshYotpoWidget('537749');
+    });
+  });
+
+  // Event listener for text changes in input fields
+  document.querySelectorAll('input[type="text"]').forEach(function(input) {
+    input.addEventListener('input', function(event) {
+      refreshYotpoWidget('537749');
+    });
+  });
+});
+
+function refreshYotpoWidget(instanceId) {
+  var widget = document.querySelector(`div[data-yotpo-instance-id="${instanceId}"]`);
+  if (widget) {
+    // Remove the widget from the DOM
+    widget.remove();
+
+    // Create a new widget with the same instance ID
+    var newWidget = document.createElement('div');
+    newWidget.className = 'yotpo-widget-instance';
+    newWidget.setAttribute('data-yotpo-instance-id', instanceId);
+
+    // Add the new widget to the DOM
+    document.body.appendChild(newWidget);
+
+    // TODO: You may need to call a function here to initialize the new widget,
+    //       depending on how the Yotpo widgets are implemented.
+  }
+}
+
+</script>
