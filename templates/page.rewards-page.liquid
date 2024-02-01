@@ -15,31 +15,3 @@
 
   <div class="yotpo-widget-instance" data-yotpo-instance-id="537723"></div>
 {% endif %}|
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Event listener for button clicks
-  document.querySelectorAll('button').forEach(function(button) {
-    button.addEventListener('click', function(event) {
-      console.log('Button clicked:', event.target);
-    });
-  });
-
-  // Event listener for text changes in input fields
-  document.querySelectorAll('input[type="text"]').forEach(function(input) {
-    input.addEventListener('input', function(event) {
-      console.log('Text changed:', event.target.value);
-    });
-  });
-});
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-  // Event delegation for button clicks
-  document.body.addEventListener('click', function(event) {
-    if (event.target.matches('button')) {
-      console.log('Button clicked:', event.target);
-    }
-  });
-});
-
-</script>
