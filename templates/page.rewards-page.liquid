@@ -22,31 +22,31 @@
 
 
 <script>
-function reloadYotpoWidget() {
-  const yotpoWidget = document.getElementById('yotpo-widget-2');
+function reloadSpecificTag() {
+  const targetTag = document.querySelector('.yotpo-widget-instance[data-yotpo-instance-id="626951"]');
 
-  if (yotpoWidget) {
+  if (targetTag) {
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0) {
           // Delay of 3.5 seconds before reloading
           setTimeout(() => {
-            const originalSrc = yotpoWidget.src;
-            yotpoWidget.src = originalSrc; // Reload by resetting src
-
-            // Add success log
-            console.log(`Yotpo widget (ID: "yotpo-widget-2") reloaded successfully at ${new Date().toLocaleString()}`);
+            targetTag.src = targetTag.src; // Reload by resetting src
+            console.log(`Tag with class "yotpo-widget-instance" and data-yotpo-instance-id="626951" reloaded successfully at ${new Date().toLocaleString()}`);
           }, 3500);
         }
       });
     });
 
-    // Start observing for added or removed nodes
-    observer.observe(yotpoWidget, { childList: true });
+    // Start observing for changes within the target tag
+    observer.observe(targetTag, { childList: true });
   } else {
-    console.warn('Yotpo widget with ID "yotpo-widget-2" not found.');
+    console.warn('Tag with class "yotpo-widget-instance" and data-yotpo-instance-id="626951" not found.');
   }
 }
+
+// Call the function to start monitoring and reloading
+reloadSpecificTag();
 
 // Call the function to start monitoring and reloading
 reloadYotpoWidget();
