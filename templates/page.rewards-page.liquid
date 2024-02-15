@@ -1,7 +1,9 @@
 {% if customer.metafields.custom.customer_type == "food_vendor" %}
-  <div class="yotpo-widget-instance" data-yotpo-instance-id="537747" id="yotpo-widget-1"></div>
-
-  <div class="yotpo-widget-instance" data-yotpo-instance-id="626951" id="yotpo-widget-2"></div>
+  <div id="yotpo-widgets-points-container">
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="537747" id="yotpo-widget-1"></div>
+  
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="626951" id="yotpo-widget-2"></div>
+  </div>
   <div id="yotpo-widgets-container">
     <div class="yotpo-widget-instance" data-yotpo-instance-id="537749"></div>
     <div class="yotpo-widget-instance" data-yotpo-instance-id="527520"></div>
@@ -21,26 +23,33 @@
 
 
 <script>
-function reloadPointsBalanceTags() {
-  const targetTags = document.querySelectorAll('#yotpo-widgets-container .yotpo-points-balance-number');
+const container = document.getElementById('yotpo-widgets-points-container');
 
-  if (targetTags.length > 0) {
-    // ... (rest of your code for reloading tags)
-  } else {
-    console.warn('Tags with class "yotpo-points-balance-number" not found within the container.');
-  }
-}
+const observer = new MutationObserver((mutations) => {
+  // Process mutations (optional):
+  // - Log details for debugging
+  // - Check for specific mutation types/targets if needed
+  // - Only trigger reload if necessary
 
-// Call the function to start monitoring and updating
-reloadPointsBalanceTags();
-
-const observer = new MutationObserver(() => {
-  // Code to execute when mutations occur within the container
-  console.log("Mutation detected in yotpo-widgets-container");
-  // You can perform specific actions based on the type of mutation here
+  // Reload content (replace with your actual reload logic):
+  console.log(`Mutation detected in yotpo-widgets-points-container. Reloading content...`);
+  reloadContent();
 });
 
-observer.observe(document.getElementById('yotpo-widgets-container'), { childList: true, subtree: true });
+observer.observe(container, { childList: true, subtree: true });
 
+function reloadContent() {
+  // Your specific implementation to reload the content (e.g., AJAX requests, DOM manipulation)
+  // Consider using a dedicated function to separate concerns and improve readability
+
+  // Example using AJAX (replace with your API/data source):
+  fetch('/api/reload-yotpo-points')
+    .then(response => response.json())
+    .then(data => {
+      // Update the container's content with the fetched data
+      container.innerHTML = data.content; // Adapt this line based on your data structure
+    })
+    .catch(error => console.error('Error reloading content:', error));
+}
 </script>
 
