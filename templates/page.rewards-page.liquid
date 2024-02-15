@@ -22,17 +22,39 @@
 
 
 <script>
+  // Option 1: Add logs directly to functions
+  // function reloadWidget() {
+  //   console.log("Function reloadWidget called");
+  //   // ... rest of the function code ...
+  // }
+
+  // // Option 2: Wrap functions in a logging function
+  function logAndRun(func) {
+    console.log("Function", func.name, "called");
+    func();
+  }
+
   const pointsBalanceSpan = document.querySelector('.yotpo-points-balance-number');
   const yotpoWidgetDiv = document.querySelector('.yotpo-widget-instance[data-yotpo-instance-id="626951"]');
 
-  function reloadWidget() {
-    yotpoWidgetDiv.contentWindow.location.reload(true); // Reload the widget's iframe
-  }
+  // Choose one of the following options:
+  
+  // Option 1 (uncomment the function)
+  // function reloadWidget() {
+  //   console.log("Function reloadWidget called");
+  //   yotpoWidgetDiv.contentWindow.location.reload(true); // Reload the widget's iframe
+  // }
 
-  // Listen for DOMSubtreeModified events (for older browsers)
-  pointsBalanceSpan.addEventListener('DOMSubtreeModified', reloadWidget);
+  // Option 2 (use logAndRun)
+  const reloadWidgetWithLogging = logAndRun(function() {
+    yotpoWidgetDiv.contentWindow.location.reload(true); // Reload the widget's iframe
+  });
+
+  // // Listen for DOMSubtreeModified events (for older browsers)
+  // pointsBalanceSpan.addEventListener('DOMSubtreeModified', reloadWidgetWithLogging);
 
   // Listen for MutationObserver events (for modern browsers)
-  const observer = new MutationObserver(reloadWidget);
+  const observer = new MutationObserver(reloadWidgetWithLogging);
   observer.observe(pointsBalanceSpan, { childList: true, subtree: true });
 </script>
+
