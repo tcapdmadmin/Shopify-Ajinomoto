@@ -53,6 +53,8 @@ reloadSpecificTag();
 
   const observer = new MutationObserver(() => {
   console.log("DOM change detected");
+
+    reloadSpecificTag();
 });
 
 observer.observe(document, { childList: true, subtree: true });
