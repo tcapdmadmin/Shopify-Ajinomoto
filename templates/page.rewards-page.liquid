@@ -22,22 +22,22 @@
 
 
 <script>
-const pointsBalanceSpan = document.querySelector('.yotpo-points-balance-number');
-const yotpoWidgetDivs = document.querySelectorAll('.yotpo-widget-instance[id^="yotpo-widget-"]'); // Select all divs with IDs starting with "yotpo-widget-"
+// Select all buttons on the page
+const buttons = document.querySelectorAll('button');
+
+// Select the Yotpo widget div to reload
+const yotpoWidgetDiv = document.querySelector('.yotpo-widget-instance[data-yotpo-instance-id="626951"]');
 
 // Wrap the reloading logic in a function for clarity
-function reloadWidgets() {
-  yotpoWidgetDivs.forEach(function(div) {
-    div.contentWindow.location.reload(true); // Reload each widget's iframe
-  });
+function reloadWidget() {
+  yotpoWidgetDiv.contentWindow.location.reload(true); // Reload the widget's iframe
 }
 
-// Listen for DOMSubtreeModified events (for older browsers)
-pointsBalanceSpan.addEventListener('DOMSubtreeModified', reloadWidgets);
+// Add click event listener to each button
+buttons.forEach(function(button) {
+  button.addEventListener('click', reloadWidget);
+});
 
-// Listen for MutationObserver events (for modern browsers)
-const observer = new MutationObserver(reloadWidgets);
-observer.observe(pointsBalanceSpan, { childList: true, subtree: true });
 
 </script>
 
