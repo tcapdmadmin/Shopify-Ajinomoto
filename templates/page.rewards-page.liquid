@@ -29,13 +29,17 @@ function reloadWidget() {
   yotpoWidgetDiv.contentWindow.location.reload(true);
 }
 
+function delayedReload() {
+  setTimeout(reloadWidget, 3500); // Delay reload by 3.5 seconds
+}
+
 // Use MutationObserver for modern browsers
 if (typeof MutationObserver !== 'undefined') {
-  const observer = new MutationObserver(reloadWidget);
+  const observer = new MutationObserver(delayedReload);
   observer.observe(document, { childList: true, subtree: true });
 } else {
   // Fallback to DOMSubtreeModified for older browsers
-  document.addEventListener('DOMSubtreeModified', reloadWidget);
+  document.addEventListener('DOMSubtreeModified', delayedReload);
 }
 
 
