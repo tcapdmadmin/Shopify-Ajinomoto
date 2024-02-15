@@ -22,25 +22,30 @@
 
 
 <script>
-const yotpoWidgetDiv = document.querySelector('#yotpo-widget-2'); // Use ID-based selector for direct targeting
+function reloadYotpoWidget() {
+  const yotpoWidget = document.getElementById('yotpo-widget-2');
 
-function reloadWidget() {
-  console.log("Reloading Yotpo widget with ID yotpo-widget-2");
-  yotpoWidgetDiv.contentWindow.location.reload(true); // Reload iframe content
+  if (yotpoWidget) {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0) {
+          // Delay of 3.5 seconds before reloading
+          setTimeout(() => {
+            yotpoWidget.src = yotpoWidget.src; // Reload by resetting src
+          }, 3500);
+        }
+      });
+    });
+
+    // Start observing for added or removed nodes
+    observer.observe(yotpoWidget, { childList: true });
+  } else {
+    console.warn('Yotpo widget with ID "yotpo-widget-2" not found.');
+  }
 }
 
-function delayedReload() {
-  setTimeout(reloadWidget, 3500); // Delay reload by 3.5 seconds
-}
-
-// Use MutationObserver if available (preferred)
-if (typeof MutationObserver !== 'undefined') {
-  const observer = new MutationObserver(delayedReload);
-  observer.observe(document, { childList: true, subtree: true });
-} else {
-  // Fallback to DOMSubtreeModified for older browsers
-  document.addEventListener('DOMSubtreeModified', delayedReload);
-}
+// Call the function to start monitoring and reloading
+reloadYotpoWidget();
 
   const observer = new MutationObserver(() => {
   console.log("DOM change detected");
