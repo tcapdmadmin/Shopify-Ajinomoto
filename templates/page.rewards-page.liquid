@@ -24,26 +24,55 @@
 
 
 <script>
-function reloadPointsBalanceTags() {
-  const targetTags = document.querySelectorAll('#yotpo-widgets-container .yotpo-points-balance-number');
 
-  if (targetTags.length > 0) {
-    // ... (rest of your code for reloading tags)
-  } else {
-    console.warn('Tags with class "yotpo-points-balance-number" not found within the container.');
-  }
-}
+// Select the nodes that will be observed for mutations
+var targetNodeFV = document.getElementById('yotpo-widgets-container-fv');
+var targetNodeR = document.getElementById('yotpo-widgets-container-r');
 
-// Call the function to start monitoring and updating
-reloadPointsBalanceTags();
+// Options for the observer (which mutations to observe)
+var config = { attributes: true, childList: true, subtree: true };
 
-const observer = new MutationObserver(() => {
-  // Code to execute when mutations occur within the container
-  console.log("Mutation detected in yotpo-widgets-container");
-  // You can perform specific actions based on the type of mutation here
-});
+// Callback function to execute when mutations are observed
+var callback = function(mutationsList, observer) {
+    for(let mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+            console.log('A child node has been added or removed.');
+        }
+        else if (mutation.type === 'attributes') {
+            console.log('The ' + mutation.attributeName + ' attribute was modified.');
+        }
+    }
+};
 
-observer.observe(document.getElementById('yotpo-widgets-container'), { childList: true, subtree: true });
+// Create an observer instance linked to the callback function
+var observerFV = new MutationObserver(callback);
+var observerR = new MutationObserver(callback);
+
+// Start observing the target node for configured mutations
+observerFV.observe(targetNodeFV, config);
+observerR.observe(targetNodeR, config);
+
+  
+// function reloadPointsBalanceTags() {
+//   const targetTags = document.querySelectorAll('#yotpo-widgets-container .yotpo-points-balance-number');
+
+//   if (targetTags.length > 0) {
+//     // ... (rest of your code for reloading tags)
+//   } else {
+//     console.warn('Tags with class "yotpo-points-balance-number" not found within the container.');
+//   }
+// }
+
+// // Call the function to start monitoring and updating
+// reloadPointsBalanceTags();
+
+// const observer = new MutationObserver(() => {
+//   // Code to execute when mutations occur within the container
+//   console.log("Mutation detected in yotpo-widgets-container");
+//   // You can perform specific actions based on the type of mutation here
+// });
+
+// observer.observe(document.getElementById('yotpo-widgets-container'), { childList: true, subtree: true });
 
 </script>
 
