@@ -1,24 +1,25 @@
 {% if customer.metafields.custom.customer_type == "food_vendor" %}
-  <div id="yotpo-widgets-points-container">
+  <div id="yotpo-widgets-points-container-fv">
     <div class="yotpo-widget-instance" data-yotpo-instance-id="537747" id="yotpo-widget-1"></div>
   
     <div class="yotpo-widget-instance" data-yotpo-instance-id="626951" id="yotpo-widget-2"></div>
   </div>
-  <div id="yotpo-widgets-container">
+  <div id="yotpo-widgets-container-fv">
     <div class="yotpo-widget-instance" data-yotpo-instance-id="537749"></div>
     <div class="yotpo-widget-instance" data-yotpo-instance-id="527520"></div>
     <div class="yotpo-widget-instance" data-yotpo-instance-id="527521"></div>
   </div>
 {% elsif customer.metafields.custom.customer_type == "retailer" %}
-  <div class="yotpo-widget-instance" data-yotpo-instance-id="537747" id="yotpo-widget-1"></div>
-
-  <div class="yotpo-widget-instance" data-yotpo-instance-id="626951" id="yotpo-widget-2"></div>
-
-  <div class="yotpo-widget-instance" data-yotpo-instance-id="537749"></div>
-
-  <div class="yotpo-widget-instance" data-yotpo-instance-id="527520"></div>
-
-  <div class="yotpo-widget-instance" data-yotpo-instance-id="537723"></div>
+  <div id="yotpo-widgets-points-container-r">
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="537747" id="yotpo-widget-1"></div>
+  
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="626951" id="yotpo-widget-2"></div>
+  </div>
+  <div id="yotpo-widgets-container-r">
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="537749"></div>
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="527520"></div>
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="537723"></div>
+  </div>
 {% endif %}|
 
 
