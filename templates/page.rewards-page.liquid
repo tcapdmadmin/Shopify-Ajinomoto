@@ -22,39 +22,25 @@
 
 
 <script>
-// 1. Ensure element exists before accessing it
-const yotpoWidgetDiv = document.querySelector('#yotpo-widget-2');
-
-// 2. Handle asynchronous loading (if applicable)
-if (!yotpoWidgetDiv) {
-  // Add a fallback mechanism, like checking for the element
-  // periodically or waiting for a specific event
-  console.warn("Yotpo widget with ID 'yotpo-widget-2' not found yet.");
-  return; // Or implement your preferred waiting/handling logic
-}
+const yotpoWidgetDiv = document.querySelector('#yotpo-widget-2'); // Use ID-based selector for direct targeting
 
 function reloadWidget() {
   console.log("Reloading Yotpo widget with ID yotpo-widget-2");
-
-  // 3. Verify iframe access if applicable
-  if (yotpoWidgetDiv.tagName.toLowerCase() === 'iframe') {
-    yotpoWidgetDiv = yotpoWidgetDiv.contentWindow.document; // Access iframe content
-  }
-
-  // 4. Handle potential race conditions (optional)
-  // Consider using setTimeout or promises if necessary
-
-  yotpoWidgetDiv.location.reload(true); // Reload iframe content
+  yotpoWidgetDiv.contentWindow.location.reload(true); // Reload iframe content
 }
 
-// 5. Trigger reload when appropriate
-// Place this where you want to trigger the reload
-// (e.g., button click, DOM change, etc.)
-reloadWidget();
+function delayedReload() {
+  setTimeout(reloadWidget, 3500); // Delay reload by 3.5 seconds
+}
 
-// 6. Consider potential timing issues
-// Ensure the script executes after the widget is fully loaded
-// or use event listeners like DOMContentLoaded
+// Use MutationObserver if available (preferred)
+if (typeof MutationObserver !== 'undefined') {
+  const observer = new MutationObserver(delayedReload);
+  observer.observe(document, { childList: true, subtree: true });
+} else {
+  // Fallback to DOMSubtreeModified for older browsers
+  document.addEventListener('DOMSubtreeModified', delayedReload);
+}
 
   const observer = new MutationObserver(() => {
   console.log("DOM change detected");
