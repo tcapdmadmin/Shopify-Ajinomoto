@@ -54,7 +54,7 @@ reloadPointsBalanceTags();
   const observer = new MutationObserver(() => {
   console.log("DOM change detected");
 
-    reloadSpecificTag();
+    reloadPointsBalanceTags();
 });
 
 observer.observe(document, { childList: true, subtree: true });
