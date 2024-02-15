@@ -31,7 +31,11 @@ function reloadYotpoWidget() {
         if (mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0) {
           // Delay of 3.5 seconds before reloading
           setTimeout(() => {
-            yotpoWidget.src = yotpoWidget.src; // Reload by resetting src
+            const originalSrc = yotpoWidget.src;
+            yotpoWidget.src = originalSrc; // Reload by resetting src
+
+            // Add success log
+            console.log(`Yotpo widget (ID: "yotpo-widget-2") reloaded successfully at ${new Date().toLocaleString()}`);
           }, 3500);
         }
       });
