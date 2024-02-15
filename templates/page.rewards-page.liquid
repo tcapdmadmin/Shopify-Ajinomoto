@@ -78,33 +78,6 @@ var observerR = new MutationObserver(callback);
 observerFV.observe(targetNodeFV, config);
 observerR.observe(targetNodeR, config);
 
-// Callback function to execute when mutations are observed
-var callback = function(mutationsList, observer) {
-    for(let mutation of mutationsList) {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-            console.log('The class attribute was modified.');
-
-            // Select the nodes to be reloaded
-            var nodeFV = document.getElementById('yotpo-widgets-points-container-fv');
-            var nodeR = document.getElementById('yotpo-widgets-points-container-r');
-
-            // Reload the nodes
-            nodeFV.innerHTML = nodeFV.innerHTML;
-            nodeR.innerHTML = nodeR.innerHTML;
-
-            // Log that the reload has been triggered
-            console.log('Reload has been triggered for yotpo-widgets-points-container-fv and yotpo-widgets-points-container-r');
-        }
-    }
-};
-
-// Create an observer instance linked to the callback function
-var observerFV = new MutationObserver(callback);
-var observerR = new MutationObserver(callback);
-
-// Start observing the target node for configured mutations
-observerFV.observe(targetNodeFV, config);
-observerR.observe(targetNodeR, config);
 
   
 // function reloadPointsBalanceTags() {
