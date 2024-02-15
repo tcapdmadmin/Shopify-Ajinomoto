@@ -22,18 +22,18 @@
 
 
 <script>
-const yotpoWidgetDiv = document.querySelector('.yotpo-widget-instance[data-yotpo-instance-id="626951"]');
+const yotpoWidgetDiv = document.querySelector('#yotpo-widget-2'); // Use ID-based selector for direct targeting
 
 function reloadWidget() {
-  console.log("Reloading Yotpo widget");
-  yotpoWidgetDiv.contentWindow.location.reload(true);
+  console.log("Reloading Yotpo widget with ID yotpo-widget-2");
+  yotpoWidgetDiv.contentWindow.location.reload(true); // Reload iframe content
 }
 
 function delayedReload() {
   setTimeout(reloadWidget, 3500); // Delay reload by 3.5 seconds
 }
 
-// Use MutationObserver for modern browsers
+// Use MutationObserver if available (preferred)
 if (typeof MutationObserver !== 'undefined') {
   const observer = new MutationObserver(delayedReload);
   observer.observe(document, { childList: true, subtree: true });
@@ -41,7 +41,6 @@ if (typeof MutationObserver !== 'undefined') {
   // Fallback to DOMSubtreeModified for older browsers
   document.addEventListener('DOMSubtreeModified', delayedReload);
 }
-
 
   const observer = new MutationObserver(() => {
   console.log("DOM change detected");
