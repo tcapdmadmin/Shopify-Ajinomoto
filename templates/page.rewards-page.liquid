@@ -22,21 +22,31 @@
 
 
 <script>
-function reloadPageOnMutation() {
-  const observer = new MutationObserver(() => {
-    // Delay of 3.5 seconds before reloading
-    setTimeout(() => {
-      window.location.reload(); // Reload the entire page
-      console.log(`Page reloaded successfully at ${new Date().toLocaleString()}`);
-    }, 3500);
-  });
+function reloadYotpoWidget() {
+  const yotpoWidget = document.getElementById('yotpo-widget-2');
 
-  // Start observing for any DOM changes
-  observer.observe(document.body, { childList: true });
+  if (yotpoWidget) {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0) {
+          // Delay of 3.5 seconds before reloading
+          setTimeout(() => {
+            const originalSrc = yotpoWidget.src;
+            yotpoWidget.src = originalSrc; // Reload by resetting src
+
+            // Add success log
+            console.log(`Yotpo widget (ID: "yotpo-widget-2") reloaded successfully at ${new Date().toLocaleString()}`);
+          }, 3500);
+        }
+      });
+    });
+
+    // Start observing for added or removed nodes
+    observer.observe(yotpoWidget, { childList: true });
+  } else {
+    console.warn('Yotpo widget with ID "yotpo-widget-2" not found.');
+  }
 }
-
-// Call the function to start monitoring and reloading
-reloadPageOnMutation();
 
 // Call the function to start monitoring and reloading
 reloadYotpoWidget();
