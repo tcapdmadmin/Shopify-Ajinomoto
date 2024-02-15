@@ -22,35 +22,34 @@
 
 
 <script>
-function reloadSpecificTag() {
-  const targetTag = document.querySelector('#yotpo-widget-2');  // Use ID selector directly
+function reloadPointsBalanceTags() {
+  const targetTags = document.querySelectorAll('.yotpo-points-balance-number');
 
-  if (targetTag) {
+  if (targetTags.length > 0) {
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.addedNodes.length > 0 || mutation.removedNodes.length > 0) {
           // Delay of 3.5 seconds before reloading
           setTimeout(() => {
-            targetTag.src = targetTag.src; // Reload by resetting src
-            console.log(`Tag with ID "yotpo-widget-2" reloaded successfully at ${new Date().toLocaleString()}`);
+            targetTags.forEach(tag => {
+              tag.textContent = ''; // Clear content instead of reloading (if applicable)
+              console.log(`Tag with class "yotpo-points-balance-number" content updated at ${new Date().toLocaleString()}`);
+            });
           }, 3500);
         }
       });
     });
 
-    // Start observing for changes within the target tag
-    observer.observe(targetTag, { childList: true });
+    // Start observing for changes within the target tags
+    targetTags.forEach(tag => observer.observe(tag, { childList: true }));
   } else {
-    console.warn('Tag with ID "yotpo-widget-2" not found.');
+    console.warn('Tags with class "yotpo-points-balance-number" not found.');
   }
 }
 
-// Call the function to start monitoring and reloading
-reloadSpecificTag();
+// Call the function to start monitoring and updating
+reloadPointsBalanceTags();
 
-
-// Call the function to start monitoring and reloading
-reloadSpecificTag();
 
   const observer = new MutationObserver(() => {
   console.log("DOM change detected");
