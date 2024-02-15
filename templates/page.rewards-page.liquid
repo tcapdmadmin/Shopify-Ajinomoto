@@ -19,3 +19,20 @@
 
   <div class="yotpo-widget-instance" data-yotpo-instance-id="537723"></div>
 {% endif %}|
+
+
+<script>
+  const pointsBalanceSpan = document.querySelector('.yotpo-points-balance-number');
+  const yotpoWidgetDiv = document.querySelector('.yotpo-widget-instance[data-yotpo-instance-id="626951"]');
+
+  function reloadWidget() {
+    yotpoWidgetDiv.contentWindow.location.reload(true); // Reload the widget's iframe
+  }
+
+  // Listen for DOMSubtreeModified events (for older browsers)
+  pointsBalanceSpan.addEventListener('DOMSubtreeModified', reloadWidget);
+
+  // Listen for MutationObserver events (for modern browsers)
+  const observer = new MutationObserver(reloadWidget);
+  observer.observe(pointsBalanceSpan, { childList: true, subtree: true });
+</script>
