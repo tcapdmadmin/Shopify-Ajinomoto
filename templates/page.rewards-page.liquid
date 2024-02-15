@@ -37,28 +37,9 @@ function reloadPointsBalanceTags() {
 reloadPointsBalanceTags();
 
 const observer = new MutationObserver(() => {
+  // Code to execute when mutations occur within the container
   console.log("Mutation detected in yotpo-widgets-container");
-
-  // Get the points container
-  const pointsContainer = document.getElementById('yotpo-widgets-points-container');
-
-  // Clear the points container
-  while (pointsContainer.firstChild) {
-    pointsContainer.removeChild(pointsContainer.firstChild);
-  }
-
-  // Reload the widgets
-  const widget1 = document.createElement('div');
-  widget1.className = 'yotpo-widget-instance';
-  widget1.dataset.yotpoInstanceId = '537747';
-  widget1.id = 'yotpo-widget-1';
-  pointsContainer.appendChild(widget1);
-
-  const widget2 = document.createElement('div');
-  widget2.className = 'yotpo-widget-instance';
-  widget2.dataset.yotpoInstanceId = '626951';
-  widget2.id = 'yotpo-widget-2';
-  pointsContainer.appendChild(widget2);
+  // You can perform specific actions based on the type of mutation here
 });
 
 observer.observe(document.getElementById('yotpo-widgets-container'), { childList: true, subtree: true });
