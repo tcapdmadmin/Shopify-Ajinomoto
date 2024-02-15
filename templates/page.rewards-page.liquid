@@ -24,36 +24,7 @@
 
 
 <script>
-
-// Select the nodes that will be observed for mutations
-var targetNodeFV = document.getElementById('yotpo-widgets-container-fv');
-var targetNodeR = document.getElementById('yotpo-widgets-container-r');
-
-// Options for the observer (which mutations to observe)
-var config = { attributes: true, childList: true, subtree: true };
-
 // Callback function to execute when mutations are observed
-var callback = function(mutationsList, observer) {
-    for(let mutation of mutationsList) {
-        if (mutation.type === 'childList') {
-            console.log('A child node has been added or removed.');
-        }
-        else if (mutation.type === 'attributes') {
-            console.log('The ' + mutation.attributeName + ' attribute was modified.');
-        }
-    }
-};
-
-// Create an observer instance linked to the callback function
-var observerFV = new MutationObserver(callback);
-var observerR = new MutationObserver(callback);
-
-// Start observing the target node for configured mutations
-observerFV.observe(targetNodeFV, config);
-observerR.observe(targetNodeR, config);
-
-
-  // Callback function to execute when mutations are observed
 var callback = function(mutationsList, observer) {
     for(let mutation of mutationsList) {
         if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
@@ -66,6 +37,9 @@ var callback = function(mutationsList, observer) {
             // Reload the nodes
             nodeFV.innerHTML = nodeFV.innerHTML;
             nodeR.innerHTML = nodeR.innerHTML;
+
+            // Log that the reload has been triggered
+            console.log('Reload has been triggered for yotpo-widgets-points-container-fv and yotpo-widgets-points-container-r');
         }
     }
 };
@@ -77,6 +51,7 @@ var observerR = new MutationObserver(callback);
 // Start observing the target node for configured mutations
 observerFV.observe(targetNodeFV, config);
 observerR.observe(targetNodeR, config);
+
 
 
   
