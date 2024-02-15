@@ -23,29 +23,7 @@
 
 
 <script>
-function reloadPointsBalanceTags() {
-  const targetTags = document.querySelectorAll('#yotpo-widgets-container .yotpo-points-balance-number');
-
-  if (targetTags.length > 0) {
-    // ... (rest of your code for reloading tags)
-  } else {
-    console.warn('Tags with class "yotpo-points-balance-number" not found within the container.');
-  }
-}
-
-// Call the function to start monitoring and updating
-reloadPointsBalanceTags();
-
 const observer = new MutationObserver(() => {
-  // Code to execute when mutations occur within the container
-  console.log("Mutation detected in yotpo-widgets-container");
-  // You can perform specific actions based on the type of mutation here
-});
-
-observer.observe(document.getElementById('yotpo-widgets-container'), { childList: true, subtree: true });
-
-
-  const observer = new MutationObserver(() => {
   console.log("Mutation detected in yotpo-widgets-container");
 
   // Get the container
