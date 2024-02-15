@@ -22,21 +22,22 @@
 
 
 <script>
-// Select all buttons on the page
-const buttons = document.querySelectorAll('button');
-
-// Select the Yotpo widget div to reload
 const yotpoWidgetDiv = document.querySelector('.yotpo-widget-instance[data-yotpo-instance-id="626951"]');
 
-// Wrap the reloading logic in a function for clarity
 function reloadWidget() {
-  yotpoWidgetDiv.contentWindow.location.reload(true); // Reload the widget's iframe
+  console.log("Reloading Yotpo widget");
+  yotpoWidgetDiv.contentWindow.location.reload(true);
 }
 
-// Add click event listener to each button
-buttons.forEach(function(button) {
-  button.addEventListener('click', reloadWidget);
-});
+// Use MutationObserver for modern browsers
+if (typeof MutationObserver !== 'undefined') {
+  const observer = new MutationObserver(reloadWidget);
+  observer.observe(document, { childList: true, subtree: true });
+} else {
+  // Fallback to DOMSubtreeModified for older browsers
+  document.addEventListener('DOMSubtreeModified', reloadWidget);
+}
+
 
   const observer = new MutationObserver(() => {
   console.log("DOM change detected");
