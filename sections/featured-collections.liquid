@@ -31,6 +31,9 @@
     -%}
 
     {%- for block in section.blocks -%}
+      {%- comment %}<locksmith:00c2>{% endcomment -%}
+        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.collection, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+      {%- comment %}</locksmith:00c2>{% endcomment -%}
       {% if customer.metafields.custom.customer_type.value == block.settings.customer_type or block.settings.customer_type == "none" %}
         {%- liquid
           assign collection = collections[block.settings.collection]
