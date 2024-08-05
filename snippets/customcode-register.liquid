@@ -66,10 +66,10 @@
                 <div class="field-wrap">
                     <input type="text" name="customer[first_name]" id="FirstName"
                            class="field-input input-full parallel"{% if form.first_name %} value="{{ form.first_name }}"{% endif %}
-                           autocapitalize="words" placeholder="{{ 'custom.registration.first_name' | t }} *" autofocus required oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')">
+                           autocapitalize="words" placeholder="{{ 'custom.registration.first_name' | t }} *" autofocus required pattern="[A-Za-z\u0E00-\u0E7F]+" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')">
                     <input type="text" name="customer[last_name]" id="LastName"
                            class="field-input input-full parallel"{% if form.last_name %} value="{{ form.last_name }}"{% endif %}
-                           autocapitalize="words" placeholder="{{ 'custom.registration.last_name' | t }} *" required oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')">
+                           autocapitalize="words" placeholder="{{ 'custom.registration.last_name' | t }} *" required pattern="[A-Za-z\u0E00-\u0E7F]+" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('โปรดกรอกข้อมูลให้ครบถ้วน')">
                 </div>
                 <div class="field-wrap">
                   <input type="text" name="birthdate" id="birthdate" placeholder="{{ 'custom.registration.birthdate' | t }}">
